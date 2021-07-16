@@ -1,0 +1,32 @@
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin-top: 6rem;
+  gap: .5rem;
+  width: 80%;
+
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  margin-left: 1rem;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+}
+
+
+@media only screen and (min-width: 48rem) {
+  .grid-container{
+    grid-template-columns:repeat(6,5rem);
+    gap: 2rem;
+    width: 48rem;
+  }
+}
+
