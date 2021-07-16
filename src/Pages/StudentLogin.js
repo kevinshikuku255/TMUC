@@ -6,7 +6,7 @@ function Login() {
     <div className="Login">
        <h4>Student Portal</h4>
        <button className="L">
-          <a href="http://student.tmuc.ac.ke/" target="_blank"rel="noreferrer">Login</a>
+          <a href="http://student.tmuc.ac.ke/">Login</a>
        </button>
     </div>
   )
