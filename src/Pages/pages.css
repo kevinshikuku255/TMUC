@@ -1,7 +1,6 @@
 .Main{
 z-index: -1;
 height: 100vh;
-background-color: lavenderblush;
 
 }
 
@@ -49,6 +48,7 @@ button{
 button:hover{
   width: 7.5rem;
   height: 2.5rem;
+  color: blue:
 }
 
 .E{
