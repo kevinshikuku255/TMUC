@@ -1,42 +1,31 @@
 import React from 'react';
-import "./pages.css"
+import "./pages.css";
+
+import Portal from "./Portal";
+import Elearning from "./E-learning";
+import Login from "./StudentLogin";
+import Downloads from "./Downloads";
+import About from "./About";
+import Council from "./Council";
+import Library from "./Library";
+import History from "./History";
 
 function Index() {
   return (
-  <div className="flex">
-      <div class="grid-container">
-          <div class="grid-item">
-              <a href="http://student.tmuc.ac.ke/" >Student Login</a></div>
-          <div class="grid-item">
-             <a href="https://elearning.tmuc.ac.ke/">E-learning</a>
-          </div>
-          <div class="grid-item">3</div>
-          <div class="grid-item">4</div>
-          <div class="grid-item">5</div>
-          <div class="grid-item">6</div>
-          <div class="grid-item">7</div>
-          <div class="grid-item">8</div>
-          <div class="grid-item">9</div>
-          <div class="grid-item">4</div>
-          <div class="grid-item">5</div>
-          <div class="grid-item">6</div>
-          <div class="grid-item">7</div>
-          <div class="grid-item">8</div>
-          <div class="grid-item">9</div>
-          <div class="grid-item">4</div>
-          <div class="grid-item">5</div>
-          <div class="grid-item">6</div>
-          <div class="grid-item">7</div>
-          <div class="grid-item">8</div>
-                    <div class="grid-item">7</div>
-          <div class="grid-item">8</div>
-          <div class="grid-item">9</div>
-          <div class="grid-item">4</div>
-          <div class="grid-item">5</div>
-          <div class="grid-item">6</div>
-          <div class="grid-item">7</div>
-          <div class="grid-item">8</div>
-          <div class="grid-item">9</div>
+  <div className="Main">
+      <div className="Welcome">
+            <i>Welcome to <br/> Tom Mboya Univeristy College</i>
+            <p> As an Institution, we value the contribution of everyone. It is humans that makes an Institution. Therefore, whether you are a Student, Parent, Staff, The Public or an Administrator, your contribution to the well being of the Institution is highly appreciated.</p>
+      </div>
+      <div className="Pages">
+          <Login/>
+          <Elearning/>
+          <Portal/>
+          <Library/>
+          <Downloads/>
+          <About/>
+          <Council/>
+          <History/>
       </div>
   </div>
   )

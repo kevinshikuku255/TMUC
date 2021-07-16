@@ -1,32 +1,103 @@
-.flex{
+.Main{
+z-index: -1;
+height: 100vh;
+background-color: lavenderblush;
+
+}
+
+.Welcome{
+  display: none;
+}
+
+.Pages{
+  margin: 6rem 1rem 1rem 1rem;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 8rem;
+  column-gap: .5rem;
+  row-gap: .5rem;
+
+}
+
+.Pages p{
+  padding: 0;
+  margin: 0;
+  background-color: blueviolet;
+}
+.Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  margin-top: 6rem;
-  gap: .5rem;
-  width: 80%;
 
-}
-.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  margin-left: 1rem;
+button{
+  width: 7rem;
   height: 2rem;
-  width: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
   text-align: center;
+  font-weight: bolder;
+  border-radius: 2rem;
+  background-color: blueviolet;
+  color: white;
+}
+.E{
+  background-image: linear-gradient(to left, blue, rgba(255, 0, 0, 0.802));
 }
 
+.P{
+  background-image: linear-gradient(to right, blueviolet, rgba(255, 0, 0, 0.802));
+}
+.L{
+  background-image: linear-gradient(to right, teal, rgba(255, 0, 0, 0.802));
+}
+
+.D{
+  background-image: linear-gradient(to left, rgb(140, 140, 65), rgba(33, 27, 27, 0.802));
+}
+.A{
+  background-image: linear-gradient(to left, rgb(140, 140, 65), rgba(33, 27, 27, 0.802));
+}
+
+.C{
+  background-image: linear-gradient(to left, rgb(0, 0, 0), rgba(90, 16, 16, 0.802));
+}
+
+.LB{
+  background-image: linear-gradient(to left, rgb(0, 0, 0), rgba(90, 16, 16, 0.802));
+}
+.H{
+  background-image: linear-gradient(to left, rgb(0, 230, 230), rgba(3, 68, 70, 0.802));
+}
 
 @media only screen and (min-width: 48rem) {
-  .grid-container{
-    grid-template-columns:repeat(6,5rem);
-    gap: 2rem;
-    width: 48rem;
+  .Main{
+    background:none;
   }
+  .Welcome{
+    display: block;
+    margin-top: 10rem;
+  }
+.Welcome i{
+  font-size: xx-large;
+  font-weight: bolder;
+  font-style: oblique;
+}
+
+.Pages{
+  border: 1px solid black;
+  margin: 1rem;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 6rem;
+  column-gap: .5rem;
+  row-gap: .5rem;
+
+}
+
 }
 
