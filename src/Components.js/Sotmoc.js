@@ -31,7 +31,7 @@ function Sotmoc() {
   const classes = useStyles();
   return (
     <div className="Sotmuc">
-     <h3>Sotmuc 2018 - 2019</h3> <br/>
+     <h3>Sotmuc 2019 - 2020</h3> <br/>
      <div className="Leaders1819">
         <div>
           <Avatar alt="Asa" src={Dama} className={classes.large} />
@@ -55,7 +55,7 @@ function Sotmoc() {
      </div>
      <br/> <br/> <br/> <br/>
 
-     <h3>Sotmuc 2019 -- </h3>
+     <h3>Sotmuc 2020 -- </h3>
      <div className="Leaders1819">
         <div>
            <Avatar alt="Asa" src={Sec} className={classes.small} />
