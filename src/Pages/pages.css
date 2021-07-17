@@ -1,6 +1,7 @@
 .Main{
 z-index: -1;
 height: 100vh;
+/* background-color: lavenderblush; */
 
 }
 
@@ -19,11 +20,6 @@ height: 100vh;
 
 }
 
-.Pages p{
-  padding: 0;
-  margin: 0;
-  background-color: blueviolet;
-}
 .Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History{
   display: flex;
   flex-direction: column;
@@ -40,7 +36,6 @@ button{
   text-align: center;
   font-weight: bolder;
   border-radius: 2rem;
-  background-color: blueviolet;
   color: white;
 }
 
@@ -48,7 +43,7 @@ button{
 button:hover{
   width: 7.5rem;
   height: 2.5rem;
-  color: blue;
+  color: #0011ff;
 }
 
 .E{
