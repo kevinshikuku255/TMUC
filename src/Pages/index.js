@@ -9,6 +9,8 @@ import About from "./About";
 import Council from "./Council";
 import Library from "./Library";
 import History from "./History";
+import Academics from "./Academics"
+import StudentCouncil from "./StudentCouncil";
 
 function Index() {
   return (
@@ -21,8 +23,10 @@ function Index() {
           <Login/>
           <Elearning/>
           <Portal/>
+          <StudentCouncil/>
           <Library/>
           <Downloads/>
+          <Academics/>
           <About/>
           <Council/>
           <History/>

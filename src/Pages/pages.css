@@ -20,7 +20,7 @@ height: 100vh;
 
 }
 
-.Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History{
+.Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil{
   display: flex;
   flex-direction: column;
   justify-content: center;
