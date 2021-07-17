@@ -2,7 +2,7 @@ import React from 'react';
 import "./pages.css";
 
 import Portal from "./Portal";
-import Elearning from "./E-learning";
+// import Elearning from "./E-learning";
 import Login from "./StudentLogin";
 import Downloads from "./Downloads";
 import About from "./About";
@@ -21,7 +21,7 @@ function Index() {
       </div>
       <div className="Pages">
           <Login/>
-          <Elearning/>
+          {/* <Elearning/> */}
           <Portal/>
           <StudentCouncil/>
           <Library/>

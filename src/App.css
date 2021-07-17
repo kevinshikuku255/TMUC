@@ -5,6 +5,7 @@
   width: 100vw;
   padding-bottom: .5rem;
   background-color: white;
+  z-index: 11;
   border-bottom: .2px solid #0000001c;
 }
 

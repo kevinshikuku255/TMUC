@@ -36,6 +36,7 @@ button{
   text-align: center;
   font-weight: bolder;
   border-radius: 2rem;
+  background-color: blueviolet;
   color: white;
 }
 
@@ -69,7 +70,7 @@ button:hover{
 }
 
 .LB{
-  background-image: linear-gradient(to left, rgb(24, 18, 18), rgba(90, 16, 16, 0.802));
+  background-image: linear-gradient(to left, rgb(214, 18, 192), rgba(112, 51, 51, 0.802));
 }
 .H{
   background-image: linear-gradient(to left, rgb(0, 230, 230), rgba(3, 68, 70, 0.802));

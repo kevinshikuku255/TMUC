@@ -1,0 +1,14 @@
+.Sotmuc{
+  margin: 8rem .5rem 2rem .5rem;
+  z-index: -3;
+}
+
+.Leaders1819{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.Sotmuc div{
+  text-align: center;
+}
