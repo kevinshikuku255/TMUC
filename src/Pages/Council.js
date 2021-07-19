@@ -1,11 +1,24 @@
 import React from 'react'
-import "./pages.css"
+import "./pages.css";
+import { useLoadDispatch } from '../Context/loading';
 
 function Council() {
+   const loadDispatch = useLoadDispatch();
+
+
+   const clickHandler = () => {
+     loadDispatch({
+       type: "LOAD",
+       payload: true
+     })
+   }
+
   return (
     <div className="Council">
        <h4>School Council</h4>
-       <button className="C"><a href="https://tmuc.ac.ke/management-staff">Council</a></button>
+       <button className="C" onClick={clickHandler}>
+          <a href="https://tmuc.ac.ke/management-staff">Council</a>
+        </button>
     </div>
   )
 }

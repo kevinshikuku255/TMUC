@@ -10,19 +10,13 @@ import Sec from "../Images/sec.jpg";
 import Mercy from "../Images/Mercy.jpg";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
   small: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
+    width: theme.spacing(10),
+    height: theme.spacing(10),
   },
   large: {
-    width: theme.spacing(17),
-    height: theme.spacing(17),
+    width: theme.spacing(13),
+    height: theme.spacing(13),
   },
 }));
 
@@ -31,7 +25,7 @@ function Sotmoc() {
   const classes = useStyles();
   return (
     <div className="Sotmuc">
-     <h3>Sotmuc 2018 - 2019</h3> <br/>
+     <h3>Sotmuc 2019 - 2020</h3> <br/>
      <div className="Leaders1819">
         <div>
           <Avatar alt="Asa" src={Dama} className={classes.large} />
@@ -55,7 +49,7 @@ function Sotmoc() {
      </div>
      <br/> <br/> <br/> <br/>
 
-     <h3>Sotmuc 2019 -- </h3>
+     <h3>Sotmuc 2020 -- </h3>
      <div className="Leaders1819">
         <div>
            <Avatar alt="Asa" src={Sec} className={classes.small} />

@@ -1,11 +1,25 @@
 import React from 'react'
-import "./pages.css"
+import "./pages.css";
+import { useLoadDispatch } from '../Context/loading';
 
 function Downloads() {
+
+   const loadDispatch = useLoadDispatch();
+
+
+   const clickHandler = () => {
+     loadDispatch({
+       type: "LOAD",
+       payload: true
+     })
+   }
+
   return (
     <div className="Downloads">
        <h4>School Downloads</h4>
-       <button className="D"> <a href="https://tmuc.ac.ke/downloads">Downloads</a> </button>
+       <button className="D" onClick={clickHandler}>
+          <a href="https://tmuc.ac.ke/downloads">Downloads</a>
+        </button>
     </div>
   )
 }
