@@ -28,8 +28,11 @@ function Sotmoc() {
      <h3>Sotmuc 2019 - 2020</h3> <br/>
      <div className="Leaders1819">
         <div>
-         <Avatar alt="Damaries" src={Dama} className={classes.large} onClick={() => history.push("/sotmuc/Dama")}/>
-          <b>Damaries</b>
+          <Avatar
+                alt="Damaries"
+                src={Dama} className={classes.large}
+                onClick={() => history.push("/sotmuc/Dama")}/>
+            <b>Damaries</b>
         </div>
         <div>
           <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/sotmuc/Asa")}/>

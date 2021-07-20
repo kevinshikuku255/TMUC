@@ -1,17 +1,26 @@
-import React from 'react'
+import React from 'react';
+import ReactGA from 'react-ga';
 import "./pages.css";
 import { useLoadDispatch } from '../Context/loading';
 
 function Login() {
 
    const loadDispatch = useLoadDispatch();
-
+   const handleClick = () => {
+        ReactGA.event({
+              category:"View",
+              action:"clicked",
+              transport:"beacon",
+              label:"Student portal",
+            })
+    }
 
    const clickHandler = () => {
      loadDispatch({
        type: "LOAD",
        payload: true
      })
+     handleClick()
    }
 
   return (
