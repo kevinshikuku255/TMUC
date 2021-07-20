@@ -8,7 +8,8 @@ import Logo from "./Images/tom_logo2.png"
 import './App.css';
 
 import Index from "./Pages";
-import Sotmuc from "./Components.js/Sotmoc";
+import Sotmuc from "./Components/Sotmoc";
+import Profile from "./Components/Profile";
 
 import { useLoadState } from './Context/loading';
 
@@ -26,7 +27,9 @@ function App() {
 
       <Switch>
         <Route exact path="/" component={Index}/>
+        <Route exact path="/sotmuc/:username" component={Profile}/>
         <Route exact path="/sotmuc" component={Sotmuc}/>
+
       </Switch>
     </div>
   );

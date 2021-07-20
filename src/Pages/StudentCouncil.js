@@ -5,6 +5,8 @@ import "./pages.css";
 
 function StudentCouncil() {
 
+
+
   return (
     <div className="StudentCouncil">
        <h4>Student Council</h4>

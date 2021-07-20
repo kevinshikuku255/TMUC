@@ -1,0 +1,41 @@
+.Sotmuc{
+  margin: 8rem .5rem 2rem .5rem;
+  z-index: -3;
+}
+
+.Leaders1819{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.Sotmuc div{
+  text-align: center;
+}
+
+.Details{
+  margin-top: 7.2rem;
+
+}
+
+.CoverImage{
+  margin: auto;
+  margin-top: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media only screen and (min-width: 48rem) {
+.CoverImage{
+  margin: unset;
+  width: 20rem;
+  height: 15rem;
+}
+.Details{
+  margin-top: 13rem;
+
+}
+}
