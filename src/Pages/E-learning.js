@@ -20,8 +20,7 @@ function Elearning() {
        <h4>E-learning</h4>
        <button className="E" >
           {/* <Link to="/e-learning">E-learning</Link> */}
-          {/* <a href="https://elearning.tmuc.ac.ke/">E-learning</a> */}
-          E-learning
+          <a href="https://elearning.tmuc.ac.ke/">E-learning</a> 
         </button>
     </div>
   )
