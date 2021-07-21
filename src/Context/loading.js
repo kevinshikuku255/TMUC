@@ -18,7 +18,12 @@ const loadReducer = (state, action) =>{
         ...state,
         loading: action.payload
       }
-
+    case 'OFFLOAD' :
+      console.log("dipstched")
+      return {
+        ...state,
+        loading: action.payload
+      }
       default:
        throw new Error(`unknown action type ${action.type}`)
    }

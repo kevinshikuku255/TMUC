@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from"react-router-dom";
 import "./pages.css";
 import { useLoadDispatch } from '../Context/loading';
 
@@ -18,7 +19,8 @@ function Elearning() {
     <div className="Elearning">
        <h4>E-learning</h4>
        <button className="E" onClick={clickHandler}>
-          <a href="https://elearning.tmuc.ac.ke/">E-learning</a>
+          <Link to="/e-learning">E-learning</Link>
+          {/* <a href="https://elearning.tmuc.ac.ke/">E-learning</a> */}
         </button>
     </div>
   )

@@ -10,6 +10,7 @@ import './App.css';
 import Index from "./Pages";
 import Sotmuc from "./Components/Sotmoc";
 import Profile from "./Components/Profile";
+import Elearning from "./Components/Elearning"
 
 import { useLoadState } from './Context/loading';
 
@@ -17,11 +18,12 @@ import { useLoadState } from './Context/loading';
 ReactGA.initialize(REACT_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
 function App() {
-  const loading = useLoadState();
+  const {loading} = useLoadState();
+  console.log(loading)
   return (
     < div className="App">
       <div className="App_header">
-         {loading && <LinearProgress/>}
+         {(loading === true ) && <LinearProgress/>}
          <img src={Logo} alt="Tom mboya"/>
       </div>
 
@@ -29,7 +31,7 @@ function App() {
         <Route exact path="/" component={Index}/>
         <Route exact path="/sotmuc/:username" component={Profile}/>
         <Route exact path="/sotmuc" component={Sotmuc}/>
-
+       <Route  exact path="e-learning" component={Elearning}/>
       </Switch>
     </div>
   );

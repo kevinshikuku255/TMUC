@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from"react-router-dom";
 import ReactGA from 'react-ga';
+
+import { useLoadDispatch } from '../Context/loading';
 import "./pages.css";
 
 
@@ -15,10 +17,21 @@ const handleClick = () => {
         })
 }
 
+   const loadDispatch = useLoadDispatch();
+
+
+   const clickHandler = () => {
+     loadDispatch({
+       type: "OFFLOAD",
+       payload: false
+     })
+     handleClick()
+   }
+
   return (
     <div className="StudentCouncil">
        <h4>Student Council</h4>
-       <button onClick={handleClick}>
+       <button onClick={clickHandler}>
           <Link to="/sotmuc">SOTMUC </Link>
         </button>
     </div>
