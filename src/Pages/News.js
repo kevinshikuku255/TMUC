@@ -8,7 +8,7 @@ function News() {
 const [thank, setThank] = useState("")
 
 const handleClick = () => {
-  setThank("Conratulation !!! 👨 let us Build TMUC Together 🔥🔥 🔥 🔥 🔥 🔥")
+  setThank("Conratulation !!! let us Build TMUC Together... 🔥🔥 🔥 🔥 🔥 🔥")
   ReactGA.event({
       category:"Acknowledged",
       action:"YES",
