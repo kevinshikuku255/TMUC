@@ -76,6 +76,55 @@ button:hover{
   background-image: linear-gradient(to left, rgb(0, 230, 230), rgba(3, 68, 70, 0.802));
 }
 
+
+
+
+
+
+
+/* -----------------------------------Sotmuc_news--------------------------------------- */
+.Sotmuc_news{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.news{
+  margin: 1rem;
+  padding: 1rem .5rem;
+  margin-top: .5rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 2px 3px 4px red;
+}
+
+.analyticBtn{
+  margin:.7rem 0 0 auto;
+  width: fit-content;
+}
+/* -------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (min-width: 48rem) {
   .Main{
     background:none;

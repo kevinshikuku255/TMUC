@@ -19,6 +19,7 @@ function Index() {
             <i>Welcome to <br/> Tom Mboya Univeristy College</i>
             <p> As an Institution, we value the contribution of everyone. It is humans that makes an Institution. Therefore, whether you are a Student, Parent, Staff, The Public or an Administrator, your contribution to the well being of the Institution is highly appreciated.</p>
       </div>
+      
       <div className="Pages">
           <Login/>
           <Elearning/>

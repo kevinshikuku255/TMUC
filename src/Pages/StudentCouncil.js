@@ -11,7 +11,7 @@ function StudentCouncil() {
 const handleClick = () => {
     ReactGA.event({
           category:"View",
-          action:"clicled",
+          action:"clicked",
           transport:"beacon",
           label:"Sotmuc",
         })

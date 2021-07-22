@@ -14,25 +14,35 @@ import Elearning from "./Components/Elearning"
 
 import { useLoadState } from './Context/loading';
 
+const News  = React.lazy( () => import("./Pages/News"));
+
 
 ReactGA.initialize(REACT_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
+
 function App() {
   const {loading} = useLoadState();
-  console.log(loading)
+ const fall_back = (
+    <div className="fallback">
+       <p>News and updates from Student Organisation of Tom Mboya University</p>
+    </div>
+ )
+
   return (
     < div className="App">
       <div className="App_header">
          {(loading === true ) && <LinearProgress/>}
          <img src={Logo} alt="Tom mboya"/>
       </div>
-
-      <Switch>
-        <Route exact path="/" component={Index}/>
-        <Route exact path="/sotmuc/:username" component={Profile}/>
-        <Route exact path="/sotmuc" component={Sotmuc}/>
-       <Route  exact path="e-learning" component={Elearning}/>
-      </Switch>
+      <React.Suspense fallback={ <div>{fall_back}</div>}>
+        <Switch>
+          <Route exact path="/" component={Index}/>
+          <Route exact path="/sotmuc/news" component={News}/>
+          <Route exact path="/sotmuc/:username" component={Profile}/>
+          <Route exact path="/sotmuc" component={Sotmuc}/>
+          <Route  exact path="e-learning" component={Elearning}/>
+        </Switch>
+      </React.Suspense>
     </div>
   );
 }

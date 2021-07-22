@@ -2,6 +2,7 @@ import React from 'react';
 import "./components.css";
 import { Avatar, makeStyles} from "@material-ui/core";
 import { useHistory } from 'react-router';
+import Nav from "./Nav";
 
 import Asa from "../Images/Asa.jpg";
 import Dama from "../Images/Dama.jpg";
@@ -24,43 +25,46 @@ function Sotmoc() {
   const history = useHistory();
   const classes = useStyles();
   return (
+<>
+    <Nav/>
     <div className="Sotmuc">
-     <h3>Sotmuc 2019 - 2020</h3> <br/>
-     <div className="Leaders1819">
-        <div>
-          <Avatar
-                alt="Damaries"
-                src={Dama} className={classes.large}
-                onClick={() => history.push("/sotmuc/Dama")}/>
-            <b>Damaries</b>
+        <h3>Sotmuc 2019 - 2020</h3> <br/>
+        <div className="Leaders1819">
+            <div>
+              <Avatar
+                    alt="Damaries"
+                    src={Dama} className={classes.large}
+                    onClick={() => history.push("/sotmuc/Dama")}/>
+                <b>Damaries</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/sotmuc/Asa")}/>
+              <b>Asa</b>
+            </div>
         </div>
-        <div>
-          <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/sotmuc/Asa")}/>
-          <b>Asa</b>
+        <br/>
+        <div className="Leaders1819">
+            <div>
+              <Avatar alt="Asa" src={Deric} className={classes.large} onClick={() => history.push("/sotmuc/Deric")} />
+              <b>Deric</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={Mercy} className={classes.large} onClick={() => history.push("/sotmuc/Mercy")}/>
+              <b>Mercy</b>
+            </div>
         </div>
-     </div>
-     <br/>
-     <div className="Leaders1819">
-        <div>
-          <Avatar alt="Asa" src={Deric} className={classes.large} onClick={() => history.push("/sotmuc/Deric")} />
-          <b>Deric</b>
-        </div>
-        <div>
-          <Avatar alt="Asa" src={Mercy} className={classes.large} onClick={() => history.push("/sotmuc/Mercy")}/>
-           <b>Mercy</b>
-        </div>
-     </div>
-     <br/> <br/> <br/> <br/>
+        <br/> <br/> <br/> <br/>
 
-     <h3>Sotmuc 2020 -- </h3>
-     <div className="Leaders1819">
-        <div>
-          <Avatar alt="Asa" src={Sec} className={classes.small} onClick={() => history.push("/sotmuc/Clinton")}/>
-           <b>Clinton</b>
+        <h3>Sotmuc 2020 -- </h3>
+        <div className="Leaders1819">
+            <div>
+              <Avatar alt="Asa" src={Sec} className={classes.small} onClick={() => history.push("/sotmuc/Clinton")}/>
+              <b>Clinton</b>
+            </div>
         </div>
-     </div>
-    <button onClick={() => history.goBack()}>Back</button>
+        <button onClick={() => history.goBack()}>Back</button>
     </div>
+</>
   )
 }
 
