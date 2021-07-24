@@ -10,7 +10,7 @@ height: 100vh;
 }
 
 .Pages{
-  margin: 6rem 1rem 1rem 1rem;
+  margin: 8rem 1rem 1rem 1rem;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -20,11 +20,14 @@ height: 100vh;
 
 }
 
-.Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil{
+.Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  background-color: burlywood;
+  box-shadow: 2px -2px white;
 }
 
 button{
