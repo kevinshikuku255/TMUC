@@ -29,7 +29,8 @@ const handleClick = () => {
 
       <h4>Let us build TMUC together.</h4>
 
-      <h6>Kevin shikuku ( _Qutekid  ) --student-- 🎇🎇🎇</h6> <br/>
+//       <h6>Kevin shikuku ( _Qutekid  ) --student-- 🎇🎇🎇</h6> 
+       <br/>
 
       <h4>Click YES to show you have read this.</h4>
       <div className="analyticBtn">
