@@ -28,8 +28,6 @@ const handleClick = () => {
       <p>It will be designed to give <b>live</b> news updates as they happen. An alternative channel to Notice Board and WhatsApp groups but way much efficient.</p> <br/>
 
       <h4>Let us build TMUC together.</h4>
-
-//       <h6>Kevin shikuku ( _Qutekid  ) --student-- 🎇🎇🎇</h6> 
        <br/>
 
       <h4>Click YES to show you have read this.</h4>
