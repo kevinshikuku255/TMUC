@@ -20,7 +20,7 @@ height: 100vh;
 
 }
 
-.Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos{
+.Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos, .Direction{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,9 +87,8 @@ button:hover{
 
 /* -----------------------------------Sotmuc_news--------------------------------------- */
 .Sotmuc_news{
-  height: 120vh;
+  height: 100vh;
   display: flex;
-  margin:"9rem 0 0 0";
   justify-content: center;
   align-items: center;
   flex-direction: column;

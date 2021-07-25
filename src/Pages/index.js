@@ -12,6 +12,7 @@ import History from "./History";
 import Academics from "./Academics"
 import StudentCouncil from "./StudentCouncil";
 import Photos from "./Photos";
+import Direction from "./Direction";
 
 function Index() {
   return (
@@ -31,6 +32,7 @@ function Index() {
           <Downloads/>
           <Academics/>
           <About/>
+          <Direction/>
           <Council/>
           <History/>
       </div>
