@@ -10,8 +10,8 @@ height: 100vh;
 }
 
 .Pages{
-  margin: 8rem 1rem 1rem 1rem;
-  height: 100%;
+  margin: 8rem 1rem 3rem 1rem;
+  height: 113%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 8rem;

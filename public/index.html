@@ -10,9 +10,30 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <meta name="google-site-verification" content="szhS16wP-4Y1O0ITfym_pz6JfRE6k-aZLi-SN84TJiE" />
     <title>TMUC</title>
+    <style>
+      noscript{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run TMUC app.</noscript>
+    <noscript>
+      <h1>Error !!</h1>
+      You need to enable JavaScript to run TMUC app.
+      <h3>How to enable</h3>
+      <ol>
+        <li>Open chrome</li>
+        <li>Click Settings</li>
+        <li>Click Provacy and Security</li>
+        <li>Click site settings</li>
+        <li>Click JavaScript</li>
+        <li>Turn on Allowed (recomended)</li>
+      </ol>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>
