@@ -14,13 +14,11 @@ const loadReducer = (state, action) =>{
 
    switch(action.type){
     case 'LOAD' :
-    console.log(state)
       return {
         ...state,
         loading: action.payload
       }
     case 'OFFLOAD' :
-      console.log(state)
       return {
         ...state,
         loading: action.payload

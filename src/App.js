@@ -4,13 +4,13 @@ import {Route, Switch} from 'react-router-dom';
 import {LinearProgress} from "@material-ui/core"
 import { REACT_GA } from "./config.json"
 
-import Logo from "./Images/tom_logo2.png"
 import './App.css';
 
 import Index from "./Pages";
 import Sotmuc from "./Components/Sotmoc";
 import Profile from "./Components/Profile";
-import Elearning from "./Components/Elearning"
+import Elearning from "./Components/Elearning";
+import Head from "./Components/Head";
 
 import { useLoadState } from './Context/loading';
 
@@ -32,7 +32,7 @@ function App() {
     < div className="App">
       <div className="App_header">
          {(loading === true ) && <LinearProgress/>}
-         <img src={Logo} alt="Tom mboya"/>
+         <Head/>
       </div>
       <React.Suspense fallback={ <div>{fall_back}</div>}>
         <Switch>
