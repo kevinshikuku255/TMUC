@@ -22,7 +22,7 @@ function Head() {
       <div  className="Name">
         <h2>tom mboya</h2>
         <hr/>
-        <h4>university collage</h4>
+        <h4>university college</h4>
       </div>
     </div>
   )
