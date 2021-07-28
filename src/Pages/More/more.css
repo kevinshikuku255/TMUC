@@ -27,6 +27,7 @@
   transform: rotateY(180deg);
 }
 .Card-Container img{
+  width: 100px;
   border-radius: 50%;
 }
 
@@ -52,7 +53,7 @@
 
 .wsp{
   color: blue;
-  font-size: 4rem;
+  font-size: 3rem;
   cursor: pointer;
 }
 
