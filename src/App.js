@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import {Route, Switch} from 'react-router-dom';
-import {LinearProgress} from "@material-ui/core"
-import { REACT_GA } from "./config.json"
+import {LinearProgress, CircularProgress} from "@material-ui/core"
+import { REACT_GA } from "./config.json";
+
 
 import './App.css';
 
@@ -15,6 +16,7 @@ import Head from "./Components/Head";
 import { useLoadState } from './Context/loading';
 
 const News  = React.lazy( () => import("./Pages/News"));
+const More = React.lazy(() => import("./Pages/More"));
 
 
 ReactGA.initialize(REACT_GA);
@@ -24,7 +26,7 @@ function App() {
   const {loading} = useLoadState();
  const fall_back = (
     <div className="fallback">
-       <p>News and updates from Student Organisation of Tom Mboya University</p>
+       <CircularProgress/>
     </div>
  )
 
@@ -40,7 +42,8 @@ function App() {
           <Route exact path="/sotmuc/news" component={News}/>
           <Route exact path="/sotmuc/:username" component={Profile}/>
           <Route exact path="/sotmuc" component={Sotmuc}/>
-          <Route  exact path="e-learning" component={Elearning}/>
+          <Route exact path="e-learning" component={Elearning}/>
+          <Route exact path="/more" component={More}/>
         </Switch>
       </React.Suspense>
     </div>

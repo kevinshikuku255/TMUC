@@ -17,11 +17,11 @@ const handleClick = () => {
         })
 }
 
-   const loadDispatch = useLoadDispatch();
+   const dispatch = useLoadDispatch();
 
 
    const clickHandler = () => {
-     loadDispatch({
+     dispatch({
        type: "OFFLOAD",
        payload: false
      })

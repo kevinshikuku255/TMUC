@@ -10,21 +10,22 @@ const LoadDispatchContext = createContext();
 
 
 //State reducer
-const loadReducer = (state, action) =>{
+const loadReducer = (state, {type, payload})  =>{
 
-   switch(action.type){
+   switch(type){
     case 'LOAD' :
       return {
         ...state,
-        loading: action.payload
+        loading: payload
       }
+      
     case 'OFFLOAD' :
       return {
         ...state,
-        loading: action.payload
+        loading: payload
       }
       default:
-       throw new Error(`unknown action type ${action.type}`)
+       throw new Error(`unknown action type ${type}`)
    }
 }
 

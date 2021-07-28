@@ -5,7 +5,7 @@ import { useLoadDispatch } from '../Context/loading';
 
 function Login() {
 
-   const loadDispatch = useLoadDispatch();
+   const dispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
               category:"View",
@@ -16,7 +16,7 @@ function Login() {
     }
 
    const clickHandler = () => {
-     loadDispatch({
+     dispatch({
        type: "LOAD",
        payload: true
      })
