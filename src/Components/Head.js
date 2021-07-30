@@ -7,8 +7,9 @@ import Logo from "../Images/favicon.png";
 
 const useStyles = makeStyles((theme) => ({
   small: {
-    width: theme.spacing(10),
-    height: theme.spacing(10),
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+    borderRadius: 0,
   }
 }));
 
@@ -32,19 +33,14 @@ export const SubHeader = () => {
 function Head() {
   const classes = useStyles();
   return (
+    <div className="HeadWrapper">
     <div className="Head">
-        <div className="Logo">
-          <Avatar src={Logo} className={classes.small}/>
-        </div>
-        <div  className="Name">
-          <h2>tom mboya</h2>
-          <h4>university college</h4>
-        </div>
-        <div>
-        </div>
-        <SubHeader/>
+          <div className="Logo"> <Avatar src={Logo} className={classes.small}/> </div>
+          <div  className="Name"> <p>tom mboya</p> <h5>university college</h5> </div>
+    </div>
+    <SubHeader/>
     </div>
   )
-}
+};
 
 export default Head

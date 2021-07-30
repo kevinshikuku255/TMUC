@@ -1,32 +1,20 @@
 
 .App_header {
-  position: fixed;
-  top: 0;
   width: 100vw;
-  padding-bottom: .5rem;
-  background-color: white;
-  z-index: 11;
-  border-bottom: .2px solid #0000001c;
 }
 
-.App_header img{
-  width: 20rem;
-  margin-top: 1rem;
-}
 
 
 
 @media only screen and (min-width: 48rem) {
   .App{
-    margin: auto;
+    /* margin: auto; */
+    margin-left: 5rem;
     width: 50vw;
   }
   .App_header{
-       width: 80vw;
+       width: inherit;
        box-shadow: none;
        border-bottom: none;
-  }
-  .App_header p{
-    margin: 0;
   }
 }

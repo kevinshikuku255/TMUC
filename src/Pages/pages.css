@@ -124,28 +124,25 @@ button:hover{
 
 
 
-
-
-
-
 @media only screen and (min-width: 48rem) {
   .Main{
     background:none;
   }
   .Welcome{
     display: block;
-    margin-top: 10rem;
+    margin: 8rem 2rem 0 2rem;
   }
-.Welcome i{
-  font-size: xx-large;
-  font-weight: bolder;
-  font-style: oblique;
-}
+  .Welcome i{
+    font-size: xx-large;
+    font-weight: bolder;
+    font-style: oblique;
+  }
 
 .Pages{
   margin: 1rem;
+  height: fit-content;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 6rem;
   column-gap: .5rem;
   row-gap: .5rem;
