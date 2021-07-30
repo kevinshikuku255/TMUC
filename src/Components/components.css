@@ -33,10 +33,10 @@
   background-color: blueviolet;
   position: fixed;
   top: 0;
-  margin-top: 7rem;
+  margin-top: 6.9rem;
   width: 100%;
   z-index: 1;
-  padding: .5rem 0;
+  padding: .9rem 0;
 }
 .Nav_Wrapper p{
   float: right;
@@ -58,6 +58,7 @@
   width: inherit;
   height: fit-content;
   margin: auto;
+  z-index: 3;
   box-shadow: 1px 1px 2px #00000064;
 }
 
@@ -105,7 +106,7 @@
   width: 100%;
   border: none;
   display: flex;
-  border-top: 1px solid #d8d8d844;
+  border-top: 1px solid #d8d8d874;
   justify-content: space-around;
 }
 
