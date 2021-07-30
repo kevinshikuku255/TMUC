@@ -1,5 +1,8 @@
+.SotmucWrapper{
+ margin-top: 10rem;
+}
 .Sotmuc{
-  margin: 10rem .5rem 2rem .5rem;
+  margin: 0 .5rem 2rem .5rem;
   z-index: -3;
 }
 
@@ -8,6 +11,12 @@
   justify-content: space-around;
   flex-direction: row;
 }
+
+.Leaders1718{
+  display: flex;
+  flex-direction: row;
+}
+
 
 .Sotmuc div{
   text-align: center;

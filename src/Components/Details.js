@@ -7,7 +7,7 @@ import './components.css';
 const useStyles = makeStyles((theme) => ({
   large: {
     width: "100%",
-    height: theme.spacing(50),
+    height: theme.spacing(80),
     borderRadius:"0",
   },
 }));
@@ -18,11 +18,11 @@ export const Details = ({name, avartar}) => {
 
   return (
     <div className="Details">
-      
+
       <div className="CoverImage">
           <Avatar alt={name} src={avartar} className={classes.large}/>
       </div>
-       <h1>{name}</h1>
+       <p>{name}</p>
 
     </div>
   )

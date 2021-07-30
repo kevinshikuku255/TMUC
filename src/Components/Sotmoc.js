@@ -9,6 +9,7 @@ import Dama from "../Images/Dama.jpg";
 import Deric from "../Images/deric.jpg";
 import Sec from "../Images/sec.jpg";
 import Mercy from "../Images/Mercy.jpg";
+import Gitonga from "../Images/gitonga.png"
 
 const useStyles = makeStyles((theme) => ({
   small: {
@@ -19,15 +20,27 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(13),
     height: theme.spacing(13),
   },
+  gitonga:{
+    width: theme.spacing(13),
+    height: theme.spacing(13),
+    borderRadius:"0",
+  }
 }));
 
 function Sotmoc() {
   const history = useHistory();
   const classes = useStyles();
   return (
-<>
+<div className="SotmucWrapper">
     <Nav/>
     <div className="Sotmuc">
+      <h3>Sotmuc 2017 - 2018</h3>
+      <div className="Leaders1718">
+         <Avatar src={Gitonga}
+            onClick={() => history.push("/sotmuc/2016")}
+            className={classes.gitonga}/>
+      </div>
+      <br/><br/>
         <h3>Sotmuc 2019 - 2020</h3> <br/>
         <div className="Leaders1819">
             <div>
@@ -64,7 +77,7 @@ function Sotmoc() {
         </div>
         <button onClick={() => history.goBack()}>Back</button>
     </div>
-</>
+</div>
   )
 }
 

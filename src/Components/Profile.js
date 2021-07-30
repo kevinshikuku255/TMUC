@@ -8,6 +8,7 @@ import DamaPic from "../Images/Dama.jpg";
 import DericPic from "../Images/deric.jpg";
 import SecPic from "../Images/sec.jpg";
 import MercyPic from "../Images/Mercy.jpg";
+import Gitonga from "../Images/gitonga.png";
 
 /** Profile component */
 function Profile() {
@@ -21,6 +22,7 @@ function Profile() {
   profileName === "Deric" && (markUp =  <Details name={profileName} avartar={DericPic}/>)
   profileName === "Mercy" && (markUp =  <Details name={profileName} avartar={MercyPic}/>)
   profileName === "Clinton" && (markUp =  <Details name={profileName} avartar={SecPic}/>)
+ profileName === "2016" && (markUp =  <Details name={""} avartar={Gitonga}/>)
 
 
   return (markUp)
