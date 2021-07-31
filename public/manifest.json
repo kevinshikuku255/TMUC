@@ -2,10 +2,16 @@
   "short_name": "TMUC",
   "name": "Tom Mboya University",
   "icons": [
-    {
-      "src": "logo92.png",
+        {
+      "src": "maskable192.png",
       "type": "image/png",
-      "sizes": "92x92"
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo96.png",
+      "type": "image/png",
+      "sizes": "96x96"
     },
     {
       "src": "logo144.png",
@@ -25,6 +31,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "teal",
   "background_color": "#ffffff"
 }
