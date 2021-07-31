@@ -41,13 +41,14 @@ button{
   border-radius: 2rem;
   background-color: blueviolet;
   color: white;
+  overflow: hidden;
+  letter-spacing: -1px;
 }
 
 
 button:hover{
   width: 7.5rem;
-  height: 2.5rem;
-  color: #0011ff;
+  box-shadow: 0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet;
 }
 
 .E{

@@ -15,48 +15,10 @@
   flex-direction: column;
 }
 
-
-.Card{
-  margin: auto;
-
- transition: transform 1s ease-in-out;
- transform-style: preserve-3d;
-}
-
-.Card-Container:hover .Card{
-  transform: rotateY(180deg);
-}
 .Card-Container img{
-  width: 100px;
-  border-radius: 50%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px blueviolet, 0 0 40px red, 0 0 50px rgb(128, 0, 107);
 }
 
-.Card figure{
-  margin: auto;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
 
-.Card .front{
-  height: fit-content;
-  position: absolute;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-}
 
-.Card .back {
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  transform: rotateY(180deg);
-}
-
-.wsp{
-  color: blue;
-  font-size: 3rem;
-  cursor: pointer;
-}
-
-.wsp:hover{
-  color: teal;
-}
