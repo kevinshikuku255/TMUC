@@ -3,6 +3,12 @@
   "name": "Tom Mboya University",
   "icons": [
     {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "92x92",
+      "purpose":"any maskable"
+    },
+    {
       "src": "logo92.png",
       "type": "image/png",
       "sizes": "92x92"
