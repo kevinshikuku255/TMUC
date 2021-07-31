@@ -3,7 +3,7 @@
   "name": "Tom Mboya University",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "teal",
+  "theme_color": "#f7f7f7",
   "background_color": "#ffffff",
     "icons": [
     {
