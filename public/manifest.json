@@ -6,12 +6,6 @@
   "theme_color": "teal",
   "background_color": "#ffffff",
     "icons": [
-        {
-      "src": "maskable192.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "maskable"
-    },
     {
       "src": "logo96.png",
       "type": "image/png",
@@ -25,7 +19,8 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
       "src": "logo512.png",
