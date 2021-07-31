@@ -5,6 +5,7 @@ import "./components.css";
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../Images/favicon.png";
 import {LinearProgress} from "@material-ui/core";
+import {ArrowBackIosRounded} from '@material-ui/icons';
 import { useLoadState } from '../Context/loading';
 
 
@@ -18,12 +19,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
+
 /** Sub header compoent */
 export const SubHeader = () => {
   const history = useHistory();
   const {pathname} = useLocation();
    return(
      <div className="SubHeader">
+        {pathname === "/" ? <ArrowBackIosRounded/> : <ArrowBackIosRounded onClick={() => history.goBack()}/>}
         <p onClick={() => history.push("/")} className={ pathname === "/" ? "active" : ""} >academics</p>
 
         <p onClick={() => history.push("/more")} className={ pathname === "/more" ? "active" : ""}  >more</p>
