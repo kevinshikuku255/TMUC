@@ -4,6 +4,10 @@ import "./components.css";
 
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../Images/favicon.png";
+import {LinearProgress} from "@material-ui/core";
+import { useLoadState } from '../Context/loading';
+
+
 
 const useStyles = makeStyles((theme) => ({
   small: {
@@ -30,10 +34,14 @@ export const SubHeader = () => {
 
 
 
+
+
 function Head() {
   const classes = useStyles();
+  const {loading} = useLoadState();
   return (
     <div className="HeadWrapper">
+    {(loading === true ) && <LinearProgress/>}
     <div className="Head">
           <div className="Logo"> <Avatar src={Logo} className={classes.small}/> </div>
           <div  className="Name"> <p>tom mboya</p> <h5>university college</h5> </div>
