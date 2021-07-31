@@ -1,4 +1,4 @@
 # TMUC
-Tom Mboya University Collage Wep App
+Tom Mboya University Collage Wep App 👨‍🎓👩‍🎓
 
 https://kevinsshikuku.github.io/tmuc/
