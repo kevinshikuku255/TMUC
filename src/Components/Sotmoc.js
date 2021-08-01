@@ -15,14 +15,21 @@ const useStyles = makeStyles((theme) => ({
   small: {
     width: theme.spacing(10),
     height: theme.spacing(10),
+    backgroundColor:"wheat",
+    "&:hover":{
+      boxShadow: "0 0 15px red, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
+    }
   },
   large: {
     width: theme.spacing(13),
     height: theme.spacing(13),
+    "&:hover":{
+      boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
+    }
   },
   gitonga:{
     width: theme.spacing(13),
-    height: theme.spacing(13),
+     height:"auto",
     borderRadius:"0",
   }
 }));
@@ -34,13 +41,16 @@ function Sotmoc() {
 <div className="SotmucWrapper">
     <Nav/>
     <div className="Sotmuc">
-      <h3>Sotmuc 2017 - 2018</h3>
+      <h3>Sotmuc 2017 - 2018</h3> <br/>
       <div className="Leaders1718">
          <Avatar src={Gitonga}
             onClick={() => history.push("/sotmuc/2016")}
             className={classes.gitonga}/>
       </div>
-      <br/><br/>
+      <hr/>
+
+
+{/* /* -------------------------------------------------------------------------- */}
         <h3>Sotmuc 2019 - 2020</h3> <br/>
         <div className="Leaders1819">
             <div>
@@ -50,32 +60,81 @@ function Sotmoc() {
                     onClick={() => history.push("/sotmuc/Dama")}/>
                 <b>Damaries</b>
             </div>
-            <div>
-              <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/sotmuc/Asa")}/>
-              <b>Asa</b>
-            </div>
         </div>
         <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar alt="Asa" src={Deric} className={classes.large} onClick={() => history.push("/sotmuc/Deric")} />
-              <b>Deric</b>
+              <Avatar
+                    alt="Damaries"
+                    src={Deric} className={classes.large}
+                    onClick={() => history.push("/sotmuc/Deric")}/>
+                <b>Damaries</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/sotmuc/Asa")}/>
+              <b>Asa</b>
             </div>
             <div>
               <Avatar alt="Asa" src={Mercy} className={classes.large} onClick={() => history.push("/sotmuc/Mercy")}/>
               <b>Mercy</b>
             </div>
         </div>
-        <br/> <br/> <br/> <br/>
+        <br/>
+        <div className="Leaders1819">
+            <div>
+              <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
+              <b>""</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
+              <b>""</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
+              <b>""</b>
+            </div>
+        </div>
+        <hr/>
 
-        <h3>Sotmuc 2020 -- </h3>
+
+{/* /* -------------------------------------------------------------------------- */}
+        <h3>Sotmuc 2020 -- to date...</h3>
+        <div className="Leaders1819">
+            <div>
+              <Avatar alt="Asa" src={"CM"} className={classes.small}/>
+              <b>C.M.</b>
+            </div>
+        </div>
+        <br/>
         <div className="Leaders1819">
             <div>
               <Avatar alt="Asa" src={Sec} className={classes.small} onClick={() => history.push("/sotmuc/Clinton")}/>
               <b>Clinton</b>
             </div>
+            <div>
+              <Avatar alt="Asa" src={"Sec"} className={classes.small}/>
+              <b>V.C.</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={"Sec"} className={classes.small}/>
+              <b>T.R</b>
+            </div>
         </div>
-        <button onClick={() => history.goBack()}>Back</button>
+        <br/>
+        <div className="Leaders1819">
+            <div>
+              <Avatar alt="Asa" src={"Sec"} className={classes.small}/>
+              <b>A.R.</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={"Sec"} className={classes.small}/>
+              <b>P.W.D.</b>
+            </div>
+            <div>
+              <Avatar alt="Asa" src={"Sec"} className={classes.small}/>
+              <b>Sports</b>
+            </div>
+        </div>
     </div>
 </div>
   )

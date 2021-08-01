@@ -26,10 +26,15 @@ export const SubHeader = () => {
   const {pathname} = useLocation();
    return(
      <div className="SubHeader">
-        {pathname === "/" ? <ArrowBackIosRounded/> : <ArrowBackIosRounded onClick={() => history.goBack()}/>}
-        <p onClick={() => history.push("/")} className={ pathname === "/" ? "active" : ""} >academics</p>
+        {pathname === "/" ? <ArrowBackIosRounded style={{opacity:0.4}}/>
+                  : <ArrowBackIosRounded onClick={() => history.goBack()}/>}
+        <div>
+          <p onClick={() => history.push("/")} className={ pathname === "/" ? "active" : ""}>academics</p>
+        </div>
 
-        <p onClick={() => history.push("/more")} className={ pathname === "/more" ? "active" : ""}  >more</p>
+        <div>
+          <p onClick={() => history.push("/more")} className={ pathname === "/more" ? "active" : ""}>more</p>
+        </div>
      </div>
    )
 }

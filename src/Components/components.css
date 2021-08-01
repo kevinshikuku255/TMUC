@@ -1,5 +1,5 @@
 .SotmucWrapper{
- margin-top: 10rem;
+ margin-top: 11rem;
 }
 .Sotmuc{
   margin: 0 .5rem 2rem .5rem;
@@ -35,7 +35,10 @@
   align-items: center;
 }
 
-
+b{
+  margin: 0;
+  padding: 0;
+}
 
 /* ----------------------------SOTMUC NAV---------------------------------------------- */
 .Nav_Wrapper{
@@ -127,21 +130,16 @@
   padding:0 0 .1rem 0rem;
 }
 
-.SubHeader p:hover{
-   color: #787171;
-
-}
-
 .active{
-  color: #787171;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid gray;
+  /* text-decoration: underline; */
 }
 
 
 
 
 
-
+/* ---------------------------Media queries----------------------------------------------- */
 @media only screen and (min-width: 48rem) {
 .CoverImage{
   margin: unset;

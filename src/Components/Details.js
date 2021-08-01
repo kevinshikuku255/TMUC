@@ -7,7 +7,7 @@ import './components.css';
 const useStyles = makeStyles((theme) => ({
   large: {
     width: "100%",
-    height: theme.spacing(80),
+    height:"auto",
     borderRadius:"0",
   },
 }));

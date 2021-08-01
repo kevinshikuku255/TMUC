@@ -45,7 +45,7 @@ button{
   letter-spacing: -1px;
 }
 
-
+/* ---------------------------Hover----------------------------------------------- */
 button:hover{
   width: 7.5rem;
   box-shadow: 0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet;

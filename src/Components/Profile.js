@@ -22,7 +22,7 @@ function Profile() {
   profileName === "Deric" && (markUp =  <Details name={profileName} avartar={DericPic}/>)
   profileName === "Mercy" && (markUp =  <Details name={profileName} avartar={MercyPic}/>)
   profileName === "Clinton" && (markUp =  <Details name={profileName} avartar={SecPic}/>)
- profileName === "2016" && (markUp =  <Details name={""} avartar={Gitonga}/>)
+  profileName === "2016" && (markUp =  <Details name={""} avartar={Gitonga}/>)
 
 
   return (markUp)
