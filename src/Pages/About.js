@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoadDispatch } from '../Context/loading';
 
-import "./pages.css"
+import "./pages.scss"
 
 
 

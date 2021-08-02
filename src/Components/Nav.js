@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import "./components.css";
+import "./components.scss";
 
 /** Sotmuc nav component */
 function Nav() {

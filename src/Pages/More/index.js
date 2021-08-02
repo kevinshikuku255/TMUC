@@ -1,5 +1,5 @@
 import React from 'react';
-import "./more.css";
+import "./more.scss";
 
 
 import Tom from "../../Images/Tom.jpeg"

@@ -1,0 +1,27 @@
+@import "../../index";
+
+.Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  height: 100vh;
+  background-color: $color1;
+}
+
+.Card-Container{
+  padding: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Card-Container img{
+  border-radius: 10px;
+  box-shadow: 0 0 20px blueviolet, 0 0 100px red, 0 0 200px rgb(255, 0, 212);
+}
+
+
+

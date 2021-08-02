@@ -1,0 +1,169 @@
+@import "../index.scss";
+
+
+
+/* -------------------------------------------------------------------------- */
+
+.Main{
+z-index: -1;
+height: 100vh;
+/* background-color: lavenderblush; */
+
+}
+
+.Welcome{
+  display: none;
+}
+
+.Pages{
+  margin: 8rem 1rem 3rem 1rem;
+  height: 120vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 8rem;
+  column-gap: .5rem;
+  row-gap: .5rem;
+  font-size: x-small;
+
+  .Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos, .Direction{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: $color2;
+  box-shadow: 20px -2px $color3;
+}
+
+}
+
+
+
+.Portal:hover, .Elearning:hover, .Login:hover, .Downloads:hover, .About:hover, .Council:hover, .Library:hover, .History:hover, .Academics:hover, .StudentCouncil:hover, .Photos:hover, .Direction:hover{
+ background-color: rgb(248, 224, 193);
+ border: 1px solid burlywood;
+;
+}
+
+button{
+  width: 7rem;
+  height: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bolder;
+  border-radius: 2rem;
+  background-color: blueviolet;
+  color: white;
+  overflow: hidden;
+  font-size: xx-small;
+}
+
+/* ---------------------------Hover----------------------------------------------- */
+button:hover{
+  width: 7.5rem;
+  box-shadow: 0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet;
+}
+
+.E{
+  background-image: linear-gradient(to left, blue, rgba(255, 0, 0, 0.802));
+}
+
+.P{
+  background-image: linear-gradient(to right, blueviolet, rgba(255, 0, 0, 0.802));
+}
+.L{
+  background-image: linear-gradient(to right, teal, rgba(255, 0, 0, 0.802));
+}
+
+.D{
+  background-image: linear-gradient(to left, rgba(25, 230, 6, 0.857), rgba(33, 27, 27, 0.802));
+}
+.A{
+  background-image: linear-gradient(to left, rgb(140, 140, 65), rgba(33, 27, 27, 0.802));
+}
+
+.C{
+  background-image: linear-gradient(to left, rgb(0, 0, 0), rgba(90, 16, 16, 0.802));
+}
+
+.LB{
+  background-image: linear-gradient(to left, rgb(214, 18, 192), rgba(112, 51, 51, 0.802));
+}
+.H{
+  background-image: linear-gradient(to left, rgb(0, 230, 230), rgba(3, 68, 70, 0.802));
+}
+
+
+
+
+
+
+
+/* -----------------------------------Sotmuc_news--------------------------------------- */
+.Sotmuc_news{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.news{
+  margin: 1rem;
+  padding: 1rem .5rem;
+  margin-top: .5rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 2px 3px 4px red;
+}
+
+.analyticBtn{
+  margin:.7rem 0 0 auto;
+  width: fit-content;
+}
+/* -------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 48rem) {
+  .Main{
+    background:none;
+  }
+  .Welcome{
+    display: block;
+    margin: 8rem 2rem 0 2rem;
+  }
+  .Welcome i{
+    font-size: xx-large;
+    font-weight: bolder;
+    font-style: oblique;
+  }
+
+.Pages{
+  margin: 1rem;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 6rem;
+  column-gap: .5rem;
+  row-gap: .5rem;
+
+}
+
+}
+

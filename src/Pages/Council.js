@@ -1,5 +1,5 @@
 import React from 'react'
-import "./pages.css";
+import "./pages.scss";
 import { useLoadDispatch } from '../Context/loading';
 
 function Council() {

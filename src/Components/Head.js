@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import "./components.css";
+import "./components.scss";
 
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../Images/favicon.png";

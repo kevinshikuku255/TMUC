@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import "./pages.css";
+import "./pages.scss";
 import { useLoadDispatch } from '../Context/loading';
 
 function Login() {
@@ -14,6 +14,7 @@ function Login() {
               label:"Student portal",
             })
     }
+
 
    const clickHandler = () => {
      dispatch({

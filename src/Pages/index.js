@@ -1,5 +1,5 @@
 import React from 'react';
-import "./pages.css";
+import "./pages.scss";
 
 import Portal from "./Portal";
 import Elearning from "./E-learning";

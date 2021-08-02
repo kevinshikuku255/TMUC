@@ -3,7 +3,7 @@ import {Link} from"react-router-dom";
 import ReactGA from 'react-ga';
 
 import { useLoadDispatch } from '../Context/loading';
-import "./pages.css";
+import "./pages.scss";
 
 
 function StudentCouncil() {

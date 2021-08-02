@@ -1,5 +1,5 @@
 import React from 'react';
-import "./components.css";
+import "./components.scss";
 import { Avatar, makeStyles} from "@material-ui/core";
 import { useHistory } from 'react-router';
 import Nav from "./Nav";
@@ -68,7 +68,7 @@ function Sotmoc() {
                     alt="Damaries"
                     src={Deric} className={classes.large}
                     onClick={() => history.push("/sotmuc/Deric")}/>
-                <b>Damaries</b>
+                <b>Deric</b>
             </div>
             <div>
               <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/sotmuc/Asa")}/>
