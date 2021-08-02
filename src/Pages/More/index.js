@@ -8,7 +8,7 @@ function index() {
   return (
     <div className="Container">
        <div className="Card-Container">
-         <img src={Tom}  alt="tom"/>
+         <img src={Tom}  alt="tom" width="100rem"/>
      </div>
    </div>
   )
