@@ -7,7 +7,7 @@ function Nav() {
   const history = useHistory();
   return (
     <div className="Nav_Wrapper">
-        <p onClick={() => history.push("./sotmuc/news")} >sotmuc news</p>
+        <p onClick={() => history.push("/sotmuc/news")} >sotmuc news</p>
     </div>
   )
 }

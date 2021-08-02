@@ -52,8 +52,7 @@ b{
   width: 100%;
   z-index: 1;
   padding: .9rem 0;
-}
-.Nav_Wrapper p{
+  p{
   float: right;
   cursor: pointer;
   font-weight: bolder;
@@ -61,6 +60,11 @@ b{
   font-variant-caps: petite-caps;
   color: white;
 }
+@media screen and (min-width:48rem) {
+  display: none;
+}
+}
+
 
 
 
@@ -75,6 +79,13 @@ b{
   margin: auto;
   z-index: 3;
   box-shadow: 1px 1px 2px $color5;
+  @media screen and (min-width: 48rem ) {
+      background-color: white;
+      left: 0;
+      box-shadow: -12px 0px -20px $color5;
+      border: none;
+
+  }
 }
 
 .Head{
@@ -82,59 +93,70 @@ b{
   height: fit-content;
   display: flex;
   font-size: larger;
+ .Name{
+    flex: 1.6;
+    display: flex;
+    flex-direction: column;
+    font-variant: small-caps;
+    justify-content: center;
+    margin-right: .5rem;
+    p{
+    color: rgb(34, 0, 255);
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: sans-serif;
+    }
 
-}
-
-.Name{
-  flex: 1.6;
-  display: flex;
-  flex-direction: column;
-  font-variant: small-caps;
-  justify-content: center;
-  margin-right: .5rem;
-
-}
+  h5{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-family: sans-serif;
+    }}
 .Logo{
   flex: .4;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: .8rem 0rem .8rem .5rem;
-}
+}}
 
-.Name p{
-  color: rgb(34, 0, 255);
-  font-size: x-large;
-  font-weight: bolder;
-  font-family: sans-serif;
-}
 
-.Name h5{
-  color: rgb(0, 0, 0);
-  font-weight: bolder;
-  font-family: sans-serif;
-}
+
+
 /* --------------------------------SubHeader------------------------------------------ */
 .SubHeader{
-  margin: -.5rem 0 0 0;
-  padding: .5rem 0;
-  width: 100%;
-  border: none;
-  display: flex;
-  border-top: 1px solid #d8d8d874;
-  justify-content: space-around;
+    margin: -.5rem 0 0 0;
+    padding: .5rem 0;
+    width: 100%;
+    border: none;
+    display: flex;
+    border-top: 1px solid #d8d8d874;
+    justify-content: space-around;
+    .sotmucNewsNav{
+      display: none;
+    }
+    p{
+    font-weight: bolder;
+    font-family: sans-serif;
+    font-variant: small-caps;
+    cursor: pointer;
+    padding:0 0 .1rem 0rem;
+  }
+  @media screen and (min-width: 48rem ) {
+      width: 55vw  ;
+      border: none;
+      .sotmucNewsNav{
+         display: block;
+      }
+
+  }
 }
 
-.SubHeader p{
-  font-weight: bolder;
-  font-family: sans-serif;
-  font-variant: small-caps;
-  cursor: pointer;
-  padding:0 0 .1rem 0rem;
-}
+
 
 .active{
   border-bottom: 1px solid gray;
+  color: gray;
   /* text-decoration: underline; */
 }
 
@@ -158,32 +180,21 @@ b{
 }
 
 .Name{
-  flex: 1.6;
-  margin-left: -1rem;
-
+    flex: 1.6;
+    margin-left: -1rem;
+    p{
+      font-size: xx-large;
+    }
+    h5{
+      color: rgb(0, 0, 0);
+      font-size:large;
+    }
 }
 
-.Name p{
-  font-size: xx-large;
-}
 
-.Name h5{
-  color: rgb(0, 0, 0);
-  font-size:large;
-}
 
 .Nav_Wrapper{
     width: 50vw;
   }
-
-.HeadWrapper{
- background-color: white;
- box-shadow: none;
- border: none;
- width: 100vw;
-}
-.SubHeader{
-  width: 50%;
-}
 
 }

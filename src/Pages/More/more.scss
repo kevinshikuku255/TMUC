@@ -7,6 +7,9 @@
   margin-top: 5rem;
   height: 100vh;
   background-color: $color1;
+  @media screen and (min-width:48vw) {
+    background: none;
+  }
 }
 
 .Card-Container{

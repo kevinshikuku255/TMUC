@@ -31,7 +31,10 @@ export const SubHeader = () => {
         <div>
           <p onClick={() => history.push("/")} className={ pathname === "/" ? "active" : ""}>academics</p>
         </div>
-
+         <div className="sotmucNewsNav">
+           <p onClick={() => history.push("/sotmuc/news")}
+              className={ pathname === "/sotmuc/news" ? "active" : ""}>sotmuc news</p>
+         </div>
         <div>
           <p onClick={() => history.push("/more")} className={ pathname === "/more" ? "active" : ""}>more</p>
         </div>
