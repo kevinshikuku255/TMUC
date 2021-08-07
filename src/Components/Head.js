@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from 'react-ga';
 import { useHistory, useLocation } from "react-router-dom";
 import "./components.scss";
 
@@ -24,6 +25,18 @@ const useStyles = makeStyles((theme) => ({
 export const SubHeader = () => {
   const history = useHistory();
   const {pathname} = useLocation();
+
+   const handleClick = () => {
+        history.push("/more")
+        ReactGA.event({
+              category:"View",
+              action:"clicked",
+              transport:"beacon",
+              label:"About TMUC",
+            })
+    }
+
+
    return(
      <div className="SubHeader">
         {pathname === "/" ? <ArrowBackIosRounded style={{opacity:0.4}}/>
@@ -36,7 +49,7 @@ export const SubHeader = () => {
               className={ pathname === "/sotmuc/news" ? "active" : ""}>sotmuc news</p>
          </div>
         <div>
-          <p onClick={() => history.push("/more")} className={ pathname === "/more" ? "active" : ""}>more</p>
+          <p onClick={() => handleClick()} className={ pathname === "/more" ? "active" : ""}>more</p>
         </div>
      </div>
    )
