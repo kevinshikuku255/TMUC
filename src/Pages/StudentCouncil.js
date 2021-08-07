@@ -31,9 +31,7 @@ const handleClick = () => {
   return (
     <div className="StudentCouncil">
        <h4>Student Council</h4>
-       <button onClick={clickHandler}>
-          <Link to="/sotmuc">SOTMUC </Link>
-        </button>
+          <Link onClick={clickHandler} to="/sotmuc">sotmuc </Link>
     </div>
   )
 }

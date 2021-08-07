@@ -32,9 +32,8 @@ function About() {
        <h4>About TMUC</h4>
       <div>
         {
-           <button className="A" >
-               <a onClick={clickHandler} href="https://tmuc.ac.ke/about-us">About us</a>
-           </button>
+
+               <a className="A" onClick={clickHandler} href="https://tmuc.ac.ke/about-us">about us</a>
        }
 
       </div>

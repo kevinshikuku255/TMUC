@@ -25,9 +25,7 @@ function Library() {
   return (
     <div className="Library">
        <h4>School Library</h4>
-       <button className="LB">
-          <a onClick={clickHandler} href="https://tmuc.ac.ke/library-home">Library</a>
-       </button>
+          <a className="LB" onClick={clickHandler} href="https://tmuc.ac.ke/library-home">library</a>
     </div>
   )
 }

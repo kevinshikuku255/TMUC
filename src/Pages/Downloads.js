@@ -26,9 +26,7 @@ function Downloads() {
   return (
     <div className="Downloads">
        <h4>School Downloads</h4>
-       <button className="D">
-          <a onClick={clickHandler} href="https://tmuc.ac.ke/downloads">Downloads</a>
-        </button>
+          <a className="D" onClick={clickHandler} href="https://tmuc.ac.ke/downloads">downloads</a>
     </div>
   )
 }

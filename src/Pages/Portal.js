@@ -26,9 +26,7 @@ function Portal() {
   return (
     <div className="Portal">
        <h4>School Website</h4>
-       <button className="P">
-         <a onClick={clickHandler} href="https://tmuc.ac.ke/">Website</a>
-      </button>
+         <a className="P" onClick={clickHandler} href="https://tmuc.ac.ke/">website</a>
     </div>
   )
 }

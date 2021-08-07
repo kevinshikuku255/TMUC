@@ -12,7 +12,6 @@ function Elearning() {
               transport:"beacon",
               label:"E-learning",
             })
-         handleClick()
       }
 
 
@@ -27,9 +26,7 @@ function Elearning() {
   return (
     <div className="Elearning">
        <h4>E-learning</h4>
-       <button className="E"  >
-          <a onClick={clickHandler} href="https://elearning.tmuc.ac.ke/">E-learning</a>
-        </button>
+          <a className="E" onClick={clickHandler} href="https://elearning.tmuc.ac.ke/">e-learning</a>
     </div>
   )
 }

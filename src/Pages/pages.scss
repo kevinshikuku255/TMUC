@@ -45,23 +45,26 @@ height: 100vh;
 ;
 }
 
-button{
+a{
   width: 7rem;
   height: 2rem;
-  border: none;
-  outline: none;
   cursor: pointer;
   text-align: center;
   font-weight: bolder;
   border-radius: 2rem;
   background-color: blueviolet;
-  color: white;
   overflow: hidden;
-  font-size: xx-small;
+  font-size:small;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-variant-caps:all-small-caps;
+
 }
 
 /* ---------------------------Hover----------------------------------------------- */
-button:hover{
+a:hover{
   width: 7.5rem;
   box-shadow: 0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet;
 }

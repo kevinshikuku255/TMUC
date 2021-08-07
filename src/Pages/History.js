@@ -25,9 +25,7 @@ function History() {
   return (
     <div className="History">
        <h4>School History</h4>
-       <button className="H">
-          <a onClick={clickHandler} href="https://tmuc.ac.ke/our-history">History</a>
-       </button>
+          <a className="H" onClick={clickHandler} href="https://tmuc.ac.ke/our-history">history</a>
     </div>
   )
 }
