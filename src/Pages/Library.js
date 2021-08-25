@@ -24,7 +24,7 @@ function Library() {
 
   return (
     <div className="Library">
-       <h4>School Library</h4>
+       <h4>school library</h4>
           <a className="LB" onClick={clickHandler} href="https://tmuc.ac.ke/library-home">library</a>
     </div>
   )
