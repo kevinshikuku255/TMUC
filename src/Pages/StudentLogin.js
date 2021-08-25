@@ -27,7 +27,7 @@ function Login() {
 
   return (
     <div className="Login">
-       <h4>Student Portal</h4>
+       <h4>student portal</h4>
           <a className="L" onClick={clickHandler} href="http://student.tmuc.ac.ke/">login</a>
     </div>
   )
