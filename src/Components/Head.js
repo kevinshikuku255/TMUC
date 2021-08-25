@@ -27,7 +27,7 @@ export const SubHeader = () => {
   const history = useHistory();
   const loadDispatch = useLoadDispatch();
   const {pathname} = useLocation();
-  const [ active, setActive] = useState("")
+  const [ active, setActive] = useState(false)
 
    const handleClick = () => {
         history.push("/more")
@@ -51,7 +51,7 @@ export const SubHeader = () => {
     }
 
    const clickHandler = () => {
-     setActive("active")
+     setActive(!active)
      loadDispatch({
        type: "LOAD",
        payload: true
@@ -71,10 +71,10 @@ export const SubHeader = () => {
               className={ pathname === "/sotmuc/news" ? "active" : ""}>sotmuc news</p>
          </div>
         <div>
-          <p onClick={() => handleClick()} className={ pathname === "/more" ? "active" : ""}>more</p>
+          <p onClick={() => handleClick()} className={ (pathname === "/more" && !active )? "active" : ""}>more</p>
         </div>
         <div>
-          <a onClick={() => clickHandler()} href="https://www.helb.co.ke/student-portal/" className={active}>helb</a>
+          <a onClick={() => clickHandler()} href="https://www.helb.co.ke/student-portal/" className={active ? "active" : ""}>helb</a>
         </div>
      </div>
    )
