@@ -14,6 +14,7 @@ import StudentCouncil from "./StudentCouncil";
 import Photos from "./Photos";
 import Direction from "./Direction";
 import Helb from "./Helb";
+import Blank from "./Blank";
 
 function Index() {
   return (
@@ -36,6 +37,7 @@ function Index() {
           <Council/>
           <History/>
           <Helb/>
+          <Blank/>
       </div>
   </div>
   )
