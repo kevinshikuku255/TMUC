@@ -25,7 +25,7 @@ function Elearning() {
 
   return (
     <div className="Elearning">
-       <h4>E-learning</h4>
+       <h4>e-learning</h4>
           <a className="E" onClick={clickHandler} href="https://elearning.tmuc.ac.ke/">e-learning</a>
     </div>
   )
