@@ -29,7 +29,7 @@ function About() {
 
   return (
     <div className="About">
-       <h4>About TMUC</h4>
+       <h4>about tmuc</h4>
       <div>
         {
 
