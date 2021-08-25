@@ -13,6 +13,7 @@ import Academics from "./Academics"
 import StudentCouncil from "./StudentCouncil";
 import Photos from "./Photos";
 import Direction from "./Direction";
+import Helb from "./Helb";
 
 function Index() {
   return (
@@ -34,6 +35,7 @@ function Index() {
           <Direction/>
           <Council/>
           <History/>
+          <Helb/>
       </div>
   </div>
   )
