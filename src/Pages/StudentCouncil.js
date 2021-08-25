@@ -30,7 +30,7 @@ const handleClick = () => {
 
   return (
     <div className="StudentCouncil">
-       <h4>Student Council</h4>
+       <h4>student council</h4>
           <Link onClick={clickHandler} to="/sotmuc">sotmuc </Link>
     </div>
   )
