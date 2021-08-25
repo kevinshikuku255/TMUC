@@ -25,7 +25,7 @@ height: 100vh;
   row-gap: .5rem;
   font-size: x-small;
 
-  .Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos, .Direction{
+  .Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos, .Direction, .Helb{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,25 +33,19 @@ height: 100vh;
   border-radius: 10px;
   background-color: $color2;
   box-shadow: 20px -2px $color3;
-}
-
-}
-
-
-
-.Portal:hover, .Elearning:hover, .Login:hover, .Downloads:hover, .About:hover, .Council:hover, .Library:hover, .History:hover, .Academics:hover, .StudentCouncil:hover, .Photos:hover, .Direction:hover{
- background-color: rgb(248, 224, 193);
- border: 1px solid burlywood;
-;
-}
-
-a{
+  h4{
+    font-variant:small-caps;
+    font-family: sans-serif;
+    font-size: 1rem;
+  }
+  a{
   width: 7rem;
   height: 2rem;
   cursor: pointer;
   text-align: center;
   font-weight: bolder;
   border-radius: 2rem;
+  color: white;
   background-color: blueviolet;
   overflow: hidden;
   font-size:small;
@@ -59,15 +53,24 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+  /* ---------------------------Hover----------------------------------------------- */
+  &:hover{
+    width: 7.5rem;
+    box-shadow: 0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet;
+  }
   font-variant-caps:all-small-caps;
 
+}}}
+
+
+.Portal:hover, .Elearning:hover, .Login:hover, .Downloads:hover, .About:hover, .Council:hover, .Library:hover, .History:hover, .Academics:hover, .StudentCouncil:hover, .Photos:hover, .Direction:hover{
+ background-color: rgb(248, 224, 193);
+ border: 1px solid burlywood;
+
 }
 
-/* ---------------------------Hover----------------------------------------------- */
-a:hover{
-  width: 7.5rem;
-  box-shadow: 0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet;
-}
+
+
 
 .E{
   background-image: linear-gradient(to left, blue, rgba(255, 0, 0, 0.802));
@@ -93,6 +96,9 @@ a:hover{
 
 .LB{
   background-image: linear-gradient(to left, rgb(214, 18, 192), rgba(112, 51, 51, 0.802));
+}
+.HB{
+  background-image: linear-gradient(to left, green, rgba(81, 112, 51, 0.802));
 }
 .H{
   background-image: linear-gradient(to left, rgb(0, 230, 230), rgba(3, 68, 70, 0.802));
