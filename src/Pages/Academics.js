@@ -25,7 +25,7 @@ function Academics() {
 
   return (
     <div className="Academics">
-       <h4>Academics</h4>
+       <h4>academics</h4>
         {
          <a className="C" onClick={clickHandler} href="https://tmuc.ac.ke/undergraduateprogrammes">academics</a>
         }
