@@ -24,7 +24,7 @@ function History() {
 
   return (
     <div className="History">
-       <h4>School History</h4>
+       <h4>school history</h4>
           <a className="H" onClick={clickHandler} href="https://tmuc.ac.ke/our-history">history</a>
     </div>
   )
