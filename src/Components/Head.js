@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import ReactGA from 'react-ga';
 import { useHistory, useLocation } from "react-router-dom";
 import "./components.scss";
@@ -8,6 +8,7 @@ import Logo from "../Images/favicon.png";
 import {LinearProgress} from "@material-ui/core";
 import {ArrowBackIosRounded} from '@material-ui/icons';
 import { useLoadState } from '../Context/loading';
+import { useLoadDispatch } from '../Context/loading';
 
 
 
@@ -24,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
 /** Sub header compoent */
 export const SubHeader = () => {
   const history = useHistory();
+  const loadDispatch = useLoadDispatch();
   const {pathname} = useLocation();
+  const [ active, setActive] = useState("")
 
    const handleClick = () => {
         history.push("/more")
@@ -36,6 +39,25 @@ export const SubHeader = () => {
             })
     }
 
+
+
+   const helbClick = () => {
+        ReactGA.event({
+              category:"View",
+              action:"clicked",
+              transport:"beacon",
+              label:"HELB",
+            })
+    }
+
+   const clickHandler = () => {
+     setActive("active")
+     loadDispatch({
+       type: "LOAD",
+       payload: true
+     })
+     helbClick()
+   }
 
    return(
      <div className="SubHeader">
@@ -50,6 +72,9 @@ export const SubHeader = () => {
          </div>
         <div>
           <p onClick={() => handleClick()} className={ pathname === "/more" ? "active" : ""}>more</p>
+        </div>
+        <div>
+          <a onClick={() => clickHandler()} href="https://www.helb.co.ke/student-portal/" className={active}>helb</a>
         </div>
      </div>
    )
