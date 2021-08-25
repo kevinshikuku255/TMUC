@@ -24,7 +24,7 @@ function Council() {
 
   return (
     <div className="Council">
-       <h4>School Council</h4>
+       <h4>school council</h4>
 
           <a className="C" onClick={clickHandler} href="https://tmuc.ac.ke/management-staff">council</a>
     </div>
