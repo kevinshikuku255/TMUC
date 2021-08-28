@@ -64,7 +64,7 @@ export const SubHeader = () => {
         {pathname === "/" ? <ArrowBackIosRounded style={{opacity:0.4}}/>
                   : <ArrowBackIosRounded onClick={() => history.goBack()}/>}
         <div>
-          <p onClick={() => history.push("/")} className={ pathname === "/" ? "active" : ""}>academics</p>
+          <p onClick={() => history.push("/")} className={ (pathname === "/" && !active) ? "active" : ""}>academics</p>
         </div>
          <div className="sotmucNewsNav">
            <p onClick={() => history.push("/sotmuc/news")}
