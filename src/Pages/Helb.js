@@ -11,7 +11,7 @@ function Helb() {
               category:"View",
               action:"clicked",
               transport:"beacon",
-              label:"Helb",
+              label:"HELB",
             })
     }
 
