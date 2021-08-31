@@ -9,7 +9,8 @@ import Dama from "../Images/Dama.jpg";
 import Deric from "../Images/deric.jpg";
 import Sec from "../Images/sec.jpg";
 import Mercy from "../Images/Mercy.jpg";
-import Gitonga from "../Images/gitonga.png"
+import Gitonga from "../Images/gitonga.png";
+import Kevin from "../Images/kevo.jpg";
 
 const useStyles = makeStyles((theme) => ({
   small: {
@@ -65,7 +66,7 @@ function Sotmoc() {
         <div className="Leaders1819">
             <div>
               <Avatar
-                    alt="Damaries"
+                    alt="Deric"
                     src={Deric} className={classes.large}
                     onClick={() => history.push("/sotmuc/Deric")}/>
                 <b>Deric</b>
@@ -75,15 +76,15 @@ function Sotmoc() {
               <b>Asa</b>
             </div>
             <div>
-              <Avatar alt="Asa" src={Mercy} className={classes.large} onClick={() => history.push("/sotmuc/Mercy")}/>
+              <Avatar alt="Mercy" src={Mercy} className={classes.large} onClick={() => history.push("/sotmuc/Mercy")}/>
               <b>Mercy</b>
             </div>
         </div>
         <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
-              <b>""</b>
+              <Avatar alt="kevin" src={Kevin} className={classes.large} onClick={() => history.push("/sotmuc/Kevin")}/>
+              <b>Kevin</b>
             </div>
             <div>
               <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
