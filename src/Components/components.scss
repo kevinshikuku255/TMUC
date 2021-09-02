@@ -32,10 +32,9 @@
 
 .CoverImage{
   margin: auto;
-  margin-top: inherit;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  width:"80vw";
+  margin-top: 8rem;
 }
 
 b{
@@ -64,9 +63,6 @@ b{
   display: none;
 }
 }
-
-
-
 
 
 /* --------------------------------App Head------------------------------------------ */
@@ -123,8 +119,10 @@ b{
 
 
 
+
 /* --------------------------------SubHeader------------------------------------------ */
 .SubHeader{
+    display: relative;
     margin: -.5rem 0 0 0;
     padding: .5rem 0;
     width: 100%;
@@ -159,6 +157,63 @@ b{
   color: blue;
   /* text-decoration: underline; */
 }
+
+
+
+/* -----------------------------Details--------------------------------------------- */
+.CName{
+  display: flex;
+  justify-content: space-around;
+  margin: .5rem  auto;
+  width:70vw;
+  display:relative;
+ p{
+   flex:.9;
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: bolder;
+   font-size: x-large;
+   text-shadow: 0 3px 4px green;
+ }
+ a{
+   flex:.1;
+   cursor: pointer;
+   .Youtube{
+     font-size: 2.5rem;
+     color:red;
+     margin-top:-4px;
+   }
+ }
+}
+
+.Genre{
+  width:70vw;
+  margin: -2px auto 0 auto;
+  font-size:bolder;
+  ul{
+    margin-left:-2.7rem;
+    margin-bottom: 4rem;
+    li{
+      float:left;
+      list-style-type: none;
+      margin: 0 1rem 0 0;
+    }
+  }
+}
+
+.Accountdetails{
+  clear:both;
+  margin:auto;
+  width:70vw;
+  ul{
+    margin-left:-2.7rem;
+    li{
+      list-style-type:none;
+      margin:1rem
+    }
+  }
+}
+
+
 
 
 
