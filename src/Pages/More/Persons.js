@@ -17,8 +17,9 @@ import Portus from "../../Images/portus.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   large: {
-    width: theme.spacing(10),
-    height: theme.spacing(10),
+    width: theme.spacing(9),
+    height: theme.spacing(9),
+    border:" 1px solid gray",
     "&:hover":{
       boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
     }
@@ -77,14 +78,14 @@ const handleClick = () => {
                 <b>KingSlay</b>
             </div>
             <div className="Cp">
-             <Avatar alt="Iconic" src={Iconic} className={classes.large} onClick={() => history.push("/c/Iconic")}/>
-              <b>Iconic</b>
-            </div>
-            <div className="Cp">
               <Badge badgeContent={"Gospel"} color="secondary">
                  <Avatar alt="Magicdee" src={Magicdee} className={classes.large} onClick={() => history.push("/c/Magicdee")} />
               </Badge>
               <b>MagicDee</b>
+            </div>
+            <div className="Cp">
+             <Avatar alt="Iconic" src={Iconic} className={classes.large} onClick={() => history.push("/c/Iconic")}/>
+              <b>Iconic</b>
             </div>
         </div>
         </div>
