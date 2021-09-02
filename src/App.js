@@ -10,10 +10,10 @@ import Index from "./Pages";
 import Sotmuc from "./Components/Sotmoc";
 import Elearning from "./Components/Elearning";
 import Head from "./Components/Head";
+import Profile from "./Components/Profile";
 
 const News  = React.lazy( () => import("./Pages/News"));
 const More = React.lazy(() => import("./Pages/More"));
-const Profile = React.lazy(() => import ("./Components/Profile"))
 
 
 ReactGA.initialize(REACT_GA);
