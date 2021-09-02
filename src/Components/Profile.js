@@ -14,6 +14,10 @@ import Gitonga from "../Images/gitonga.png";
 import IconicPic from "../Images/iconic.jpg";
 import BabafemiPic from "../Images/Babfemi.jpg";
 import ColloPic from "../Images/collo.jpg";
+import Kenyanboy from "../Images/kenyanboy.jpeg";
+import Magicdee from "../Images/magic.jpeg";
+import Kingslay from "../Images/kingslay.jpeg";
+import Portus from "../Images/portus.jpeg";
 
 /** Profile component */
 function Profile() {
@@ -30,8 +34,11 @@ function Profile() {
   profileName === "Clinton" && (markUp = <Details DetailInfo={DetailInfo.Clinton} avartar={SecPic}/>)
   profileName === "Iconic" && (markUp = <Details DetailInfo={DetailInfo.Iconic} avartar={IconicPic}/>)
   profileName === "Babafemi" && (markUp = <Details DetailInfo={DetailInfo.Babafemi} avartar={BabafemiPic}/>)
-  profileName === "Collo" && (markUp = <Details DetailInfo={DetailInfo.Collo} avartar={ColloPic}/>)
-  profileName === "Portus" && (markUp = <Details DetailInfo={DetailInfo.Kiongozi} avartar={"Portus"}/>)
+  profileName === "Collo" && (markUp = <Details DetailInfo={DetailInfo.Mccollo} avartar={ColloPic}/>)
+  profileName === "Portus" && (markUp = <Details DetailInfo={DetailInfo.Kiongozi} avartar={Portus}/>)
+  profileName === "Kenyanboy" && (markUp = <Details DetailInfo={DetailInfo.Kenyanboy} avartar={Kenyanboy}/>)
+  profileName === "Magicdee" && (markUp = <Details DetailInfo={DetailInfo.Magicdee} avartar={Magicdee}/>)
+  profileName === "Kingslay" && (markUp = <Details DetailInfo={DetailInfo.Kingslay} avartar={Kingslay}/>)
   profileName === "2016" && (markUp =  <Details  avartar={Gitonga}/>)
 
 
