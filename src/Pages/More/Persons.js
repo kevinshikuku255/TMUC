@@ -9,6 +9,10 @@ import Iconic from "../../Images/iconic.jpg";
 import Babafemi from "../../Images/Babfemi.jpg";
 import Collo from "../../Images/collo.jpg";
 import Kenyanboy from "../../Images/kenyanboy.jpeg";
+import Magicdee from "../../Images/magicdee.jpeg";
+import Kingslay from "../../Images/kingslay.jpeg";
+import Sotmuc from "../../Images/sot.jpeg";
+import Portus from "../../Images/portus.jpeg";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,41 +56,25 @@ const handleClick = () => {
            <div className="Cleadership">
              <div className="Cp">
                 <Link onClick={clickHandler} to="/sotmuc">
-                     <Avatar alt="Sotmuc" src={"Sotmuc"} color="yellow" className={classes.large} />
+                     <Avatar alt="Sotmuc" src={Sotmuc} className={classes.large} />
                 </Link>
                 <Link onClick={clickHandler} className="Csotmuc" to="/sotmuc">SOTMUC </Link>
              </div>
 
-              <div className="Cp">
+              {/* <div className="Cp">
                 <Avatar alt="Wasike" src={"Wasike"} className={classes.large} />
                 <b>Dean Wsike</b>
-             </div>
+             </div> */}
            </div>
         </div>
         <hr/>
         <div className="Ccategory">
-          <h2 className="CCTagline">ENTERTAINMENT</h2>
-          <h3 className="CTagline">COMEDY</h3> <br/>
-          <div className="Ccomedy">
-              <div className="Cp">
-                <Avatar alt="P" src={"Portus"} className={classes.large} onClick={() => history.push("/c/Portus")}/>
-                  <b>Portus</b>
-              </div>
-              <div className="Cp">
-                <Avatar alt="kenyanboy" src={Kenyanboy} className={classes.large}/>
-                <b>KenyanBoy254</b>
-              </div>
-          </div>
-        </div>
-
-
-        <hr/>
-        <div className="Ccategory">
+        <h2 className="CCTagline">ENTERTAINMENT</h2>
         <h3 className="CTagline">MUSIC</h3> <br/>
         <div className="Cmusic">
             <div className="Cp">
-              <Avatar alt="K" src={"Kingsaly"} className={classes.large}/>
-                <b>King Slay</b>
+              <Avatar alt="Kingslay" src={Kingslay} className={classes.large} onClick={() => history.push("/c/Kingslay")}/>
+                <b>KingSlay</b>
             </div>
             <div className="Cp">
              <Avatar alt="Iconic" src={Iconic} className={classes.large} onClick={() => history.push("/c/Iconic")}/>
@@ -94,12 +82,27 @@ const handleClick = () => {
             </div>
             <div className="Cp">
               <Badge badgeContent={"Gospel"} color="secondary">
-                 <Avatar alt="Prince" src={"Prince"} className={classes.large} />
+                 <Avatar alt="Magicdee" src={Magicdee} className={classes.large} onClick={() => history.push("/c/Magicdee")} />
               </Badge>
               <b>MagicDee</b>
             </div>
         </div>
         </div>
+        <hr/>
+        <div className="Ccategory">
+          <h3 className="CTagline">COMEDY</h3> <br/>
+          <div className="Ccomedy">
+              <div className="Cp">
+                <Avatar alt="Portus" src={Portus} className={classes.large} onClick={() => history.push("/c/Portus")}/>
+                  <b>Portus</b>
+              </div>
+              <div className="Cp">
+                <Avatar alt="kenyanboy" src={Kenyanboy} className={classes.large} onClick={() => history.push("/c/Kenyanboy")}/>
+                <b>KenyanBoy254</b>
+              </div>
+          </div>
+        </div>
+
         <hr/>
       <div className="Ccategory">
         <div className="Cmusic">
