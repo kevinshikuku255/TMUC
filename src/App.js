@@ -8,12 +8,12 @@ import './App.css';
 
 import Index from "./Pages";
 import Sotmuc from "./Components/Sotmoc";
-import Profile from "./Components/Profile";
 import Elearning from "./Components/Elearning";
 import Head from "./Components/Head";
 
 const News  = React.lazy( () => import("./Pages/News"));
 const More = React.lazy(() => import("./Pages/More"));
+const Profile = React.lazy(() => import ("./Components/Profile"))
 
 
 ReactGA.initialize(REACT_GA);
@@ -35,7 +35,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Index}/>
           <Route exact path="/sotmuc/news" component={News}/>
-          <Route exact path="/sotmuc/:username" component={Profile}/>
+          <Route exact path="/c/:username" component={Profile}/>
           <Route exact path="/sotmuc" component={Sotmuc}/>
           <Route exact path="e-learning" component={Elearning}/>
           <Route exact path="/more" component={More}/>
