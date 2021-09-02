@@ -1,10 +1,7 @@
 @import "../../index";
 
 .Container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5rem;
+  margin-top: 8rem;
   height: 100vh;
   background-color: $color1;
   @media screen and (min-width:48vw) {
@@ -15,10 +12,6 @@
 .Card-Container{
   padding: 3rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .Card-Container img{
@@ -27,4 +20,48 @@
 }
 
 
+/* -------------------------------------------------------------------------- */
+.Ccategory{
+  margin-top: 2rem;
+  margin-bottom:1rem ;
+}
 
+.Cp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.CCTagline, .CTagline{
+  font-size: large;
+  font-weight: bolder;
+  color: rgb(52, 43, 226);
+  text-shadow: 0px 2px 4px black;
+  cursor: pointer;
+  margin-left: 1rem;
+  width: fit-content;
+}
+
+.CCTagline{
+  font-size: large;
+  text-shadow: 0px 2px 3px black;
+  text-decoration: underline;
+  margin-bottom: .5rem;
+}
+.Csotmuc{
+  font-size: normal;
+  font-weight: bolder;
+  color: blue;
+  cursor: pointer;
+}
+
+.Csotmuc:hover{
+  font-size: x-large;
+  color: #8400ff;
+}
+
+.Cmusic, .Ccomedy, .Cleadership{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
