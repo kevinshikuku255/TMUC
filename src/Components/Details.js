@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar, makeStyles} from "@material-ui/core";
-import { YouTube, Instagram, WhatsApp, Facebook, FormatTextdirectionLToR } from "@material-ui/icons";
+import { YouTube, Instagram, WhatsApp, Twitter, Facebook, FormatTextdirectionLToR } from "@material-ui/icons";
 
 import './components.scss';
 
@@ -36,6 +36,7 @@ export const Details = ({DetailInfo, avartar}) => {
            {DetailInfo?.Phone && <li>  <a href={`https://wa.me/${DetailInfo?.Phone}`}><WhatsApp style={{color:"cyan"}}/></a></li>}
            {DetailInfo?.Facebook && <li>  <a href={DetailInfo?.Facebook}><Facebook style={{color:"blue"}}/></a></li>}
            {DetailInfo?.Tiktok && <li>  <a href={DetailInfo?.Tiktok}><FormatTextdirectionLToR style={{color:"#ff00f7"}}/></a></li>}
+           {DetailInfo?.Twitter && <li>  <a href={DetailInfo?.Twitter}><Twitter style={{color:"skyblue"}}/></a></li>}
         </ul>
 
       </div>
