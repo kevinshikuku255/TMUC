@@ -45,7 +45,7 @@ function Sotmoc() {
       <h3>Sotmuc 2017 - 2018</h3> <br/>
       <div className="Leaders1718">
          <Avatar src={Gitonga}
-            onClick={() => history.push("/sotmuc/2016")}
+            onClick={() => history.push("/c/2016")}
             className={classes.gitonga}/>
       </div>
       <hr/>
@@ -58,7 +58,7 @@ function Sotmoc() {
               <Avatar
                     alt="Damaries"
                     src={Dama} className={classes.large}
-                    onClick={() => history.push("/sotmuc/Dama")}/>
+                    onClick={() => history.push("/c/Dama")}/>
                 <b>Damaries</b>
             </div>
         </div>
@@ -68,22 +68,22 @@ function Sotmoc() {
               <Avatar
                     alt="Deric"
                     src={Deric} className={classes.large}
-                    onClick={() => history.push("/sotmuc/Deric")}/>
+                    onClick={() => history.push("/c/Deric")}/>
                 <b>Deric</b>
             </div>
             <div>
-              <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/sotmuc/Asa")}/>
+              <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/c/Asa")}/>
               <b>Asa</b>
             </div>
             <div>
-              <Avatar alt="Mercy" src={Mercy} className={classes.large} onClick={() => history.push("/sotmuc/Mercy")}/>
+              <Avatar alt="Mercy" src={Mercy} className={classes.large} onClick={() => history.push("/c/Mercy")}/>
               <b>Mercy</b>
             </div>
         </div>
         <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar alt="kevin" src={Kevin} className={classes.large} onClick={() => history.push("/sotmuc/Kevin")}/>
+              <Avatar alt="kevin" src={Kevin} className={classes.large} onClick={() => history.push("/c/Kevin")}/>
               <b>Kevin</b>
             </div>
             <div>
