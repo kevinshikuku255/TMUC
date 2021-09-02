@@ -1,17 +1,17 @@
 import React from 'react';
+import Persons from "./Persons";
 import "./more.scss";
 
 
-import Tom from "../../Images/Tom.jpeg"
+function Index() {
 
-function index() {
+
   return (
     <div className="Container">
-       <div className="Card-Container">
-         <img src={Tom}  alt="tom" width="100rem"/>
-     </div>
-   </div>
+      <h3>TMUC STUDENT CELEBRITIES</h3>
+      <Persons/>
+    </div>
   )
 }
 
-export default index;
+export default Index;
