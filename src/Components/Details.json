@@ -6,12 +6,12 @@
     "image":"../Images/Dama.jpj"
   },
   "Kingslay": {
-    "name": "King Sley",
-    "category": "music",
-    "Genre":"Bongo",
-    "youtube": "htpps:youtube.com/c/Iconicmusic254",
-    "Phone": "07",
-    "Instagram":"https://Instagram.com/i_conic254"
+    "name": "KINGSLAY KENYA",
+    "Genre":"Good music",
+    "Youtube": "https://www.youtube.com/channel/UCw7SA8EzxCNdJsThOjBd4EA/featured",
+    "Instagram":"https://www.instagram.com/kingslaykenya/",
+    "Ig":"kingslaykenya",
+    "Youtubechannel":"KINGSLAY KENYA"
   },
   "Iconic": {
     "name": "iCONIC254",
@@ -24,12 +24,18 @@
     "Youtubechannel":"iCONIC254"
   },
   "Magicdee": {
-    "name": "Magicdee",
-    "category": "music",
-    "Genre":"Afro pop, Gengeton, Dancehall & Hiphop",
-    "Youtube": "htpps:youtube.com/c/Iconicmusic254",
-    "Phone": "07",
-    "Instagram":"https://Instagram.com/i_conic254"
+    "name": "Magicdee KE",
+    "Genre":"Gospel music",
+    "Youtube": "https://www.youtube.com/channel/UCUDw-UZefu72unUc9AU3YCw",
+    "Instagram":"https://www.instagram.com/magicdee_music/",
+    "Ig":"Magicdee_music",
+    "Youtubechannel":"Magicdee KE"
+  },
+  "Mccollo": {
+    "name": "MC COLLO",
+    "Genre":"Event MC",
+    "Instagram":"https://www.instagram.com/magicdee_music/",
+    "Ig":"mccollo123"
   },
   "Kiongozi": {
     "name": "kiongozi Portus",
@@ -45,18 +51,16 @@
     "Email": "ombogaouma@gmail.com",
     "Youtubechannel":"Kiongozi Portus"
   },
+  "Babafemi": {
+    "name": "Clinton @Babafemi254",
+    "Category": "Active politics",
+    "Twitter" :"https://twitter.com/Babafemi254"
+
+  },
   "Kenyanboy": {
     "name": "Kenyanboy",
-    "Category": "Funny content creation & Stand up comedy",
-    "Youtube": "https://www.youtube.com/channel/UCuxFiVjMW9RAaxAf4OPBAWg/featured",
-    "Facebook": "https://www.facebook.com/PortusKiongozi",
-    "Fb":"Kiongizi Portus",
-    "Phone": "+254715116636",
-    "Instagram":"https://www.instagram.com/kiongozi_portus/",
-    "Ig": "kiongozi_portus",
-    "Tiktok": "https://www.tiktok.com/@kiongoziportus?lang=en",
-    "Tktok": "KiongoziPortus",
-    "Email": "ombogaouma@gmail.com",
-    "Youtubechannel":"Kiongozi Portus"
+    "Category": "Comedy and Fan",
+    "Youtubechannel":"Kenyanboy254",
+    "Youtube": "https://www.youtube.com/channel/UClcIVex5deyKAHe4CqRz6jQ"
   }
 }
