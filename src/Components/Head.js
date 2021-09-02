@@ -3,7 +3,8 @@ import ReactGA from 'react-ga';
 import { useHistory, useLocation } from "react-router-dom";
 import "./components.scss";
 
-import { Avatar, makeStyles } from "@material-ui/core";
+import { Avatar, makeStyles, Badge } from "@material-ui/core";
+import { withStyles } from '@material-ui/core/styles';
 import Logo from "../Images/favicon.png";
 import {LinearProgress} from "@material-ui/core";
 import {ArrowBackIosRounded} from '@material-ui/icons';
@@ -20,7 +21,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -5,
+    top: 13,
+    height: theme.spacing(1.3),
+    width: theme.spacing(1.3),
+    border: `2px solid ${theme.palette.background.paper}`,
+  },
+}))(Badge);
 
 /** Sub header compoent */
 export const SubHeader = () => {
@@ -64,14 +73,16 @@ export const SubHeader = () => {
         {pathname === "/" ? <ArrowBackIosRounded style={{opacity:0.4}}/>
                   : <ArrowBackIosRounded onClick={() => history.goBack()}/>}
         <div>
-          <p onClick={() => history.push("/")} className={ (pathname === "/" && !active) ? "active" : ""}>academics</p>
+          <p onClick={() => history.push("/")}  className={ (pathname === "/" && !active ) ? "active" : ""}>academics</p>
         </div>
          <div className="sotmucNewsNav">
            <p onClick={() => history.push("/sotmuc/news")}
               className={ pathname === "/sotmuc/news" ? "active" : ""}>sotmuc news</p>
          </div>
         <div>
-          <p onClick={() => handleClick()} className={ (pathname === "/more" && !active )? "active" : ""}>more</p>
+          <StyledBadge badgeContent={" "} color="primary" variant="dot" overlap="circular">
+             <p onClick={() => handleClick()} className={ (pathname === "/more" && !active ) ? "active" : ""}>more</p>
+          </StyledBadge>
         </div>
         <div>
           <a onClick={() => clickHandler()} href="https://www.helb.co.ke/student-portal/" className={active ? "active" : ""}>helb</a>
@@ -79,9 +90,6 @@ export const SubHeader = () => {
      </div>
    )
 }
-
-
-
 
 
 
