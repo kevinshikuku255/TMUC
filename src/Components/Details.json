@@ -1,0 +1,62 @@
+{
+
+  "Dama":{
+    "name": "Damaries",
+    "position": "president",
+    "image":"../Images/Dama.jpj"
+  },
+  "Kingslay": {
+    "name": "King Sley",
+    "category": "music",
+    "Genre":"Bongo",
+    "youtube": "htpps:youtube.com/c/Iconicmusic254",
+    "Phone": "07",
+    "Instagram":"https://Instagram.com/i_conic254"
+  },
+  "Iconic": {
+    "name": "iCONIC254",
+    "category": "music",
+    "Genre":"Afro pop, Gengeton, Dancehall & Hiphop",
+    "Youtube": "https://youtube.com/c/Iconicmusic254",
+    "Phone": "+254718807722",
+    "Instagram":"https://Instagram.com/i_conic254",
+    "Ig": "i_conic254",
+    "Youtubechannel":"iCONIC254"
+  },
+  "Magicdee": {
+    "name": "Magicdee",
+    "category": "music",
+    "Genre":"Afro pop, Gengeton, Dancehall & Hiphop",
+    "Youtube": "htpps:youtube.com/c/Iconicmusic254",
+    "Phone": "07",
+    "Instagram":"https://Instagram.com/i_conic254"
+  },
+  "Kiongozi": {
+    "name": "kiongozi Portus",
+    "Category": "Funny content creation & Stand up comedy",
+    "Youtube": "https://www.youtube.com/channel/UCuxFiVjMW9RAaxAf4OPBAWg/featured",
+    "Facebook": "https://www.facebook.com/PortusKiongozi",
+    "Fb":"Kiongizi Portus",
+    "Phone": "+254715116636",
+    "Instagram":"https://www.instagram.com/kiongozi_portus/",
+    "Ig": "kiongozi_portus",
+    "Tiktok": "https://www.tiktok.com/@kiongoziportus?lang=en",
+    "Tktok": "KiongoziPortus",
+    "Email": "ombogaouma@gmail.com",
+    "Youtubechannel":"Kiongozi Portus"
+  },
+  "Kenyanboy": {
+    "name": "Kenyanboy",
+    "Category": "Funny content creation & Stand up comedy",
+    "Youtube": "https://www.youtube.com/channel/UCuxFiVjMW9RAaxAf4OPBAWg/featured",
+    "Facebook": "https://www.facebook.com/PortusKiongozi",
+    "Fb":"Kiongizi Portus",
+    "Phone": "+254715116636",
+    "Instagram":"https://www.instagram.com/kiongozi_portus/",
+    "Ig": "kiongozi_portus",
+    "Tiktok": "https://www.tiktok.com/@kiongoziportus?lang=en",
+    "Tktok": "KiongoziPortus",
+    "Email": "ombogaouma@gmail.com",
+    "Youtubechannel":"Kiongozi Portus"
+  }
+}
