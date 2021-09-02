@@ -1,0 +1,125 @@
+import React from 'react';
+import {Link} from"react-router-dom";
+import ReactGA from 'react-ga';
+import { useLoadDispatch } from '../../Context/loading';
+import "./more.scss";
+import { Avatar, makeStyles, Badge} from "@material-ui/core";
+import { useHistory } from 'react-router';
+import Iconic from "../../Images/iconic.jpg";
+import Babafemi from "../../Images/Babfemi.jpg";
+import Collo from "../../Images/collo.jpg";
+import Kenyanboy from "../../Images/kenyanboy.jpeg";
+
+
+const useStyles = makeStyles((theme) => ({
+  large: {
+    width: theme.spacing(10),
+    height: theme.spacing(10),
+    "&:hover":{
+      boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
+    }
+  }
+}));
+
+function Person() {
+  const history = useHistory();
+
+const handleClick = () => {
+    ReactGA.event({
+          category:"View",
+          action:"clicked",
+          transport:"beacon",
+          label:"Sotmuc",
+        })}
+   const dispatch = useLoadDispatch();
+
+   const clickHandler = () => {
+     dispatch({
+       type: "OFFLOAD",
+       payload: false
+     })
+     handleClick()
+   }
+
+  const classes = useStyles();
+
+  return (
+<div className="CWrapper">
+
+        <hr/>
+        <div  className="Ccategory">
+           <h3 className="CTagline">LEADERSHIP</h3> <br/>
+           <div className="Cleadership">
+             <div className="Cp">
+                <Link onClick={clickHandler} to="/sotmuc">
+                     <Avatar alt="Sotmuc" src={"Sotmuc"} color="yellow" className={classes.large} />
+                </Link>
+                <Link onClick={clickHandler} className="Csotmuc" to="/sotmuc">SOTMUC </Link>
+             </div>
+
+              <div className="Cp">
+                <Avatar alt="Wasike" src={"Wasike"} className={classes.large} />
+                <b>Dean Wsike</b>
+             </div>
+           </div>
+        </div>
+        <hr/>
+        <div className="Ccategory">
+          <h2 className="CCTagline">ENTERTAINMENT</h2>
+          <h3 className="CTagline">COMEDY</h3> <br/>
+          <div className="Ccomedy">
+              <div className="Cp">
+                <Avatar alt="P" src={"Portus"} className={classes.large} onClick={() => history.push("/c/Portus")}/>
+                  <b>Portus</b>
+              </div>
+              <div className="Cp">
+                <Avatar alt="kenyanboy" src={Kenyanboy} className={classes.large}/>
+                <b>KenyanBoy254</b>
+              </div>
+          </div>
+        </div>
+
+
+        <hr/>
+        <div className="Ccategory">
+        <h3 className="CTagline">MUSIC</h3> <br/>
+        <div className="Cmusic">
+            <div className="Cp">
+              <Avatar alt="K" src={"Kingsaly"} className={classes.large}/>
+                <b>King Slay</b>
+            </div>
+            <div className="Cp">
+             <Avatar alt="Iconic" src={Iconic} className={classes.large} onClick={() => history.push("/c/Iconic")}/>
+              <b>Iconic</b>
+            </div>
+            <div className="Cp">
+              <Badge badgeContent={"Gospel"} color="secondary">
+                 <Avatar alt="Prince" src={"Prince"} className={classes.large} />
+              </Badge>
+              <b>MagicDee</b>
+            </div>
+        </div>
+        </div>
+        <hr/>
+      <div className="Ccategory">
+        <div className="Cmusic">
+            <div className="Cp">
+              <Badge badgeContent={"MC"} color="secondary">
+                 <Avatar alt="Collo" src={Collo} className={classes.large} onClick={() => history.push("/c/Collo")}/>
+              </Badge>
+                <b>MC Collo</b>
+            </div>
+            <div className="Cp">
+            <Badge badgeContent={"Politics"} color="secondary">
+               <Avatar alt="Babafemi" src={Babafemi} className={classes.large} onClick={() => history.push("/c/Babafemi")}/>
+            </Badge>
+              <b>Baba femi</b>
+            </div>
+        </div>
+        </div>
+
+    </div>
+  )
+}
+
+export default Person;
