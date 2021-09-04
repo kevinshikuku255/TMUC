@@ -5,7 +5,6 @@ import { useLoadDispatch } from '../Context/loading';
 import "./pages.scss"
 
 
-
 function About() {
    const loadDispatch = useLoadDispatch();
 
