@@ -109,7 +109,7 @@ function Sotmoc() {
         <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar alt="Asa" src={Sec} className={classes.small} onClick={() => history.push("/sotmuc/Clinton")}/>
+              <Avatar alt="Asa" src={Sec} className={classes.small} onClick={() => history.push("/c/Clinton")}/>
               <b>Clinton</b>
             </div>
             <div>
