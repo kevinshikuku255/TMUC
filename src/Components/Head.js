@@ -79,7 +79,7 @@ export const SubHeader = () => {
           <a onClick={() => clickHandler()} href="https://www.helb.co.ke/student-portal/" className={active ? "active" : ""}>helb</a>
         </div>
         <div>
-             <p onClick={() => handleClick()} className={ (pathname === "/more" && !active ) ? "active" : ""}>more..</p>
+             <p onClick={() => handleClick()} className={ (pathname === "/more" && !active ) ? "active" : ""}>more*</p>
         </div>
      </div>
    )
