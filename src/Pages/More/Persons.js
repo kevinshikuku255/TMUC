@@ -13,6 +13,7 @@ import Magicdee from "../../Images/magicdee.jpeg";
 import Kingslay from "../../Images/kingslay.jpeg";
 import Sotmuc from "../../Images/sot.jpeg";
 import Portus from "../../Images/portus.jpeg";
+import J_se from "../../Images/jose.jpeg";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -118,6 +119,12 @@ const handleClick = () => {
                <Avatar alt="Babafemi" src={Babafemi} className={classes.large} onClick={() => history.push("/c/Babafemi")}/>
             </Badge>
               <b>Baba femi</b>
+            </div>
+            <div className="Cp">
+              <Badge badgeContent={"Dancer"} color="secondary">
+                 <Avatar alt="J_se" src={J_se} className={classes.large} onClick={() => history.push("/c/J_se911")}/>
+              </Badge>
+                <b>j_se911</b>
             </div>
         </div>
         </div>
