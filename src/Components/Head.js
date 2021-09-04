@@ -3,8 +3,7 @@ import ReactGA from 'react-ga';
 import { useHistory, useLocation } from "react-router-dom";
 import "./components.scss";
 
-import { Avatar, makeStyles, Badge } from "@material-ui/core";
-import { withStyles } from '@material-ui/core/styles';
+import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../Images/favicon.png";
 import {LinearProgress} from "@material-ui/core";
 import {ArrowBackIosRounded} from '@material-ui/icons';
@@ -21,15 +20,6 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const StyledBadge = withStyles((theme) => ({
-  badge: {
-    right: -5,
-    top: 13,
-    height: theme.spacing(1.3),
-    width: theme.spacing(1.3),
-    border: `2px solid ${theme.palette.background.paper}`,
-  },
-}))(Badge);
 
 /** Sub header compoent */
 export const SubHeader = () => {
@@ -68,10 +58,16 @@ export const SubHeader = () => {
      helbClick()
    }
 
+  let back = e => {
+      e.stopPropagation();
+      history.goBack();
+    };
+
+
    return(
      <div className="SubHeader">
         {pathname === "/" ? <ArrowBackIosRounded style={{opacity:0.4}}/>
-                  : <ArrowBackIosRounded onClick={() => history.goBack()}/>}
+                  : <ArrowBackIosRounded onClick={back}/>}
         <div>
           <p onClick={() => history.push("/")}  className={ (pathname === "/" && !active ) ? "active" : ""}>academics</p>
         </div>
@@ -80,12 +76,10 @@ export const SubHeader = () => {
               className={ pathname === "/sotmuc/news" ? "active" : ""}>sotmuc news</p>
          </div>
         <div>
-          <StyledBadge badgeContent={" "} color="primary" variant="dot" overlap="circular">
-             <p onClick={() => handleClick()} className={ (pathname === "/more" && !active ) ? "active" : ""}>more</p>
-          </StyledBadge>
+          <a onClick={() => clickHandler()} href="https://www.helb.co.ke/student-portal/" className={active ? "active" : ""}>helb</a>
         </div>
         <div>
-          <a onClick={() => clickHandler()} href="https://www.helb.co.ke/student-portal/" className={active ? "active" : ""}>helb</a>
+             <p onClick={() => handleClick()} className={ (pathname === "/more" && !active ) ? "active" : ""}>more</p>
         </div>
      </div>
    )
