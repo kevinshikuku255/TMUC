@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(9),
     height: theme.spacing(9),
+    fontSize:"1px",
     border:" 1px solid gray",
     "&:hover":{
       boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
