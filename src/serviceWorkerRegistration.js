@@ -30,6 +30,7 @@ function registerValidSW(swUrl, config) {
         }
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
+             console.log("Ready to reload")
             navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload());
           }
         };
