@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 function Person() {
 
 const handleClick = (name) => {
-  console.log(name)
     ReactGA.event({
           category:"Student Celeb",
           action:"clicked",

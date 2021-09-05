@@ -18,7 +18,17 @@ const loadReducer = (state, {type, payload})  =>{
         ...state,
         loading: payload
       }
-      
+    case 'CLOSE' :
+      return {
+        ...state,
+        open: payload
+      }
+   case 'OPEN' :
+      return {
+        ...state,
+        open: payload
+      }
+
     case 'OFFLOAD' :
       return {
         ...state,
@@ -32,7 +42,7 @@ const loadReducer = (state, {type, payload})  =>{
 
 //Provider that will export and use in the App.js
 export const LoadProvider = ({children}) => {
-  const [state, dispatch] = useReducer(loadReducer, false );
+  const [state, dispatch] = useReducer(loadReducer, {loading:false, open:false} );
    return(
     <LoadDispatchContext.Provider value={dispatch}>
         <LoadStateContext.Provider value ={state}>

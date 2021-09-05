@@ -27,17 +27,16 @@ const websocketApiUrl = WEBSOCKET_API_URL
 const apolloClient = createApolloClient(API_URL, websocketApiUrl);
 
 ReactDOM.render(
-  <React.StrictMode>
+
       <ApolloProvider client={apolloClient}>
         <BrowserRouter>
          <AuthProvider>
-          <LoadProvider>
-                <App />
-          </LoadProvider>
+              <LoadProvider>
+                    <App />
+              </LoadProvider>
         </AuthProvider>
       </BrowserRouter>
-    </ApolloProvider>
-  </React.StrictMode>,
+    </ApolloProvider>,
   document.getElementById('root')
 );
 serviceWorkerRegistration.register();
