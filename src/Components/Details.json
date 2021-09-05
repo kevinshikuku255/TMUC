@@ -5,6 +5,30 @@
     "position": "president",
     "image":"../Images/Dama.jpj"
   },
+  "Deric":{
+    "name": "Deric",
+    "position": "president",
+    "image":"../Images/Dama.jpj"
+  },
+  "Mercy":{
+    "name": "Mercy",
+    "position": "president",
+    "image":"../Images/Dama.jpj"
+  },
+  "Asa":{
+    "name": "Asa",
+    "position": "president",
+    "image":"../Images/Dama.jpj"
+  },
+  "Clinton":{
+    "name": "Clinton",
+    "position": "president"
+  },
+  "Kevin":{
+    "name": "Kevin",
+    "position": "president",
+    "image":"../Images/Dama.jpj"
+  },
   "Kingslay": {
     "name": "KINGSLAY KENYA",
     "Genre":"Good music",

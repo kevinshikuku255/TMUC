@@ -4,7 +4,6 @@ import ReactGA from 'react-ga';
 import { useLoadDispatch } from '../../Context/loading';
 import "./more.scss";
 import { Avatar, makeStyles, Badge} from "@material-ui/core";
-import { useHistory } from 'react-router';
 import Iconic from "../../Images/iconic.jpg";
 import Babafemi from "../../Images/Babfemi.jpg";
 import Collo from "../../Images/collo.jpg";
@@ -29,23 +28,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Person() {
-  const history = useHistory();
 
-const handleClick = () => {
+const handleClick = (name) => {
+  console.log(name)
     ReactGA.event({
-          category:"View",
+          category:"Student Celeb",
           action:"clicked",
           transport:"beacon",
-          label:"Sotmuc",
+          label:{name},
         })}
    const dispatch = useLoadDispatch();
 
-   const clickHandler = () => {
+   const clickHandler = (name) => {
      dispatch({
        type: "OFFLOAD",
        payload: false
      })
-     handleClick()
+     handleClick(name)
    }
 
   const classes = useStyles();
@@ -58,7 +57,7 @@ const handleClick = () => {
            <h3 className="CTagline">LEADERSHIP</h3> <br/>
            <div className="Cleadership">
              <div className="Cp">
-                <Link onClick={clickHandler} to="/sotmuc">
+                <Link onClick={() => clickHandler("Sotmuc")} to="/sotmuc">
                      <Avatar alt="Sotmuc" src={Sotmuc} className={classes.large} />
                 </Link>
                 <Link onClick={clickHandler} className="Csotmuc" to="/sotmuc">SOTMUC </Link>
@@ -76,17 +75,23 @@ const handleClick = () => {
         <h3 className="CTagline">MUSIC</h3> <br/>
         <div className="Cmusic">
             <div className="Cp">
-              <Avatar alt="Kingslay" src={Kingslay} className={classes.large} onClick={() => history.push("/c/Kingslay")}/>
+              <Link onClick={() => clickHandler("Kingslay")} to="/c/Kingslay">
+                  <Avatar alt="Kingslay" src={Kingslay} className={classes.large}/>
+              </Link>
                 <b>KingSlay</b>
             </div>
             <div className="Cp">
               <Badge badgeContent={"Gospel"} color="secondary">
-                 <Avatar alt="Magicdee" src={Magicdee} className={classes.large} onClick={() => history.push("/c/Magicdee")} />
+                 <Link onClick={() => clickHandler("Magicdee")} to="/c/Magicdee">
+                  <Avatar alt="Magicdee" src={Magicdee} className={classes.large}/>
+                 </Link>
               </Badge>
               <b>MagicDee</b>
             </div>
             <div className="Cp">
-             <Avatar alt="Iconic" src={Iconic} className={classes.large} onClick={() => history.push("/c/Iconic")}/>
+             <Link onClick={() => clickHandler("Iconic")} to="/c/Iconic">
+               <Avatar alt="Iconic" src={Iconic} className={classes.large}/>
+             </Link>
               <b>Iconic</b>
             </div>
         </div>
@@ -96,11 +101,15 @@ const handleClick = () => {
           <h3 className="CTagline">COMEDY</h3> <br/>
           <div className="Ccomedy">
               <div className="Cp">
-                <Avatar alt="Portus" src={Portus} className={classes.large} onClick={() => history.push("/c/Portus")}/>
+                 <Link onClick={() => clickHandler("Portus")} to="/c/Portus">
+                <Avatar alt="Portus" src={Portus} className={classes.large} />
+                </Link>
                   <b>Portus</b>
               </div>
               <div className="Cp">
-                <Avatar alt="kenyanboy" src={Kenyanboy} className={classes.large} onClick={() => history.push("/c/Kenyanboy")}/>
+                <Link onClick={() => clickHandler("Kenyanboy")} to="/c/Kenyanboy">
+                  <Avatar alt="kenyanboy" src={Kenyanboy} className={classes.large}/>
+                </Link>
                 <b>KenyanBoy254</b>
               </div>
           </div>
@@ -111,19 +120,25 @@ const handleClick = () => {
         <div className="Cmusic">
             <div className="Cp">
               <Badge badgeContent={"MC"} color="secondary">
-                 <Avatar alt="Collo" src={Collo} className={classes.large} onClick={() => history.push("/c/Collo")}/>
+                <Link onClick={() => clickHandler("Mc Collo")} to="/c/Collo">
+                 <Avatar alt="Collo" src={Collo} className={classes.large}/>
+                </Link>
               </Badge>
                 <b>MC Collo</b>
             </div>
             <div className="Cp">
             <Badge badgeContent={"Politics"} color="secondary">
-               <Avatar alt="Babafemi" src={Babafemi} className={classes.large} onClick={() => history.push("/c/Babafemi")}/>
+               <Link onClick={() => clickHandler("Babafemi")} to="/c/Babafemi">
+                 <Avatar alt="Babafemi" src={Babafemi} className={classes.large}/>
+               </Link>
             </Badge>
               <b>Baba femi</b>
             </div>
             <div className="Cp">
               <Badge badgeContent={"Dancer"} color="secondary">
-                 <Avatar alt="J_se" src={J_se} className={classes.large} onClick={() => history.push("/c/J_se911")}/>
+                <Link onClick={() => clickHandler("J_se911")} to="/c/J_se911">
+                   <Avatar alt="J_se" src={J_se} className={classes.large}/>
+                 </Link>
               </Badge>
                 <b>j_se911</b>
             </div>

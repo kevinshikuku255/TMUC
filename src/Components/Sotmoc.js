@@ -1,7 +1,9 @@
 import React from 'react';
 import "./components.scss";
+import {Link} from"react-router-dom";
+import ReactGA from 'react-ga';
+import { useLoadDispatch } from '../Context/loading';
 import { Avatar, makeStyles} from "@material-ui/core";
-import { useHistory } from 'react-router';
 import Nav from "./Nav";
 
 import Asa from "../Images/Asa.jpg";
@@ -35,18 +37,42 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
+
 function Sotmoc() {
-  const history = useHistory();
   const classes = useStyles();
+
+const handleClick = (name) => {
+  console.log(name)
+    ReactGA.event({
+          category:"SOTMUC",
+          action:"clicked",
+          transport:"beacon",
+          label:{name},
+        })}
+   const dispatch = useLoadDispatch();
+
+   const clickHandler = (name) => {
+     dispatch({
+       type: "OFFLOAD",
+       payload: false
+     })
+     handleClick(name)
+   }
+
+
+
+
+
   return (
 <div className="SotmucWrapper">
     <Nav/>
     <div className="Sotmuc">
       <h3>Sotmuc 2017 - 2018</h3> <br/>
       <div className="Leaders1718">
-         <Avatar src={Gitonga}
-            onClick={() => history.push("/c/2016")}
-            className={classes.gitonga}/>
+        <Link onClick={() => clickHandler("Sotmuc2016")} to="/c/2016">
+         <Avatar src={Gitonga} className={classes.gitonga}/>
+        </Link>
       </div>
       <hr/>
 
@@ -55,39 +81,43 @@ function Sotmoc() {
         <h3>Sotmuc 2019 - 2020</h3> <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar
-                    alt="Damaries"
-                    src={Dama} className={classes.large}
-                    onClick={() => history.push("/c/Dama")}/>
+              <Link onClick={() => clickHandler("Dama")} to="/c/Dama">
+                 <Avatar alt="Damaries" src={Dama} className={classes.large}/>
+              </Link>
                 <b>Damaries</b>
             </div>
         </div>
         <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar
-                    alt="Deric"
-                    src={Deric} className={classes.large}
-                    onClick={() => history.push("/c/Deric")}/>
+              <Link onClick={() => clickHandler("Deric")} to="/c/Deric">
+                 <Avatar alt="Deric" src={Deric} className={classes.large}/>
+              </Link>
                 <b>Deric</b>
             </div>
             <div>
-              <Avatar alt="Asa" src={Asa} className={classes.large} onClick={() => history.push("/c/Asa")}/>
+              <Link onClick={() => clickHandler("Asa")} to="/c/Asa">
+                 <Avatar alt="Asa" src={Asa} className={classes.large}/>
+              </Link>
               <b>Asa</b>
             </div>
             <div>
-              <Avatar alt="Mercy" src={Mercy} className={classes.large} onClick={() => history.push("/c/Mercy")}/>
+              <Link onClick={() => clickHandler("Mercy")} to="/c/Mercy">
+                <Avatar alt="Mercy" src={Mercy} className={classes.large}/>
+              </Link>
               <b>Mercy</b>
             </div>
         </div>
         <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar alt="kevin" src={Kevin} className={classes.large} onClick={() => history.push("/c/Kevin")}/>
+              <Link onClick={() => clickHandler("Kevin")} to="/c/Kevin">
+                <Avatar alt="kevin" src={Kevin} className={classes.large}/>
+              </Link>
               <b>Kevin</b>
             </div>
             <div>
-              <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
+                <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
               <b>""</b>
             </div>
             <div>
@@ -109,7 +139,9 @@ function Sotmoc() {
         <br/>
         <div className="Leaders1819">
             <div>
-              <Avatar alt="Asa" src={Sec} className={classes.small} onClick={() => history.push("/c/Clinton")}/>
+              <Link onClick={() => clickHandler("Clinton")} to="/c/Clinton">
+                <Avatar alt="Asa" src={Sec} className={classes.small}/>
+              </Link>
               <b>Clinton</b>
             </div>
             <div>
