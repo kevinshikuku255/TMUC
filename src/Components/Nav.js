@@ -1,13 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router';
 import "./components.scss";
 
 /** Sotmuc nav component */
 function Nav() {
-  const history = useHistory();
   return (
     <div className="Nav_Wrapper">
-        <p onClick={() => history.push("/sotmuc/news")} >sotmuc news</p>
+        <p>Student Organisation <br/>of Tom Mboya University College <br/> (SOTMUC)</p>
     </div>
   )
 }

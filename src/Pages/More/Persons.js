@@ -13,7 +13,8 @@ import Kingslay from "../../Images/kingslay.jpeg";
 import Sotmuc from "../../Images/sot.jpeg";
 import Portus from "../../Images/portus.jpeg";
 import J_se from "../../Images/jose.jpeg";
-import Wasike from "../../Images/wasikeAv.jpg"
+import Wasike from "../../Images/wasikeAv.jpg";
+import Fteam from "../../Images/ball.jpeg";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +26,14 @@ const useStyles = makeStyles((theme) => ({
     "&:hover":{
       boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
     }
-  }
+  },
+ team: {
+   borderRadius:"0px",
+   width:"97%",
+   margin:"auto",
+   paddingBottom:"3%",
+   height:"auto"
+ }
 }));
 
 function Person() {
@@ -146,7 +154,16 @@ const handleClick = (name) => {
             </div>
         </div>
         </div>
-
+        <hr/>
+<div className="Ccategory">
+        <div >
+            <div>
+                <Link onClick={() => clickHandler("Mc Collo")} to="/c/Fteam">
+                 <Avatar alt="Collo" src={Fteam} className={classes.team}/>
+                </Link>
+            </div>
+        </div>
+        </div>
     </div>
   )
 }
