@@ -158,9 +158,9 @@ const handleClick = (name) => {
 <div className="Ccategory">
         <div >
             <div>
-                <Link onClick={() => clickHandler("Mc Collo")} to="/c/Fteam">
+                {/* <Link onClick={() => clickHandler("Mc Collo")} to="/c/Fteam"> */}
                  <Avatar alt="Collo" src={Fteam} className={classes.team}/>
-                </Link>
+                {/* </Link> */}
             </div>
         </div>
         </div>
