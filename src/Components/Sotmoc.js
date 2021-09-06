@@ -69,7 +69,7 @@ const handleClick = (name) => {
     <Nav/>
     <div className="Sotmuc">
         <br/> <br/>
-        <h3>Sotmuc 2020 -- to date</h3>
+        <h3>2020 -- TO DATE</h3>
         <div className="Leaders1819">
             <div>
               <Avatar alt="Asa" src={"CM"} className={classes.small}/>
@@ -111,7 +111,7 @@ const handleClick = (name) => {
 
       <hr/>
 
-        <h3>Sotmuc 2019 - 2020</h3> <br/>
+        <h3>2019 - 2020</h3> <br/>
         <div className="Leaders1819">
             <div>
               <Link onClick={() => clickHandler("Dama")} to="/c/Dama">
@@ -161,7 +161,7 @@ const handleClick = (name) => {
 
         <hr/>
 
-        <h3>Sotmuc 2017 - 2018</h3> <br/>
+        <h3>2017 - 2018</h3> <br/>
         <div className="Leaders1718">
           <Avatar src={Gitonga} className={classes.gitonga}/>
         </div>
