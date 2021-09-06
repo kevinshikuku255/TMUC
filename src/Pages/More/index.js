@@ -8,7 +8,6 @@ function Index() {
 
   return (
     <div className="Container">
-      <h3>TMUC STUDENT CELEBRITIES</h3>
       <Persons/>
     </div>
   )
