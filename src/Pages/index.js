@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { GET_AD } from '../Graphql/ad';
 import { Avatar } from "@material-ui/core";
+import { WhatsApp, Phone } from "@material-ui/icons";
 import "./pages.scss";
 
 
@@ -33,9 +34,9 @@ function Index() {
       get_ad({ variables: { company: "Profia" } })
   }, [get_ad])
 
-  let ad;
+
   if(!loading && data){
-    ad = data.get_ad
+    console.log(data)
   }
 
   return (
@@ -49,12 +50,20 @@ function Index() {
 
 
         {
-        data && !loading &&
+        !data &&
+
         <div className="Ad">
           <div className="Img"> <Avatar src={Profia}/> </div>
           <div className="Description">
-            <h4>{ad?.company}</h4>
-            <p> {ad?.message}</p>
+            <h4>Profia Institute for KASNEB courses - Homa Bay Town</h4>
+            <p> CPA, ATD, CAMS, CIFA, CS</p>
+            <b>Register before 9 Sept to get 5% discount</b>
+            <div className="Adcontact">
+              <a href="tel: 0793977991"> <Phone className="PhoneAd"/> </a>
+              <a href="https://wa.me/+254793977991?text=Hello%20I%20have%20seen%20Profia%20on%20TMUC%20APP%20and%20I%20would%20like%20to%20Enroll.">
+               <WhatsApp className="WhatsappAd"/>
+              </a>
+            </div>
           </div>
           <sup>Ad</sup>
         </div>

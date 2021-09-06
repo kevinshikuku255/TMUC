@@ -19,6 +19,7 @@ import Magicdee from "../Images/magic.jpeg";
 import Kingslay from "../Images/kingslay.jpeg";
 import Portus from "../Images/portus.jpeg";
 import J_se from "../Images/jose.jpeg";
+import Wasike from "../Images/wasike.jpg";
 
 /** Profile component */
 function Profile() {
@@ -40,6 +41,7 @@ function Profile() {
   profileName === "Kenyanboy" && (markUp = <Details DetailInfo={DetailInfo.Kenyanboy} avartar={Kenyanboy}/>)
   profileName === "Magicdee" && (markUp = <Details DetailInfo={DetailInfo.Magicdee} avartar={Magicdee}/>)
   profileName === "Kingslay" && (markUp = <Details DetailInfo={DetailInfo.Kingslay} avartar={Kingslay}/>)
+  profileName === "Wasike" && (markUp = <Details DetailInfo={DetailInfo.Wasike} avartar={Wasike}/>)
   profileName === "J_se911" && (markUp = <Details DetailInfo={DetailInfo.J_se} avartar={J_se}/>)
   profileName === "2016" && (markUp =  <Details  avartar={Gitonga}/>)
 

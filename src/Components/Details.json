@@ -29,6 +29,11 @@
     "position": "president",
     "image":"../Images/Dama.jpj"
   },
+ "Wasike":{
+    "name": "Wasike Yona",
+    "position": "president",
+    "image":"../Images/Dama.jpj"
+  },
   "Kingslay": {
     "name": "KINGSLAY KENYA",
     "Genre":"Good music",
@@ -83,9 +88,14 @@
   },
   "Kenyanboy": {
     "name": "Kenyanboy",
-    "Category": "Comedy and Fan",
+    "Category": "CREATIVE CONTENT CREATOR🇰🇪",
     "Youtubechannel":"Kenyanboy254",
-    "Youtube": "https://www.youtube.com/channel/UClcIVex5deyKAHe4CqRz6jQ"
+    "Youtube": "https://www.youtube.com/channel/UClcIVex5deyKAHe4CqRz6jQ",
+
+    "Facebook": "https://www.facebook.com/profile.php?id=100069379683477",
+    "Fb":"Wãzïmü Wã Cømédy",
+    "Phone": "+254795961199",
+    "Email": "mesharkmutne@gmail.com"
   },
   "J_se": {
     "name": "j_se911",

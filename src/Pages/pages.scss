@@ -141,14 +141,14 @@ height: 100vh;
 /* -----------------------------AD--------------------------------------------- */
 
 .Ad{
-  width: 99%;
-  margin: .8rem  auto .5rem  auto;
-  background-color: purple;
+  // width: 96vw;
+  margin: .9rem  auto .5rem  auto;
+  background-color: #f5f5f5;
   display: flex;
   padding: .2rem;
   border-radius: 5px;
-  color: white;
-  // display: none;
+  color: #0c0c0c;
+  display: none;
 
  .Img{
    flex: .1;
@@ -161,8 +161,27 @@ height: 100vh;
  sup{
    font-weight: bolder;
    margin-top: -1.2rem;
+   font-size: x-small;
    color: black;
  }
+.Adcontact{
+  display: flex;
+  .WhatsappAd{
+    cursor: pointer;
+    color: rgb(0, 208, 255);
+    font-size:large;
+    font-weight: bolder;
+    margin: .5rem .5rem 0 1rem;
+  }
+  .PhoneAd{
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+    font-size:large;
+    margin: .5rem .5rem 0 0;
+  }
+}
+
+
 }
 
 

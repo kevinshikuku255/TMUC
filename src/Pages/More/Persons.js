@@ -13,6 +13,7 @@ import Kingslay from "../../Images/kingslay.jpeg";
 import Sotmuc from "../../Images/sot.jpeg";
 import Portus from "../../Images/portus.jpeg";
 import J_se from "../../Images/jose.jpeg";
+import Wasike from "../../Images/wasikeAv.jpg"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -62,10 +63,12 @@ const handleClick = (name) => {
                 <Link onClick={clickHandler} className="Csotmuc" to="/sotmuc">SOTMUC </Link>
              </div>
 
-              {/* <div className="Cp">
-                <Avatar alt="Wasike" src={"Wasike"} className={classes.large} />
+              <div className="Cp">
+                <Link onClick={clickHandler} className="Csotmuc" to="/c/Wasike">
+                    <Avatar alt="Wasike" src={Wasike} className={classes.large} />
+                </Link>
                 <b>Dean Wsike</b>
-             </div> */}
+             </div>
            </div>
         </div>
         <hr/>
