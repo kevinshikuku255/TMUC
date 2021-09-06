@@ -1,5 +1,4 @@
 import React, { useState} from "react";
-import ReactGA from 'react-ga';
 import { useHistory, useLocation } from "react-router-dom";
 import "./components.scss";
 
@@ -34,13 +33,8 @@ export const SubHeader = () => {
 
 /* -------------------------------------------------------------------------- */
    const handleClick = () => {
+        setActive(true)
         history.push("/more")
-        ReactGA.event({
-              category:"View",
-              action:"clicked",
-              transport:"beacon",
-              label:"Helb",
-            })
     }
 
   let back = e => {
@@ -78,7 +72,7 @@ export const SubHeader = () => {
          </Dialog>
         </div>
         <div>
-             <p onClick={() => handleClick()} className={ (pathname === "/more" && !active ) ? "active" : ""}>more</p>
+             <p onClick={() => handleClick()} className={ (pathname === "/more" && (active && !open) ) ? "active" : ""}>more</p>
         </div>
      </div>
    )
