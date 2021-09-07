@@ -5,7 +5,7 @@ import "./components.scss";
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../Images/favicon.png";
 import {LinearProgress} from "@material-ui/core";
-import {ArrowBackIosRounded} from '@material-ui/icons';
+import {ArrowBack} from '@material-ui/icons';
 import { useLoadState,useLoadDispatch } from '../Context/loading';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -52,8 +52,8 @@ export const SubHeader = () => {
 
    return(
      <div className="SubHeader">
-        {pathname === "/" ? <ArrowBackIosRounded style={{opacity:0.4}}/>
-                  : <ArrowBackIosRounded onClick={back}/>}
+        {pathname === "/" ? <ArrowBack className="inactive_back_arrow"/>
+                  : <ArrowBack onClick={back}/>}
         <div>
           <p onClick={() => history.push("/")}  className={ (pathname === "/" && (!active || !open) ) ? "active" : ""}>academics</p>
         </div>
@@ -72,7 +72,7 @@ export const SubHeader = () => {
          </Dialog>
         </div>
         <div>
-             <p onClick={() => handleClick()} className={ (pathname === "/more" && (active && !open) ) ? "active" : ""}>more</p>
+             <p onClick={() => handleClick()} className={ (pathname === "/more" && (active && !open) ) ? "active" : ""}>activities</p>
         </div>
      </div>
    )

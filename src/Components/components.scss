@@ -126,6 +126,9 @@ b{
     display: flex;
     border-top: 1px solid #d8d8d874;
     justify-content: space-around;
+    .inactive_back_arrow:hover{
+       opacity: 0.5;
+    }
     .sotmucNewsNav{
       display: none;
     }
