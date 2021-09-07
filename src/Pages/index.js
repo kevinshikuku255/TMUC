@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import { useLocation } from "react-router-dom";
 import { useLazyQuery } from '@apollo/client';
 import { GET_AD } from '../Graphql/ad';
 import { Avatar } from "@material-ui/core";
@@ -23,7 +24,13 @@ import Helb from "./Helb";
 import Profia from "../Images/profia.jpg";
 
 function Index() {
-
+const {pathname} = useLocation();
+  let active;
+  if(pathname === "/"){
+    active = true
+  }else{
+    active = false
+  }
 /* -------------------------AD------------------------------------------------- */
   const [
     get_ad,
@@ -40,7 +47,7 @@ function Index() {
   }
 
   return (
-  <div className="Main">
+  <div className={active ? "Active_Main" : "Main"}>
       <div className="Welcome">
             <h1>Welcome to <br/> Tom Mboya Univeristy College</h1>
             <p> As an Institution, we value the contribution of everyone. It is humans that makes an Institution. Therefore, whether you are a Student, Parent, Staff, The Public or an Administrator, your contribution to the well being of the Institution is highly appreciated.</p>
