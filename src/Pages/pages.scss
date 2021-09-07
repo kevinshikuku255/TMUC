@@ -16,8 +16,8 @@ height: 100vh;
 
 .Home_page{
   margin: 8rem 1rem 1rem 1rem;
-  height: 120vh;
-  padding-bottom: 5rem;
+  height: 100vh;
+  padding-bottom: 10rem;
 .Pages{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -148,7 +148,8 @@ height: 100vh;
   padding: .2rem;
   border-radius: 5px;
   color: #0c0c0c;
-  display: none;
+  border:.4px solid rgb(148, 148, 148);
+  // display: none;
 
  .Img{
    flex: .1;
@@ -166,15 +167,20 @@ height: 100vh;
  }
 .Adcontact{
   display: flex;
+  align-items: baseline;
+  float: right;
+  b{
+    margin: 0 .5rem 0 0;
+  }
   .WhatsappAd{
     cursor: pointer;
-    color: rgb(0, 208, 255);
+    color: rgb(0, 72, 255);
     font-size:large;
     font-weight: bolder;
     margin: .5rem .5rem 0 1rem;
   }
   .PhoneAd{
-    color: rgb(100, 100, 100);
+    color: rgb(0, 0, 0);
     cursor: pointer;
     font-size:large;
     margin: .5rem .5rem 0 0;

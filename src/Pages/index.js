@@ -15,11 +15,11 @@ import Council from "./Council";
 import Library from "./Library";
 import History from "./History";
 import Academics from "./Academics"
-import StudentCouncil from "./StudentCouncil";
+// import StudentCouncil from "./StudentCouncil";
 import Photos from "./Photos";
 import Direction from "./Direction";
 import Helb from "./Helb";
-import Blank from "./Blank";
+// import Blank from "./Blank";
 import Profia from "../Images/profia.jpg";
 
 function Index() {
@@ -59,6 +59,7 @@ function Index() {
             <p> CPA, ATD, CAMS, CIFA, CS</p>
             <b>Register before 9 Sept to get 5% discount</b>
             <div className="Adcontact">
+              <b> call or WhatsApp</b>
               <a href="tel: 0793977991"> <Phone className="PhoneAd"/> </a>
               <a href="https://wa.me/+254793977991?text=Hello%20I%20have%20seen%20Profia%20on%20TMUC%20APP%20and%20I%20would%20like%20to%20Enroll.">
                <WhatsApp className="WhatsappAd"/>
@@ -74,7 +75,7 @@ function Index() {
           <Login/>
           <Elearning/>
           <Portal/>
-          <StudentCouncil/>
+          {/* <StudentCouncil/> */}
           <Photos/>
           <Library/>
           <Downloads/>
@@ -84,7 +85,7 @@ function Index() {
           <Council/>
           <History/>
           <Helb/>
-          <Blank/>
+          {/* <Blank/> */}
       </div>
       </div>
   </div>

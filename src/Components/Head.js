@@ -83,12 +83,30 @@ export const SubHeader = () => {
 function Head() {
   const classes = useStyles();
   const {loading} = useLoadState();
+  const location = useLocation();
+  const profileName = location.pathname.split("/").pop();
+
+  let custom_head
+  if(profileName === "Football"){
+    custom_head = "university football team"
+  } else if(profileName === "sotmuc"){
+    custom_head = "university student council"
+  }else{
+    custom_head = "university college"
+  }
+
+
   return (
     <div className="HeadWrapper">
     {(loading === true ) && <LinearProgress/>}
     <div className="Head">
           <div className="Logo"> <Avatar src={Logo} className={classes.small}/> </div>
-          <div  className="Name"> <p>tom mboya</p> <h5>university college</h5> </div>
+          <div  className="Name">
+             <p>tom mboya</p>
+            <h5>
+              {custom_head}
+            </h5>
+          </div>
     </div>
     <SubHeader/>
     </div>

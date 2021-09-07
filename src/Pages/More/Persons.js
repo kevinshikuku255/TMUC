@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
    width:"97%",
    margin:"auto",
    paddingBottom:"3%",
-   height:"auto"
+   height:"auto",
  }
 }));
 
@@ -60,7 +60,6 @@ const handleClick = (name) => {
   return (
 <div className="CWrapper">
 
-        <hr/>
         <div  className="Ccategory">
            <h3 className="CTagline">LEADERSHIP</h3> <br/>
            <div className="Cleadership">
@@ -81,7 +80,17 @@ const handleClick = (name) => {
         </div>
         <hr/>
         <div className="Ccategory">
-        <h2 className="CCTagline">ENTERTAINMENT</h2>
+     <div className="Ccategory">
+        <div>
+         <h3 className="CTagline">FOOTBALL TEAM</h3>
+            <div>
+                <Link onClick={() => clickHandler("Mc Collo")} to="/Football">
+                    <Avatar alt="Collo" src={Fteam} className={classes.team}/>
+                </Link>
+            </div>
+        </div>
+        </div>
+        <hr/>
         <h3 className="CTagline">MUSIC</h3> <br/>
         <div className="Cmusic">
             <div className="Cp">
@@ -151,16 +160,6 @@ const handleClick = (name) => {
                  </Link>
               </Badge>
                 <b>j_se911</b>
-            </div>
-        </div>
-        </div>
-        <hr/>
-<div className="Ccategory">
-        <div >
-            <div>
-                {/* <Link onClick={() => clickHandler("Mc Collo")} to="/c/Fteam"> */}
-                 <Avatar alt="Collo" src={Fteam} className={classes.team}/>
-                {/* </Link> */}
             </div>
         </div>
         </div>

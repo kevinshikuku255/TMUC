@@ -11,6 +11,7 @@ import Sotmuc from "./Components/Sotmoc";
 import Elearning from "./Components/Elearning";
 import Head from "./Components/Head";
 import Profile from "./Components/Profile";
+import Football from './Pages/More/Football';
 
 const News  = React.lazy( () => import("./Pages/News"));
 const More = React.lazy(() => import("./Pages/More"));
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/" component={Index}/>
           <Route exact path="/sotmuc/news" component={News}/>
           <Route exact path="/c/:username" component={Profile}/>
+          <Route exact path="/Football" component={Football}/>
           <Route exact path="/sotmuc" component={Sotmuc}/>
           <Route exact path="e-learning" component={Elearning}/>
           <Route exact path="/more" component={More}/>
