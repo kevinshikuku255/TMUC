@@ -16,8 +16,8 @@ import AlertDialog from "./Dialog";
 
 const useStyles = makeStyles((theme) => ({
   small: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
+    width: theme.spacing(4),
+    height: theme.spacing(4),
     borderRadius: 0,
   }
 }));
@@ -55,14 +55,17 @@ export const SubHeader = () => {
         {pathname === "/" ? <ArrowBack className="inactive_back_arrow"/>
                   : <ArrowBack onClick={back}/>}
         <div>
-          <p onClick={() => history.push("/")}  className={ (pathname === "/" && (!active || !open) ) ? "active" : ""}>academics</p>
+          <p onClick={() => history.push("/")}  className={ (pathname === "/" && (!active || !open) ) ? "active" : "a"}>ACADEMICS</p>
         </div>
          <div className="sotmucNewsNav">
            <p onClick={() => history.push("/sotmuc/news")}
               className={ pathname === "/sotmuc/news" ? "active" : ""}>sotmuc news</p>
          </div>
         <div>
-          <p onClick={open_dialog}  className={(active && open) ? "active" : ""}>helb</p>
+             <p onClick={() => handleClick()} className={ (pathname === "/more" && (active && !open) ) ? "active" : "a"}>ACTIVITIES</p>
+        </div>
+        <div>
+          <p onClick={open_dialog}  className={(active && open) ? "active" : "a"}>HELB</p>
           <Dialog
             open={open}
             aria-labelledby="alert-dialog-title"
@@ -70,9 +73,6 @@ export const SubHeader = () => {
             >
              <AlertDialog/>
          </Dialog>
-        </div>
-        <div>
-             <p onClick={() => handleClick()} className={ (pathname === "/more" && (active && !open) ) ? "active" : ""}>activities</p>
         </div>
      </div>
    )
@@ -88,11 +88,11 @@ function Head() {
 
   let custom_head
   if(profileName === "Football"){
-    custom_head = "university football team"
+    custom_head = "UNIVERSITY FOOTBALL TEAM"
   } else if(profileName === "sotmuc"){
-    custom_head = "university student council"
+    custom_head = "UNIVERSITY STUDENT COUNCIL"
   }else{
-    custom_head = "university college"
+    custom_head = "UNIVERSITY COLLEGE"
   }
 
 
@@ -102,7 +102,7 @@ function Head() {
     <div className="Head">
           <div className="Logo"> <Avatar src={Logo} className={classes.small}/> </div>
           <div  className="Name">
-             <p>tom mboya</p>
+             <p>TOM MBOYA</p>
             <h5>
               {custom_head}
             </h5>
