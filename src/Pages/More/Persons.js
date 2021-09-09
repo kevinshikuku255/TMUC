@@ -14,6 +14,7 @@ import Sotmuc from "../../Images/sot.jpeg";
 import Portus from "../../Images/portus.jpeg";
 import J_se from "../../Images/jose.jpeg";
 import Fteam from "../../Images/ball.jpeg";
+// import Cu from "../../Images/cu.jpg";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,10 +30,17 @@ const useStyles = makeStyles((theme) => ({
   },
  team: {
    borderRadius:"0px",
-   width:"97%",
+   width:"100vw",
    margin:"auto",
    paddingBottom:"3%",
    height:"auto",
+ },
+ cu: {
+   borderRadius:"3px",
+   width:"100vw",
+   height:"50%",
+   margin:"auto",
+   paddingBottom:"3%",
  }
 }));
 
@@ -68,8 +76,8 @@ const handleClick = (name) => {
                 </Link>
              </div>
            </div>
+           <hr/>
         </div>
-        <hr/>
         <div className="Ccategory">
      <div className="Ccategory">
         <div>
@@ -81,7 +89,7 @@ const handleClick = (name) => {
             </div>
         </div>
         </div>
-        <hr/>
+
         <h3 className="CTagline">Music</h3> <br/>
         <div className="Cmusic">
             <div className="Cp">
@@ -106,7 +114,7 @@ const handleClick = (name) => {
             </div>
         </div>
         </div>
-        <hr/>
+
         <div className="Ccategory">
           <h3 className="CTagline">Comedy</h3> <br/>
           <div className="Ccomedy">

@@ -10,7 +10,7 @@ import Fteampic5 from "../../Images/ball5.jpeg";
 const useStyles = makeStyles((theme) => ({
  team: {
    borderRadius:"0px",
-   width:"97%",
+   width:"100vw",
    margin:"auto",
    paddingBottom:"3%",
    height:"auto",

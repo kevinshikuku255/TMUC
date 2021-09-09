@@ -8,10 +8,10 @@ import './components.scss';
 
 const useStyles = makeStyles(() => ({
   large: {
-    width: "90vw",
+    width: "100vw",
     height:"auto",
     margin:"auto",
-    borderRadius:"8px",
+    borderRadius:"0px",
   },
 }));
 
