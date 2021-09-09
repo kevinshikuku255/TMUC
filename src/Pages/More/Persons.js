@@ -73,7 +73,7 @@ const handleClick = (name) => {
         <div className="Ccategory">
      <div className="Ccategory">
         <div>
-         <h3 className="CTagline">FOOTBALL TEAM</h3>
+         <h3 className="CTagline">Footbal team</h3>
             <div>
                 <Link onClick={() => clickHandler("Mc Collo")} to="/Football">
                     <Avatar alt="Collo" src={Fteam} className={classes.team}/>
@@ -82,7 +82,7 @@ const handleClick = (name) => {
         </div>
         </div>
         <hr/>
-        <h3 className="CTagline">MUSIC</h3> <br/>
+        <h3 className="CTagline">Music</h3> <br/>
         <div className="Cmusic">
             <div className="Cp">
               <Link onClick={() => clickHandler("Kingslay")} to="/c/Kingslay">
@@ -108,7 +108,7 @@ const handleClick = (name) => {
         </div>
         <hr/>
         <div className="Ccategory">
-          <h3 className="CTagline">COMEDY</h3> <br/>
+          <h3 className="CTagline">Comedy</h3> <br/>
           <div className="Ccomedy">
               <div className="Cp">
                  <Link onClick={() => clickHandler("Portus")} to="/c/Portus">

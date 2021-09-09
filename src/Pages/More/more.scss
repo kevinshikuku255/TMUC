@@ -47,13 +47,16 @@
 }
 .CCTagline, .CTagline{
   font-size: large;
+  font-family:serif;
   font-weight: bolder;
-  color: rgb(52, 43, 226);
-  text-shadow: 0px 2px 4px black;
+  color: #000000;
+  text-shadow: 0px 2px 4px rgb(0, 0, 0);
   cursor: pointer;
   margin-left: 1rem;
   width: fit-content;
 }
+
+
 
 .CCTagline{
   font-size: large;

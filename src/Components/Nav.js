@@ -5,7 +5,9 @@ import "./components.scss";
 function Nav() {
   return (
     <div className="Nav_Wrapper">
-        <p>Student Organisation <br/>of Tom Mboya University College <br/> (SOTMUC)</p>
+        <p>Student Organisation </p>
+        <p>of Tom Mboya University College </p>
+        <p>(SOTMUC)</p>
     </div>
   )
 }

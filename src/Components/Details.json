@@ -2,37 +2,27 @@
 
   "Dama":{
     "name": "Damaries",
-    "position": "president",
-    "image":"../Images/Dama.jpj"
+    "position": "President"
   },
   "Deric":{
     "name": "Deric",
-    "position": "president",
-    "image":"../Images/Dama.jpj"
+    "position": ""
   },
   "Mercy":{
     "name": "Mercy",
-    "position": "president",
-    "image":"../Images/Dama.jpj"
+    "position": "Representative of People With Disabilities"
   },
   "Asa":{
     "name": "Asa",
-    "position": "president",
-    "image":"../Images/Dama.jpj"
+    "position":""
   },
   "Clinton":{
     "name": "Clinton",
-    "position": "president"
+    "position": "Secretary General"
   },
   "Kevin":{
     "name": "Kevin",
-    "position": "president",
-    "image":"../Images/Dama.jpj"
-  },
- "Wasike":{
-    "name": "Wasike Yona",
-    "position": "president",
-    "image":"../Images/Dama.jpj"
+    "position": "Chairman of Sports"
   },
   "Kingslay": {
     "name": "KINGSLAY KENYA",

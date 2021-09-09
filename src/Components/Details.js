@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar, makeStyles} from "@material-ui/core";
-import { YouTube, Instagram, WhatsApp, Twitter, Facebook, FormatTextdirectionLToR } from "@material-ui/icons";
+import { YouTube, Instagram, WhatsApp, Twitter, Facebook, FormatTextdirectionLToR, AssignmentInd } from "@material-ui/icons";
+
 
 import './components.scss';
 
@@ -24,10 +25,11 @@ export const Details = ({DetailInfo, avartar}) => {
           <Avatar alt={DetailInfo?.name} src={avartar} className={classes.large}/>
       </div>
       <div className="CName">
-        <p>{DetailInfo?.name}</p>
+        <p> {DetailInfo?.position &&  <AssignmentInd/> } {DetailInfo?.name}</p>
         {DetailInfo?.Youtube && <a href={DetailInfo?.Youtube}><YouTube className="Youtube"/></a>}
       </div>
       <div className="Genre">
+        {DetailInfo?.position && <p>{DetailInfo?.position}</p>}
         {DetailInfo?.Genre && <p>{DetailInfo?.Genre}</p>}
         {DetailInfo?.Category && <p>{DetailInfo?.Category}</p>}
         <ul>
