@@ -16,8 +16,8 @@ import AlertDialog from "./Dialog";
 
 const useStyles = makeStyles((theme) => ({
   small: {
-    width: theme.spacing(4),
-    height: theme.spacing(4),
+    width: theme.spacing(6),
+    height: theme.spacing(6),
     borderRadius: 0,
   }
 }));
@@ -62,7 +62,7 @@ export const SubHeader = () => {
               className={ pathname === "/sotmuc/news" ? "active" : ""}>sotmuc news</p>
          </div>
         <div>
-             <p onClick={() => handleClick()} className={ (pathname === "/more" && (active && !open) ) ? "active" : "a"}>ACTIVITIES</p>
+             <p onClick={() => handleClick()} className={ (pathname !== "/" && (!open) ) ? "active" : "a"}>ACTIVITIES</p>
         </div>
         <div>
           <p onClick={open_dialog}  className={(active && open) ? "active" : "a"}>HELB</p>

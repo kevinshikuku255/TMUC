@@ -13,7 +13,6 @@ import Kingslay from "../../Images/kingslay.jpeg";
 import Sotmuc from "../../Images/sot.jpeg";
 import Portus from "../../Images/portus.jpeg";
 import J_se from "../../Images/jose.jpeg";
-import Wasike from "../../Images/wasikeAv.jpg";
 import Fteam from "../../Images/ball.jpeg";
 
 
@@ -22,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(9),
     height: theme.spacing(9),
     fontSize:"1px",
-    border:" 1px solid gray",
+    borderRadius:"10px",
+    border:" 1px solid #80808088",
     "&:hover":{
       boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
     }
@@ -61,20 +61,11 @@ const handleClick = (name) => {
 <div className="CWrapper">
 
         <div  className="Ccategory">
-           <h3 className="CTagline">LEADERSHIP</h3> <br/>
            <div className="Cleadership">
              <div className="Cp">
                 <Link onClick={() => clickHandler("Sotmuc")} to="/sotmuc">
-                     <Avatar alt="Sotmuc" src={Sotmuc} className={classes.large} />
+                     <Avatar alt="Sotmuc" src={Sotmuc} className={classes.team} />
                 </Link>
-                <Link onClick={clickHandler} className="Csotmuc" to="/sotmuc">SOTMUC </Link>
-             </div>
-
-              <div className="Cp">
-                <Link onClick={clickHandler} className="Csotmuc" to="/c/Wasike">
-                    <Avatar alt="Wasike" src={Wasike} className={classes.large} />
-                </Link>
-                <b>Dean Wsike</b>
              </div>
            </div>
         </div>
