@@ -16,8 +16,8 @@ import Kevin from "../Images/kevo.jpg";
 
 const useStyles = makeStyles((theme) => ({
   small: {
-    width: theme.spacing(12),
-    height: theme.spacing(12),
+    width: theme.spacing(10),
+    height: theme.spacing(10),
     backgroundColor:"wheat",
     "&:hover":{
       boxShadow: "0 0 15px red, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
@@ -61,12 +61,19 @@ const handleClick = (name) => {
    }
 
 
+let head = (
+         <>
+          <p>Student Organisation </p>
+          <p>of Tom Mboya University College </p>
+          <p>(SOTMUC)</p>
+         </>
+        )
 
 
 
   return (
 <div className="SotmucWrapper">
-    <Nav/>
+    <Nav head={head}/>
     <div className="Sotmuc">
         <br/> <br/>
         <h3>2020 -- TO DATE</h3>

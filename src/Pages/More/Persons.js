@@ -14,7 +14,7 @@ import Sotmuc from "../../Images/sot.jpeg";
 import Portus from "../../Images/portus.jpeg";
 import J_se from "../../Images/jose.jpeg";
 import Fteam from "../../Images/ball.jpeg";
-// import Cu from "../../Images/cu.jpg";
+import Cu from "../../Images/cu.jpeg";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,19 +28,12 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
     }
   },
- team: {
+ img: {
    borderRadius:"0px",
    width:"100vw",
    margin:"auto",
    paddingBottom:"3%",
    height:"auto",
- },
- cu: {
-   borderRadius:"3px",
-   width:"100vw",
-   height:"50%",
-   margin:"auto",
-   paddingBottom:"3%",
  }
 }));
 
@@ -72,19 +65,26 @@ const handleClick = (name) => {
            <div className="Cleadership">
              <div className="Cp">
                 <Link onClick={() => clickHandler("Sotmuc")} to="/sotmuc">
-                     <Avatar alt="Sotmuc" src={Sotmuc} className={classes.team} />
+                     <Avatar alt="Sotmuc" src={Sotmuc} className={classes.img} />
+                </Link>
+             </div>
+           </div>
+           <hr/>
+           <div className="Cleadership">
+             <div className="Cp">
+                <Link onClick={() => clickHandler("Sotmuc")} to="/cu">
+                     <Avatar alt="Sotmuc" src={Cu} className={classes.img} />
                 </Link>
              </div>
            </div>
            <hr/>
         </div>
-        <div className="Ccategory">
      <div className="Ccategory">
+      <div className="Ccategory">
         <div>
-         <h3 className="CTagline">Footbal team</h3>
             <div>
                 <Link onClick={() => clickHandler("Mc Collo")} to="/Football">
-                    <Avatar alt="Collo" src={Fteam} className={classes.team}/>
+                    <Avatar alt="Collo" src={Fteam} className={classes.img}/>
                 </Link>
             </div>
         </div>

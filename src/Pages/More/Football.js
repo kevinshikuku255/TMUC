@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar, makeStyles} from "@material-ui/core";
+import Nav from "../../Components/Nav";
 import Fteam from "../../Images/ball.jpeg";
 import Fteampic2 from "../../Images/ball2.jpeg";
 import Fteampic3 from "../../Images/ball3.jpeg";
@@ -16,14 +17,21 @@ const useStyles = makeStyles((theme) => ({
    height:"auto",
  },
   teamgrid:{
-  paddingTop:"20vh",
+  paddingTop:"1rem",
  }
 }));
+
+let head = (
+  <>
+   <p>Tom Mboya University College </p><p>  Footbal Team</p>
+  </>
+)
 
 function Football() {
   const classes = useStyles()
   return (
-    <div className="FtWrapper">
+    <div className="Ftwarapper">
+      <Nav head={head}/>
       <div className={classes.teamgrid}>
         <Avatar src={Fteam} className={classes.team}/>
         <Avatar src={Fteampic2} className={classes.team}/>

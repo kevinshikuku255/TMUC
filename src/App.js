@@ -12,6 +12,7 @@ import Elearning from "./Components/Elearning";
 import Head from "./Components/Head";
 import Profile from "./Components/Profile";
 import Football from './Pages/More/Football';
+import Cu from './Pages/More/Cu';
 
 
 
@@ -40,6 +41,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Index}/>
           <Route exact path="/more" component={More}/>
+          <Route exact path="/cu" component={Cu}/>
           <Route exact path="/sotmuc/news" component={News}/>
           <Route exact path="/c/:username" component={Profile}/>
           <Route exact path="/Football" component={Football}/>
