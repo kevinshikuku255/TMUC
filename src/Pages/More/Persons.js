@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from"react-router-dom";
+import {useHistory} from"react-router-dom";
 import ReactGA from 'react-ga';
 import { useLoadDispatch } from '../../Context/loading';
 import "./more.scss";
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Person() {
-
+const history = useHistory();
 const handleClick = (name) => {
     ReactGA.event({
           category:"Student Celeb",
@@ -49,10 +49,21 @@ const handleClick = (name) => {
    const dispatch = useLoadDispatch();
 
    const clickHandler = (name) => {
+     console.log(name)
      dispatch({
        type: "OFFLOAD",
        payload: false
      })
+     history.push(`activities/${name}`)
+     handleClick(name)
+   }
+
+   const groupHandler = (name) => {
+     dispatch({
+       type: "OFFLOAD",
+       payload: false
+     })
+     history.push(`/${name}`)
      handleClick(name)
    }
 
@@ -64,70 +75,100 @@ const handleClick = (name) => {
         <div  className="Ccategory">
            <div className="Cleadership">
              <div className="Cp">
-                <Link onClick={() => clickHandler("Sotmuc")} to="/sotmuc">
-                     <Avatar alt="Sotmuc" src={Sotmuc} className={classes.img} />
-                </Link>
+                     <Avatar
+                     onClick={() => groupHandler("Sotmuc")}
+                     alt="Sotmuc" src={Sotmuc} className={classes.img} />
              </div>
            </div>
            <hr/>
            <div className="Cleadership">
              <div className="Cp">
-                <Link onClick={() => clickHandler("Sotmuc")} to="/cu">
-                     <Avatar alt="Sotmuc" src={Cu} className={classes.img} />
-                </Link>
+                     <Avatar
+                     onClick={() => groupHandler("Cu")}
+                     alt="Cu" src={Cu} className={classes.img} />
              </div>
            </div>
            <hr/>
+           <div className="Cleadership">
+             <div>
+                    <Avatar
+                    onClick={() => groupHandler("Football")}
+                    alt="Football" src={Fteam} className={classes.img}/>
+            </div>
+           </div>
         </div>
      <div className="Ccategory">
-      <div className="Ccategory">
-        <div>
-            <div>
-                <Link onClick={() => clickHandler("Mc Collo")} to="/Football">
-                    <Avatar alt="Collo" src={Fteam} className={classes.img}/>
-                </Link>
-            </div>
-        </div>
-        </div>
-
         <h3 className="CTagline">Music</h3> <br/>
         <div className="Cmusic">
             <div className="Cp">
-              <Link onClick={() => clickHandler("Kingslay")} to="/c/Kingslay">
-                  <Avatar alt="Kingslay" src={Kingslay} className={classes.large}/>
-              </Link>
+                  <Avatar
+                  onClick={() => clickHandler("Kingslay")}
+                  alt="Kingslay" src={Kingslay} className={classes.large}/>
                 <b>KingSlay</b>
             </div>
             <div className="Cp">
-              <Badge badgeContent={"Gospel"} color="secondary">
-                 <Link onClick={() => clickHandler("Magicdee")} to="/c/Magicdee">
-                  <Avatar alt="Magicdee" src={Magicdee} className={classes.large}/>
-                 </Link>
-              </Badge>
+                  <Avatar
+                  onClick={() => clickHandler("Magicdee")}
+                  alt="Magicdee" src={Magicdee} className={classes.large}/>
               <b>MagicDee</b>
             </div>
             <div className="Cp">
-             <Link onClick={() => clickHandler("Iconic")} to="/c/Iconic">
-               <Avatar alt="Iconic" src={Iconic} className={classes.large}/>
-             </Link>
+               <Avatar
+               onClick={() => clickHandler("Iconic")}
+               alt="Iconic" src={Iconic} className={classes.large}/>
               <b>Iconic</b>
             </div>
+
         </div>
+        <br/>
+        <div className="Cmusic">
+            {/* <div className="Cp">
+                  <Avatar
+                  onClick={() => clickHandler("Lilian_Boke")}
+                  alt="Kingslay" src={Kingslay} className={classes.large}/>
+                <b>Lilian Boke</b>
+            </div>
+            <div className="Cp">
+                  <Avatar
+                  onClick={() => clickHandler("Gidy")}
+                  alt="Magicdee" src={Magicdee} className={classes.large}/>
+              <b>Gidy Matum</b>
+            </div>
+            <div className="Cp">
+               <Avatar
+               onClick={() => clickHandler("Lameki")}
+               alt="Iconic" src={Iconic} className={classes.large}/>
+              <b>Lameki</b>
+            </div> */}
         </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div className="Ccategory">
           <h3 className="CTagline">Comedy</h3> <br/>
           <div className="Ccomedy">
               <div className="Cp">
-                 <Link onClick={() => clickHandler("Portus")} to="/c/Portus">
-                <Avatar alt="Portus" src={Portus} className={classes.large} />
-                </Link>
+                <Avatar
+                onClick={() => clickHandler("Portus")}
+                alt="Portus" src={Portus} className={classes.large} />
                   <b>Portus</b>
               </div>
               <div className="Cp">
-                <Link onClick={() => clickHandler("Kenyanboy")} to="/c/Kenyanboy">
-                  <Avatar alt="kenyanboy" src={Kenyanboy} className={classes.large}/>
-                </Link>
+                  <Avatar
+                  onClick={() => clickHandler("Kenyanboy")}
+                  alt="kenyanboy" src={Kenyanboy} className={classes.large}/>
                 <b>KenyanBoy254</b>
               </div>
           </div>
@@ -138,25 +179,25 @@ const handleClick = (name) => {
         <div className="Cmusic">
             <div className="Cp">
               <Badge badgeContent={"MC"} color="secondary">
-                <Link onClick={() => clickHandler("Mc Collo")} to="/c/Collo">
-                 <Avatar alt="Collo" src={Collo} className={classes.large}/>
-                </Link>
+                 <Avatar
+                 onClick={() => clickHandler("Mc Collo")}
+                 alt="Collo" src={Collo} className={classes.large}/>
               </Badge>
                 <b>MC Collo</b>
             </div>
             <div className="Cp">
             <Badge badgeContent={"Politics"} color="secondary">
-               <Link onClick={() => clickHandler("Babafemi")} to="/c/Babafemi">
-                 <Avatar alt="Babafemi" src={Babafemi} className={classes.large}/>
-               </Link>
+                 <Avatar
+                 onClick={() => clickHandler("Babafemi")}
+                 alt="Babafemi" src={Babafemi} className={classes.large}/>
             </Badge>
               <b>Baba femi</b>
             </div>
             <div className="Cp">
               <Badge badgeContent={"Dancer"} color="secondary">
-                <Link onClick={() => clickHandler("J_se911")} to="/c/J_se911">
-                   <Avatar alt="J_se" src={J_se} className={classes.large}/>
-                 </Link>
+                   <Avatar
+                   onClick={() => clickHandler("J_se911")}
+                   alt="J_se" src={J_se} className={classes.large}/>
               </Badge>
                 <b>j_se911</b>
             </div>

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
    height:"auto",
  },
   teamgrid:{
-  paddingTop:"1rem",
+  // paddingTop:"1rem",
  }
 }));
 

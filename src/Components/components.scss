@@ -150,11 +150,13 @@ b{
   transition-timing-function: ease-in-out;
   transition-delay: 2s;
   font-weight: lighter;
+
 }
 
 .active{
-  border-bottom: 2.5px solid #5050fa;
+  border-bottom: 3px solid #000000;
   font-weight: bolder;
+  border-spacing: 10rem;
 }
 
 

@@ -7,7 +7,7 @@ import "./more.scss";
 function Index() {
 const {pathname} = useLocation();
   let active;
-  if(pathname === "/more"){
+  if(pathname === "/Activities"){
     active = true
   }else{
     active = false

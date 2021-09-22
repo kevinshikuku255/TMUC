@@ -21,6 +21,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
+    "react-router-carousel": "^0.1.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "subscriptions-transport-ws": "^0.9.19",

@@ -1,6 +1,6 @@
 import React from 'react';
 import "./components.scss";
-import {Link} from"react-router-dom";
+import { useHistory} from"react-router-dom";
 import ReactGA from 'react-ga';
 import { useLoadDispatch } from '../Context/loading';
 import { Avatar, makeStyles} from "@material-ui/core";
@@ -13,6 +13,9 @@ import Sec from "../Images/sec.jpg";
 import Mercy from "../Images/Mercy.jpg";
 import Gitonga from "../Images/gitonga.png";
 import Kevin from "../Images/kevo.jpg";
+import Other from "../Images/Other.jpeg";
+import Evans from "../Images/Evans.jpeg";
+import Kendi from "../Images/Kendi.jpg";
 
 const useStyles = makeStyles((theme) => ({
   small: {
@@ -42,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Sotmoc() {
   const classes = useStyles();
+  const history = useHistory();
 
 const handleClick = (name) => {
     ReactGA.event({
@@ -57,6 +61,7 @@ const handleClick = (name) => {
        type: "OFFLOAD",
        payload: false
      })
+     history.push(`/activities/${name}`)
      handleClick(name)
    }
 
@@ -86,9 +91,9 @@ let head = (
         <br/>
         <div className="Leaders1819">
             <div>
-              <Link onClick={() => clickHandler("Clinton")} to="/c/Clinton">
-                <Avatar alt="Asa" src={Sec} className={classes.small}/>
-              </Link>
+                <Avatar
+                onClick={() => clickHandler("Clinton")}
+                alt="Asa" src={Sec} className={classes.small}/>
               <b>Clinton</b>
             </div>
             <div>
@@ -107,7 +112,7 @@ let head = (
               <b>A.R.</b>
             </div>
             <div>
-              <Avatar alt="Asa" src={"Sec"} className={classes.small}/>
+              <Avatar alt="Kendi" src={Kendi} className={classes.small}/>
               <b>P.W.D.</b>
             </div>
             <div>
@@ -121,47 +126,52 @@ let head = (
         <h3>2019 - 2020</h3> <br/>
         <div className="Leaders1819">
             <div>
-              <Link onClick={() => clickHandler("Dama")} to="/c/Dama">
-                 <Avatar alt="Damaries" src={Dama} className={classes.large}/>
-              </Link>
+                 <Avatar
+                 onClick={() => clickHandler("Dama")}
+                 alt="Damaries" src={Dama} className={classes.large}/>
                 <b>Damaries</b>
             </div>
         </div>
         <br/>
         <div className="Leaders1819">
             <div>
-              <Link onClick={() => clickHandler("Deric")} to="/c/Deric">
-                 <Avatar alt="Deric" src={Deric} className={classes.large}/>
-              </Link>
+                 <Avatar
+                 onClick={() => clickHandler("Deric")}
+                 alt="Deric" src={Deric} className={classes.large}/>
                 <b>Deric</b>
             </div>
             <div>
-              <Link onClick={() => clickHandler("Asa")} to="/c/Asa">
-                 <Avatar alt="Asa" src={Asa} className={classes.large}/>
-              </Link>
+                 <Avatar
+                 onClick={() => clickHandler("Asa")}
+                 alt="Asa" src={Asa} className={classes.large}/>
               <b>Asa</b>
             </div>
             <div>
-              <Link onClick={() => clickHandler("Mercy")} to="/c/Mercy">
-                <Avatar alt="Mercy" src={Mercy} className={classes.large}/>
-              </Link>
+                <Avatar
+                onClick={() => clickHandler("Mercy")}
+                alt="Mercy" src={Mercy} className={classes.large}/>
               <b>Mercy</b>
             </div>
         </div>
         <br/>
         <div className="Leaders1819">
             <div>
-              <Link onClick={() => clickHandler("Kevin")} to="/c/Kevin">
-                <Avatar alt="kevin" src={Kevin} className={classes.large}/>
-              </Link>
+                <Avatar
+                onClick={() => clickHandler("Kevin")}
+                alt="kevin" src={Kevin} className={classes.large}/>
               <b>Kevin</b>
             </div>
             <div>
-                <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
-              <b>""</b>
+
+                <Avatar
+                onClick={() => clickHandler("Evans")}
+                alt="Evans" src={Evans} className={classes.large}/>
+              <b>Evans</b>
             </div>
             <div>
-              <Avatar alt="Asa" src={"Asa"} className={classes.large}/>
+              <Avatar
+              onClick={() => clickHandler("Other")}
+              alt="Other" src={Other} className={classes.large}/>
               <b>""</b>
             </div>
         </div>

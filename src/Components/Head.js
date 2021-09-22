@@ -34,7 +34,7 @@ export const SubHeader = () => {
 /* -------------------------------------------------------------------------- */
    const handleClick = () => {
         setActive(true)
-        history.push("/more")
+        history.push("/Activities")
     }
 
   let back = e => {
@@ -89,9 +89,12 @@ function Head() {
   let custom_head
   if(profileName === "Football"){
     custom_head = "UNIVERSITY FOOTBALL TEAM"
-  } else if(profileName === "sotmuc"){
+  } else if(profileName === "Sotmuc"){
     custom_head = "UNIVERSITY STUDENT COUNCIL"
-  }else{
+  }else if(profileName === "Cu"){
+    custom_head = "UNIVERSITY CU"
+  }
+  else{
     custom_head = "UNIVERSITY COLLEGE"
   }
 
