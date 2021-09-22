@@ -2,23 +2,6 @@
 
 
 
-/* -------------------------------------------------------------------------- */
-
-.Main{
-z-index: -1;
-margin-left: 0vw;
-transition-property: height;
-transition-duration: 2s;
-transition-timing-function: linear;
-transition-delay: 2s;
-}
-
-.Active_Main{
-  margin-left: 0vw;
-  z-index: -1;
-  transform: margin 5s;
-}
-
 .Welcome{
   display: none;
 }

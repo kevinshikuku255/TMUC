@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 let head = (
   <>
-   <p>Tom Mboya University College </p><p>  Footbal Team</p>
+   <p>Tom Mboya University College </p><p>  Football Club <sub>since 2017</sub></p>
   </>
 )
 

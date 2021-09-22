@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import {Route, Switch} from 'react-router-dom';
-import { CircularProgress} from "@material-ui/core";
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
 
@@ -15,6 +14,7 @@ import Profile from "./Components/Profile";
 import Football from './Pages/More/Football';
 import Cu from './Pages/More/Cu';
 import Activities from "./Pages/More";
+import FallbackPage  from './Components/FallbackPage';
 
 
 const News  = React.lazy( () => import("./Pages/News"));
@@ -24,12 +24,6 @@ ReactGA.initialize(REACT_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 
-
- const FallbackPage = (
-    <div className="fallback">
-       <CircularProgress/>
-    </div>
- )
 
 const Carousel = () => (
   <RouterCarousel
