@@ -5,12 +5,12 @@ import "./components.scss";
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../Images/favicon.png";
 import {LinearProgress} from "@material-ui/core";
-import {ArrowBack} from '@material-ui/icons';
+import {ArrowBack, MoreVert} from '@material-ui/icons';
 import { useLoadState,useLoadDispatch } from '../Context/loading';
 
 import Dialog from '@material-ui/core/Dialog';
 import AlertDialog from "./Dialog";
-
+import Menu from "./Menu";
 
 
 
@@ -84,7 +84,16 @@ function Head() {
   const classes = useStyles();
   const {loading} = useLoadState();
   const location = useLocation();
+  const loadispatch = useLoadDispatch();
+  const {menu} = useLoadState();
   const profileName = location.pathname.split("/").pop();
+
+  const openMenu = () => {
+    loadispatch({
+      type: "MENU",
+      payload: true
+    })
+  }
 
   let custom_head
   if(profileName === "Football"){
@@ -103,12 +112,18 @@ function Head() {
     <div className="HeadWrapper">
     {(loading === true ) && <LinearProgress/>}
     <div className="Head">
-          <div className="Logo"> <Avatar src={Logo} className={classes.small}/> </div>
-          <div  className="Name">
-             <p>TOM MBOYA</p>
-            <h5>
-              {custom_head}
-            </h5>
+          <div className="Logo">
+            <div className="Avartor"> <Avatar src={Logo} className={classes.small}/> </div>
+            <div  className="Name">
+              <p>TOM MBOYA</p>
+              <h5>
+                {custom_head}
+              </h5>
+            </div>
+          </div>
+          <div className="Menu">
+             <MoreVert onClick={openMenu}/>
+             <Menu open={menu}/>
           </div>
     </div>
     <SubHeader/>

@@ -28,7 +28,11 @@ const loadReducer = (state, {type, payload})  =>{
         ...state,
         open: payload
       }
-
+  case "MENU" :
+    return {
+      ...state,
+      menu: payload
+    }
     case 'OFFLOAD' :
       return {
         ...state,
@@ -42,7 +46,7 @@ const loadReducer = (state, {type, payload})  =>{
 
 //Provider that will export and use in the App.js
 export const LoadProvider = ({children}) => {
-  const [state, dispatch] = useReducer(loadReducer, {loading:false, open:false} );
+  const [state, dispatch] = useReducer(loadReducer, {loading:false, open:false , menu: false} );
    return(
     <LoadDispatchContext.Provider value={dispatch}>
         <LoadStateContext.Provider value ={state}>

@@ -37,7 +37,7 @@ function Profile() {
   profileName === "Clinton" && (markUp = <Details DetailInfo={DetailInfo.Clinton} avartar={SecPic}/>)
   profileName === "Iconic" && (markUp = <Details DetailInfo={DetailInfo.Iconic} avartar={IconicPic}/>)
   profileName === "Babafemi" && (markUp = <Details DetailInfo={DetailInfo.Babafemi} avartar={BabafemiPic}/>)
-  profileName === "Collo" && (markUp = <Details DetailInfo={DetailInfo.Mccollo} avartar={ColloPic}/>)
+  profileName === "Mc_Collo" && (markUp = <Details DetailInfo={DetailInfo.Mccollo} avartar={ColloPic}/>)
   profileName === "Portus" && (markUp = <Details DetailInfo={DetailInfo.Kiongozi} avartar={Portus}/>)
   profileName === "Kenyanboy" && (markUp = <Details DetailInfo={DetailInfo.Kenyanboy} avartar={Kenyanboy}/>)
   profileName === "Magicdee" && (markUp = <Details DetailInfo={DetailInfo.Magicdee} avartar={Magicdee}/>)

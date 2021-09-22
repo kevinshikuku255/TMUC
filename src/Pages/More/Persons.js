@@ -30,9 +30,10 @@ const useStyles = makeStyles((theme) => ({
   },
  img: {
    borderRadius:"0px",
-   width:"100vw",
+   borderBottom:"1px solid gray",
+   width:"99vw",
    margin:"auto",
-   paddingBottom:"3%",
+   paddingTop:"3%",
    height:"auto",
  }
 }));
@@ -80,7 +81,6 @@ const handleClick = (name) => {
                      alt="Sotmuc" src={Sotmuc} className={classes.img} />
              </div>
            </div>
-           <hr/>
            <div className="Cleadership">
              <div className="Cp">
                      <Avatar
@@ -88,7 +88,6 @@ const handleClick = (name) => {
                      alt="Cu" src={Cu} className={classes.img} />
              </div>
            </div>
-           <hr/>
            <div className="Cleadership">
              <div>
                     <Avatar
@@ -180,7 +179,7 @@ const handleClick = (name) => {
             <div className="Cp">
               <Badge badgeContent={"MC"} color="secondary">
                  <Avatar
-                 onClick={() => clickHandler("Mc Collo")}
+                 onClick={() => clickHandler("Mc_Collo")}
                  alt="Collo" src={Collo} className={classes.large}/>
               </Badge>
                 <b>MC Collo</b>

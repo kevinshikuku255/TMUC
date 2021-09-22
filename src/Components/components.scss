@@ -84,31 +84,63 @@ b{
   height: fit-content;
   display: flex;
   font-weight: lighter;
- .Name{
-    flex: 1.6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: .5rem;
-    font-family: sans-serif;
-    font-weight: bolder;
-    p{
-    color: rgb(34, 0, 255);
-    }
+ .Logo{
+   flex: 1.8;
+   display: flex;
+    .Name{
+        flex: 1.6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: .5rem;
+        font-family: sans-serif;
+        font-weight: bolder;
+        p{
+        color: rgb(34, 0, 255);
+        }
 
-  h5{
-    color: rgb(0, 0, 0);
-    }}
-.Logo{
-  flex: .4;
+      h5{
+        color: rgb(0, 0, 0);
+       }
+      }
+    .Avartor{
+      flex: .4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: .8rem 0rem .8rem .5rem;
+    }
+ }
+ .Menu{
+  flex: 0.2;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: .8rem 0rem .8rem .5rem;
-}}
+ }
+}
 
 
+.MenuWrapper{
+  .MenuItems{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #e1e1e1;
+    padding:4rem 0 0 .5rem;
+    width: 45vw;
+    .MenuItem{
+      padding: .1rem .2rem;
+      margin: 1rem .5rem;
+      border-radius: 7px;
+      font-family: serif;
+      font-size: small;
+      &:hover{
+       background-color: #8686b8;
+      }
+    }
 
+    }
+}
 
 
 /* --------------------------------SubHeader------------------------------------------ */
@@ -153,7 +185,7 @@ b{
 }
 
 .active{
-  border-bottom: 3px solid #000000;
+  border-bottom: 3px solid blue;
   font-weight: bolder;
 }
 
@@ -271,3 +303,4 @@ b{
     color: brown;
   }
 }
+
