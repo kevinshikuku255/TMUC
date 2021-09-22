@@ -34,6 +34,39 @@
 }
 
 
+/* --------------------------New celebrity Styling------------------------------------------------ */
+.Celebrity{
+  display: flex;
+  margin: 0 auto .5rem auto;
+  width: 96vw;
+  border-bottom: 1px solid gray;
+  &:hover{
+    background-color: rgb(242, 242, 242);
+    border: 1px solid rgb(201, 169, 169);
+    border-radius: 5px;
+  }
+  .CelebrityDetails{
+    flex: 1.9;
+    display: flex;
+    .CelebrityName{
+      margin: auto 0 0 .5rem;
+      display: flex;
+      flex-direction: column;
+     .Youtube{
+        font-size: 1.5rem;
+        color:red;
+        width: fit-content;
+        border-radius: 10px;
+        margin-top:-4px;
+     }
+    }
+  }
+  .CelebrityAction{
+    flex: .1;
+  }
+}
+
+
 /* -------------------------------------------------------------------------- */
 .Ccategory{
   margin-top: 2rem;

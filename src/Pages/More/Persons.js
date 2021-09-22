@@ -2,8 +2,10 @@ import React from 'react';
 import {useHistory} from"react-router-dom";
 import ReactGA from 'react-ga';
 import { useLoadDispatch } from '../../Context/loading';
+import { MoreVert} from '@material-ui/icons';
 import "./more.scss";
 import { Avatar, makeStyles, Badge} from "@material-ui/core";
+import { YouTube } from "@material-ui/icons";
 import Iconic from "../../Images/iconic.jpg";
 import Babafemi from "../../Images/Babfemi.jpg";
 import Collo from "../../Images/collo.jpg";
@@ -15,15 +17,17 @@ import Portus from "../../Images/portus.jpeg";
 import J_se from "../../Images/jose.jpeg";
 import Fteam from "../../Images/ball.jpeg";
 import Cu from "../../Images/cu.jpeg";
+import Boke from "../../Images/Boke.jpg";
+import Lameki from "../../Images/Lameki.jpg";
 
+import DetailInfo from "../../Components/Details.json";
 
 const useStyles = makeStyles((theme) => ({
   large: {
-    width: theme.spacing(9),
-    height: theme.spacing(9),
+    width: theme.spacing(15),
+    height: theme.spacing(15),
     fontSize:"1px",
-    borderRadius:"10px",
-    border:" 1px solid #80808088",
+    borderRadius:"0px",
     "&:hover":{
       boxShadow: "0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet"
     }
@@ -50,7 +54,6 @@ const handleClick = (name) => {
    const dispatch = useLoadDispatch();
 
    const clickHandler = (name) => {
-     console.log(name)
      dispatch({
        type: "OFFLOAD",
        payload: false
@@ -96,56 +99,92 @@ const handleClick = (name) => {
             </div>
            </div>
         </div>
+
+{/* /* -------------------------------------------------------------------------- */}
      <div className="Ccategory">
         <h3 className="CTagline">Music</h3> <br/>
-        <div className="Cmusic">
-            <div className="Cp">
-                  <Avatar
-                  onClick={() => clickHandler("Kingslay")}
-                  alt="Kingslay" src={Kingslay} className={classes.large}/>
-                <b>KingSlay</b>
-            </div>
-            <div className="Cp">
-                  <Avatar
-                  onClick={() => clickHandler("Magicdee")}
-                  alt="Magicdee" src={Magicdee} className={classes.large}/>
-              <b>MagicDee</b>
-            </div>
-            <div className="Cp">
-               <Avatar
-               onClick={() => clickHandler("Iconic")}
-               alt="Iconic" src={Iconic} className={classes.large}/>
-              <b>Iconic</b>
-            </div>
 
-        </div>
-        <br/>
-        <div className="Cmusic">
-            {/* <div className="Cp">
-                  <Avatar
-                  onClick={() => clickHandler("Lilian_Boke")}
-                  alt="Kingslay" src={Kingslay} className={classes.large}/>
-                <b>Lilian Boke</b>
+        <>
+        <div className="Celebrity" onClick={() => clickHandler("Kingslay")}>
+            <div className="CelebrityDetails">
+                <Avatar alt="Kingslay" src={Kingslay} className={classes.large}/>
+              <div className="CelebrityName">
+                  <p> <b>Genre</b> {DetailInfo?.Kingslay?.Genre}</p>
+                  <p> <b>Youtube:</b> {DetailInfo?.Kingslay?.Youtubechannel}</p>
+                  <a href={DetailInfo?.Kingslay?.Youtube}> <YouTube className="Youtube"/> </a>
+              </div>
             </div>
-            <div className="Cp">
-                  <Avatar
-                  onClick={() => clickHandler("Gidy")}
-                  alt="Magicdee" src={Magicdee} className={classes.large}/>
-              <b>Gidy Matum</b>
+            <div className="CelebrityAction">
+              <MoreVert/>
             </div>
-            <div className="Cp">
-               <Avatar
-               onClick={() => clickHandler("Lameki")}
-               alt="Iconic" src={Iconic} className={classes.large}/>
-              <b>Lameki</b>
-            </div> */}
         </div>
+        <div className="Celebrity" onClick={() => clickHandler("Magicdee")}>
+            <div className="CelebrityDetails">
+                <Avatar alt="Magicdee" src={Magicdee} className={classes.large}/>
+              <div className="CelebrityName">
+                  <p> <b>Genre</b> {DetailInfo?.Magicdee?.Genre}</p>
+                  <p> <b>Youtube:</b> {DetailInfo?.Magicdee?.Youtubechannel}</p>
+                  <a href={DetailInfo?.Magicdee?.Youtube}> <YouTube className="Youtube"/> </a>
+              </div>
+            </div>
+            <div className="CelebrityAction">
+              <MoreVert/>
+            </div>
+        </div>
+        <div className="Celebrity" onClick={() => clickHandler("Iconic")}>
+            <div className="CelebrityDetails">
+                <Avatar alt="Iconic" src={Iconic} className={classes.large}/>
+              <div className="CelebrityName">
+                  <p> <b>Genre</b> {DetailInfo?.Iconic?.Genre}</p>
+                  <p> <b>Youtube:</b> {DetailInfo?.Iconic?.Youtubechannel}</p>
+                  <a href={DetailInfo?.Iconic?.Youtube}> <YouTube className="Youtube"/> </a>
+              </div>
+            </div>
+            <div className="CelebrityAction">
+              <MoreVert/>
+            </div>
+        </div>
+        <div className="Celebrity" onClick={() => clickHandler("Lilian_Boke")}>
+            <div className="CelebrityDetails">
+                <Avatar alt="Lilian_Boke" src={Boke} className={classes.large}/>
+              <div className="CelebrityName">
+                  <p> <b>Genre</b> {DetailInfo?.Lilian_Boke?.Genre}</p>
+                  <p> <b>Youtube:</b> {DetailInfo?.Lilian_Boke?.Youtubechannel}</p>
+                  <a href={DetailInfo?.Lilian_Boke?.Youtube}> <YouTube className="Youtube"/> </a>
+              </div>
+            </div>
+            <div className="CelebrityAction">
+              <MoreVert/>
+            </div>
+        </div>
+        <div className="Celebrity" onClick={() => clickHandler("Lameki")}>
+            <div className="CelebrityDetails">
+                <Avatar alt="Iconic" src={Lameki} className={classes.large}/>
+              <div className="CelebrityName">
+                  <p> <b>Genre</b> {DetailInfo?.Lameki?.Genre}</p>
+                  <p> <b>Youtube:</b> {DetailInfo?.Lameki?.Youtubechannel}</p>
+                  <a href={DetailInfo?.Lameki?.Youtube}> <YouTube className="Youtube"/> </a>
+              </div>
+            </div>
+            <div className="CelebrityAction">
+              <MoreVert/>
+            </div>
+        </div>
+        <div className="Celebrity" onClick={() => clickHandler("J_se911")}>
+            <div className="CelebrityDetails">
+                <Avatar alt="J_se911" src={J_se} className={classes.large}/>
+              <div className="CelebrityName">
+                  <p> <b>Genre:</b> Dancer </p>
+                  <p> <b>Youtube:</b> {DetailInfo?.J_se?.Youtubechannel}</p>
+                  <a href={DetailInfo?.J_se?.Youtube}> <YouTube className="Youtube"/> </a>
+              </div>
+            </div>
+            <div className="CelebrityAction">
+              <MoreVert/>
+            </div>
+        </div>
+        </>
      </div>
-
-
-
-
-
 
 
 
@@ -191,14 +230,6 @@ const handleClick = (name) => {
                  alt="Babafemi" src={Babafemi} className={classes.large}/>
             </Badge>
               <b>Baba femi</b>
-            </div>
-            <div className="Cp">
-              <Badge badgeContent={"Dancer"} color="secondary">
-                   <Avatar
-                   onClick={() => clickHandler("J_se911")}
-                   alt="J_se" src={J_se} className={classes.large}/>
-              </Badge>
-                <b>j_se911</b>
             </div>
         </div>
         </div>

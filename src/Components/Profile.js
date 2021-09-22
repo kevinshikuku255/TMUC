@@ -21,6 +21,8 @@ import Portus from "../Images/portus.jpeg";
 import J_se from "../Images/jose.jpeg";
 import Evans from "../Images/Evans.jpeg";
 import Other from "../Images/Other.jpeg";
+import Boke from "../Images/Boke.jpg";
+import Lameki from "../Images/Lameki.jpg";
 
 /** Profile component */
 function Profile() {
@@ -45,9 +47,9 @@ function Profile() {
   profileName === "J_se911" && (markUp = <Details DetailInfo={DetailInfo.J_se} avartar={J_se}/>)
   profileName === "Evans" && (markUp = <Details DetailInfo={DetailInfo.Evans} avartar={Evans}/>)
   profileName === "Other" && (markUp = <Details DetailInfo={DetailInfo.Other} avartar={Other}/>)
-  profileName === "Lilian_Boke" && (markUp = <Details DetailInfo={DetailInfo.Lilian_Boke} avartar={Other}/>)
+  profileName === "Lilian_Boke" && (markUp = <Details DetailInfo={DetailInfo.Lilian_Boke} avartar={Boke}/>)
   profileName === "Gidy" && (markUp = <Details DetailInfo={DetailInfo.Gidy} avartar={Other}/>)
-  profileName === "Lameki" && (markUp = <Details DetailInfo={DetailInfo.Lameki} avartar={Other}/>)
+  profileName === "Lameki" && (markUp = <Details DetailInfo={DetailInfo.Lameki} avartar={Lameki}/>)
   profileName === "2016" && (markUp =  <Details  avartar={Gitonga}/>)
 
 
