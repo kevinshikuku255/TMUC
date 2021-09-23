@@ -1,0 +1,32 @@
+.Wrapper{
+   margin-top: 7rem;
+   padding-bottom: .5rem;
+  .News{
+    display: flex;
+    padding: .5rem;
+    border-radius: 5px;
+    flex-direction: column;
+    margin: 1rem auto 0 auto;
+    width: 94vw;
+    background-color: rgb(187, 187, 187);
+    &:hover{
+     background-color: rgb(216, 216, 216);
+    }
+    .NewsHead{
+      display: flex;
+      flex-direction: row;
+      margin-bottom: .5rem;
+      .PublisherDetails{
+        display: flex;
+        flex-direction: column;
+        margin: auto 0 0 .2rem;
+     }
+   }
+   .NewsActions{
+     display: flex;
+     margin: .4rem auto;
+     width: 98%;
+     justify-content: space-between;
+   }
+ }
+}

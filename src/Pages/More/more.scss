@@ -39,7 +39,9 @@
   display: flex;
   margin: 0 auto .5rem auto;
   width: 96vw;
-  border-bottom: 1px solid gray;
+  height: 7.5rem;
+  border: 1px solid gray;
+  border-radius: 5px;
   &:hover{
     background-color: rgb(242, 242, 242);
     border: 1px solid rgb(201, 169, 169);
@@ -52,12 +54,14 @@
       margin: auto 0 0 .5rem;
       display: flex;
       flex-direction: column;
-     .Youtube{
+     a{
+       width: fit-content;
+       .Youtube{
         font-size: 1.5rem;
         color:red;
-        width: fit-content;
         border-radius: 10px;
         margin-top:-4px;
+      }
      }
     }
   }
@@ -109,7 +113,19 @@
   color: #8400ff;
 }
 
-.Cmusic, .Ccomedy, .Cleadership{
+.Cleadership{
+  height: fit-content;
+  margin: 1rem auto 0 auto;
+  width: 99vw;
+  border: 1px solid rgba(163, 163, 163, 0.631);
+  border-radius: 5px;
+  background-color: rgb(228, 228, 228);
+  &:hover{
+    border: 1px solid red;
+  }
+}
+
+.Cmusic, .Ccomedy{
   display: flex;
   margin: auto;
   width: 96vw;

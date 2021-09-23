@@ -11,7 +11,7 @@ body {
   margin: 0;
   zoom:reset;
   overscroll-behavior-y: contain;
-  font-family: sans-serif;
+  font-family: serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
      -moz-user-select: none; /* Firefox */
@@ -28,20 +28,6 @@ p, h1, h2, h3, h4, h5, h6{
 a{
   text-decoration: none;
   color: inherit;
-}
-
-
-.fallback{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  word-wrap: break-word;
-  text-align: center;
-  font-size: larger;
-  font-weight: bolder;
-  margin: auto 3rem;
-  color: blue;
-  height: 100vh;
 }
 
 
