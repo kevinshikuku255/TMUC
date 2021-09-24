@@ -18,8 +18,8 @@ dotenv.config("../.env");
 // GraphQL HTTP URL
 const API_URL = process.env.REACT_APP_API_URL;
 
-const domain = process.env.REACT_APP_AUTH0_DOMAIN
-const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 
 // GraphQL WebSocket (subscriptions) URL.

@@ -42,6 +42,7 @@ function Index() {
      </div>
      )
   }
+console.log(data)
 let MarkeUp;
 if(data){
    MarkeUp =  data?.getPosts.map( post => (
