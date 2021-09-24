@@ -31,6 +31,17 @@ function Index() {
      </div>
      )
   }
+  if(!loading && !data){
+     loader = (
+       <div className="Wrapper">
+          <Skeleton/>
+          <Skeleton/>
+          <Skeleton/>
+          <Skeleton/>
+          <Skeleton/>
+     </div>
+     )
+  }
 let MarkeUp;
 if(data){
    MarkeUp =  data?.getPosts.map( post => (
