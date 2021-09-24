@@ -4,8 +4,9 @@ import { BrowserRouter} from 'react-router-dom';
 import { LoadProvider } from './Context/loading';
 import dotenv from 'dotenv';
 import { ApolloProvider } from '@apollo/client';
-import { AuthProvider } from './Context/auth';
-import { createApolloClient } from './Utils/apollo_client'
+import { PostProvider } from './Context/post';
+import { createApolloClient } from './Utils/apollo_client';
+import { Auth0Provider} from "@auth0/auth0-react";
 
 
 
@@ -17,6 +18,10 @@ dotenv.config("../.env");
 // GraphQL HTTP URL
 const API_URL = process.env.REACT_APP_API_URL;
 
+const domain = process.env.REACT_APP_AUTH0_DOMAIN
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
+
+
 // GraphQL WebSocket (subscriptions) URL.
 // If its url is not set in .env then it has same url, host and pathname
 const WEBSOCKET_API_URL = process.env.REACT_APP_WEBSOCKET_API_URL;
@@ -27,16 +32,17 @@ const websocketApiUrl = WEBSOCKET_API_URL
 const apolloClient = createApolloClient(API_URL, websocketApiUrl);
 
 ReactDOM.render(
-
+      <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin}>
       <ApolloProvider client={apolloClient}>
         <BrowserRouter>
-         <AuthProvider>
               <LoadProvider>
-                    <App />
+                <PostProvider>
+                    <App/>
+                </PostProvider>
               </LoadProvider>
-        </AuthProvider>
       </BrowserRouter>
-    </ApolloProvider>,
+    </ApolloProvider>
+    </Auth0Provider>,
   document.getElementById('root')
 );
 serviceWorkerRegistration.register();

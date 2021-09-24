@@ -1,6 +1,10 @@
 .Wrapper{
    margin-top: 7rem;
    padding-bottom: .5rem;
+   min-height: 100vh;
+   }
+
+
   .News{
     display: flex;
     padding: .5rem;
@@ -15,18 +19,161 @@
     .NewsHead{
       display: flex;
       flex-direction: row;
-      margin-bottom: .5rem;
-      .PublisherDetails{
+      .NewsAvatar{
         display: flex;
-        flex-direction: column;
-        margin: auto 0 0 .2rem;
-     }
+        flex-direction: row;
+        margin-bottom: .5rem;
+        .PublisherDetails{
+          display: flex;
+          flex-direction: column;
+          margin: auto 0 0 .2rem;
+       }
+      }
+      .NewsPin{
+        margin: -7px 0 auto auto;
+        color: white;
+        transform: rotate(45deg);
+      }
+
+   }
+   .NewsBody{
+     word-wrap: break-word;
+     writing-mode: horizontal-tb;
+     white-space: pre-wrap;
+     font-family: sans-serif;
    }
    .NewsActions{
-     display: flex;
-     margin: .4rem auto;
-     width: 98%;
-     justify-content: space-between;
+     width: fit-content;
+     color: blue;
+     margin: 0 0 0 auto;
    }
  }
+
+
+
+/* --------------------------Details post------------------------------------------------ */
+.PostDetailsWrapper{
+  padding: 0 .5rem;
+  margin: auto;
+   margin-top: 7rem;
+   .DetailsNews{
+      display: flex;
+      padding: .5rem;
+      border-radius: 5px;
+      flex-direction: column;
+      .DetailsHead{
+         display: flex;
+         flex-direction: row;
+         margin-bottom: .5rem;
+         .AuthorDetails{
+          display: flex;
+          flex-direction: column;
+          margin: 0 0 0 1rem;
+          p{
+            color:rgb(28, 28, 138)
+          }
+        }
+      }
+    .DetailsNewsBody{
+        word-wrap: break-word;
+        writing-mode: horizontal-tb;
+        white-space: pre-wrap;
+        font-family: sans-serif;
+     }
+      .DetailsNewsActions{
+        width: fit-content;
+        color: blue;
+        margin: 0 0 0 auto;
+      }
+ }
+}
+
+
+.PostInstructions{
+  width:80vw;
+  border-radius: 10px;
+  padding: .5rem;
+  // background-color: #00fffb;
+  color: blueviolet;
+  margin:auto;
+}
+
+
+/* -------------------------SkeletonPost------------------------------------------------- */
+.SkeletonPost{
+   display: flex;
+   flex-direction: column;
+   width: 90vw;
+   margin: .5rem auto;
+   border-radius: 5px;
+   padding: 1rem;
+   background-color: rgb(192, 192, 192);
+   .SkeletonPostHeader{
+     display: flex;
+     margin-bottom: 1rem;
+     .SkeletonPostAvatar{
+       width: 2rem;
+       height: 2rem;
+       border-radius: 50%;
+       background-color: wheat;
+     }
+     .skeletonPostDetails{
+       margin: auto 0 0 .5rem;
+       div{
+         width: 10rem;
+         height: .3rem;
+         background-color: wheat;
+       }
+     }
+   }
+   .SkeletonPostBody{
+     height: 9rem;
+     div{
+       width: 92%;
+       height: .5rem;
+       border-radius: 4px;
+       margin: .5rem 0;
+       background-color: wheat;
+     }
+   }
+}
+
+
+/* ----------------------------Login page---------------------------------------------- */
+.LoginWrapper{
+   margin-top: 5vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 90vh;
+   padding: 0 2rem;
+   font-family: sans-serif;
+   div{
+     background-color: rgb(235, 235, 235);
+     border-radius: 5px;
+     color: brown;
+     padding: 1rem;
+     font-size: x-small;
+   }
+   h3{
+     color: blue;
+     font-weight: bolder;
+     font-weight: bolder;
+     margin: .5rem;
+   }
+   button{
+     padding: .5rem 1.5rem;
+     font-size: larger;
+     outline: none;
+     border-radius: 7px;
+     border: none;
+     background-color: blue;
+     color: white;
+     margin-top: 2rem;
+     cursor: pointer;
+     &:hover{
+       background-color: rgb(80, 80, 255);
+     }
+   }
 }

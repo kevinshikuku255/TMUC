@@ -21,24 +21,24 @@ export const timeAgo = unixTimestamp => {
 
   interval = Math.floor(seconds / 2628002.88);
   if (interval === 1) {
-    return `${interval}m`;
+    return `${interval}month ago`;
   }else if(interval >1){
-    return `${interval}m`
+    return `${interval}months ago`
   }
 
   interval = Math.floor(seconds / 86400);
   if (interval === 1) {
-    return `${interval} d`;
+    return `${interval} day ago`;
   }else if(interval > 1){
-    return `${interval}d`;
+    return `${interval}days ago`;
   }
 
 
   interval = Math.floor(seconds / 3600);
   if (interval === 1) {
-    return  `${interval}hr`;
+    return  `${interval}hr ago`;
   }else if(interval > 1){
-    return  `${interval}hrs`;
+    return  `${interval}hrs ago`;
   }
 
 

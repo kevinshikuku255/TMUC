@@ -117,11 +117,11 @@
   height: fit-content;
   margin: 1rem auto 0 auto;
   width: 99vw;
-  border: 1px solid rgba(163, 163, 163, 0.631);
+  border: 1px solid #a3a3a3a1;
   border-radius: 5px;
   background-color: rgb(228, 228, 228);
   &:hover{
-    border: 1px solid red;
+    border: 1px solid #808080a1;
   }
 }
 
