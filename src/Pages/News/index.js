@@ -31,7 +31,7 @@ function Index() {
      </div>
      )
   }
-  if(data.getPosts.length < 1){
+  if(data && data.getPosts.length < 1){
      loader = (
        <div className="Wrapper">
           <Skeleton/>
@@ -44,7 +44,7 @@ function Index() {
   }
 let MarkeUp;
 if(data){
-   MarkeUp = (data.getPosts.length > 0) &&  data?.getPosts.map( post => (
+   MarkeUp = ( data && data.getPosts.length > 0) &&  data?.getPosts.map( post => (
         <Post key={post.id} post ={post}/>
      ))
 }
