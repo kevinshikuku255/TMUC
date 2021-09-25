@@ -5,6 +5,7 @@ import Post from "./Post"
 import { useLazyQuery } from '@apollo/client';
 import { GET_POSTS } from '../../Graphql/posts'
 import Skeleton from './Skeleton';
+import { SignalWifiOff} from "@material-ui/icons"
 
 
 /** News component */
@@ -12,7 +13,7 @@ function Index() {
 
   const [
     getPosts,
-    { loading, data },
+    { loading, data, error },
   ] = useLazyQuery(GET_POSTS,{fetchPolicy:"no-cache"})
 
   useEffect(() => {
@@ -43,6 +44,22 @@ function Index() {
      )
   }
 
+
+if(error){
+  console.log(error)
+  loader = (
+       <div className="Wrapper">
+          <div className="NoInternet">
+             <SignalWifiOff/>
+             <p>check your internet connection</p>
+          </div>
+          <Skeleton/>
+          <Skeleton/>
+          <Skeleton/>
+          <Skeleton/>
+          <Skeleton/>
+     </div>)
+}
 
 let MarkeUp;
 if(data){
