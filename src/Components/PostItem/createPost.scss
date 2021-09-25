@@ -1,0 +1,95 @@
+.create_post_wrapper{
+  padding: 0;
+ .post_description{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    .input{
+        width: 90vw;
+        margin: auto;
+      .description, .title{
+        outline: none;
+        border-radius: 3px;
+        margin-top: .7rem;
+        width: 100%;
+        resize: none;
+        flex-grow: inherit;
+        font-size: larger;
+        font-family: sans-serif;
+      }
+    }
+   .photo_input{
+       margin-left: auto;
+  }
+ }
+}
+
+
+
+
+
+
+
+
+
+.image_preview{
+  width: 90vw;
+  margin: auto;
+  margin-top:1rem;
+}
+
+
+.display_item_loader{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  height: 90vh;
+}
+
+.display_item_alert{
+  display: flex;
+  font-size: large;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  color: rgb(4, 0, 255);
+}
+
+.display_item_error{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  color: red;
+}
+
+.floating_button{
+  width: inherit;
+  padding-right: 1rem;
+}
+
+.close{
+ position: absolute;
+ right: 0;
+ margin-right: 2rem;
+ font-size: xx-large;
+}
+
+
+.displayBtn{
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.displayBtn button{
+  background: none;
+  padding:0.4rem 1rem;
+  border-radius: 20px;
+  border: 2px solid gray;
+}

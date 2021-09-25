@@ -120,8 +120,12 @@ b{
 }
 
 
+
+/* -------------------------------MENU------------------------------------------- */
 .MenuWrapper{
   .MenuItems{
+    font-family: sans-serif;
+    font-weight: bolder;
     position: absolute;
     top: 0;
     right: 0;
@@ -131,9 +135,10 @@ b{
     height: 99vh;
     .MenuItem{
       padding: .1rem .2rem;
-      margin: 1rem .5rem;
+      margin: 1.5rem .5rem 0 1rem;
       border-radius: 7px;
-      font-family: serif;
+      display: flex;
+      align-items: center;
       font-size: small;
       &:hover{
        background-color: #8686b8;
@@ -305,3 +310,16 @@ b{
   }
 }
 
+
+.UsagePolicy{
+  margin:8rem auto 0 auto;
+  width: 80vw;
+  word-wrap: break-word;
+  writing-mode: horizontal-tb;
+  white-space: pre-wrap;
+  font-family: sans-serif;
+  p{
+    margin: 1rem;
+  }
+
+}

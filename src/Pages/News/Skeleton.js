@@ -7,8 +7,9 @@ function Skeleton() {
     <div className="SkeletonPost">
 
       <div className="SkeletonPostHeader">
-          <div className="SkeletonPostAvatar"/>
+          {/* <div className="SkeletonPostAvatar"/> */}
           <div className="skeletonPostDetails">
+               <div/>
                <div/>
           </div>
       </div>

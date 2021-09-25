@@ -13,6 +13,7 @@ import Activities from "./Pages/More";
 
 
 import Sotmuc from "./Components/Sotmoc";
+import Policy from "./Components/Policy";
 import Head from "./Components/Head";
 import Profile from "./Components/Profile";
 import Football from './Pages/More/Football';
@@ -43,9 +44,7 @@ const Carousel = () => (
 
 
 
-
 function App() {
-
 
   return (
     < div className="App">
@@ -61,6 +60,7 @@ function App() {
           <Route  path="/Football" component={Football}/>
           <Route  path="/Sotmuc" component={Sotmuc}/>
           <Route path="/CreatePost" component={MakePost}/>
+          <Route path="/Policy" component={Policy}/>
           <Route  path='*' component={Carousel} />
         </Switch>
       </React.Suspense>

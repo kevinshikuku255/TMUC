@@ -1,22 +1,19 @@
 import React from 'react';
 import { CreatePost } from "../../Components/PostItem/Post";
-import { useAuth0 } from '@auth0/auth0-react';
-import Login from './Login';
+import { useHistory } from 'react-router';
 import "./news.scss";
 
 function MakePost() {
-  const {
-    isAuthenticated
-  } = useAuth0();
+  const history = useHistory();
   return (
     <>
-    { isAuthenticated ? <div className="Wrapper">
+    {<div className="Wrapper">
       <div className="PostInstructions">
-          <p>Type the Title and Message of your News post and attach an image if any </p>
+          <p>Type the Title and Message of your News post and attach an image if any. </p>
+          <h4 onClick={() => history.push("/Policy")}>Read usage policy</h4>
         </div>
         <CreatePost/>
-      </div> :
-      <Login/>
+      </div>
     }
     </>
   )

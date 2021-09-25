@@ -13,7 +13,7 @@ function Login() {
         <p> By loging in you will be able to pin items on the students online notice board. <br/>
         Remember to keep every comment positve for you will be accountable to any damage or misinformation.</p>
       </div>
-      <button onClick={() => loginWithRedirect()}>Continue to  Login </button>
+      <button onClick={() => loginWithRedirect()}>Continue to  login </button>
     </div>
   )
 }

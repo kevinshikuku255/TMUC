@@ -25,7 +25,7 @@ function Post({post}) {
       <div className="News">
               <div className="NewsHead">
                 <div className="NewsAvatar">
-                    <div><Avatar src={authorPic} className={classes.avator}/></div>
+                    {/* <div><Avatar src={authorPic} className={classes.avator}/></div> */}
                     <div className="PublisherDetails">
                         <p>{authorName}</p>
                         <p>{email}</p>

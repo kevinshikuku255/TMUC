@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
-import  "./createPost.css";
+import  "./createPost.scss";
 import PostImageUpload from "./PostImageUpload";
-import { useAuth0 } from '@auth0/auth0-react';
 
 import {useMutation} from "@apollo/client"
 import {CREATE_POST, GET_POSTS} from "../../Graphql/posts";
@@ -19,7 +18,6 @@ export const  CreatePost = () => {
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState('');
   const [warning, setWarning] = useState('');
-  const { user } = useAuth0();
 
 
    const handleReset = () => {
@@ -45,9 +43,7 @@ export const  CreatePost = () => {
         }
   }
 
-
-const { email, picture, name } = user
-const values = { title, message, image,  email:email , authorPic:picture , authorName:name}
+const values = { title, message, image }
 
  const [createPost, { loading }] = useMutation(CREATE_POST,{
     variables: values,
@@ -87,7 +83,7 @@ const handleSubmit = (e) => {
     e.preventDefault();
     createPost();
     handleReset();
-    setWarning("Your New post pinned successfully!");
+    setWarning("pinned successfully!");
 };
 
 
@@ -123,31 +119,31 @@ const form = (
    {image && <p onClick={ () => setImage("") } className="close" > <Close/> </p>}
    <br/>
    <div className="post_description">
-       <div>
-          <TextareaAutosize
-            placeholder="Title"
-            name="title"
-            rows={1}
-            onChange={hadleTitleChange}
-            value={values.title}
-            className="title"
-          />
-       </div>
+          <div className="input">
+              <TextareaAutosize
+                placeholder="Title"
+                name="title"
+                minRows={1}
+                onChange={hadleTitleChange}
+                value={values.title}
+                className="title"
+              />
+          </div>
 
-        <div >
-           <TextareaAutosize
-               placeholder="Message"
-               rowsMin={1}
-               name='description'
-               onChange={handleMessageChange}
-               value={values.message}
-               className="description"
-               />
-       </div>
-       <br/>
-       <div className="photo_input">
-          <PostImageUpload  label="Photo"  handleChange={handlePostImageUpload}/>
-       </div>
+            <div className="input">
+              <TextareaAutosize
+                  placeholder="Message"
+                  minRows={2}
+                  name='description'
+                  onChange={handleMessageChange}
+                  value={values.message}
+                  className="description"
+                  />
+          </div>
+          <br/>
+          <div className="photo_input">
+              <PostImageUpload  label="Photo"  handleChange={handlePostImageUpload}/>
+          </div>
        </div>
    </div>
 

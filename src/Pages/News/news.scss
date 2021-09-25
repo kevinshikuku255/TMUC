@@ -1,7 +1,7 @@
 .Wrapper{
    margin-top: 7rem;
    padding-bottom: .5rem;
-   min-height: 100vh;
+   min-height: 80vh;
    }
 
 
@@ -12,9 +12,9 @@
     flex-direction: column;
     margin: 1rem auto 0 auto;
     width: 94vw;
-    background-color: rgb(187, 187, 187);
+    background-color: rgb(226, 226, 226);
     &:hover{
-     background-color: rgb(216, 216, 216);
+     background-color: rgb(157, 157, 157);
     }
     .NewsHead{
       display: flex;
@@ -79,6 +79,11 @@
         writing-mode: horizontal-tb;
         white-space: pre-wrap;
         font-family: sans-serif;
+        .Message{
+          border: 1px solid gray;
+          padding: .5rem;
+          border-radius: 5px;
+        }
      }
       .DetailsNewsActions{
         width: fit-content;
@@ -92,10 +97,16 @@
 .PostInstructions{
   width:80vw;
   border-radius: 10px;
+  font-size: x-small;
+  font-family: sans-serif;
   padding: .5rem;
-  // background-color: #00fffb;
   color: blueviolet;
   margin:auto;
+  h4{
+    margin-top: 1rem;
+    color: black;
+    cursor: pointer;
+  }
 }
 
 
@@ -118,9 +129,10 @@
        background-color: wheat;
      }
      .skeletonPostDetails{
-       margin: auto 0 0 .5rem;
+       margin: 0 0 0 .5rem;
        div{
          width: 10rem;
+         margin: .3rem 0;
          height: .3rem;
          background-color: wheat;
        }

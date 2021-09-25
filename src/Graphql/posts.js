@@ -5,10 +5,11 @@
   title
   message
   image
-  email
-  authorPic
+  author{
+    id
+    name
+  }
   createdAt
-  authorName
  `
 
 
@@ -33,14 +34,16 @@
 
 /**Create News Post */
 export const CREATE_POST = gql`
-  mutation($title: String, $message: String, $authorName:String, $authorPic:String, $image:Upload, $email:String){
-     createPost(title: $title, message:$message, authorPic:$authorPic, authorName:$authorName, image:$image, email:$email){
+  mutation($title: String, $message: String, $authorId:String, $image:Upload){
+     createPost(title: $title, message:$message, authorId:$authorId, image:$image){
       id
       title
       message
       image
-      authorPic
-      authorName
+      author{
+        id
+        name
+      }
       createdAt
   }
 }

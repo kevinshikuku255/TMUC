@@ -13,8 +13,8 @@ avator:{
   borderBottom:"2px solid white",
 },
  image: {
-   borderRadius:"5px",
-   width:"98%",
+   borderRadius:"0px",
+   width:"inherit",
    height:"auto",
    margin:"auto",
  }
@@ -54,13 +54,12 @@ let loader;
 
   let newsPost;
   if(data && !loading){
-    const { authorPic, authorName, email, title,image, message, createdAt} = data?.getPost
+    const { authorName, email, title,image, message, createdAt} = data?.getPost
       newsPost =
       (
       <div className="PostDetailsWrapper">
        <div className="DetailsNews">
               <div className="DetailsHead">
-                <div><Avatar src={authorPic} className={classes.avator}/></div>
                 <div className="AuthorDetails">
                     <h3>{authorName}</h3>
                     <p>{email}</p>
@@ -69,8 +68,8 @@ let loader;
 
               <div className="DetailsNewsBody">
                 <h2> {title}</h2>
-                <p> {message}</p>
-                <div>
+                <div className="Message">
+                  <p> {message}</p>
                   {image && <Avatar src={image} className={classes.image}/>}
                 </div>
               </div>

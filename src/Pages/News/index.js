@@ -42,6 +42,8 @@ function Index() {
      </div>
      )
   }
+
+
 let MarkeUp;
 if(data){
    MarkeUp = ( data && data.getPosts.length > 0) &&  data?.getPosts.map( post => (

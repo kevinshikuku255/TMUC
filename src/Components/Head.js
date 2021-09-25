@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 /** Sub header compoent */
-export const SubHeader = () => {
+const SubHeader = () => {
   const history = useHistory();
   const {pathname} = useLocation();
 
@@ -50,7 +50,7 @@ export const SubHeader = () => {
 
 
 
-function Head() {
+const  Head = () => {
   const classes = useStyles();
   const {loading} = useLoadState();
   const location = useLocation();

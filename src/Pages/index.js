@@ -37,19 +37,14 @@ const [ getPosts,{ loading, data }] = useLazyQuery(GET_POSTS,{fetchPolicy:"no-ca
 
   return (
   <div className="Main">
-      <div className="Welcome">
-            <h1>Welcome to <br/> Tom Mboya Univeristy College</h1>
-            <p> As an Institution, we value the contribution of everyone. It is humans that makes an Institution. Therefore, whether you are a Student, Parent, Staff, The Public or an Administrator, your contribution to the well being of the Institution is highly appreciated.</p>
-      </div>
-
       <div className="Home_page">
 
         <div className="Pages">
           <Login/>
           <Elearning/>
           <Portal/>
-          <Photos/>
           <Library/>
+          <Photos/>
           <Downloads/>
           <Academics/>
           <About/>
