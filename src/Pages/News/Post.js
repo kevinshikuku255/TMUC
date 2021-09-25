@@ -19,18 +19,11 @@ avator:{
 function Post({post}) {
   const classes = useStyles();
   const history = useHistory();
-  const { id, title,message,  authorPic, image,  authorName, email, createdAt } = post;
+  const { id, title, message,  image, createdAt } = post;
   return (
     <div>
       <div className="News">
               <div className="NewsHead">
-                <div className="NewsAvatar">
-                    {/* <div><Avatar src={authorPic} className={classes.avator}/></div> */}
-                    <div className="PublisherDetails">
-                        <p>{authorName}</p>
-                        <p>{email}</p>
-                    </div>
-                </div>
                 <div className="NewsPin"><AttachFileTwoTone/></div>
               </div>
 
