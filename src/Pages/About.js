@@ -10,10 +10,10 @@ function About() {
 
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"Cliked on About us",
               transport:"beacon",
-              label:"About TMUC",
+              label:"ABOUT US"
             })
     }
 

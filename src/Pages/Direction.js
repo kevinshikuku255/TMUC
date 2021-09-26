@@ -8,10 +8,10 @@ import { useLoadDispatch } from '../Context/loading';
 function Direction() {
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on school direction",
               transport:"beacon",
-              label:"Direction",
+              label:"DIRECTION",
             })
     }
    const loadDispatch = useLoadDispatch();

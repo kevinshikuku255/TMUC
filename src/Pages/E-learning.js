@@ -7,10 +7,10 @@ function Elearning() {
    const loadDispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on e-learning",
               transport:"beacon",
-              label:"E-learning",
+              label:"E-LEARNING",
             })
       }
 

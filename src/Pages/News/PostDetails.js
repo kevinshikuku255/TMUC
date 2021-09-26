@@ -1,4 +1,5 @@
 import React, { useEffect} from 'react';
+import ReactGA from 'react-ga';
 import { Avatar, makeStyles} from "@material-ui/core";
 import {  timeAgo } from  "../../Utils/date"
 import Skeleton from "./Skeleton"
@@ -7,6 +8,7 @@ import "./news.scss";
 
 import { useLazyQuery } from '@apollo/client';
 import { GET_POST } from '../../Graphql/posts'
+
 
 const useStyles = makeStyles((theme) => ({
 avator:{
@@ -24,7 +26,7 @@ avator:{
 
 /** Single page post */
 function PostDetails({match}) {
-
+  ReactGA.pageview(window.location.pathname);
   const classes = useStyles();
 
   const [
@@ -54,20 +56,13 @@ let loader;
 
   let newsPost;
   if(data && !loading){
-    const { authorName, email, title,image, message, createdAt} = data?.getPost
+    const { title,image, message, createdAt} = data?.getPost
       newsPost =
       (
       <div className="PostDetailsWrapper">
        <div className="DetailsNews">
-              <div className="DetailsHead">
-                <div className="AuthorDetails">
-                    <h3>{authorName}</h3>
-                    <p>{email}</p>
-                </div>
-              </div>
-
               <div className="DetailsNewsBody">
-                <h2> {title}</h2>
+                <h3> {title}</h3>
                 <div className="Message">
                   <p> {message}</p>
                   {image && <Avatar src={image} className={classes.image}/>}

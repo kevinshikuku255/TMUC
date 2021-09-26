@@ -7,10 +7,10 @@ function History() {
    const loadDispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on school history",
               transport:"beacon",
-              label:"School Histroy",
+              label:"SCHOOL-HISTORY",
             })
     }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import { Avatar, makeStyles} from "@material-ui/core";
 import { YouTube, Instagram, WhatsApp, Twitter, Facebook, FormatTextdirectionLToR, AssignmentInd } from "@material-ui/icons";
 
@@ -17,6 +18,9 @@ const useStyles = makeStyles(() => ({
 
 /** Dama */
 export const Details = ({DetailInfo, avartar}) => {
+   let pagevieew = window.location.pathname;
+   ReactGA.pageview(`${pagevieew.split("/").pop()}`);
+
    const classes = useStyles();
   return (
     <div className="Details">

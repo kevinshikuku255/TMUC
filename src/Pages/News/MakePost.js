@@ -1,9 +1,12 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import { CreatePost } from "../../Components/PostItem/Post";
 import { useHistory } from 'react-router';
 import "./news.scss";
 
+
 function MakePost() {
+  ReactGA.pageview('/CreatePost');
   const history = useHistory();
   return (
     <>

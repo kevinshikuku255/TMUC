@@ -1,4 +1,5 @@
 import React, { useEffect} from 'react';
+import ReactGA from 'react-ga';
 import "./news.scss";
 import Post from "./Post"
 
@@ -10,7 +11,7 @@ import { SignalWifiOff} from "@material-ui/icons"
 
 /** News component */
 function Index() {
-
+  ReactGA.pageview('/News');
   const [
     getPosts,
     { loading, data, error },
@@ -20,7 +21,9 @@ function Index() {
       getPosts()
   }, [getPosts])
 
-  let loader
+
+
+let loader;
   if(loading){
      loader = (
        <div className="Wrapper">
@@ -32,6 +35,8 @@ function Index() {
      </div>
      )
   }
+
+
   if(data && data.getPosts.length < 1){
      loader = (
        <div className="Wrapper">
@@ -46,20 +51,16 @@ function Index() {
 
 
 if(error){
-  console.log(error)
   loader = (
        <div className="Wrapper">
-          <div className="NoInternet">
-             <SignalWifiOff/>
-             <p>check your internet connection</p>
-          </div>
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
+          <Skeleton warning={<SignalWifiOff/>}/>
+          <Skeleton warning={<SignalWifiOff/>}/>
+          <Skeleton warning={<SignalWifiOff/>}/>
+          <Skeleton warning={<SignalWifiOff/>}/>
+          <Skeleton warning={<SignalWifiOff/>}/>
      </div>)
 }
+
 
 let MarkeUp;
 if(data){

@@ -8,10 +8,10 @@ function Academics() {
 
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"Clicked on academics",
               transport:"beacon",
-              label:"Academics",
+              label:"ACADEMICS"
             })
     }
 

@@ -9,15 +9,15 @@ import './App.css';
 import Index from "./Pages";
 import News from "./Pages/News/index";
 import Login from "./Pages/News/Login";
-import Activities from "./Pages/More";
+import Activities from "./Pages/Activities";
 
 
 import Sotmuc from "./Components/Sotmoc";
 import Policy from "./Components/Policy";
 import Head from "./Components/Head";
 import Profile from "./Components/Profile";
-import Football from './Pages/More/Football';
-import Cu from './Pages/More/Cu';
+import Football from './Pages/Activities/Football';
+import Cu from './Pages/Activities/Cu';
 import FallbackPage  from './Components/FallbackPage';
 import PostDetails from "./Pages/News/PostDetails";
 import MakePost from "./Pages/News/MakePost";

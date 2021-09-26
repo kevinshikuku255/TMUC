@@ -1,0 +1,142 @@
+@import "../../index";
+
+
+
+.Container{
+  margin-right: 0vw;
+  background-color: $color1;
+  transition-property: height;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 20s;
+  @media screen and (min-width:48vw) {
+    background: none;
+  }
+}
+
+.Active_Container{
+  margin-top: 7rem;
+  margin-right: 0;
+  background-color: $color1;
+  @media screen and (min-width:48vw) {
+    background: none;
+  }
+}
+
+.Card-Container{
+  padding: 3rem;
+
+}
+
+.Card-Container img{
+  border-radius: 10px;
+  box-shadow: 0 0 20px blueviolet, 0 0 100px red, 0 0 200px rgb(255, 0, 212);
+}
+
+
+/* --------------------------New celebrity Styling------------------------------------------------ */
+.Celebrity{
+  display: flex;
+  margin: 0 auto .5rem auto;
+  width: 96vw;
+  height: 7.5rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  &:hover{
+    background-color: rgb(242, 242, 242);
+    border: 1px solid rgb(201, 169, 169);
+    border-radius: 5px;
+  }
+  .CelebrityDetails{
+    flex: 1.9;
+    display: flex;
+    .CelebrityName{
+      margin: auto 0 0 .5rem;
+      display: flex;
+      flex-direction: column;
+     a{
+       width: fit-content;
+       .Youtube{
+        font-size: 1.5rem;
+        color:red;
+        border-radius: 10px;
+        margin-top:-4px;
+      }
+     }
+    }
+  }
+  .CelebrityAction{
+    flex: .1;
+  }
+}
+
+
+/* -------------------------------------------------------------------------- */
+.Ccategory{
+  margin-top: 2rem;
+}
+
+.Cp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.CCTagline, .CTagline{
+  font-size: large;
+  font-family:serif;
+  font-weight: bolder;
+  color: #000000;
+  text-shadow: 0px 2px 4px rgb(0, 0, 0);
+  cursor: pointer;
+  margin-left: 1rem;
+  width: fit-content;
+}
+
+
+
+.CCTagline{
+  font-size: large;
+  text-shadow: 0px 2px 3px black;
+  text-decoration: underline;
+  margin-bottom: .5rem;
+}
+.Csotmuc{
+  font-size: normal;
+  font-weight: bolder;
+  color: blue;
+  cursor: pointer;
+}
+
+.Csotmuc:hover{
+  font-size: x-large;
+  color: #8400ff;
+}
+
+.Cleadership{
+  height: fit-content;
+  margin: 1rem auto 0 auto;
+  width: 99vw;
+  border: 1px solid #a3a3a3a1;
+  border-radius: 5px;
+  background-color: rgb(228, 228, 228);
+  &:hover{
+    border: 1px solid #808080a1;
+  }
+}
+
+.Cmusic, .Ccomedy{
+  display: flex;
+  margin: auto;
+  width: 96vw;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+.Cuwarapper, .Ftwarapper{
+margin-top: 6.3rem;
+}

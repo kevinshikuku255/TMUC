@@ -8,10 +8,10 @@ function Portal() {
    const dispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on school website",
               transport:"beacon",
-              label:"School portal",
+              label:"SCHOOL-WEBSITE",
             })
     }
 

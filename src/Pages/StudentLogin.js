@@ -8,10 +8,10 @@ function Login() {
    const dispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on student portal",
               transport:"beacon",
-              label:"Student portal",
+              label:"STUDENT-PORTAL",
             })
     }
 

@@ -7,8 +7,8 @@ function Helb() {
    const loadDispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on helb",
               transport:"beacon",
               label:"HELB",
             })

@@ -46,23 +46,16 @@ const useStyles = makeStyles((theme) => ({
 function Sotmoc() {
   const classes = useStyles();
   const history = useHistory();
+  ReactGA.pageview(window.location.pathname);
+  
+  const dispatch = useLoadDispatch();
 
-const handleClick = (name) => {
-    ReactGA.event({
-          category:"SOTMUC",
-          action:"clicked",
-          transport:"beacon",
-          label:{name},
-        })}
-   const dispatch = useLoadDispatch();
-
-   const clickHandler = (name) => {
+  const clickHandler = (name) => {
      dispatch({
        type: "OFFLOAD",
        payload: false
      })
      history.push(`/activities/${name}`)
-     handleClick(name)
    }
 
 

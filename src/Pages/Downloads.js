@@ -8,10 +8,10 @@ function Downloads() {
    const loadDispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on school downloads",
               transport:"beacon",
-              label:"Downloads",
+              label:"DOWNLOADS",
             })
     }
 

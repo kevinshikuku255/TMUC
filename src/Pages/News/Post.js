@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import {  timeAgo } from  "../../Utils/date"
 import { AttachFileTwoTone} from '@material-ui/icons';
 
+
 const useStyles = makeStyles((theme) => ({
 avator:{
   borderBottom:"2px solid white",
@@ -19,16 +20,16 @@ avator:{
 function Post({post}) {
   const classes = useStyles();
   const history = useHistory();
-  const { id, title, message,  image, createdAt } = post;
+  const { id, title, message, name,  image, createdAt } = post;
   return (
     <div>
       <div className="News">
               <div className="NewsHead">
                 <div className="NewsPin"><AttachFileTwoTone/></div>
               </div>
-
               <div className="NewsBody" onClick={() => history.push(`/Post/${id}`)}>
-                <h2> {title}</h2>
+                {name && <h4 className="NewsAuthor">From: {name} </h4>}
+                <p className="NewsTitle">{title}</p>
                 <p>{ `${message?.substring(0,200)}`} <b>{message?.length > 200 && "... read more"}</b></p>
                 <div>
                  { image && <Avatar src={image} className={classes.image}/>}

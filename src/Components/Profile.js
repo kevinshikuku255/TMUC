@@ -29,7 +29,6 @@ function Profile() {
   const location = useLocation();
   const profileName = location.pathname.split("/").pop();
 
-
   let markUp;
   profileName === "Dama" && (markUp =  <Details   DetailInfo={DetailInfo.Dama} avartar={DamaPic}/>)
   profileName === "Asa" && (markUp =   <Details   DetailInfo={DetailInfo.Asa} avartar={AsaPic}/>)

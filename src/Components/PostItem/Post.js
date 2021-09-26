@@ -16,6 +16,7 @@ export const  CreatePost = () => {
   const [image, setImage] = useState('');
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
+  const [name, setName] = useState('');
   const [errors, setErrors] = useState('');
   const [warning, setWarning] = useState('');
 
@@ -43,7 +44,7 @@ export const  CreatePost = () => {
         }
   }
 
-const values = { title, message, image }
+const values = { title, message, name,  image }
 
  const [createPost, { loading }] = useMutation(CREATE_POST,{
     variables: values,
@@ -75,6 +76,7 @@ const values = { title, message, image }
     }
 });
 
+const hadleNameChange = e => setName(e.target.value);
 const hadleTitleChange = e => setTitle(e.target.value);
 const handleMessageChange = e => setMessage(e.target.value)
 
@@ -120,8 +122,11 @@ const form = (
    <br/>
    <div className="post_description">
           <div className="input">
+              <input type="text" placeholder="Your name/title" value={name} onChange={hadleNameChange}/>
+          </div>
+          <div className="input">
               <TextareaAutosize
-                placeholder="Title"
+                placeholder="Heading"
                 name="title"
                 minRows={1}
                 onChange={hadleTitleChange}

@@ -7,10 +7,10 @@ function Council() {
    const loadDispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on school council",
               transport:"beacon",
-              label:"School council",
+              label:"SCHOOL-COUNCIL",
             })
     }
 

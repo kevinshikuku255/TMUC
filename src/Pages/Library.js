@@ -7,10 +7,10 @@ function Library() {
    const loadDispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on school library",
               transport:"beacon",
-              label:"Library",
+              label:"LIBRARY",
             })
     }
 

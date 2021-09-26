@@ -10,10 +10,10 @@ function Photos() {
    const loadDispatch = useLoadDispatch();
    const handleClick = () => {
         ReactGA.event({
-              category:"View",
-              action:"clicked",
+              category:"Button",
+              action:"clicked on school photos",
               transport:"beacon",
-              label:"School photos",
+              label:"SCHOOL PHOTOS",
             })
     }
 

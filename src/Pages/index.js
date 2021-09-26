@@ -1,4 +1,5 @@
 import React, { useEffect} from 'react';
+import ReactGA from 'react-ga';
 import "./pages.scss";
 
 import { useLazyQuery } from '@apollo/client';
@@ -18,27 +19,28 @@ import Photos from "./Photos";
 import Direction from "./Direction";
 import Helb from "./Helb";
 
+
 function Index() {
+  ReactGA.pageview('/');
 /* -------------------------POST------------------------------------------------- */
-const postDispatch = usePostDispatch();
-const [ getPosts,{ loading, data }] = useLazyQuery(GET_POSTS,{fetchPolicy:"no-cache"})
+  const postDispatch = usePostDispatch();
+  const [ getPosts,{ loading, data }] = useLazyQuery(GET_POSTS,{fetchPolicy:"no-cache"})
 
-  useEffect(() => {
-      getPosts()
-  }, [getPosts])
+    useEffect(() => {
+        getPosts()
+    }, [getPosts])
 
 
-  if(!loading && data){
-    postDispatch({
-        type: 'ADD_POST',
-        payload: data.getPosts
-      })
-  }
+    if(!loading && data){
+      postDispatch({
+          type: 'ADD_POST',
+          payload: data.getPosts
+        })
+    }
 
   return (
   <div className="Main">
       <div className="Home_page">
-
         <div className="Pages">
           <Login/>
           <Elearning/>
