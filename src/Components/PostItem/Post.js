@@ -122,7 +122,7 @@ const form = (
    <br/>
    <div className="post_description">
           <div className="input">
-              <input type="text" placeholder="Your name/title" value={name} onChange={hadleNameChange}/>
+              <input type="text" placeholder="Your name/title *Optional*" value={name} onChange={hadleNameChange}/>
           </div>
           <div className="input">
               <TextareaAutosize

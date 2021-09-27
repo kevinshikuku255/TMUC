@@ -2,7 +2,7 @@ import React from 'react';
 import { Avatar, makeStyles} from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import {  timeAgo } from  "../../Utils/date"
-import { AttachFileTwoTone} from '@material-ui/icons';
+import { ColorizeTwoTone} from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +25,7 @@ function Post({post}) {
     <div>
       <div className="News">
               <div className="NewsHead">
-                <div className="NewsPin"><AttachFileTwoTone/></div>
+                <div className="NewsPin"><ColorizeTwoTone/></div>
               </div>
               <div className="NewsBody" onClick={() => history.push(`/Post/${id}`)}>
                 {name && <h4 className="NewsAuthor">From: {name} </h4>}

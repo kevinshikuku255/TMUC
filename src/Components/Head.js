@@ -78,9 +78,13 @@ const  Head = () => {
   else if(profileName === "Activities"){
     custom_head = "UNIVERSITY ACTIVITIES"
   }
+  else if(profileName === "CreatePost"){
+    custom_head = "UNIVERSITY PIN A NOTICE"
+  }
   else{
     custom_head = "UNIVERSITY COLLEGE"
   }
+
 
 
   return (

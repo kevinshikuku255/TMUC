@@ -26,6 +26,7 @@ const websocketApiUrl = WEBSOCKET_API_URL
 
 const apolloClient = createApolloClient(API_URL, websocketApiUrl);
 
+
 ReactDOM.render(
       <ApolloProvider client={apolloClient}>
         <BrowserRouter>

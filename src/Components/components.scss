@@ -267,32 +267,6 @@ b{
 
 
 
-/* ---------------------------Media queries----------------------------------------------- */
-@media only screen and (min-width: 48rem) {
-.CoverImage{
-  margin: unset;
-  width: 20rem;
-  height: 15rem;
-}
-.Details{
-  margin-top: 70rem;
-
-}
-.Head{
-  border: none;
-}
-
-.Name{
-    flex: 1.6;
-    margin-left: -1rem;
-    p{
-      font-size: xx-large;
-    }
-    h5{
-      color: rgb(0, 0, 0);
-      font-size:large;
-    }
-}}
 
 
 /* --------------------------FallbackPage------------------------------------------------ */
@@ -322,4 +296,45 @@ b{
     margin: 1rem;
   }
 
+}
+
+
+
+
+
+
+
+
+
+
+.Fab{
+  position:fixed;
+  z-index:14;
+  bottom:0;
+  right:0;
+  margin: 0 .5rem 1rem 0;
+  button{
+    padding:.7rem;
+    border-radius:50%;
+    margin:auto;
+    border:none;
+    outline:none;
+    color:white;
+    background-color:blue;
+
+  }
+}
+
+
+
+.Desktop{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:red;
+  height:100vh;
+  .Images{
+    display:flex;
+  }
 }

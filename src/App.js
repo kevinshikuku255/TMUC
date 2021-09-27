@@ -3,6 +3,7 @@ import ReactGA from 'react-ga';
 import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
+import { BrowserView, MobileView} from 'react-device-detect';
 
 import './App.css';
 
@@ -10,8 +11,10 @@ import Index from "./Pages";
 import News from "./Pages/News/index";
 import Login from "./Pages/News/Login";
 import Activities from "./Pages/Activities";
+import Fab from "./Components/Fab";
 
 
+import Desktopview from "./Components/Desktopview";
 import Sotmuc from "./Components/Sotmoc";
 import Policy from "./Components/Policy";
 import Head from "./Components/Head";
@@ -48,22 +51,30 @@ function App() {
 
   return (
     < div className="App">
-      <div className="App_header">
-         <Head/>
-      </div>
-      <React.Suspense fallback={ <div>{FallbackPage}</div>}>
-        <Switch>
-          <Route  path="/Cu" component={Cu}/>
-          <Route  path="/Login" component={Login}/>
-          <Route  path="/activities/:username" component={Profile}/>
-          <Route  path="/Post/:id" component={PostDetails}/>
-          <Route  path="/Football" component={Football}/>
-          <Route  path="/Sotmuc" component={Sotmuc}/>
-          <Route path="/CreatePost" component={MakePost}/>
-          <Route path="/Policy" component={Policy}/>
-          <Route  path='*' component={Carousel} />
-        </Switch>
-      </React.Suspense>
+
+      <BrowserView>
+           <Desktopview/>
+      </BrowserView>
+      <MobileView>
+          <div className="App_header">
+            <Fab/>
+            <Head/>
+          </div>
+
+          <React.Suspense fallback={ <div>{FallbackPage}</div>}>
+            <Switch>
+              <Route  path="/Cu" component={Cu}/>
+              <Route  path="/Login" component={Login}/>
+              <Route  path="/activities/:username" component={Profile}/>
+              <Route  path="/Post/:id" component={PostDetails}/>
+              <Route  path="/Football" component={Football}/>
+              <Route  path="/Sotmuc" component={Sotmuc}/>
+              <Route path="/CreatePost" component={MakePost}/>
+              <Route path="/Policy" component={Policy}/>
+              <Route  path='*' component={Carousel} />
+            </Switch>
+          </React.Suspense>
+      </MobileView>
     </div>
   );
 }

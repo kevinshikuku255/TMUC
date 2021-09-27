@@ -1,5 +1,5 @@
 import React from 'react';
-import { AttachFileTwoTone} from '@material-ui/icons';
+import { ColorizeTwoTone} from '@material-ui/icons';
 
 
 /** Skeleton post */
@@ -12,7 +12,7 @@ function Skeleton({warning}) {
                <div/>
                <div/>
           </div>
-          <div className="NewsPin"><AttachFileTwoTone/></div>
+          <div className="NewsPin"><ColorizeTwoTone/></div>
       </div>
 
       <div className="SkeletonPostBody">

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import { Avatar, makeStyles} from "@material-ui/core";
+import { makeStyles} from "@material-ui/core";
+import Image from 'material-ui-image'
 import Nav from "../../Components/Nav";
 import Fteam from "../../Images/ball.jpeg";
 import Fteampic2 from "../../Images/ball2.jpeg";
@@ -9,13 +10,6 @@ import Fteampic4 from "../../Images/ball4.jpeg";
 import Fteampic5 from "../../Images/ball5.jpeg";
 
 const useStyles = makeStyles((theme) => ({
- team: {
-   borderRadius:"0px",
-   width:"100vw",
-   margin:"auto",
-   paddingBottom:"3%",
-   height:"auto",
- },
   teamgrid:{
   // paddingTop:"1rem",
  }
@@ -34,11 +28,11 @@ function Football() {
     <div className="Ftwarapper">
       <Nav head={head}/>
       <div className={classes.teamgrid}>
-        <Avatar src={Fteam} className={classes.team}/>
-        <Avatar src={Fteampic2} className={classes.team}/>
-        <Avatar src={Fteampic3} className={classes.team}/>
-        <Avatar src={Fteampic4} className={classes.team}/>
-        <Avatar src={Fteampic5} className={classes.team}/>
+        <Image src={Fteam}  animationDuration="3000" aspectRatio="(1/.6)"/>
+        <Image src={Fteampic2} animationDuration="3000" aspectRatio="(1/.6)"/>
+        <Image src={Fteampic3} animationDuration="3000" aspectRatio="(1/.6)"/>
+        <Image src={Fteampic4} animationDuration="3000" aspectRatio="(1/1.3)"/>
+        <Image src={Fteampic5} animationDuration="3000" aspectRatio="(1/.6)"/>
       </div>
     </div>
   )
