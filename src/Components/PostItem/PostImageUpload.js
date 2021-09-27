@@ -1,21 +1,18 @@
 import React from 'react';
-
 import { makeStyles } from '@material-ui/core/styles';
-
-import IconButton from '@material-ui/core/IconButton';
-import AddAPhoto from '@material-ui/icons/AddAPhoto';
+import { AttachFile} from '@material-ui/icons';
 
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
   input: {
     display: 'none',
   },
+  attachment: {
+    fontSize:"xx-large",
+    padding:0,
+    margin:0,
+  }
 }));
 
 
@@ -37,9 +34,7 @@ const PostImageUpload = ({ handleChange }) => {
       type="file"
          />
   <label htmlFor="icon-button-file">
-    <IconButton color="inherit" aria-label="upload picture" size="medium" component="span">
-      <AddAPhoto style={{fontSize:"xx-large"}} />
-    </IconButton>
+      <AttachFile className={classes.attachment} />
   </label>
   </>
   )

@@ -121,10 +121,10 @@ const form = (
    {image && <p onClick={ () => setImage("") } className="close" > <Close/> </p>}
    <br/>
    <div className="post_description">
-          <div className="input">
+          <div className="NameInput">
               <input type="text" placeholder="Your name/title *Optional*" value={name} onChange={hadleNameChange}/>
           </div>
-          <div className="input">
+          <div className="TitleInput">
               <TextareaAutosize
                 placeholder="Heading"
                 name="title"
@@ -134,20 +134,18 @@ const form = (
                 className="title"
               />
           </div>
-
-            <div className="input">
+          <div className="MessageInput">
               <TextareaAutosize
                   placeholder="Message"
-                  minRows={2}
+                  minRows={1}
                   name='description'
                   onChange={handleMessageChange}
                   value={values.message}
-                  className="description"
+                  className="Message"
                   />
-          </div>
-          <br/>
-          <div className="photo_input">
-              <PostImageUpload  label="Photo"  handleChange={handlePostImageUpload}/>
+                 <div className="Photo">
+                    <PostImageUpload  label="Photo"  handleChange={handlePostImageUpload}/>
+                 </div>
           </div>
        </div>
    </div>
