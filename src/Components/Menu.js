@@ -28,11 +28,13 @@ export default function AccountMenu({menu_on}) {
 
 // Sharing the app link
 async function onShare() {
+  const label= "T.M.U.C"
   const url = "https://tmuc.netlify.app";
   const text = "TMUC APP";
   try {
       await navigator
       .share({
+        label,
         url,
         text
       })
