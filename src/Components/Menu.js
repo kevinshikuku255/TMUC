@@ -25,6 +25,25 @@ export default function AccountMenu({menu_on}) {
     }
   }, [menu_on, loadispatch])
 
+
+// Sharing the app link
+async function onShare() {
+  const url = "https://tmuc.netlify.app";
+  const text = "TMUC APP";
+  try {
+      await navigator
+      .share({
+        url,
+        text
+      })
+
+    } catch (err) {
+
+         // the user cancels the action of sharing
+       console.log("share canceled");
+    }
+}
+
   return (
         <>
         { menu_on &&
@@ -36,6 +55,7 @@ export default function AccountMenu({menu_on}) {
               <p className="MenuItem" onClick={() => history.push("/News")}>NOTICE-BOARD</p>
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Policy")}>  USAGE POLICY</p>
+              <p className="MenuItem" onClick={onShare}> SHARE THIS APP</p>
            </div>
         </div>
         }
