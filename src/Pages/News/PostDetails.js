@@ -56,7 +56,7 @@ function PostDetails({match}) {
 
 
 let loader;
-  if(loading && !cacheData){
+  if(loading){
     loader = (
     <div className="Wrapper">
       <Skeleton/>
