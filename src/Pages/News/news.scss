@@ -6,8 +6,8 @@
 
   .News{
     display: flex;
-    padding: .5rem;
-    border-radius: 5px;
+    padding: .5rem 0;
+    border-radius: 2px;
     flex-direction: column;
     margin: 1rem auto 0 auto;
     width: 94vw;
@@ -49,8 +49,12 @@
    }
    .NewsActions{
      width: fit-content;
-     color: blue;
-     margin: 0 0 0 auto;
+     margin: 0 .3rem 0 auto;
+     p{
+       font-size: small;
+       font-family: sans-serif;
+       color: rgb(33, 32, 32);
+     }
    }
  }
 
@@ -62,9 +66,10 @@
   margin: auto;
    margin-top: 7rem;
    .DetailsNews{
+     border: 1px solid gray;
       display: flex;
-      padding: .5rem;
-      border-radius: 5px;
+      padding: .5rem 0;
+      border-radius: 2px;
       flex-direction: column;
       .DetailsHead{
          display: flex;
@@ -75,7 +80,9 @@
           flex-direction: column;
           margin: 0 0 0 1rem;
           p{
-            color:rgb(28, 28, 138)
+            color:#1c1c4b;
+            margin: 0 0 0 1rem;
+            font-family: sans-serif;
           }
         }
       }
@@ -85,15 +92,14 @@
         white-space: pre-wrap;
         font-family: sans-serif;
         .Message{
-          border: 1px solid gray;
-          padding: .5rem;
+          padding: .5rem .05rem;
           border-radius: 5px;
         }
      }
       .DetailsNewsActions{
-        width: fit-content;
-        color: blue;
-        margin: 0 0 0 auto;
+        color:#1c1c4b;
+        margin: 0 .3rem 0 auto;
+        font-family: sans-serif;
       }
  }
 }

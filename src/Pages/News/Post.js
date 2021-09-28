@@ -10,10 +10,10 @@ avator:{
   borderBottom:"2px solid white",
 },
  image: {
-   borderRadius:"5px",
-   width:"98%",
+   width:"100%",
+   borderRadius: "0",
    height: theme.spacing(18),
-   margin:"auto",
+   margin:".5rem auto",
  }
 }));
 
@@ -32,7 +32,7 @@ function Post({post}) {
                 <p className="NewsTitle">{title}</p>
                 <p>{ `${message?.substring(0,200)}`} <b>{message?.length > 200 && "... read more"}</b></p>
                 <div>
-                 { image && <Avatar src={image} className={classes.image}/>}
+                 {image &&  <Avatar src={image} className={classes.image}/>}
                 </div>
               </div>
 

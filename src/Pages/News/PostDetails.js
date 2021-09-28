@@ -17,9 +17,9 @@ avator:{
 },
  image: {
    borderRadius:"0px",
-   width:"inherit",
+   width:"100%",
    height:"auto",
-   margin:"auto",
+   margin:" .5rem auto",
  }
 }));
 
@@ -56,7 +56,7 @@ function PostDetails({match}) {
 
 
 let loader;
-  if(loading){
+  if(loading && !cacheData){
     loader = (
     <div className="Wrapper">
       <Skeleton/>
