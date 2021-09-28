@@ -12,12 +12,21 @@ const PostDispatchContext = createContext();
 
 //Message reducer
 const postReducer = (state, action) =>{
+  const { posts } = state
    switch(action.type){
 
-       case "ADD_POST":
+      case "ADD_POSTS":
         return {
          ...state,
          posts:  action.payload
+        }
+
+       case "ADD_POST":
+         let newPosts = [...posts, action.payload ]
+        console.log(action.payload)
+        return {
+         ...state,
+         posts:  newPosts
         }
 
       default:

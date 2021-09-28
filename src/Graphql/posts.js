@@ -50,3 +50,20 @@ export const CREATE_POST = gql`
   }
 }
 `
+
+
+/** Publishes new message in real time */
+export const NEW_POST = gql`
+  subscription {
+    newPost{
+      id
+      title
+      name
+      message
+      author{
+      id
+      }
+    }
+  }
+`
+

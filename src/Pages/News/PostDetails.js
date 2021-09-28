@@ -1,12 +1,13 @@
 import React, { useEffect} from 'react';
 import ReactGA from 'react-ga';
 import { Avatar, makeStyles} from "@material-ui/core";
+import { SignalWifiOff} from "@material-ui/icons"
 import {  timeAgo } from  "../../Utils/date"
 import Skeleton from "./Skeleton"
 import "./news.scss";
 
 
-import { useLazyQuery } from '@apollo/client';
+import { useLazyQuery, useQuery } from '@apollo/client';
 import { GET_POST } from '../../Graphql/posts'
 
 
@@ -29,14 +30,24 @@ function PostDetails({match}) {
   ReactGA.pageview(window.location.pathname);
   const classes = useStyles();
 
-  const [
-    getPost,
-    { loading, data },
-  ] = useLazyQuery(GET_POST,{
+//cache data
+  const { data: cacheData, loading: cacheLoading} = useQuery(GET_POST, {
+        fetchPolicy:"cache-only",
         variables: {
             id: match.params.id
         }
         })
+
+// Fresh data
+  const [ getPost, { loading: queryLoading, data: queryData, error },] = useLazyQuery(GET_POST,{
+        fetchPolicy:"network-only",
+        variables: {
+            id: match.params.id
+        }
+        })
+
+ const data = queryData || cacheData;
+ const loading = queryLoading || cacheLoading;
 
   useEffect(() => {
       getPost()
@@ -53,6 +64,22 @@ let loader;
     )
   }
 
+if(!loading && !data){
+loader = (
+    <div className="Wrapper">
+      <Skeleton/>
+    </div>
+    )
+}
+
+
+
+if(error && !data){
+  loader = (
+       <div className="Wrapper">
+          <Skeleton warning={<SignalWifiOff/>}/>
+     </div>)
+}
 
   let newsPost;
   if(data && !loading){

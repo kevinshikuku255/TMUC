@@ -2,8 +2,8 @@ import React,{useState} from 'react';
 import  "./createPost.scss";
 import PostImageUpload from "./PostImageUpload";
 
-import {useMutation} from "@apollo/client"
-import {CREATE_POST, GET_POSTS} from "../../Graphql/posts";
+import {useMutation } from "@apollo/client"
+import {CREATE_POST } from "../../Graphql/posts";
 import {CircularProgress, TextareaAutosize} from '@material-ui/core';
 import {Close} from '@material-ui/icons';
 
@@ -50,29 +50,6 @@ const values = { title, message, name,  image }
     variables: values,
     onError(err){
       setErrors(err.message)
-    },
-    update(cache,{data}){
-      //add new data to existing data
-      const newPost = data?.createPost;
-      const existingPosts = cache.readQuery({
-        query:GET_POSTS,
-        variables:{
-          skip:0,
-          limit:50,
-        }
-      });
-      cache.writeQuery({
-        query:GET_POSTS,
-        variables:{
-          skip:0,
-          limit:50,
-        },
-        data:{
-          getPosts:{
-              posts:[...existingPosts?.getPosts.posts, newPost]
-          }
-        }
-      })
     }
 });
 

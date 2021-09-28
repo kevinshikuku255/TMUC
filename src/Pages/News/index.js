@@ -3,7 +3,8 @@ import ReactGA from 'react-ga';
 import "./news.scss";
 import Post from "./Post"
 
-import { useLazyQuery } from '@apollo/client';
+import { usePostDispatch, usePostState } from "../../Context/post";
+import { useLazyQuery, useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../Graphql/posts'
 import Skeleton from './Skeleton';
 import { SignalWifiOff} from "@material-ui/icons"
@@ -12,15 +13,29 @@ import { SignalWifiOff} from "@material-ui/icons"
 /** News component */
 function Index() {
   ReactGA.pageview('/News');
-  const [
-    getPosts,
-    { loading, data, error },
-  ] = useLazyQuery(GET_POSTS,{fetchPolicy:"no-cache"})
+  const postDispatch = usePostDispatch();
+  const { posts } = usePostState()
+
+  //Use lazy query
+  const { data:cachedData, loading: cacheLoading }  = useQuery(GET_POSTS,{ fetchPolicy:"cache-only" });
+  const [ getPosts,{ loading: queryLoading, data:queryData, error } ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
+
 
   useEffect(() => {
       getPosts()
   }, [getPosts])
 
+ const data = queryData || cachedData;
+ const loading = queryLoading || cacheLoading;
+
+  useEffect(() => {
+    if (data) {
+      postDispatch({
+        type: 'ADD_POSTS',
+        payload: data.getPosts
+      })
+    }
+  }, [data, postDispatch])
 
 
 let loader;
@@ -50,7 +65,7 @@ let loader;
   }
 
 
-if(error){
+if(error && !data){
   loader = (
        <div className="Wrapper">
           <Skeleton warning={<SignalWifiOff/>}/>
@@ -63,8 +78,8 @@ if(error){
 
 
 let MarkeUp;
-if(data){
-   MarkeUp = ( data && data.getPosts.length > 0) &&  data?.getPosts.map( post => (
+if(posts){
+   MarkeUp = ( posts && posts.length > 0) &&  posts.map( post => (
         <Post key={post.id} post ={post}/>
      ))
 }

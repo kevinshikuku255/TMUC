@@ -341,3 +341,56 @@ b{
     display:flex;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------AD--------------------------------------------- */
+
+.Carousel{
+margin-bottom: .5rem;
+width: 96vw;
+// position: absolute;
+div{
+  width: 100%;
+  height: auto;
+}
+ .one{
+   background-color: blue;
+   width: 100vw;
+   height: 4rem;
+ }
+ .two{
+   background-color: blueviolet;
+   width: 100vw;
+   height: 4rem;
+ }
+ .three{
+   background-color: chartreuse;
+   width: 100vw;
+   height: 4rem;
+ }
+ .four{
+   background-color: cyan;
+   width: 100vw;
+   height: 4rem;
+ }
+ .five{
+   background-color: darkblue;
+   width: 100vw;
+   height: 4rem;
+ }
+ .six{
+   background-color: dimgrey;
+   width: 100vw;
+   height: 4rem;
+ }
+}
