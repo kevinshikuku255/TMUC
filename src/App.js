@@ -15,6 +15,9 @@ import News from "./Pages/News/index";
 import Login from "./Pages/News/Login";
 import Activities from "./Pages/Activities";
 import Fab from "./Components/Fab";
+import Signup from "./Pages/Auth/SignUp";
+import Signin from "./Pages/Auth/SignIn";
+import EditPost from "./Pages/Auth/EditPost";
 
 
 import Desktopview from "./Components/Desktopview";
@@ -53,11 +56,10 @@ function App() {
    const postDispatch = usePostDispatch();
    const { data } = useSubscription(NEW_POST)
 
-    console.log(data)
-
     //Putting loaded data on global state
     useEffect(() => {
           if(data){
+            navigator.vibrate(200)
           postDispatch({
               type: 'ADD_POST',
               payload: data.newPost
@@ -89,6 +91,9 @@ function App() {
                 <Route  path="/Sotmuc" component={Sotmuc}/>
                 <Route  path="/CreatePost" component={MakePost}/>
                 <Route  path="/Policy" component={Policy}/>
+                <Route  path="/Signup" component={Signup}/>
+                <Route  path="/Signin" component={Signin}/>
+                <Route  path="/Editpost" component={EditPost}/>
                 <Route  path='*' component={Swipble} />
               </Switch>
             </React.Suspense>

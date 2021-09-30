@@ -1,6 +1,6 @@
 .Wrapper{
    margin-top: 7rem;
-   padding-bottom: .5rem;
+   padding-bottom: 4rem;
    min-height: 80vh;
    }
 
@@ -11,9 +11,9 @@
     flex-direction: column;
     margin: 1rem auto 0 auto;
     width: 94vw;
-    background-color: rgb(226, 226, 226);
+    background-color: #e2e2e2;
     &:hover{
-     background-color: rgb(157, 157, 157);
+     background-color: #d1d1d1;
     }
     .NewsHead{
       display: flex;
@@ -31,6 +31,7 @@
       .NewsPin{
         margin: -7px 0 auto auto;
         color: gray;
+        transform:rotate(55deg)
       }
 
    }
@@ -40,21 +41,50 @@
      white-space: pre-wrap;
      font-family: sans-serif;
      .NewsAuthor{
-       color: rgb(82, 82, 82);
+       font-size: large;
+       text-transform: uppercase;
+       font-weight: bolder;
+       font-stretch: condensed;
+       display: flex;
+       align-items: center;
+       margin-bottom: 1rem;
      }
      .NewsTitle{
        font-weight: bolder;
-       margin: .5rem 0;
+       margin:0  0 0 .2rem ;
+     }
+     .NewsBody{
+       margin: .5rem 0 0 .5rem;
      }
    }
    .NewsActions{
      width: fit-content;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
      margin: 0 .3rem 0 auto;
      p{
        font-size: small;
        font-family: sans-serif;
-       color: rgb(33, 32, 32);
+       color: #212020;
      }
+     .DeleteStatus{
+       color: green;
+       margin-left: .5rem;
+       text-transform: uppercase;
+     }
+    .DeleteButton{
+       border: none;
+       outline: none;
+       cursor: pointer;
+       padding: 0;
+       margin: 0 0 0 2rem;
+       border-radius: 10%;
+       background: none;
+       &:hover{
+         background: #c9c9c9;
+       }
+    }
    }
  }
 
@@ -91,6 +121,15 @@
         writing-mode: horizontal-tb;
         white-space: pre-wrap;
         font-family: sans-serif;
+        .NewsAuthor{
+            font-size: large;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-stretch: condensed;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
         .Message{
           padding: .5rem .05rem;
           border-radius: 5px;
@@ -185,7 +224,10 @@
      border-radius: 5px;
      color: brown;
      padding: 1rem;
-     font-size: x-small;
+     font-size: small;
+     p{
+       padding: 2rem;
+     }
    }
    h3{
      color: blue;

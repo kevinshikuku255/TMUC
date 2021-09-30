@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 const SubHeader = () => {
   const history = useHistory();
   const {pathname} = useLocation();
-
 /* -------------------------------------------------------------------------- */
    const handleClick = () => { history.push("/Activities") }
 

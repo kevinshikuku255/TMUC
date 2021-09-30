@@ -1,12 +1,14 @@
 import React, { useEffect, useRef} from 'react';
 import { useHistory } from 'react-router-dom';
 import { useLoadDispatch } from '../Context/loading';
+import { useStore } from "../store";
 
 /** Menu  */
 export default function AccountMenu({menu_on}) {
  const ref = useRef()
  const loadispatch = useLoadDispatch();
  const history = useHistory();
+ const  [{auth}] = useStore();
 
   useEffect(() => {
     const checkIfClickedOutside = e => {
@@ -57,12 +59,12 @@ async function onShare() {
               <p className="MenuItem" onClick={() => history.push("/News")}>NOTICE-BOARD</p>
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Policy")}>  USAGE POLICY</p>
+              {!auth?.user && <p className="MenuItem" onClick={() => history.push("/Login")}> LOGIN</p>}
+              {auth?.user && <p className="MenuItem" onClick={() => history.push("/Editpost")}> MY PINNED POSTS</p>}
               <p className="MenuItem" onClick={onShare}> SHARE THIS APP</p>
            </div>
         </div>
         }
         </>
-
-
   );
 }

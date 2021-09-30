@@ -1,0 +1,70 @@
+.SignUp{
+  margin-top: 7rem;
+  .Header{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    font-family: sans-serif;
+    .ErrorMessage{
+      color: red;
+      margin-top: 1rem;
+      font-weight: bolder;
+      text-transform: capitalize;
+    }
+  }
+  .Form{
+    margin-top: 2rem;
+    width: 88vw;
+    display: flex;
+    margin: 1rem auto 0 auto;
+    input{
+      width: 100%;
+      background: none;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid blue;
+      margin: 1.5rem 0;
+      font-size: larger;
+    }
+    .Error{
+      color: #ff0000;
+      border-bottom: 2px solid #ff0000;
+    }
+    .SubmitButton{
+      text-align: center;
+      margin: auto;
+      button{
+        padding: .5rem 1.5rem;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        background-color: blueviolet;
+        &:hover{
+          background-color: rgb(139, 139, 255);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+.Loading{
+  color: green;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.Nopins{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

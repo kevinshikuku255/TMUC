@@ -23,7 +23,6 @@ const postReducer = (state, action) =>{
 
        case "ADD_POST":
          let newPosts = [...posts, action.payload ]
-        console.log(action.payload)
         return {
          ...state,
          posts:  newPosts

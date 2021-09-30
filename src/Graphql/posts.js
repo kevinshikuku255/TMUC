@@ -3,9 +3,10 @@
  const postPayload = `
   id
   title
-  message
   name
   image
+  message
+  imagePublicId
   author{
     id
     name
@@ -22,6 +23,16 @@
        }
       }
   `;
+
+
+
+ /**Delete post */
+  export const DELETE_POST = gql`
+      mutation($id: ID!, $imagePublicId: String){
+       deletePost(id: $id, imagePublicId: $imagePublicId)
+      }
+  `;
+
 
 
  /**Get all news posts*/
@@ -62,6 +73,7 @@ export const NEW_POST = gql`
       message
       author{
       id
+      name
       }
     }
   }

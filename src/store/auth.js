@@ -25,8 +25,8 @@ if(localStorage.getItem("jwt")){
 export const authReducer = (state = authInitialState, action) => {
   switch (action.type) {
     case SET_AUTH_USER:
-      // const decodedToken = jwtDecode(action.payload.token);
-      // authInitialState.user = decodedToken
+      const jwt = localStorage.getItem("jwt");
+      authInitialState.user = jwtDecode(jwt)
       console.log(action.payload)
       return {
         ...state,

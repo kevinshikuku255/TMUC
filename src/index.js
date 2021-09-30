@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import { ApolloProvider } from '@apollo/client';
 import { PostProvider } from './Context/post';
 import { createApolloClient } from './Utils/apollo_client';
+import { StoreProvider } from "./store"
 
 
 import './index.scss';
@@ -30,11 +31,13 @@ const apolloClient = createApolloClient(API_URL, websocketApiUrl);
 ReactDOM.render(
       <ApolloProvider client={apolloClient}>
         <BrowserRouter>
+           <StoreProvider>
                 <LoadProvider>
                   <PostProvider>
                       <App/>
                   </PostProvider>
                 </LoadProvider>
+            </StoreProvider>
       </BrowserRouter>
     </ApolloProvider>,
   document.getElementById('root')

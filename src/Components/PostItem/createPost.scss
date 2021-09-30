@@ -21,7 +21,7 @@
       width: 90vw;
       margin: .5rem auto;
       background-color: #dadada;
-      border-radius: 10px;
+      border-radius: 5px;
       padding: .2rem .3rem;
       display: flex;
       height: auto;
@@ -39,7 +39,7 @@
         flex: .1;
         margin: auto 0 0 0;
         height: fit-content;
-        transform: rotate(-135deg);
+        transform: rotate(135deg);
         &:hover{
           color: blue;
         }
@@ -93,7 +93,7 @@
   flex-direction: column;
   justify-content: center;
   margin-top: 5rem;
-  height: 90vh;
+  height: 40vh;
 }
 
 .display_item_alert{

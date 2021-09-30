@@ -1,8 +1,18 @@
 import React from 'react';
-import { Avatar, makeStyles} from "@material-ui/core";
+import { useStore } from "../../store";
+import { timeAgo } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
-import {  timeAgo } from  "../../Utils/date"
-import { ColorizeTwoTone} from '@material-ui/icons';
+import { Avatar, makeStyles} from "@material-ui/core";
+
+
+import PushPinIcon from '@mui/icons-material/PushPin';
+import VerifiedIcon from '@mui/icons-material/Verified';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+import { useMutation } from "@apollo/client"
+import { DELETE_POST } from "../../Graphql/posts";
+import { GET_AUTH_USER } from "../../Graphql/user";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,20 +27,46 @@ avator:{
  }
 }));
 
-function Post({post}) {
+function Post({ post }) {
+  const [{auth}] = useStore();
   const classes = useStyles();
   const history = useHistory();
-  const { id, title, message, name,  image, createdAt } = post;
+  const path = history.location.pathname
+  const { id, title, message, image, imagePublicId, createdAt, author } = post;
+
+  const displayMessage = message?.substring(0,200)
+
+
+
+  const clickHandler = () => {
+    history.push(`/Post/${id}`)
+ }
+
+ //Dlete post mutation
+ const [deletePost, { data, loading}] = useMutation(DELETE_POST,
+      {variables:{id, imagePublicId},
+      refetchQueries:[
+        {query: GET_AUTH_USER}
+      ]
+      })
+
   return (
     <div>
       <div className="News">
               <div className="NewsHead">
-                <div className="NewsPin"><ColorizeTwoTone/></div>
+                <div className="NewsPin"><PushPinIcon/></div>
               </div>
-              <div className="NewsBody" onClick={() => history.push(`/Post/${id}`)}>
-                {name && <h4 className="NewsAuthor">From: {name} </h4>}
+              <div className="NewsBody" onClick={ (!auth?.user || path !== "/Editpost") && clickHandler}>
+                {author &&
+                <div className="NewsAuthor">
+                   <p>{author?.name} </p>
+                   <VerifiedIcon color="primary" fontSize="small"/>
+                </div>}
                 <p className="NewsTitle">{title}</p>
-                <p>{ `${message?.substring(0,200)}`} <b>{message?.length > 200 && "... read more"}</b></p>
+
+                { (auth?.user && path === "/Editpost") ?  <p className="NewsBody">{ message} </p> :
+                <p className="NewsBody">{ displayMessage} <b>{message?.length > 300 && "... read more"}</b></p> }
+
                 <div>
                  {image &&  <Avatar src={image} className={classes.image}/>}
                 </div>
@@ -38,10 +74,23 @@ function Post({post}) {
 
               <div className="NewsActions">
                 <p>{timeAgo(createdAt)}</p>
+
+                {auth.user && path === "/Editpost" &&
+                <p className="DeleteStatus">
+                  {loading && "deleting"}
+                  {data && "deleted"}
+                </p>}
+
+                {auth.user && path === "/Editpost" &&
+                <button className="DeleteButton" >
+                    { loading || data ? <DeleteIcon color="primary" />
+                      : <DeleteIcon  color="secondary" onClick={() => deletePost()}/>}
+                </button>}
               </div>
           </div>
     </div>
   )
 }
+
 
 export default Post;

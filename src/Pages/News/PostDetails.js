@@ -2,8 +2,9 @@ import React, { useEffect} from 'react';
 import ReactGA from 'react-ga';
 import { Avatar, makeStyles} from "@material-ui/core";
 import { SignalWifiOff} from "@material-ui/icons"
-import {  timeAgo } from  "../../Utils/date"
-import Skeleton from "./Skeleton"
+import {  timeAgo } from  "../../Utils/date";
+import Skeleton from "./Skeleton";
+import VerifiedIcon from '@mui/icons-material/Verified';
 import "./news.scss";
 
 
@@ -83,12 +84,18 @@ if(error && !data){
 
   let newsPost;
   if(data && !loading){
-    const { title,image, message, createdAt} = data?.getPost
+    const { title,image, message, createdAt, author} = data?.getPost
       newsPost =
       (
       <div className="PostDetailsWrapper">
        <div className="DetailsNews">
               <div className="DetailsNewsBody">
+                {author &&
+                <div className="NewsAuthor">
+                   <p>{author?.name} </p>
+                   <VerifiedIcon color="primary" fontSize="small"/>
+                </div>}
+                
                 <h3> {title}</h3>
                 <div className="Message">
                   <p> {message}</p>

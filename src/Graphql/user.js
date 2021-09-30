@@ -2,72 +2,72 @@
 
 
 
- const userPayload =`
-   id
-   tamname
-   messages{
-        id
-        body
-        sender
-        receiver
-        createdAt
-   }
-    group
-    image
-    coverImage
-`
 
-
- const payload = `
-  team{
-    id
-    teamname
-    fan
-    group
-    token
-  }
-  fan{
-    id
-    fanname
-    messages{
-        id
-        body
-        sender{
-          id
-          fanname
-        }
-        receiver
-        createdAt
+ /** Get auth user*/
+export const GET_USER = gql`
+   query($name:String){
+     getUser(name: $name){
+      id
+      name
+      username
+      createdAt
+      updatedAt
     }
-    likes{
-     id
-     message
-     fan{
-       id
-       fanname
-     }
-     createdAt
-   }
-  }
- `
+ }
+`;
 
 
+ /** Get auth user*/
+export const GET_USERS = gql`
+   query($skip:Int, $limit:Int){
+     getUser(skip: $skip, limit:$limit){
+      id
+      name
+      username
+      createdAt
+      updatedAt
+    }
+ }
+`;
 
 
-/** Logs in a fan */
+ /**Get authenticated user */
+  export const GET_AUTH_USER = gql`
+      query{
+       getAuthUser {
+          id
+          name
+          posts {
+          id
+          title
+          image
+          message
+          createdAt
+          author{
+            id
+            name
+          }
+          }
+          createdAt
+        }
+      }
+  `;
+
+
+/** creates user account */
 export const SIGN_UP = gql`
-  mutation($fanname: String!, $password: String!) {
-     signup(fanname: $fanname, password: $password){
-         fanname
+  mutation($name: String, $password: String, $confirmPassword:String) {
+     signup(name: $name, password: $password, confirmPassword: $confirmPassword){
+         token
      }
   }
 `
 
-/** Logs in a fan */
+/** Logs in a user */
 export const SIGN_IN = gql`
-  mutation($teamname: String, $fanname: String, $password: String) {
-     signin(teamname:$teamname, fanname: $fanname, password: $password){
-         ${payload}
+  mutation($name: String!, $password: String!) {
+     signin(name:$name, password: $password){
+         token
      }
   }
 `

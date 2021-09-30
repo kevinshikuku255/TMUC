@@ -1,11 +1,13 @@
 import React,{useState} from 'react';
-import  "./createPost.scss";
 import PostImageUpload from "./PostImageUpload";
 
 import {useMutation } from "@apollo/client"
 import {CREATE_POST } from "../../Graphql/posts";
 import {CircularProgress, TextareaAutosize} from '@material-ui/core';
 import {Close} from '@material-ui/icons';
+import { useStore } from "../../store"
+
+import  "./createPost.scss";
 
 
 
@@ -19,8 +21,8 @@ export const  CreatePost = () => {
   const [name, setName] = useState('');
   const [errors, setErrors] = useState('');
   const [warning, setWarning] = useState('');
-
-
+  const [{ auth }] = useStore();
+  const authorId = auth?.user?.id
    const handleReset = () => {
     setTitle('');
     setImage('');
@@ -44,7 +46,7 @@ export const  CreatePost = () => {
         }
   }
 
-const values = { title, message, name,  image }
+const values = { title, message, name,  image, authorId }
 
  const [createPost, { loading }] = useMutation(CREATE_POST,{
     variables: values,

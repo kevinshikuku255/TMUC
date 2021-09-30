@@ -17,8 +17,8 @@ function Index() {
   const { posts } = usePostState()
 
   //Use lazy query
-  const { data:cachedData }  = useQuery(GET_POSTS,{ fetchPolicy:"cache-only" });
-  const [ getPosts,{ loading, data:queryData, error } ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
+  const { data:cachedData, loading:cacheLoading }  = useQuery(GET_POSTS,{ fetchPolicy:"cache-only" });
+  const [ getPosts,{ loading:queryLoading, data:queryData, error } ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
 
 
   useEffect(() => {
@@ -26,6 +26,7 @@ function Index() {
   }, [getPosts])
 
  const data = queryData || cachedData;
+ const loading = queryLoading || cacheLoading
 
   useEffect(() => {
     if (data) {
@@ -85,6 +86,7 @@ if(posts){
 
   return (
     <div className="Wrapper">
+      {/* <Post/> */}
       {MarkeUp}
       {loader}
     </div>
