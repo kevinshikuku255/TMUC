@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import ReactGA from 'react-ga';
 import { Avatar, makeStyles} from "@material-ui/core";
 import { SignalWifiOff} from "@material-ui/icons"
@@ -8,7 +8,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import "./news.scss";
 
 
-import { useLazyQuery, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { GET_POST } from '../../Graphql/posts'
 
 
@@ -25,7 +25,6 @@ avator:{
 }));
 
 
-
 /** Single page post */
 function PostDetails({match}) {
   ReactGA.pageview(window.location.pathname);
@@ -39,22 +38,9 @@ function PostDetails({match}) {
         }
         })
 
-// Fresh data
-  const [ getPost, { loading: queryLoading, data: queryData, error },] = useLazyQuery(GET_POST,{
-        fetchPolicy:"network-only",
-        variables: {
-            id: match.params.id
-        }
-        })
 
- const data = queryData || cacheData;
- const loading = queryLoading || cacheLoading;
-
-  useEffect(() => {
-      getPost()
-  }, [getPost])
-
-
+ const data =  cacheData;
+ const loading =  cacheLoading;
 
 let loader;
   if(loading){
@@ -75,7 +61,7 @@ loader = (
 
 
 
-if(error && !data){
+if( !data){
   loader = (
        <div className="Wrapper">
           <Skeleton warning={<SignalWifiOff/>}/>
@@ -95,7 +81,7 @@ if(error && !data){
                    <p>{author?.name} </p>
                    <VerifiedIcon color="primary" fontSize="small"/>
                 </div>}
-                
+
                 <h3> {title}</h3>
                 <div className="Message">
                   <p> {message}</p>

@@ -8,8 +8,6 @@ const PostStateContext = createContext();
 const PostDispatchContext = createContext();
 
 
-
-
 //Message reducer
 const postReducer = (state, action) =>{
   const { posts } = state

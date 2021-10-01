@@ -14,7 +14,7 @@ import { SignalWifiOff} from "@material-ui/icons"
 function Index() {
   ReactGA.pageview('/News');
   const postDispatch = usePostDispatch();
-  const { posts } = usePostState()
+  const { posts } = usePostState();
 
   //Use lazy query
   const { data:cachedData, loading:cacheLoading }  = useQuery(GET_POSTS,{ fetchPolicy:"cache-only" });
@@ -39,7 +39,7 @@ function Index() {
 
 
 let loader;
-  if(loading){
+  if( posts.length < 1 || loading){
      loader = (
        <div className="NewsWrapper">
           <Skeleton/>
@@ -86,7 +86,6 @@ if(posts){
 
   return (
     <div className="NewsWrapper">
-      {/* <Post/> */}
       {MarkeUp}
       {loader}
     </div>

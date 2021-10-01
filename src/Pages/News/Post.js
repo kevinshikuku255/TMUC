@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { useStore } from "../../store";
 import { timeAgo } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
@@ -9,10 +9,9 @@ import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import { useMutation } from "@apollo/client"
-import { DELETE_POST } from "../../Graphql/posts";
+import { useMutation, useLazyQuery } from "@apollo/client"
+import { DELETE_POST, GET_POST } from "../../Graphql/posts";
 import { GET_AUTH_USER } from "../../Graphql/user";
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +32,17 @@ function Post({ post }) {
   const history = useHistory();
   const path = history.location.pathname
   const { id, title, message, image, imagePublicId, createdAt, author } = post;
+
+
+// Fetch single post data
+  const [ getPost ] = useLazyQuery(GET_POST,{
+        fetchPolicy:"network-only",
+        variables: {id}
+        })
+  useEffect(() => {
+      getPost()
+  }, [getPost])
+
 
   const displayMessage = message?.substring(0,200)
 
