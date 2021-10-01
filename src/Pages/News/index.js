@@ -41,7 +41,7 @@ function Index() {
 let loader;
   if(loading){
      loader = (
-       <div className="Wrapper">
+       <div className="NewsWrapper">
           <Skeleton/>
           <Skeleton/>
           <Skeleton/>
@@ -54,7 +54,7 @@ let loader;
 
   if(data && data.getPosts.length < 1){
      loader = (
-       <div className="Wrapper">
+       <div className="NewsWrapper">
           <Skeleton/>
           <Skeleton/>
           <Skeleton/>
@@ -67,7 +67,7 @@ let loader;
 
 if(error && !data){
   loader = (
-       <div className="Wrapper">
+       <div className="NewsWrapper">
           <Skeleton warning={<SignalWifiOff/>}/>
           <Skeleton warning={<SignalWifiOff/>}/>
           <Skeleton warning={<SignalWifiOff/>}/>
@@ -85,7 +85,7 @@ if(posts){
 }
 
   return (
-    <div className="Wrapper">
+    <div className="NewsWrapper">
       {/* <Post/> */}
       {MarkeUp}
       {loader}

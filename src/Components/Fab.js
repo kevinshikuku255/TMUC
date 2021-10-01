@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory, useLocation } from "react-router-dom";
-import AddCommentIcon from '@mui/icons-material/AddComment';
+import AddLinkIcon from '@mui/icons-material/AddLink';
 import './components.scss';
 
 
@@ -11,7 +11,7 @@ function Fab() {
     <> {
       pathname !== "/CreatePost" &&
       <div className="Fab" onClick={() => history.push("/CreatePost")}>
-          <button><AddCommentIcon style={{fontSize:"x-large"}}/></button>
+          <button><AddLinkIcon style={{fontSize:"x-large"}}/></button>
       </div>
     }
     </>

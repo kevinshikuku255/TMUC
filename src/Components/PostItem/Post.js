@@ -18,7 +18,7 @@ export const  CreatePost = () => {
   const [image, setImage] = useState('');
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
-  const [name, setName] = useState('');
+  // const [name, setName] = useState('');
   const [errors, setErrors] = useState('');
   const [warning, setWarning] = useState('');
   const [{ auth }] = useStore();
@@ -46,7 +46,8 @@ export const  CreatePost = () => {
         }
   }
 
-const values = { title, message, name,  image, authorId }
+
+const values = { title, message,  image, authorId }
 
  const [createPost, { loading }] = useMutation(CREATE_POST,{
     variables: values,
@@ -55,7 +56,7 @@ const values = { title, message, name,  image, authorId }
     }
 });
 
-const hadleNameChange = e => setName(e.target.value);
+// const hadleNameChange = e => setName(e.target.value);
 const hadleTitleChange = e => setTitle(e.target.value);
 const handleMessageChange = e => setMessage(e.target.value)
 
@@ -100,12 +101,12 @@ const form = (
    {image && <p onClick={ () => setImage("") } className="close" > <Close/> </p>}
    <br/>
    <div className="post_description">
-          <div className="NameInput">
+          {/* <div className="NameInput">
               <input type="text" placeholder="Your name/title *Optional*" value={name} onChange={hadleNameChange}/>
-          </div>
+          </div> */}
           <div className="TitleInput">
               <TextareaAutosize
-                placeholder="Heading"
+                placeholder="headline"
                 name="title"
                 minRows={1}
                 onChange={hadleTitleChange}
@@ -115,7 +116,7 @@ const form = (
           </div>
           <div className="MessageInput">
               <TextareaAutosize
-                  placeholder="Message"
+                  placeholder="message"
                   minRows={1}
                   name='description'
                   onChange={handleMessageChange}
@@ -123,7 +124,7 @@ const form = (
                   className="Message"
                   />
                  <div className="Photo">
-                    <PostImageUpload  label="Photo"  handleChange={handlePostImageUpload}/>
+                    <PostImageUpload  label="Photo" color="primary"  handleChange={handlePostImageUpload}/>
                  </div>
           </div>
        </div>

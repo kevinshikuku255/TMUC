@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorizeTwoTone} from '@material-ui/icons';
+import PushPinIcon from '@mui/icons-material/PushPin';
 
 
 /** Skeleton post */
@@ -12,7 +12,7 @@ function Skeleton({warning}) {
                <div/>
                <div/>
           </div>
-          <div className="NewsPin"><ColorizeTwoTone/></div>
+          <div className="NewsPin"><PushPinIcon/></div>
       </div>
 
       <div className="SkeletonPostBody">

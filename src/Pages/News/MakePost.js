@@ -11,7 +11,7 @@ function MakePost() {
   return (
     <>
     {<div className="Wrapper">
-      <div className="PostInstructions">
+       <div className="PostInstructions">
           <p>Type the Title and Message of your News post and attach an image if any. </p>
           <h4 onClick={() => history.push("/Policy")}>Read usage policy</h4>
         </div>

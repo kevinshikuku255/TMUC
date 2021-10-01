@@ -1,8 +1,15 @@
 .Wrapper{
-   margin-top: 7rem;
-   padding-bottom: 4rem;
-   min-height: 80vh;
+    padding-top: 7rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
    }
+  .NewsWrapper{
+      margin-top: 7rem;
+      padding-bottom: 4rem;
+      min-height: fit-content;
+  }
 
   .News{
     display: flex;

@@ -5,7 +5,7 @@ import { SIGN_UP } from "../../Graphql/user";
 import { useMutation } from '@apollo/client';
 
 
-import "./Auth.scss";
+import "../Auth/Auth.scss";
 
 
 import Logo from "../../Images/favicon.png"
@@ -13,7 +13,8 @@ import Logo from "../../Images/favicon.png"
 function SignUp() {
 const [ values, setValues] = useState({password:"", name:"" , confirmPassword:""})
 const [ errors, setErrors] = useState({})
-const [ error, setError] = useState('')
+const [ error, setError] = useState('');
+const [ show, setShow] = useState(false)
 const history = useHistory()
 
 
@@ -46,7 +47,7 @@ if(loading){
   return(
     <div className="Loading">
       <CircularProgress/>
-      <p>signing in, just a minute</p>
+      <p>Just a minute signing in</p>
     </div>
   )
 }
@@ -58,37 +59,48 @@ if(loading){
          <p>TMUC</p>
          <p className="ErrorMessage">{error}</p>
       </div>
-      <div className="Form">
-        <form  onSubmit={submitHundler}>
-          <input
-            placeholder="name"
-            name= "name"
-            type="text"
-            onChange={changeHundler}
-            value={values.name}
-            className={errors.name ? "Error": ""}
-            />
-            <input
-            placeholder="password"
-            name= "password"
-            type="text"
-            onChange={changeHundler}
-            value={values.password}
-            className={errors.password || errors.passwords ? "Error": ""}
-            />
-            <input
-            placeholder="confirm password"
-            name= "confirmPassword"
-            type="text"
-            onChange={changeHundler}
-            values={values.confirmPassword}
-            className={errors.confirm || errors.passwords ? "Error": ""}
-            />
+     <form className="Form" onSubmit={submitHundler}>
+           <div>
+             <input
+                placeholder="name"
+                name= "name"
+                type="text"
+                onChange={changeHundler}
+                value={values.name}
+                className={errors.name ? "Error": ""}
+              />
+           </div>
+
+            <div>
+              <input
+                placeholder="password"
+                name= "password"
+                type={show ? "text" : "password"}
+                onChange={changeHundler}
+                value={values.password}
+                className={errors.password || errors.passwords ? "Error": ""}
+              />
+              {!show && <p className="passwordVisibility" onClick={()=> setShow(!show)}>show</p>}
+              {show && <p className="passwordVisibility" onClick={()=> setShow(!show)}>hide</p>}
+            </div>
+
+            <div>
+              <input
+                placeholder="confirm password"
+                name= "confirmPassword"
+                type={show ? "text" : "password"}
+                onChange={changeHundler}
+                values={values.confirmPassword}
+                className={errors.confirm || errors.passwords ? "Error": ""}
+              />
+              {!show && <p className="passwordVisibility" onClick={()=> setShow(!show)}>show</p>}
+              {show && <p className="passwordVisibility" onClick={()=> setShow(!show)}>hide</p>}
+            </div>
+
            <div className="SubmitButton">
              <button type="submit">  SIGN IN </button>
            </div>
         </form>
-      </div>
       <p style={{color:"blue"}} onClick={() => history.push("./Signin")}>Login instead</p>
     </div>
   )

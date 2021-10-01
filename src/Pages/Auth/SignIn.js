@@ -17,7 +17,8 @@ import Logo from "../../Images/favicon.png";
 function SignIn() {
 const [ values, setValues] = useState({password:"", name:"" })
 const [ errors, setErrors] = useState({})
-const [ error, setError] = useState('')
+const [ error, setError] = useState('');
+const [ show, setShow] = useState(false)
 const history = useHistory();
 const [, dispatch] = useStore();
 
@@ -77,30 +78,36 @@ if(loading){
          <p>TMUC</p>
          <p className="ErrorMessage">{error}</p>
       </div>
-      <div className="Form">
-        <form  onSubmit={submitHundler}>
-          <input
-            placeholder="name"
-            name= "name"
-            type="text"
-            onChange={changeHundler}
-            value={values.name}
-            className={errors.name ? "Error": ""}
-            />
-            <input
-            placeholder="password"
-            name= "password"
-            type="text"
-            onChange={changeHundler}
-            value={values.password}
-            className={errors.password || errors.passwords ? "Error": ""}
-            />
+     <form className="Form" onSubmit={submitHundler}>
+           <div>
+             <input
+                placeholder="name"
+                name= "name"
+                type="text"
+                onChange={changeHundler}
+                value={values.name}
+                className={errors.name ? "Error": ""}
+              />
+           </div>
+
+            <div>
+              <input
+                placeholder="password"
+                name= "password"
+                type={show ? "text" : "password"}
+                onChange={changeHundler}
+                value={values.password}
+                className={errors.password || errors.passwords ? "Error": ""}
+              />
+              {!show && <p className="passwordVisibility" onClick={()=> setShow(!show)}>show</p>}
+              {show && <p className="passwordVisibility" onClick={()=> setShow(!show)}>hide</p>}
+            </div>
+
            <div className="SubmitButton">
-             <button type="submit">  LOGIN </button>
+             <button type="submit">  SIGN IN </button>
            </div>
         </form>
-      </div>
-      <p style={{color:"blue"}} onClick={()=> history.push("./Signup")}>Login instead</p>
+      <p style={{color:"blue"}} onClick={()=> history.push("./Signup")}>create account instead</p>
     </div>
   )
 }

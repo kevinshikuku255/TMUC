@@ -26,7 +26,7 @@
       display: flex;
       height: auto;
       .Message{
-        flex: .9;
+        flex: 1;
         border: none;
         background: none;
         resize: none;
@@ -36,13 +36,9 @@
         padding: .5rem;
       }
       .Photo{
-        flex: .1;
         margin: auto 0 0 0;
+        align-self: flex-end;
         height: fit-content;
-        transform: rotate(135deg);
-        &:hover{
-          color: blue;
-        }
       }
     }
 
@@ -58,15 +54,16 @@
         }
       .title{
         outline: none;
+        background: none;
         margin-top: .5rem;
         width: 100%;
         resize: none;
-        font-size: larger;
+        font-size: large;
         font-family: sans-serif;
         border:none;
         padding:.2rem;
         font-weight:bolder;
-        border-bottom:1px solid;
+        border-bottom:2px solid;
         }
     }
  }

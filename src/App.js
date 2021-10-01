@@ -38,7 +38,8 @@ ReactGA.initialize(REACT_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 //Swipable views
-const Swipble = () => (
+const Swipble = () =>{
+  return (
   <RouterCarousel
     swipeLeftClassName={'router-carousel-zone router-carousel-zone--left'}
     swipeRightClassName={'router-carousel-zone router-carousel-zone--right'}
@@ -48,7 +49,8 @@ const Swipble = () => (
     <Route path="/Activities" component={Activities}/>
     <Route path="/News" component={News}/>
   </RouterCarousel>
-);
+ )
+};
 
 
 function App() {

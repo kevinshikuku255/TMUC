@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AttachFile} from '@material-ui/icons';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 
 
 
@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
   },
   attachment: {
-    fontSize:"xx-large",
+    fontSize:"x-large",
+    color: "#595959",
     padding:0,
     margin:0,
   }
@@ -34,7 +35,7 @@ const PostImageUpload = ({ handleChange }) => {
       type="file"
          />
   <label htmlFor="icon-button-file">
-      <AttachFile className={classes.attachment} />
+      <AddPhotoAlternateIcon className={classes.attachment} />
   </label>
   </>
   )
