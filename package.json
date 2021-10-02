@@ -31,6 +31,7 @@
     "react-router-carousel": "^0.1.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-swipeable-list": "^1.4.0",
     "subscriptions-transport-ws": "^0.9.19",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.3",

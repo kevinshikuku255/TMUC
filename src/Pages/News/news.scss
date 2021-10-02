@@ -1,23 +1,47 @@
 .Wrapper{
-    padding-top: 7rem;
+    margin-top: 6.2rem;
     position: absolute;
     width: 100%;
-    height: 100%;
-    background-color: #f0f0f0;
+    min-height: calc(100vh - 6.2rem);
    }
-  .NewsWrapper{
-      margin-top: 7rem;
+
+
+#CreatePostWrapper{
+  min-height:calc(100vh - 6.2rem);
+  position: relative;
+  background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
+}
+
+.NewsWrapper{
+      margin-top: 6.2rem;
       padding-bottom: 4rem;
-      min-height: fit-content;
+      min-height: calc(100vh - 6.2rem);
   }
 
-  .News{
+.SwipeToDelete, .RightSwipe{
+  background-color: rgb(250, 57, 57);
+  border-bottom: 3px solid white;
+  border-top: 3px solid white;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.RightSwipe{
+ background-color: green;
+}
+
+.News{
     display: flex;
-    padding: .5rem 0;
+    padding: .5rem ;
     border-radius: 2px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    border-top: 3px solid rgb(255, 255, 255);
     flex-direction: column;
-    margin: 1rem auto 0 auto;
-    width: 94vw;
+    margin: 0 auto 0 auto;
+    width: 98vw;
     background-color: #e2e2e2;
     &:hover{
      background-color: #d1d1d1;
@@ -61,7 +85,7 @@
        margin:0  0 0 .2rem ;
      }
      .NewsBody{
-       margin: .5rem 0 0 .5rem;
+       margin: .5rem .5rem 0 .5rem;
      }
    }
    .NewsActions{
@@ -75,23 +99,6 @@
        font-family: sans-serif;
        color: #212020;
      }
-     .DeleteStatus{
-       color: green;
-       margin-left: .5rem;
-       text-transform: uppercase;
-     }
-    .DeleteButton{
-       border: none;
-       outline: none;
-       cursor: pointer;
-       padding: 0;
-       margin: 0 0 0 2rem;
-       border-radius: 10%;
-       background: none;
-       &:hover{
-         background: #c9c9c9;
-       }
-    }
    }
  }
 
@@ -101,9 +108,10 @@
 .PostDetailsWrapper{
   padding: 0 .5rem;
   margin: auto;
-   margin-top: 7rem;
+  padding-top: 7rem;
+  min-height: calc(100vh - 7rem);
+  background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
    .DetailsNews{
-     border: 1px solid gray;
       display: flex;
       padding: .5rem 0;
       border-radius: 2px;
@@ -150,21 +158,6 @@
  }
 }
 
-
-.PostInstructions{
-  width:80vw;
-  border-radius: 10px;
-  font-size: x-small;
-  font-family: sans-serif;
-  padding: .5rem;
-  color: blueviolet;
-  margin:auto;
-  h4{
-    margin-top: 1rem;
-    color: black;
-    cursor: pointer;
-  }
-}
 
 
 /* -------------------------SkeletonPost------------------------------------------------- */

@@ -47,7 +47,7 @@ if(loading){
   return(
     <div className="Loading">
       <CircularProgress/>
-      <p>Just a minute signing in</p>
+      <p>preparing just a minute</p>
     </div>
   )
 }
@@ -98,9 +98,10 @@ if(loading){
             </div>
 
            <div className="SubmitButton">
-             <button type="submit">  SIGN IN </button>
+             <button type="submit">  SIGN UP </button>
            </div>
         </form>
+        <br/><br/>
       <p style={{color:"blue"}} onClick={() => history.push("./Signin")}>Login instead</p>
     </div>
   )

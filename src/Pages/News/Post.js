@@ -1,13 +1,21 @@
 import React, { useEffect} from 'react';
 import { useStore } from "../../store";
-import { timeAgo } from  "../../Utils/date";
+import { timeAgo, currentDate } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
 import { Avatar, makeStyles} from "@material-ui/core";
 
 
 import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import DeleteIcon from '@mui/icons-material/Delete';
+
+import {
+  LeadingActions,
+  SwipeableList,
+  SwipeableListItem,
+  SwipeAction,
+  TrailingActions,
+} from 'react-swipeable-list';
+import 'react-swipeable-list/dist/styles.css';
 
 import { useMutation, useLazyQuery } from "@apollo/client"
 import { DELETE_POST, GET_POST } from "../../Graphql/posts";
@@ -53,30 +61,26 @@ function Post({ post }) {
  }
 
  //Dlete post mutation
- const [deletePost, { data, loading}] = useMutation(DELETE_POST,
+ const [deletePost] = useMutation(DELETE_POST,
       {variables:{id, imagePublicId},
       refetchQueries:[
         {query: GET_AUTH_USER}
       ]
       })
 
-  return (
-    <div>
-      <div className="News">
+const markUp = (
+<div className="News">
               <div className="NewsHead">
                 <div className="NewsPin"><PushPinIcon/></div>
               </div>
-              <div className="NewsBody" onClick={ (!auth?.user || path !== "/Editpost") && clickHandler}>
+              <div className="NewsBody" onClick={clickHandler}>
                 {author &&
                 <div className="NewsAuthor">
                    <p>{author?.name} </p>
                    <VerifiedIcon color="primary" fontSize="small"/>
                 </div>}
                 <p className="NewsTitle">{title}</p>
-
-                { (auth?.user && path === "/Editpost") ?  <p className="NewsBody">{ message} </p> :
-                <p className="NewsBody">{ displayMessage} <b>{message?.length > 300 && "... read more"}</b></p> }
-
+                <p className="NewsBody">{ displayMessage} <b>{message?.length > 300 && "... read more"}</b></p>
                 <div>
                  {image &&  <Avatar src={image} className={classes.image}/>}
                 </div>
@@ -84,20 +88,43 @@ function Post({ post }) {
 
               <div className="NewsActions">
                 <p>{timeAgo(createdAt)}</p>
-
-                {auth.user && path === "/Editpost" &&
-                <p className="DeleteStatus">
-                  {loading && "deleting"}
-                  {data && "deleted"}
-                </p>}
-
-                {auth.user && path === "/Editpost" &&
-                <button className="DeleteButton" >
-                    { loading || data ? <DeleteIcon color="primary" />
-                      : <DeleteIcon  color="secondary" onClick={() => deletePost()}/>}
-                </button>}
               </div>
           </div>
+)
+
+//Swipe left and right actions
+const leadingActions = () => (
+  <LeadingActions>
+    <SwipeAction onClick={() => console.info('swipe action triggered')}>
+      <div className="RightSwipe">
+        {currentDate(createdAt)}
+      </div>
+    </SwipeAction>
+  </LeadingActions>
+);
+
+const trailingActions = () => (
+  <TrailingActions>
+    <SwipeAction
+      destructive={true}
+       onClick={ () => deletePost()}
+    >
+      <div className="SwipeToDelete">
+        <p>Delete</p>
+      </div>
+    </SwipeAction>
+  </TrailingActions>
+);
+  return (
+    <div>
+      <SwipeableList>
+      <SwipeableListItem
+        leadingActions={ auth.user && path === "/Editpost" ? leadingActions() : null}
+        trailingActions={ auth.user && path === "/Editpost" ? trailingActions():  leadingActions()}
+      >
+        {markUp}
+      </SwipeableListItem>
+    </SwipeableList>
     </div>
   )
 }

@@ -1,7 +1,13 @@
 body::-webkit-scrollbar{
   display: none;
+  width: 0px;
+  background: #ff0000;
   }
 
+/* Track */
+body::-webkit-scrollbar-track {
+  display: none;
+}
 
 body, html{
   margin: 0;

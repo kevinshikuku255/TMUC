@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
 import PostImageUpload from "./PostImageUpload";
 
-import {useMutation } from "@apollo/client"
-import {CREATE_POST } from "../../Graphql/posts";
-import {CircularProgress, TextareaAutosize} from '@material-ui/core';
-import {Close} from '@material-ui/icons';
+import { useMutation } from "@apollo/client"
+import { CREATE_POST } from "../../Graphql/posts";
+import SendIcon from '@mui/icons-material/Send';
+import { TextareaAutosize} from '@material-ui/core';
+import { Close} from '@material-ui/icons';
 import { useStore } from "../../store"
 
 import  "./createPost.scss";
@@ -49,8 +50,11 @@ export const  CreatePost = () => {
 
 const values = { title, message,  image, authorId }
 
- const [createPost, { loading }] = useMutation(CREATE_POST,{
+ const [createPost, { loading , data}] = useMutation(CREATE_POST,{
     variables: values,
+    onCompleted:()=>{
+       setWarning("pinned successfully!");
+    },
     onError(err){
       setErrors(err.message)
     }
@@ -65,21 +69,10 @@ const handleSubmit = (e) => {
     e.preventDefault();
     createPost();
     handleReset();
-    setWarning("pinned successfully!");
 };
 
 
-/** Loading spinnner */
-  let loader;
-  if(loading){
-    return loader = (
-      <div className="display_item_loader">
-        <CircularProgress/>
-        <p>Pinning your Post ...</p>
-      </div>
-    )
-  }
-
+//Image preview
 const postImagePrevew =
    (<div className="image_preview">
       {image && (
@@ -87,10 +80,24 @@ const postImagePrevew =
           <div>
             <img  src={image} width="100%" alt="preview" />
           </div>
+          {image && <p onClick={ () => setImage("") } className="close" > <Close/> </p>}
       </>
       )}
    </div>)
 
+
+//Display messages
+const warningMessage = (
+  <div className="display_item_alert" >
+    { data && warning}
+    {loading && "pinning your post ..."}
+  </div>
+)
+
+//Error handling
+if(errors){
+  console.log(errors)
+}
 
 /** Display item form */
 const form = (
@@ -98,15 +105,12 @@ const form = (
 
    <div className="create_post_wrapper">
    {postImagePrevew}
-   {image && <p onClick={ () => setImage("") } className="close" > <Close/> </p>}
+   {warningMessage}
    <br/>
    <div className="post_description">
-          {/* <div className="NameInput">
-              <input type="text" placeholder="Your name/title *Optional*" value={name} onChange={hadleNameChange}/>
-          </div> */}
           <div className="TitleInput">
               <TextareaAutosize
-                placeholder="headline"
+                placeholder="headline *requred*"
                 name="title"
                 minRows={1}
                 onChange={hadleTitleChange}
@@ -115,8 +119,11 @@ const form = (
               />
           </div>
           <div className="MessageInput">
+          <div className="Photo">
+                    <PostImageUpload  label="Photo" color="primary"  handleChange={handlePostImageUpload}/>
+                 </div>
               <TextareaAutosize
-                  placeholder="message"
+                  placeholder="message *required*"
                   minRows={1}
                   name='description'
                   onChange={handleMessageChange}
@@ -124,34 +131,21 @@ const form = (
                   className="Message"
                   />
                  <div className="Photo">
-                    <PostImageUpload  label="Photo" color="primary"  handleChange={handlePostImageUpload}/>
+                    <SendIcon  label="Photo" color="primary"  onClick={ title || message ? handleSubmit : null } />
                  </div>
           </div>
        </div>
    </div>
-
-         <div className="displayBtn">
-             <button onClick={ handleSubmit } disabled={!title || !message}>
-                 POST
-             </button>
-         </div>
  </form>
 )
 
-if(errors){
-  console.log(errors)
-}
 
-const warningMessage = (
-  <div className="display_item_alert" >
-    {warning}
-  </div>
-)
 
   return(
 <div className="preview" >
-   {loading ? loader : form}
-   {warning &&  warningMessage}
+   {form}
 </div>
   )
+
+
 };

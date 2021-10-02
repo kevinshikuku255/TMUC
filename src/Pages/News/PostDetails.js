@@ -59,8 +59,6 @@ loader = (
     )
 }
 
-
-
 if( !data){
   loader = (
        <div className="Wrapper">
@@ -84,7 +82,7 @@ if( !data){
 
                 <h3> {title}</h3>
                 <div className="Message">
-                  <p> {message}</p>
+                  <div className="MessageText"><p> {message}</p></div>
                   {image && <Avatar src={image} className={classes.image}/>}
                 </div>
               </div>
@@ -96,6 +94,8 @@ if( !data){
         </div>
        )
   }
+
+
 
   return (
   <>
