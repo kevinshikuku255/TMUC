@@ -27,7 +27,6 @@ export const authReducer = (state = authInitialState, action) => {
     case SET_AUTH_USER:
       const jwt = localStorage.getItem("jwt");
       authInitialState.user = jwtDecode(jwt)
-      console.log(action.payload)
       return {
         ...state,
         user: action.payload,

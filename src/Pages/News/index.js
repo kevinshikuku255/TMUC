@@ -15,18 +15,21 @@ function Index() {
   ReactGA.pageview('/News');
   const postDispatch = usePostDispatch();
   const { posts } = usePostState();
+  const online = navigator.online;
+
 
   //Use lazy query
-  const { data:cachedData, loading:cacheLoading }  = useQuery(GET_POSTS,{ fetchPolicy:"cache-only" });
-  const [ getPosts,{ loading:queryLoading, data:queryData, error } ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
+  const { data:cachedData, loading:cacheLoading, error }  = useQuery(GET_POSTS,{ fetchPolicy:"cache-only" });
+  const [ getPosts ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
 
 
   useEffect(() => {
       getPosts()
-  }, [getPosts])
+  }, [getPosts, online ])
 
- const data = queryData || cachedData;
- const loading = queryLoading || cacheLoading
+
+ const data = cachedData;
+ const loading =  cacheLoading
 
   useEffect(() => {
     if (data) {

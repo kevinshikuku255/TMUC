@@ -4,9 +4,8 @@ import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
 import { BrowserView, MobileView} from 'react-device-detect';
-import { useSubscription } from '@apollo/client';
-import {  NEW_POST} from './Graphql/posts';
-import { usePostDispatch } from './Context/post';
+import { useSubscription, useLazyQuery } from '@apollo/client';
+import {  NEW_POST, GET_POSTS} from './Graphql/posts';
 
 import './App.scss';
 
@@ -33,7 +32,6 @@ import MakePost from "./Pages/News/MakePost";
 
 
 
-
 ReactGA.initialize(REACT_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
@@ -55,20 +53,13 @@ const Swipble = () =>{
 
 function App() {
 
-   const postDispatch = usePostDispatch();
-   const { data } = useSubscription(NEW_POST)
+   const { data } = useSubscription(NEW_POST);
 
-    //Putting loaded data on global state
+
+  const [ getPosts ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
     useEffect(() => {
-          if(data){
-            navigator.vibrate(200)
-          postDispatch({
-              type: 'ADD_POST',
-              payload: data.newPost
-            })
-        }
-    },[data, postDispatch])
-
+        getPosts()
+    }, [ getPosts, data ])
 
 
 

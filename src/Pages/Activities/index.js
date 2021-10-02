@@ -7,7 +7,7 @@ import "./more.scss";
 
 /** Activites */
 function Index() {
-  
+
 ReactGA.pageview('/Activites');
 const {pathname} = useLocation();
   let active;
