@@ -78,7 +78,10 @@ const wsLink = new WebSocketLink({
       timeout: 60000,
       reconnect: true,
       connectionParams: {
-        authorization: authToken,
+      authorization: authToken,
+      keepAlive: 10000,
+      onConnect: () => console.log("connected"),
+      onDisconnect: () => console.log("disconnected")
       },
     },
   });
