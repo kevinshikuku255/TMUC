@@ -47,7 +47,7 @@
     border-bottom: 5px solid white;
     border-top: 5px solid white;
     flex-direction: column;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     width: 98vw;
     background-color: #e2e2e2;
     &:hover{
@@ -63,11 +63,11 @@
         .PublisherDetails{
           display: flex;
           flex-direction: column;
-          margin: auto 0 0 .2rem;
+          margin: auto 0 0 0;
        }
       }
       .NewsPin{
-        margin: -7px 0 auto auto;
+        margin: -4px 0 auto auto;
         color: gray;
         transform:rotate(55deg)
       }
@@ -79,13 +79,13 @@
      white-space: pre-wrap;
      font-family: sans-serif;
      .NewsAuthor{
-       font-size: large;
+      //  font-size: large;
        text-transform: uppercase;
        font-weight: bolder;
        font-stretch: condensed;
        display: flex;
        align-items: center;
-       margin-bottom: 1rem;
+       margin-bottom: .5rem;
      }
      .NewsTitle{
        font-weight: bolder;
@@ -258,3 +258,92 @@
      }
    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Ad{
+    font-size: xx-small;
+    font-weight: 900;
+    display: flex;
+    padding: 0 .5rem ;
+    border-radius: 7px;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
+    flex-direction: column;
+    margin: 0 auto 0 auto;
+    width: 98vw;
+    background-color: #ebebeb;
+    &:hover{
+     background-color: #d1d1d1;
+    }
+    .NewsHead{
+      display: flex;
+      flex-direction: row;
+      .NewsPin{
+        margin: 0px 0 auto auto;
+        color: rgb(0, 0, 0);
+      }
+
+   }
+   .NewsBody{
+     word-wrap: break-word;
+     writing-mode: horizontal-tb;
+     white-space: pre-wrap;
+     font-family: sans-serif;
+     .NewsAuthor{
+       font-size: medium;
+      color: rgb(252, 0, 76);
+       text-transform: uppercase;
+       font-weight: bolder;
+       font-stretch: condensed;
+       display: flex;
+       align-items: center;
+     }
+     .NewsTitle{
+       font-weight: bolder;
+       font-size: x-small;
+       margin:0  ;
+     }
+     .NewsBody{
+       margin: 0;
+     }
+   }
+   .NewsActions{
+     width: fit-content;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin: 0 .3rem 0 auto;
+     p{
+       font-size: x-small;
+       font-family: sans-serif;
+       color: #212020;
+     }
+   }
+ }
+
+
+
+
+
+
+
+
+
+
+
+

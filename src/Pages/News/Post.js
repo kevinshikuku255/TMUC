@@ -31,6 +31,12 @@ avator:{
    borderRadius: "0",
    height: theme.spacing(20),
    margin:".5rem auto",
+ },
+  Ad: {
+   width:"100%",
+   borderRadius: "0px",
+   height: theme.spacing(10),
+   margin:".1rem auto",
  }
 }));
 
@@ -69,9 +75,9 @@ function Post({ post }) {
       })
 
 const markUp = (
-<div className="News">
+<div className={id ? "News" : "Ad"}>
               <div className="NewsHead">
-                <div className="NewsPin"><PushPinIcon/></div>
+                <div className="NewsPin">{id ? <PushPinIcon/> : "Ad"}</div>
               </div>
               <div className="NewsBody" onClick={id ? clickHandler : null}>
                 {author &&
@@ -82,13 +88,13 @@ const markUp = (
                 <p className="NewsTitle">{title}</p>
                 <p className="NewsBody">{ displayMessage} <b>{message?.length > 300 && "... read more"}</b></p>
                 <div>
-                 {image &&  <Avatar src={image} className={classes.image}/>}
+                 {image &&  <Avatar src={image} className={id ? classes.image : classes.Ad}/>}
                 </div>
               </div>
 
-              <div className="NewsActions">
+              {id && <div className="NewsActions">
                 <p>{timeAgo(createdAt)}</p>
-              </div>
+              </div>}
           </div>
 )
 
