@@ -1,9 +1,8 @@
 import React,{useState} from 'react';
 import PostImageUpload from "./PostImageUpload";
 
-import { useMutation, useQuery } from "@apollo/client"
+import { useMutation } from "@apollo/client"
 import { CREATE_POST } from "../../Graphql/posts";
-import { GET_AUTH_USER } from "../../Graphql/user";
 import SendIcon from '@mui/icons-material/Send';
 import { TextareaAutosize} from '@material-ui/core';
 import { Close} from '@material-ui/icons';
@@ -54,15 +53,12 @@ const values = { title, message,  image, authorId }
     variables: values,
     onCompleted:()=>{
        setWarning("pinned successfully!");
-       getAuthUser();
     },
     onError(err){
       setErrors(err.message)
     }
 });
 
-//Refetch auth user
-const [ getAuthUser ] = useQuery(GET_AUTH_USER);
 
 // const hadleNameChange = e => setName(e.target.value);
 const hadleTitleChange = e => setTitle(e.target.value);
