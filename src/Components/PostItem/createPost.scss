@@ -1,58 +1,58 @@
 .create_post_wrapper{
-  margin: 6.2rem auto 0 auto;
- .post_description{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    .MessageInput{
-      margin: .5rem auto;
-      background-color: #dadada;
-      padding: .2rem 0rem;
-      display: flex;
-      height: auto;
-      padding: 0 ;
-      width: 98vw;
-      .Message{
-        flex: 1;
-        border: none;
-        background: none;
-        resize: none;
-        outline: none;
-        font-size: larger;
-        font-family: sans-serif;
-        padding: .5rem;
-      }
-      .Photo{
-        margin: auto  .5rem 0  .5rem;
-        align-self: flex-end;
-        height: fit-content;
-      }
-    }
+      .post_description{
+                  display: flex;
+                  flex-direction: column;
+                  margin: auto;
+                  width: 96vw;
+                  .MessageInput{
+                              margin: .5rem auto;
+                              // background-color: #dadada;
+                              // padding: .2rem 0rem;
+                              display: flex;
+                              flex-direction: row;
+                              // height: auto;
+                              // padding: 0 ;
+                              width: 96vw;
+                    .Message{
+                            flex: auto;
+                            border: none;
+                            background: none;
+                            resize: none;
+                            outline: none;
+                            font-size: larger;
+                            font-family: sans-serif;
+                            padding: .5rem;
+                    }
+                    .Photo{
+                          flex: .05;
+                          margin: auto  .5rem 0  .5rem;
+                    }
+                  }
 
 
-    .TitleInput{
-        width: 96vw;
-        margin: auto;
-        input{
-          outline: none;
-          border:none;
-          border-bottom:1px solid;
-        }
-      .title{
-        outline: none;
-        background: none;
-        margin-top: .5rem;
-        width: 100%;
-        resize: none;
-        font-size: large;
-        font-family: sans-serif;
-        border:none;
-        padding:.2rem;
-        font-weight:bolder;
-        border-bottom:2px solid;
-        }
-    }
- }
+          .TitleInput{
+              width: 90%;
+              margin: auto;
+              input{
+                outline: none;
+                border:none;
+                border-bottom:1px solid;
+              }
+            .title{
+              outline: none;
+              background: none;
+              margin-top: .5rem;
+              width: 100%;
+              resize: none;
+              font-size: large;
+              font-family: sans-serif;
+              border:none;
+              padding:.2rem;
+              font-weight:bolder;
+              border-bottom:2px solid;
+              }
+          }
+      }
 }
 
 
@@ -72,38 +72,38 @@
   color: rgb(4, 0, 255);
 }
 
-.display_item_error{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 5rem;
-  color: red;
-}
-
-// .floating_button{
-//   width: inherit;
-//   padding-right: 1rem;
+// .display_item_error{
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   justify-content: center;
+//   margin-top: 5rem;
+//   color: red;
 // }
 
-.close{
- position: absolute;
- right: 0;
- margin-right: 2rem;
- font-size: xx-large;
-}
+// // .floating_button{
+// //   width: inherit;
+// //   padding-right: 1rem;
+// // }
+
+// .close{
+//  position: absolute;
+//  right: 0;
+//  margin-right: 2rem;
+//  font-size: xx-large;
+// }
 
 
-.displayBtn{
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .displayBtn{
+//   margin-right: auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-.displayBtn button{
-  background: none;
-  padding:0.4rem 1rem;
-  border-radius: 20px;
-  border: 2px solid gray;
-}
+// .displayBtn button{
+//   background: none;
+//   padding:0.4rem 1rem;
+//   border-radius: 20px;
+//   border: 2px solid gray;
+// }

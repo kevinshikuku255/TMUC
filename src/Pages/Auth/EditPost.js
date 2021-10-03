@@ -13,19 +13,20 @@ function Index() {
   ReactGA.pageview('/Edit');
 
   //Use lazy query
-  const { data:cachedData , loading:cacheLoading}  = useQuery(GET_AUTH_USER,{ fetchPolicy:"cache-only" });
-  const [ getPosts,{ loading:queryLoading, data:queryData, error } ] = useLazyQuery(GET_AUTH_USER,{ fetchPolicy:"network-only" });
-
+  const { data:cachedData , loading:cacheLoading, error}  = useQuery(GET_AUTH_USER,{ fetchPolicy:"cache-only" });
+  const [ getPosts, ] = useLazyQuery(GET_AUTH_USER,{ fetchPolicy:"network-only" });
 
   useEffect(() => {
       getPosts()
   }, [getPosts])
 
- const data = queryData || cachedData;
- const loading = queryLoading || cacheLoading
+
+console.log(cachedData)
+ const data =  cachedData;
+ const loading =  cacheLoading
 
 let loader;
-  if(loading){
+  if(loading || cachedData.getAuthUser.posts.length < 1 ){
      loader = (
        <div className="Wrapper">
           <Skeleton/>
@@ -54,7 +55,9 @@ if(error && !data){
 let MarkeUp;
 if(data){
    MarkeUp =  data?.getAuthUser?.posts.map( post => (
-        <Post key={post.id} post ={post}/>
+        <div className="Wrapper">
+          <Post key={post.id} post ={post}/>
+        </div>
      ))
 }
 
@@ -68,10 +71,10 @@ if(data?.getAuthUser?.posts?.length < 1){
 }
 
   return (
-    <div className="Wrapper">
+    <>
       {MarkeUp}
       {loader}
-    </div>
+    </>
 
   )
 }

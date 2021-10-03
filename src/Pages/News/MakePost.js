@@ -8,8 +8,10 @@ function MakePost() {
   ReactGA.pageview('/CreatePost');
   return (
     <>
-    {<div id="CreatePostWrapper">
-        <CreatePost/>
+    {<div className="CreatePostWrapper">
+        <div>
+          <CreatePost/>
+        </div>
       </div>
     }
     </>

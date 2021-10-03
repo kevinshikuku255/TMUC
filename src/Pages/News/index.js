@@ -7,7 +7,23 @@ import { usePostDispatch, usePostState } from "../../Context/post";
 import { useLazyQuery, useQuery } from '@apollo/client';
 import { GET_POSTS } from '../../Graphql/posts'
 import Skeleton from './Skeleton';
-import { SignalWifiOff} from "@material-ui/icons"
+import { SignalWifiOff} from "@material-ui/icons";
+import  Img from "../../Images/mike.jpg";
+
+
+const mike = {
+author:
+     {__typename: 'User', id: '61557bbfe494ad225ca14ffa', name: 'Image Paradice'},
+createdAt: "1633177397421",
+id: null,
+image: Img,
+imagePublicId: null,
+message: "Garage road oposite transforma: 0742244889",
+name: null,
+title: "Comrades cyber and Barbershop in Town",
+__typename: "Post",
+}
+
 
 
 /** News component */
@@ -83,12 +99,15 @@ if(error && !data){
 let MarkeUp;
 if(posts){
    MarkeUp = ( posts && posts.length > 0) &&  posts.map( post => (
-        <Post key={post.id} post ={post}/>
+        <div>
+            <Post key={post.id} post ={post}/>
+        </div>
      ))
 }
 
   return (
     <div className="NewsWrapper">
+      <Post key={mike.id} post ={mike} onClick={null}/>
       {MarkeUp}
       {loader}
     </div>

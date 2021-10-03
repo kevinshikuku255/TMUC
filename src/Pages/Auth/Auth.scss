@@ -1,7 +1,12 @@
+.wrapper{
+  margin-top: 6.2rem;
+}
+
+/* -------------------------------------------------------------------------- */
 .SignUp{
   padding-top: 7rem;
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: calc(100% - 7rem);
   background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
   background-repeat: no-repeat;
@@ -18,6 +23,7 @@
       text-transform: capitalize;
     }
   }
+
 /* -------------------------------------------------------------------------- */
   .Form{
     margin-top: 2rem;
@@ -78,8 +84,7 @@
 
 /* -------------------------------------------------------------------------- */
 .Loading{
-  color: rgb(255, 255, 255);
-  height: 100vh;
+  height: calc(100vh - 7rem);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -89,8 +94,9 @@
 }
 
 .Nopins{
-  height: 100vh;
+  height: calc(100vh - 6.2rem);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
 }

@@ -57,13 +57,25 @@ export const timeAgo = unixTimestamp => {
   return  'just now';
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Converts unix timestamp to current date
  *
  * @param {string} date unix timestamp
  */
 export const currentDate = unixTimestamp => {
-  const date = new Date(parseInt(unixTimestamp));
+  const date = new Date(unixTimestamp * 1000);
   const months = [
     'Jan',
     'Feb',
@@ -79,12 +91,13 @@ export const currentDate = unixTimestamp => {
     'Dec',
   ];
   const month = months[date.getMonth()];
-  const day = date.getDate();
+  // const day = date.getDate().toString()
+  const day = new Date(date).toLocaleDateString('en-Us', { weekday: "long"})
 
+  console.log(day)
 //days of week
-let dd = ["Sun", "Mon", "Tue", 'Wed', "Thur", "Fri", "Sat"]
+// let days = ["Sun", "Mon", "Tue", 'Wed', "Thur", "Fri", "Sat"]
 
-  const _day =  dd[day]
   const year = date.getFullYear().toString();
   const time = date.toLocaleString('en-US', {
     hour: 'numeric',
@@ -92,7 +105,7 @@ let dd = ["Sun", "Mon", "Tue", 'Wed', "Thur", "Fri", "Sat"]
     hour12: false,
   });
 
-  return ` ${time} ${_day} ${month}  ${year} `;
+  return ` ${time} ${day} ${month}  ${year} `;
 };
 
 

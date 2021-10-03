@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react';
 import { useStore } from "../../store";
-import { timeAgo, currentDate } from  "../../Utils/date";
+import { timeAgo, weekDay } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
 import { Avatar, makeStyles} from "@material-ui/core";
 
@@ -29,7 +29,7 @@ avator:{
  image: {
    width:"100%",
    borderRadius: "0",
-   height: theme.spacing(18),
+   height: theme.spacing(20),
    margin:".5rem auto",
  }
 }));
@@ -73,7 +73,7 @@ const markUp = (
               <div className="NewsHead">
                 <div className="NewsPin"><PushPinIcon/></div>
               </div>
-              <div className="NewsBody" onClick={clickHandler}>
+              <div className="NewsBody" onClick={id ? clickHandler : null}>
                 {author &&
                 <div className="NewsAuthor">
                    <p>{author?.name} </p>
@@ -97,7 +97,7 @@ const leadingActions = () => (
   <LeadingActions>
     <SwipeAction onClick={() => console.info('swipe action triggered')}>
       <div className="RightSwipe">
-        {currentDate(createdAt)}
+        {weekDay(createdAt)}
       </div>
     </SwipeAction>
   </LeadingActions>
