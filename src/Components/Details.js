@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import { Avatar, makeStyles} from "@material-ui/core";
-import { YouTube, Instagram, WhatsApp, Twitter, Facebook, FormatTextdirectionLToR, AssignmentInd } from "@material-ui/icons";
+import { YouTube, Instagram, WhatsApp, Twitter, Facebook, FormatTextdirectionLToR } from "@material-ui/icons";
 
 
 import './components.scss';
@@ -9,9 +9,10 @@ import './components.scss';
 
 const useStyles = makeStyles(() => ({
   large: {
-    width: "100vw",
+    width: "100%",
     height:"auto",
     margin:"auto",
+    backgroundColor:"pink",
     borderRadius:"0px",
   },
 }));
@@ -27,11 +28,12 @@ export const Details = ({DetailInfo, avartar}) => {
 
       <div className="CoverImage">
           <Avatar alt={DetailInfo?.name} src={avartar} className={classes.large}/>
+          <p>
+            {DetailInfo.name}
+            {DetailInfo?.Youtube && <a href={DetailInfo?.Youtube}><YouTube className="Youtube"/></a>}
+          </p>
       </div>
-      <div className="CName">
-        <p> {DetailInfo?.position &&  <AssignmentInd/> } {DetailInfo?.name}</p>
-        {DetailInfo?.Youtube && <a href={DetailInfo?.Youtube}><YouTube className="Youtube"/></a>}
-      </div>
+
       <div className="Genre">
         {DetailInfo?.position && <p>{DetailInfo?.position}</p>}
         {DetailInfo?.Genre && <p>{DetailInfo?.Genre}</p>}
@@ -44,8 +46,8 @@ export const Details = ({DetailInfo, avartar}) => {
            {DetailInfo?.Tiktok && <li>  <a href={DetailInfo?.Tiktok}><FormatTextdirectionLToR style={{color:"#ff00f7"}}/></a></li>}
            {DetailInfo?.Twitter && <li>  <a href={DetailInfo?.Twitter}><Twitter style={{color:"skyblue"}}/></a></li>}
         </ul>
-
       </div>
+
       <div className="Accountdetails">
          <ul>
            { DetailInfo?.Youtubechannel && <li><b>Yotube Channel:</b>  {DetailInfo?.Youtubechannel}</li>}

@@ -2,15 +2,23 @@
 
   "Dama":{
     "name": "Damaries",
-    "position": "President"
+    "position": "Former President of Student Organisation"
   },
   "Deric":{
     "name": "Deric",
     "position": ""
   },
+  "Evans":{
+    "name": "Evans",
+    "position": ""
+  },
+  "Other":{
+    "name": "",
+    "position": ""
+  },
   "Mercy":{
     "name": "Mercy",
-    "position": "Representative of People With Disabilities"
+    "position": "Former representative of People With Disabilities"
   },
   "Asa":{
     "name": "Asa",
@@ -18,11 +26,11 @@
   },
   "Clinton":{
     "name": "Clinton",
-    "position": "Secretary General"
+    "position": "Incumbent Secretary General"
   },
   "Kevin":{
     "name": "Kevin",
-    "position": "Chairman of Sports and Entertainement"
+    "position": "Former chairman of Sports and Entertainement"
   },
   "Kingslay": {
     "name": "KINGSLAY KENYA",

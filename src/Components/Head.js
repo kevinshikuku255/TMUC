@@ -38,10 +38,10 @@ const SubHeader = () => {
           <p onClick={() => history.push("/")}  className={ (pathname === "/" ) ? "active" : "a"}>ACADEMICS</p>
         </div>
         <div>
-             <p onClick={() => handleClick()} className={ (pathname === "/Activities" ) ? "active" : "a"}>ACTIVITIES</p>
+             <p onClick={() => history.push("/News")} className={ (pathname === "/News" ) ? "active" : "a"}>NOTICEBOARD</p>
         </div>
         <div>
-             <p onClick={() => history.push("/News")} className={ (pathname === "/News" ) ? "active" : "a"}>NEWS</p>
+             <p onClick={() => handleClick()} className={ (pathname === "/Activities" ) ? "active" : "a"}>ACTIVITIES</p>
         </div>
      </div>
    )
