@@ -20,7 +20,7 @@ import EditPost from "./Pages/Auth/EditPost";
 
 
 import Desktopview from "./Components/Desktopview";
-import Sotmuc from "./Components/Sotmoc";
+import Sotmuc from "./Components/Sotmuc";
 import Policy from "./Components/Policy";
 import Head from "./Components/Head";
 import Profile from "./Components/Profile";

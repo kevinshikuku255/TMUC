@@ -1,45 +1,35 @@
 @import "../index.scss";
 
-
-.SotmucWrapper{
- margin-top: 7rem;
-}
-.Sotmuc{
-  margin: 0 .5rem 2rem .5rem;
-  z-index: -3;
-}
-
-.Leaders1819{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
-.Leaders1718{
-  display: flex;
-  flex-direction: row;
-}
-
-
-.Sotmuc div{
-  text-align: center;
-}
-
-.Details{
-  margin-top: 6.3rem;
-
+/* -------------------------------------------------------------------------- */
+.SotmucGrid{
+  margin-top: 7rem;
+  min-height: calc(100vh - 7rem);
+  .SotmucGridWrapper{
+      width: fit-content;
+      margin: auto;
+      position: relative;
+      hr{
+        margin: .5rem -1.6rem ;
+      }
+      .SotmucGridContainer{
+          display: grid;
+          width: fit-content;
+          grid-template-columns: 5rem 5rem 5rem;
+          grid-gap:1rem 3rem;
+          padding: 10px;
+          .sotmucMember {
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 5px;
+                border: 3px solid pink;
+                border-bottom: 10px solid pink;
+                height: 5rem;
+          }
+      }
+  }
 }
 
-.CoverImage{
-  margin: auto;
-  align-items: center;
-  width:"80vw";
-}
 
-b{
-  margin: 0;
-  padding: 0;
-}
+
 
 /* ----------------------------SOTMUC NAV---------------------------------------------- */
 .Nav_Wrapper{
@@ -57,6 +47,21 @@ b{
   display: none;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* --------------------------------App Head------------------------------------------ */
