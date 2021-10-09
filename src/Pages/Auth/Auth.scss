@@ -1,5 +1,20 @@
-.wrapper{
-  margin-top: 6.2rem;
+.EditPostWrapper{
+  margin-top: 5.7rem;
+  .SwipeToDleleteMessage{
+    height: 2rem;
+    width: 100vw;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f45f5f;
+    margin: auto;
+    font-family: sans-serif;
+    p{
+      margin:0 .5rem ;
+    }
+
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -98,5 +113,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
+  background-image: linear-gradient(to bottom left, #f8902ec3, #ebebebc9);
 }

@@ -1,11 +1,10 @@
 import React, { useState} from 'react';
-import { Avatar, CircularProgress } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import { SIGN_IN } from "../../Graphql/user";
 import { useMutation } from '@apollo/client';
-import { SET_AUTH_USER } from "../../store/auth";
-import { useStore } from "../../store";
+import { useAuthContext, LOG_IN } from "../../Context"
 
 import "./Auth.scss";
 import Logo from "../../Images/favicon.png";
@@ -20,7 +19,7 @@ const [ errors, setErrors] = useState({})
 const [ error, setError] = useState('');
 const [ show, setShow] = useState(false)
 const history = useHistory();
-const [, dispatch] = useStore();
+const [, dispatch] = useAuthContext();
 
 
 const changeHundler = (e) => {
@@ -50,7 +49,7 @@ const [ signin ,{loading}] = useMutation(SIGN_IN, {
 
   const dispatchAction = (token) => {
     dispatch({
-      type: SET_AUTH_USER,
+      type: LOG_IN ,
       payload: token,
     });
   };
@@ -59,16 +58,6 @@ const [ signin ,{loading}] = useMutation(SIGN_IN, {
 const submitHundler = (e) => {
   e.preventDefault();
   signin()
-}
-
-
-if(loading){
-  return(
-    <div className="Loading">
-      <CircularProgress/>
-      <p>preparing just a minute ...</p>
-    </div>
-  )
 }
 
   return (
@@ -104,7 +93,7 @@ if(loading){
             </div>
 
            <div className="SubmitButton">
-             <button type="submit">  LOGIN </button>
+             <button type="submit" disabled={loading}> {loading ? "LOGING IN ..." : "LOGIN" }</button>
            </div>
         </form>
         <br/><br/>

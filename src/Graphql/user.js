@@ -43,6 +43,10 @@ export const GET_USERS = gql`
           image
           message
           createdAt
+          views{
+            id
+            post
+          }
           author{
             id
             name

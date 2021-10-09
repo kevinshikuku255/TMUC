@@ -1,10 +1,12 @@
 import React from 'react';
 import {useHistory} from"react-router-dom";
 import ReactGA from 'react-ga';
-import { useLoadDispatch } from '../../Context/loading';
+import { useLoadContext } from '../../Context';
 import "./more.scss";
+
 import { Avatar, makeStyles, Badge} from "@material-ui/core";
 import { YouTube } from "@material-ui/icons";
+
 import Iconic from "../../Images/iconic.jpg";
 import Babafemi from "../../Images/Babfemi.jpg";
 import Collo from "../../Images/collo.jpg";
@@ -38,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Person() {
 const history = useHistory();
+const [ ,dispatch] = useLoadContext();
 const handleClick = (name) => {
     ReactGA.event({
           category:"Student Celeb",
@@ -45,7 +48,6 @@ const handleClick = (name) => {
           transport:"beacon",
           label:{name},
         })}
-   const dispatch = useLoadDispatch();
 
    const clickHandler = (name) => {
      dispatch({

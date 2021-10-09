@@ -6,6 +6,10 @@
   name
   image
   message
+  views{
+    id
+    post
+  }
   imagePublicId
   author{
     id
@@ -28,8 +32,8 @@
 
  /**Delete post */
   export const DELETE_POST = gql`
-      mutation($id: ID!, $imagePublicId: String){
-       deletePost(id: $id, imagePublicId: $imagePublicId)
+      mutation($id: ID!, $authUserId: ID,  $imagePublicId: String){
+       deletePost(id: $id,authUserId: $authUserId imagePublicId: $imagePublicId)
       }
   `;
 
@@ -44,6 +48,19 @@
       }
   `;
 
+
+/** Record a view */
+export const RECORD_VIEW = gql`
+   mutation($postId: ID!){
+     createView(postId:$postId){
+       id
+       post
+       createdAt
+     }
+   }
+`;
+
+
 /**Create News Post */
 export const CREATE_POST = gql`
   mutation($title: String, $message: String, $authorId:String, $name:String, $image:Upload){
@@ -53,6 +70,10 @@ export const CREATE_POST = gql`
       message
       name
       image
+      views{
+        id
+        post
+      }
       author{
         id
         name

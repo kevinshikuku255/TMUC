@@ -1,0 +1,152 @@
+@import "../../index.scss";
+
+
+
+.Welcome{
+  display: none;
+}
+
+
+.Home_page{
+  margin: 7rem 1rem 1rem 1rem;
+  min-height: 90vh;
+  padding-bottom: .5rem;
+  transition: all .5s ease-out;
+  position: relative;
+.Pages{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 8rem;
+  column-gap: .5rem;
+  row-gap: .5rem;
+  font-size: x-small;
+}}
+
+  .Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos, .Direction, .Helb{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: $color2;
+  box-shadow: 20px -2px $color3;
+  &:hover{
+   background-color: rgb(248, 224, 193);
+   border: 1px solid burlywood;
+  }
+  h4{
+    font-variant:small-caps;
+    font-family: sans-serif;
+    font-size: .8rem;
+  }
+  a{
+  width: 7rem;
+  height: 2rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bolder;
+  border-radius: 2rem;
+  color: white;
+  background-color: blueviolet;
+  overflow: hidden;
+  font-size:small;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ---------------------------Hover----------------------------------------------- */
+  &:hover{
+    width: 7.5rem;
+    box-shadow: 0 0 15px blue, 0 0 40px rgb(255, 0, 234), 0 0 4px blueviolet;
+  }
+  font-variant-caps:all-small-caps;
+
+}}
+
+
+
+
+
+
+
+.E{
+  background-image: linear-gradient(to left, #0000ff, #ff0000cd);
+}
+
+.P{
+  background-image: linear-gradient(to right, #8a2be2, #ff0000cd);
+}
+.L{
+  background-image: linear-gradient(to right, #008080, #ff0000cd);
+}
+
+.D{
+  background-image: linear-gradient(to left, #19e606db, #211b1bcd);
+}
+.A{
+  background-image: linear-gradient(to left, #8c8c41, #211b1bcd);
+}
+
+.C{
+  background-image: linear-gradient(to left, #000000, #5a1010cd);
+}
+
+.LB{
+  background-image: linear-gradient(to left, #d612c0, #703333cd);
+}
+.HB{
+  background-image: linear-gradient(to left, green, rgba(81, 112, 51, 0.802));
+}
+.H{
+  background-image: linear-gradient(to left, rgb(0, 230, 230), rgba(3, 68, 70, 0.802));
+}
+
+
+
+
+
+
+
+/* -----------------------------------Sotmuc_news--------------------------------------- */
+.Sotmuc_news{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.news{
+  margin: 1rem;
+  padding: 1rem .5rem;
+  margin-top: .5rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 2px 3px 4px red;
+}
+
+.analyticBtn{
+  margin:.7rem 0 0 auto;
+  width: fit-content;
+}
+
+
+
+
+
+
+.AdSlider{
+  position: absolute;
+  width: 100vw;
+  background-color: red;
+  margin: auto;
+  top: 0;
+  margin-top: 9rem;
+  z-index: 14;
+}
+
+
+
+
+
+

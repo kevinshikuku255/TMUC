@@ -1,14 +1,14 @@
 .Wrapper{
-    margin-top: 6.2rem;
+    margin-top: 5.5rem;
     position: absolute;
     width: 100%;
-    min-height: calc(100vh - 6.2rem);
+    min-height: calc(100vh - 5.5rem);
    }
 
 
 .CreatePostWrapper{
-  min-height:calc(100vh - 6.2rem);
-  margin-top: 6.2rem;
+  min-height:calc(100vh - 5.5rem);
+  margin-top: 5.5rem;
   position: relative;
   display: flex;
   background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
@@ -21,8 +21,8 @@
 }
 
 .NewsWrapper{
-      margin-top: 6.2rem;
-      min-height: calc(100vh - 6.2rem);
+      margin-top:5.5rem;
+      min-height: calc(100vh - 5.5rem);
   }
 
 .SwipeToDelete, .RightSwipe{
@@ -35,6 +35,7 @@
   align-items: center;
   padding: 0;
   margin: 0;
+  padding-left: 2rem;
 }
 .RightSwipe{
  background-color: green;
@@ -51,7 +52,7 @@
     width: 98vw;
     background-color: #e2e2e2;
     &:hover{
-     background-color: #d1d1d1;
+     background-color: #9d9d9d;
     }
     .NewsHead{
       display: flex;
@@ -96,11 +97,17 @@
      }
    }
    .NewsActions{
-     width: fit-content;
      display: flex;
      flex-direction: row;
+     justify-content: space-between;
      align-items: center;
-     margin: 0 .3rem 0 auto;
+     align-items: center;
+     .PostViews{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 1rem 0;
+     }
      p{
        font-size: small;
        font-family: sans-serif;
@@ -115,8 +122,8 @@
 .PostDetailsWrapper{
   padding: 0 .5rem;
   margin: auto;
-  padding-top: 7rem;
-  min-height: calc(100vh - 7rem);
+  padding-top: 5.5rem;
+  min-height: calc(100vh - 5.5rem);
   background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
    .DetailsNews{
       display: flex;
@@ -178,6 +185,7 @@
    border-bottom: 5px solid white;
    border-top: 5px solid white;
    position: relative;
+   margin: auto;
    &:hover{
      background-color: #979797;
    }
@@ -215,63 +223,6 @@
      }
    }
 }
-
-
-/* ----------------------------Login page---------------------------------------------- */
-.LoginWrapper{
-   margin-top: 5vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   min-height: 90vh;
-   padding: 0 2rem;
-   font-family: sans-serif;
-   div{
-     background-color: rgb(235, 235, 235);
-     border-radius: 5px;
-     color: brown;
-     padding: 1rem;
-     font-size: small;
-     p{
-       padding: 2rem;
-     }
-   }
-   h3{
-     color: blue;
-     font-weight: bolder;
-     font-weight: bolder;
-     margin: .5rem;
-   }
-   button{
-     padding: .5rem 1.5rem;
-     font-size: larger;
-     outline: none;
-     border-radius: 7px;
-     border: none;
-     background-color: blue;
-     color: white;
-     margin-top: 2rem;
-     cursor: pointer;
-     &:hover{
-       background-color: rgb(80, 80, 255);
-     }
-   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

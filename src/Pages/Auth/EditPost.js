@@ -5,30 +5,30 @@ import Post from "../News/Post"
 import Skeleton from "../News/Skeleton";
 
 import { useLazyQuery, useQuery } from '@apollo/client';
-import { GET_AUTH_USER } from '../../Graphql/user'
+import { GET_AUTH_USER } from '../../Graphql/user';
+import DeleteSweepOutlinedIcon from '@mui/icons-material/DeleteSweepOutlined';
 
 
 /** Edit post */
 function Index() {
   ReactGA.pageview('/Edit');
+  const online = navigator.onLine
 
   //Use lazy query
   const { data:cachedData , loading:cacheLoading, error}  = useQuery(GET_AUTH_USER,{ fetchPolicy:"cache-only" });
-  const [ getPosts, ] = useLazyQuery(GET_AUTH_USER,{ fetchPolicy:"network-only" });
+  const [ getPosts, { data:queryData, loading:queryLaodng} ] = useLazyQuery(GET_AUTH_USER,{ fetchPolicy:"network-only" });
 
   useEffect(() => {
       getPosts()
-  }, [getPosts])
+  }, [getPosts, online])
 
-
-console.log(cachedData)
- const data =  cachedData;
- const loading =  cacheLoading
+ const data =  cachedData || queryData;
+ const loading =  cacheLoading || queryLaodng
 
 let loader;
-  if(loading || cachedData.getAuthUser.posts.length < 1 ){
+  if(loading || cachedData?.getAuthUser?.posts.length < 1 ){
      loader = (
-       <div className="Wrapper">
+       <div>
           <Skeleton/>
           <Skeleton/>
           <Skeleton/>
@@ -40,7 +40,7 @@ let loader;
 
 if(error && !data){
   loader = (
-       <div className="Wrapper">
+       <div>
           <Skeleton />
           <Skeleton />
           <Skeleton />
@@ -55,14 +55,14 @@ if(error && !data){
 let MarkeUp;
 if(data){
    MarkeUp =  data?.getAuthUser?.posts.map( post => (
-        <div className="Wrapper">
+        <div>
           <Post key={post.id} post ={post}/>
         </div>
      ))
 }
 
 
-if(data?.getAuthUser?.posts?.length < 1){
+if(data?.getAuthUser?.posts?.length <= 0){
   MarkeUp = (
     <div className="Nopins">
       <h4>YOU HAVE NO PINNED NOTICE</h4>
@@ -71,10 +71,15 @@ if(data?.getAuthUser?.posts?.length < 1){
 }
 
   return (
-    <>
+    <div className="EditPostWrapper">
+      {data?.getAuthUser?.posts?.length > 0 &&
+      <div className="SwipeToDleleteMessage">
+         <p>Swipe left to delete</p>
+         <p><DeleteSweepOutlinedIcon/></p>
+      </div>}
       {MarkeUp}
       {loader}
-    </>
+    </div>
 
   )
 }

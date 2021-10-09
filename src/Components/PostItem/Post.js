@@ -6,7 +6,7 @@ import { CREATE_POST } from "../../Graphql/posts";
 import SendIcon from '@mui/icons-material/Send';
 import { TextareaAutosize} from '@material-ui/core';
 import { Close} from '@material-ui/icons';
-import { useStore } from "../../store"
+import { useAuthContext } from "../../Context"
 
 import  "./createPost.scss";
 
@@ -21,8 +21,8 @@ export const  CreatePost = () => {
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState('');
   const [warning, setWarning] = useState('');
-  const [{ auth }] = useStore();
-  const authorId = auth?.user?.id
+  const [ {user } ] = useAuthContext();
+  const authorId = user ? user?.id : null
    const handleReset = () => {
     setTitle('');
     setImage('');

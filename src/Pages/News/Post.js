@@ -1,12 +1,12 @@
 import React, { useEffect} from 'react';
-import { useStore } from "../../store";
+import { useAuthContext} from "../../Context"
 import { timeAgo, weekDay } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
 import { Avatar, makeStyles} from "@material-ui/core";
 
-
 import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
+import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
 
 import {
   LeadingActions,
@@ -17,8 +17,8 @@ import {
 } from 'react-swipeable-list';
 import 'react-swipeable-list/dist/styles.css';
 
-import { useMutation, useLazyQuery } from "@apollo/client"
-import { DELETE_POST, GET_POST } from "../../Graphql/posts";
+import { useMutation, useLazyQuery } from "@apollo/client";
+import { DELETE_POST, GET_POST , RECORD_VIEW} from "../../Graphql/posts";
 import { GET_AUTH_USER } from "../../Graphql/user";
 
 
@@ -41,11 +41,14 @@ avator:{
 }));
 
 function Post({ post }) {
-  const [{auth}] = useStore();
+  const [{user}] = useAuthContext();
   const classes = useStyles();
   const history = useHistory();
   const path = history.location.pathname
-  const { id, title, message, image, imagePublicId, createdAt, author } = post;
+  const { id, title, message, image, imagePublicId, createdAt, views, author } = post;
+
+// Record a view
+const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
 
 
 // Fetch single post data
@@ -63,14 +66,15 @@ function Post({ post }) {
 
 
   const clickHandler = () => {
+    view()
     history.push(`/Post/${id}`)
  }
 
  //Dlete post mutation
  const [deletePost] = useMutation(DELETE_POST,
-      {variables:{id, imagePublicId},
-      refetchQueries:[
-        {query: GET_AUTH_USER}
+      {variables:{id, imagePublicId, authUserId: user?.id },
+        refetchQueries:[
+            {query: GET_AUTH_USER}
       ]
       })
 
@@ -79,20 +83,26 @@ const markUp = (
               <div className="NewsHead">
                 <div className="NewsPin">{id ? <PushPinIcon/> : "Ad"}</div>
               </div>
-              <div className="NewsBody" onClick={id ? clickHandler : null}>
+              <div className="NewsBody">
                 {author &&
                 <div className="NewsAuthor">
                    <p>{author?.name} </p>
                    <VerifiedIcon color="primary" fontSize="small"/>
                 </div>}
                 <p className="NewsTitle">{title}</p>
-                <p className="NewsBody">{ displayMessage} <b>{message?.length > 300 && "... read more"}</b></p>
+                <p className="NewsBody">{ displayMessage}
+                    <b style={{color:"blueviolet"}}  onClick={id ? clickHandler : null} >{". . . read more"}</b>
+                </p>
                 <div>
                  {image &&  <Avatar src={image} className={id ? classes.image : classes.Ad}/>}
                 </div>
               </div>
 
               {id && <div className="NewsActions">
+                <div className="PostViews">
+                  <VisibilityTwoToneIcon/>
+                  <p> {views?.length} views</p>
+                </div>
                 <p>{timeAgo(createdAt)}</p>
               </div>}
           </div>
@@ -101,7 +111,7 @@ const markUp = (
 //Swipe left and right actions
 const leadingActions = () => (
   <LeadingActions>
-    <SwipeAction onClick={() => console.info('swipe action triggered')}>
+    <SwipeAction>
       <div className="RightSwipe">
         {weekDay(createdAt)}
       </div>
@@ -125,8 +135,7 @@ const trailingActions = () => (
     <div>
       <SwipeableList>
       <SwipeableListItem
-        leadingActions={ auth.user && path === "/Editpost" ? leadingActions() : null}
-        trailingActions={ auth.user && path === "/Editpost" ? trailingActions():  leadingActions()}
+        trailingActions={ user && path === "/Editpost" ? trailingActions():  leadingActions()}
       >
         {markUp}
       </SwipeableListItem>

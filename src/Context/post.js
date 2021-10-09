@@ -1,25 +1,29 @@
 import React, {createContext, useReducer, useContext} from 'react'
 
 //Two context one holding state other holding dispatch
-//Auth state context
-const PostStateContext = createContext();
+const PostContext = createContext();
 
-//Dispatch state context
-const PostDispatchContext = createContext();
+
+export const postsInitialState = {
+  posts: []
+}
+
+
+export const ADD_POSTS = "ADD_POSTS";
+export const ADD_POST = "ADD_POST";
 
 
 //Message reducer
-const postReducer = (state, action) =>{
-  const { posts } = state
+const  postsReducer = (state, action) =>{
+  const { posts } = state;
    switch(action.type){
-
-      case "ADD_POSTS":
+      case ADD_POSTS:
         return {
          ...state,
          posts:  action.payload
         }
 
-       case "ADD_POST":
+       case ADD_POST:
          let newPosts = [...posts, action.payload ]
         return {
          ...state,
@@ -29,21 +33,19 @@ const postReducer = (state, action) =>{
       default:
        throw new Error(`unknown action type ${action.type}`)
    }
-}
+};
 
 //Provider that will export and use in the App.js
 export const PostProvider = ({children}) => {
-  const [state, dispatch] = useReducer(postReducer, { posts: []   })
    return(
-    <PostDispatchContext.Provider value={dispatch}>
-        <PostStateContext.Provider value ={state}>
+    <PostContext.Provider value={ useReducer(postsReducer, postsInitialState)}>
                    {children}
-        </PostStateContext.Provider>
-    </PostDispatchContext.Provider>
+    </PostContext.Provider>
    )
 }
 
 
 //Export what is held inside usecontext
-export const usePostState = () => useContext(PostStateContext);
-export const usePostDispatch = () => useContext(PostDispatchContext);
+/** Global posts context */
+export const usePostsContext = () => useContext(PostContext);
+

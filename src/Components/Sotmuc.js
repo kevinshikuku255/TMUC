@@ -1,21 +1,21 @@
 import React from 'react';
 import "./components.scss";
-import { useHistory} from"react-router-dom";
 import ReactGA from 'react-ga';
-import { useLoadDispatch } from '../Context/loading';
+import { useHistory} from"react-router-dom";
+import { useLoadContext } from '../Context';
 import { Avatar, makeStyles} from "@material-ui/core";
 import Nav from "./Nav";
 
 import Asa from "../Images/Asa.jpg";
-import Dama from "../Images/Dama.jpg";
-import Deric from "../Images/deric.jpg";
 import Sec from "../Images/sec.jpg";
-import Mercy from "../Images/Mercy.jpg";
-import Gitonga from "../Images/gitonga.png";
+import Dama from "../Images/Dama.jpg";
 import Kevin from "../Images/kevo.jpg";
+import Mercy from "../Images/Mercy.jpg";
+import Kendi from "../Images/Kendi.jpg";
+import Deric from "../Images/deric.jpg";
 import Other from "../Images/Other.jpeg";
 import Evans from "../Images/Evans.jpeg";
-import Kendi from "../Images/Kendi.jpg";
+import Gitonga from "../Images/gitonga.png";
 
 const useStyles = makeStyles((theme) => ({
   img: {
@@ -40,7 +40,7 @@ function Sotmoc() {
   const history = useHistory();
   ReactGA.pageview(window.location.pathname);
 
-  const dispatch = useLoadDispatch();
+  const [ ,dispatch ] = useLoadContext();
 
   const clickHandler = (name) => {
      dispatch({

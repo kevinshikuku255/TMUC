@@ -1,8 +1,10 @@
 import React, { useState} from 'react';
-import { Avatar, CircularProgress } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
 import { SIGN_UP } from "../../Graphql/user";
 import { useMutation } from '@apollo/client';
+import { useAuthContext, LOG_IN} from "../../Context";
+import jwtDecode from "jwt-decode";
 
 
 import "../Auth/Auth.scss";
@@ -15,7 +17,8 @@ const [ values, setValues] = useState({password:"", name:"" , confirmPassword:""
 const [ errors, setErrors] = useState({})
 const [ error, setError] = useState('');
 const [ show, setShow] = useState(false)
-const history = useHistory()
+const history = useHistory();
+const [, dispatch] = useAuthContext();
 
 
 const changeHundler = (e) => {
@@ -31,25 +34,29 @@ const [ signup ,{loading}] = useMutation(SIGN_UP, {
     setErrors({[error]: e.message})
     setError(e.message)
   },
-  onCompleted:() => {
+  onCompleted:(data) => {
+    console.log(data)
+    let token = data.signup.token
+    const decodedToken = jwtDecode(token);
+    console.log(decodedToken)
+    localStorage.setItem("jwt", token);
+    dispatchAction(decodedToken);
     history.push("/")
   }
 })
 
 
+  const dispatchAction = (token) => {
+    dispatch({
+      type: LOG_IN,
+      payload: token,
+    });
+  };
+
+
 const submitHundler = (e) => {
   e.preventDefault();
   signup()
-}
-
-
-if(loading){
-  return(
-    <div className="Loading">
-      <CircularProgress/>
-      <p>preparing just a minute</p>
-    </div>
-  )
 }
 
   return (
@@ -98,7 +105,7 @@ if(loading){
             </div>
 
            <div className="SubmitButton">
-             <button type="submit">  SIGN UP </button>
+             <button type="submit" disabled={loading}> { loading ? "SIGNING UP ...": "SIGN UP"} </button>
            </div>
         </form>
         <br/><br/>

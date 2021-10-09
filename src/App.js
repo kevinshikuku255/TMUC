@@ -9,9 +9,8 @@ import {  NEW_POST, GET_POSTS} from './Graphql/posts';
 
 import './App.scss';
 
-import Index from "./Pages";
+import Index from "./Pages/Home/index";
 import News from "./Pages/News/index";
-import Login from "./Pages/News/Login";
 import Activities from "./Pages/Activities";
 import Fab from "./Components/Fab";
 import Signup from "./Pages/Auth/SignUp";
@@ -44,8 +43,8 @@ const Swipble = () =>{
     fallbackRoute={FallbackPage}
   >
     <Route exact path="/" component={Index}/>
-    <Route path="/News" component={News}/>
     <Route path="/Activities" component={Activities}/>
+    <Route path="/News" component={News}/>
   </RouterCarousel>
  )
 };
@@ -77,7 +76,6 @@ function App() {
             <React.Suspense fallback={ <div>{FallbackPage}</div>}>
               <Switch>
                 <Route  path="/Cu" component={Cu}/>
-                <Route  path="/Login" component={Login}/>
                 <Route  path="/activities/:username" component={Profile}/>
                 <Route  path="/Post/:id" component={PostDetails}/>
                 <Route  path="/Football" component={Football}/>

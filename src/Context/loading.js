@@ -2,43 +2,55 @@ import React, {createContext, useReducer, useContext} from 'react';
 
 //Two context one holding state other holding dispatch
 //Auth state context
-const LoadStateContext = createContext();
+const LoadContext = createContext();
 
-//Dispatch state context
-const LoadDispatchContext = createContext();
 
+const initialState = {
+  loading:false,
+  open:false ,
+  menu: false
+}
+
+
+export const LOAD = "LOAD";
+export const OFFLOAD = "OFFLOAD";
+export const CLOSE = "CLOSE";
+export const OPEN = "OPEN";
+export const MENU = "MENU"
 
 
 //State reducer
-const loadReducer = (state, {type, payload})  =>{
+export const loadReducer = (state, {type, payload})  =>{
 
    switch(type){
-    case 'LOAD' :
+    case LOAD :
       return {
         ...state,
         loading: payload
       }
-    case 'CLOSE' :
+    case OFFLOAD :
+      return {
+        ...state,
+        loading: payload
+      }
+    case CLOSE :
       return {
         ...state,
         open: payload
       }
-   case 'OPEN' :
+
+   case OPEN :
       return {
         ...state,
         open: payload
       }
-  case "MENU" :
+   case MENU :
     return {
       ...state,
       menu: payload
     }
-    case 'OFFLOAD' :
-      return {
-        ...state,
-        loading: payload
-      }
       default:
+        console.log(type, payload)
        throw new Error(`unknown action type ${type}`)
    }
 }
@@ -46,20 +58,16 @@ const loadReducer = (state, {type, payload})  =>{
 
 //Provider that will export and use in the App.js
 export const LoadProvider = ({children}) => {
-  const [state, dispatch] = useReducer(loadReducer, {loading:false, open:false , menu: false} );
    return(
-    <LoadDispatchContext.Provider value={dispatch}>
-        <LoadStateContext.Provider value ={state}>
+    <LoadContext.Provider value={useReducer(loadReducer, initialState )}>
                    {children}
-        </LoadStateContext.Provider>
-    </LoadDispatchContext.Provider>
+    </LoadContext.Provider>
    )
 }
 
 
 //Export uwhat is held inside usecontext
-/** State */
-export const useLoadState = () => useContext(LoadStateContext);
+/** Loading state */
+export const useLoadContext = () => useContext(LoadContext);
 
-/** Dispatch */
-export const useLoadDispatch = () => useContext(LoadDispatchContext);
+

@@ -1,12 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter} from 'react-router-dom';
-import { LoadProvider } from './Context/loading';
 import dotenv from 'dotenv';
+import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
-import { PostProvider } from './Context/post';
+import { BrowserRouter} from 'react-router-dom';
 import { createApolloClient } from './Utils/apollo_client';
-import { StoreProvider } from "./store"
+import { AuthProvider, LoadProvider, PostProvider } from "./Context";
 
 
 import './index.scss';
@@ -31,13 +29,13 @@ const apolloClient = createApolloClient(API_URL, websocketApiUrl);
 ReactDOM.render(
       <ApolloProvider client={apolloClient}>
         <BrowserRouter>
-           <StoreProvider>
+           <AuthProvider>
                 <LoadProvider>
                   <PostProvider>
                       <App/>
                   </PostProvider>
                 </LoadProvider>
-            </StoreProvider>
+            </AuthProvider>
       </BrowserRouter>
     </ApolloProvider>,
   document.getElementById('root')
