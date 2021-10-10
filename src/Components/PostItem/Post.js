@@ -6,7 +6,9 @@ import { CREATE_POST } from "../../Graphql/posts";
 import SendIcon from '@mui/icons-material/Send';
 import { TextareaAutosize} from '@material-ui/core';
 import { Close} from '@material-ui/icons';
-import { useAuthContext } from "../../Context"
+import { useAuthContext } from "../../Context";
+import useSound from 'use-sound';
+import Bubble from "../../Images/bubble.wav";
 
 import  "./createPost.scss";
 
@@ -22,12 +24,13 @@ export const  CreatePost = () => {
   const [errors, setErrors] = useState('');
   const [warning, setWarning] = useState('');
   const [ {user } ] = useAuthContext();
+   const [play] = useSound(Bubble);
   const authorId = user ? user?.id : null
    const handleReset = () => {
     setTitle('');
     setImage('');
-    setErrors('')
-    setMessage('')
+    setErrors('');
+    setMessage('');
   };
 
 
@@ -52,7 +55,8 @@ const values = { title, message,  image, authorId }
  const [createPost, { loading , data}] = useMutation(CREATE_POST,{
     variables: values,
     onCompleted:()=>{
-       setWarning("pinned successfully!");
+       play()
+       setWarning(<p style={{fontFamily:"sans-serif"}}>Pinned successfully!</p>);
     },
     onError(err){
       setErrors(err.message)
@@ -90,7 +94,7 @@ const postImagePrevew =
 const warningMessage = (
   <div className="display_item_alert" >
     { data && warning}
-    {loading && "pinning your post ..."}
+    {loading && <p style={{fontFamily:"sans-serif"}}>Pinning your Note</p>}
   </div>
 )
 

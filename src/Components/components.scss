@@ -166,17 +166,14 @@
 /* --------------------------------SubHeader------------------------------------------ */
 .SubHeader{
     display: relative;
-    margin: 0rem 0 0 0;
+    margin:  0;
     height: 1.4rem;
-    padding: .5rem 0;
+    padding: .5rem 0 0rem 0;
     width: 100%;
     border: none;
     display: flex;
     justify-content: space-around;
     align-items:center;
-    .inactive_back_arrow:hover{
-       opacity: 0.5;
-    }
     p, a{
     font-family: serif;
     font-size: smaller;
@@ -185,27 +182,9 @@
     cursor: pointer;
     padding:0 0 .1rem 0rem;
   }
-  @media screen and (min-width: 48rem ) {
-      width: 55vw  ;
-      border: none;
-      .sotmucNewsNav{
-         display: block;
-      }
-
-  }
 }
-
-.a{
-  transition-property: border-bottom;
-  transition-duration: 5s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 5s;
-  font-weight: bolder;
-}
-
 .active{
   border-bottom: 3px solid blue;
-  font-weight: bolder;
 }
 
 

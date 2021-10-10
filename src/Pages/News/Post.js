@@ -1,11 +1,10 @@
 import React, { useEffect} from 'react';
-import { useAuthContext} from "../../Context"
+import { useAuthContext} from "../../Context";
 import { timeAgo, weekDay } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
 import { Avatar, makeStyles} from "@material-ui/core";
 import useSound from 'use-sound';
-import Boop from "../../Images/boop.wav";
-import Bubble from "../../Images/bubble.wav"
+import Bubble from "../../Images/bubble.wav";
 
 import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
@@ -50,9 +49,9 @@ function Post({ post }) {
   const classes = useStyles();
   const history = useHistory();
   const path = history.location.pathname;
-  const [play] = useSound(Boop);
   const [readMore] = useSound(Bubble);
   const { id, title, message, image, imagePublicId, createdAt, views, author } = post;
+
 
 // Record a view
 const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
@@ -90,7 +89,6 @@ const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
 
 // Sharing the pinned post
 async function Share() {
-  play();
   const label= JSON.stringify(title, null, 2)
   const url = "https://tmuc.netlify.app/Noticeboard";
   const text = JSON.stringify(message, null, 2);

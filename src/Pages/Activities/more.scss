@@ -9,13 +9,10 @@
   transition-duration: 2s;
   transition-timing-function: linear;
   transition-delay: 20s;
-  @media screen and (min-width:48vw) {
-    background: none;
-  }
 }
 
 .Active_Container{
-  margin-top: 7rem;
+  margin-top: 5.5rem;
   margin-right: 0;
   background-color: $color1;
   @media screen and (min-width:48vw) {
