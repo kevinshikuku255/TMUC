@@ -51,9 +51,6 @@
     margin: 0 auto;
     width: 98vw;
     background-color: #e2e2e2;
-    &:hover{
-     background-color: #9d9d9d;
-    }
     .NewsHead{
       display: flex;
       flex-direction: row;
@@ -102,11 +99,14 @@
      justify-content: space-between;
      align-items: center;
      align-items: center;
-     .PostViews{
+     .PostActions{
        display: flex;
        justify-content: center;
        align-items: center;
        margin: 1rem 0;
+       &:hover{
+         color: red;
+       }
      }
      p{
        font-size: small;

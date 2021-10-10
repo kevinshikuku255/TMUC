@@ -3,10 +3,15 @@ import { useAuthContext} from "../../Context"
 import { timeAgo, weekDay } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
 import { Avatar, makeStyles} from "@material-ui/core";
+import useSound from 'use-sound';
+import Boop from "../../Images/boop.wav";
+import Bubble from "../../Images/bubble.wav"
 
 import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
+import ShareTwoToneIcon from '@mui/icons-material/ShareTwoTone';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
+
 
 import {
   LeadingActions,
@@ -44,7 +49,9 @@ function Post({ post }) {
   const [{user}] = useAuthContext();
   const classes = useStyles();
   const history = useHistory();
-  const path = history.location.pathname
+  const path = history.location.pathname;
+  const [play] = useSound(Boop);
+  const [readMore] = useSound(Bubble);
   const { id, title, message, image, imagePublicId, createdAt, views, author } = post;
 
 // Record a view
@@ -66,7 +73,8 @@ const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
 
 
   const clickHandler = () => {
-    view()
+    readMore();
+    view();
     history.push(`/Post/${id}`)
  }
 
@@ -77,6 +85,31 @@ const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
             {query: GET_AUTH_USER}
       ]
       })
+
+
+
+// Sharing the pinned post
+async function Share() {
+  play();
+  const label= {title};
+  const url = "https://tmuc.netlify.app/News";
+  const text = {message};
+  try {
+      await navigator
+      .share({
+        label,
+        url,
+        text
+      })
+
+    } catch (err) {
+
+         // the user cancels the action of sharing
+       console.log("share canceled");
+    }
+}
+
+
 
 const markUp = (
 <div className={id ? "News" : "Ad"}>
@@ -99,10 +132,13 @@ const markUp = (
               </div>
 
               {id && <div className="NewsActions">
-                <div className="PostViews">
+                <div className="PostActions">
                   <VisibilityTwoToneIcon/>
                   <p> {views?.length} views</p>
                 </div>
+                 <div className="PostActions" onClick={Share}>
+                     <ShareTwoToneIcon/> share
+                 </div>
                 <p>{timeAgo(createdAt)}</p>
               </div>}
           </div>

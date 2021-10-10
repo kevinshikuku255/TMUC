@@ -25,7 +25,7 @@ const SubHeader = () => {
              <p onClick={() => handleClick()} className={ (pathname === "/Activities" ) ? "active" : "a"}>ACTIVITIES</p>
         </div>
         <div>
-             <p onClick={() => history.push("/News")} className={ (pathname === "/News" ) ? "active" : "a"}>NOTICEBOARD</p>
+             <p onClick={() => history.push("/Noticeboard")} className={ (pathname === "/Noticeboard" ) ? "active" : "a"}>NOTICEBOARD</p>
         </div>
      </div>
    )
@@ -54,7 +54,7 @@ const  Head = () => {
     custom_head = "UNIVERSITY STUDENT COUNCIL"
   }else if(profileName === "Cu"){
     custom_head = "CHRISTIAN UNION"
-  }else if(profileName === "News"){
+  }else if(profileName === "Noticeboard"){
     custom_head = "ONLINE NOTICEBOARD"
   }
   else if(profileName === "Activities"){
