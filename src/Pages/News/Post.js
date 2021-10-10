@@ -91,9 +91,9 @@ const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
 // Sharing the pinned post
 async function Share() {
   play();
-  const label= JSON.stringify(title)
+  const label= JSON.stringify(title, null, 2)
   const url = "https://tmuc.netlify.app/Noticeboard";
-  const text = JSON.stringify(message);
+  const text = JSON.stringify(message, null, 2);
   try {
       await navigator
       .share({

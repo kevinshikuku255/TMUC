@@ -46,9 +46,9 @@ function Sotmoc() {
 const handleClick = (name) => {
     ReactGA.event({
           category:"STUDENT CELEB",
-          action: `Clicked on ${JSON.stringify(name)}` ,
+          action: `Clicked on ${JSON.stringify(name, null, 2)}` ,
           transport:"beacon",
-          label: JSON.stringify(name),
+          label: JSON.stringify(name, null, 2),
         })}
 
 
