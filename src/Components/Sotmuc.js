@@ -42,12 +42,23 @@ function Sotmoc() {
 
   const [ ,dispatch ] = useLoadContext();
 
+
+const handleClick = (name) => {
+    ReactGA.event({
+          category:"STUDENT CELEB",
+          action: `Clicked on ${JSON.stringify(name)}` ,
+          transport:"beacon",
+          label: JSON.stringify(name),
+        })}
+
+
   const clickHandler = (name) => {
      dispatch({
        type: "OFFLOAD",
        payload: false
      })
      history.push(`/activities/${name}`)
+     handleClick(name)
    }
 
 

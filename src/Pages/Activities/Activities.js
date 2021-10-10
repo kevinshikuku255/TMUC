@@ -43,10 +43,10 @@ const history = useHistory();
 const [ ,dispatch] = useLoadContext();
 const handleClick = (name) => {
     ReactGA.event({
-          category:"Student Celeb",
-          action:"clicked",
+          category:"STUDENT CELEB",
+          action: `Clicked on ${JSON.stringify(name)}` ,
           transport:"beacon",
-          label:{name},
+          label: JSON.stringify(name),
         })}
 
    const clickHandler = (name) => {

@@ -53,7 +53,6 @@ function Post({ post }) {
   const [play] = useSound(Boop);
   const [readMore] = useSound(Bubble);
   const { id, title, message, image, imagePublicId, createdAt, views, author } = post;
-  console.log(`${title}`)
 
 // Record a view
 const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
@@ -92,9 +91,9 @@ const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
 // Sharing the pinned post
 async function Share() {
   play();
-  const label= `${title}`;
+  const label= JSON.stringify(title)
   const url = "https://tmuc.netlify.app/Noticeboard";
-  const text = `${message}`;
+  const text = JSON.stringify(message);
   try {
       await navigator
       .share({
