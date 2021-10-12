@@ -24,8 +24,7 @@ export default function AccountMenu({menu_on}) {
 
   useEffect(() => {
     const checkIfClickedOutside = e => {
-      // If the menu is open and the clicked target is not within the menu,
-      // then close the menu
+// If the menu is open and the clicked target is not within the menu, then close the menu
       if (menu_on && ref.current && !ref.current.contains(e.target)) {
         loadispatch({type:"MENU", payload: false})
       }
@@ -34,7 +33,7 @@ export default function AccountMenu({menu_on}) {
     document.addEventListener("mousedown", checkIfClickedOutside)
 
     return () => {
-      // Cleanup the event listener
+// Cleanup the event listener
       document.removeEventListener("mousedown", checkIfClickedOutside)
     }
   }, [menu_on, loadispatch])

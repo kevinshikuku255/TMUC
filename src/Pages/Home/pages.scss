@@ -8,8 +8,8 @@
 
 
 .Home_page{
-  margin: 7rem 1rem 1rem 1rem;
-  min-height: 90vh;
+  margin: 6rem 1rem 1rem 1rem;
+  min-height: calc(100vh - 6rem);
   padding-bottom: .5rem;
   transition: all .5s ease-out;
   position: relative;

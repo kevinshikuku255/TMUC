@@ -81,14 +81,11 @@ if( !data){
                 </div>}
 
                 <h3> {title}</h3>
+                <p>{timeAgo(createdAt)}</p> <br/>
                 <div className="Message">
                   <div className="MessageText"><p> {message}</p></div>
                   {image && <Avatar src={image} className={classes.image}/>}
                 </div>
-              </div>
-
-              <div className="DetailsNewsActions">
-                <p>{timeAgo(createdAt)}</p>
               </div>
         </div>
         </div>

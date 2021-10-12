@@ -76,8 +76,9 @@ let head = (
 <div className="SotmucGrid">
     <Nav head={head}/>
     <div className="SotmucGridWrapper">
-         <hr/>
-         <p>2020 - todate</p>
+         <div className="Year">
+           <p>2020 - todate</p>
+         </div>
          <div className="SotmucGridContainer">
               <div className="sotmucMember" style={{opacity:0}}> 1 </div>
               <div className="sotmucMember">
@@ -95,8 +96,9 @@ let head = (
               <div className="sotmucMember"> <Avatar alt="Kendi" src={Kendi} className={classes.img}/> </div>
               <div className="sotmucMember"> <Avatar  className={classes.img}/> </div>
          </div>
-         <hr/>
-         <p>2019 - 2020</p>
+         <div className="Year">
+            <p>2019 - 2020</p>
+         </div>
          <div className="SotmucGridContainer">
               <div className="sotmucMember" style={{opacity:0}}> 1 </div>
               <div className="sotmucMember">
@@ -136,10 +138,11 @@ let head = (
                     alt="Other" src={Other} className={classes.img}/>
               </div>
          </div>
-         <hr/>
     </div>
     <div>
-      <h3>2017 - 2018</h3>
+      <div className="Year">
+        <h3>2017 - 2018</h3>
+     </div>
         <div >
           <Avatar src={Gitonga} className={classes.gitonga}/>
         </div>
