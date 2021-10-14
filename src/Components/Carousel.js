@@ -7,7 +7,7 @@ function CarouselComponent() {
   return (
     <div>
       {<Carousel
-          itemsToShow={2} className="Carousel"
+          itemsToShow={1} className="Carousel"
           showArrows={false}
           enableSwipe={true}
           enableAutoPlay
@@ -17,8 +17,6 @@ function CarouselComponent() {
           <div className="two">2</div>
           <div className="three">3</div>
           <div className="four">4</div>
-          <div className="five">5</div>
-          <div className="six">6</div>
         </Carousel>}
     </div>
   )

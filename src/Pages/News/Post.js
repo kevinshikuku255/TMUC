@@ -3,8 +3,6 @@ import { useAuthContext} from "../../Context";
 import { timeAgo, weekDay } from  "../../Utils/date";
 import { useHistory } from "react-router-dom";
 import { Avatar, makeStyles} from "@material-ui/core";
-import useSound from 'use-sound';
-import Bubble from "../../Images/bubble.wav";
 
 import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
@@ -49,7 +47,6 @@ function Post({ post }) {
   const classes = useStyles();
   const history = useHistory();
   const path = history.location.pathname;
-  const [readMore] = useSound(Bubble);
   const { id, title, message, image, imagePublicId, createdAt, views, author } = post;
 
 
@@ -72,7 +69,6 @@ const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
 
 
   const clickHandler = () => {
-    readMore();
     view();
     history.push(`/Post/${id}`)
  }

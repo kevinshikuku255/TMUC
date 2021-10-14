@@ -43,8 +43,8 @@ const Swipble = () =>{
     fallbackRoute={FallbackPage}
   >
     <Route exact path="/" component={Index}/>
-    <Route path="/Activities" component={Activities}/>
     <Route path="/Noticeboard" component={News}/>
+    <Route path="/Activities" component={Activities}/>
   </RouterCarousel>
  )
 };
