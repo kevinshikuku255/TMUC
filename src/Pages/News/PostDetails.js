@@ -95,7 +95,7 @@ if( !data){
         <div className="DetailsReply">
           <CreateReply postId={id}/>
           {replies.map(reply => (
-            <Reply  key={reply.id} reply={reply}/>
+            <Reply  key={reply?.id} reply={reply}/>
           ))}
         </div>
         </div>

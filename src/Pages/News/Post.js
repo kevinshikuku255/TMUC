@@ -130,7 +130,7 @@ const markUp = (
                   <p> {views?.length} views</p>
                 </div>
                  <div className="PostActions" onClick={id ? clickHandler : null}>
-                     <ForumIcon/> {replies.length} feedback
+                     <ForumIcon/> {replies?.length} feedback
                  </div>
                 <p>{timeAgo(createdAt)}</p>
               </div>}

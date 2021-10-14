@@ -7,8 +7,8 @@ import "./news.scss";
 function Reply({reply}) {
   return (
     <div className="Reply">
-      <p>{reply.body}</p>
-      <i>{timeAgo(reply.createdAt)}</i>
+      <p>{reply?.body}</p>
+      <i>{timeAgo(reply?.createdAt)}</i>
     </div>
   )
 }
