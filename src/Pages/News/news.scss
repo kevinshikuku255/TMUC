@@ -169,6 +169,15 @@
             align-items: center;
             margin-bottom: 1rem;
         }
+        .MessageMeta{
+          display: flex;
+          justify-content: space-between;
+          p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
         .Message{
           padding: .5rem .05rem;
           border-radius: 5px;

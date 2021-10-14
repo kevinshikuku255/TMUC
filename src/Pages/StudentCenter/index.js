@@ -1,14 +1,22 @@
-import React from 'react'
+import React from 'react';
+import ReactGA from 'react-ga';
+import { useHistory } from 'react-router';
+import "./studentcenter.css";
 
 
 
 /** Student center */
-function index() {
+function Index() {
+   ReactGA.pageview('Studentcenter');
+   const history = useHistory()
   return (
-    <div>
-       <h1>Student center</h1>
+    <div className="StudentCenter">
+       <p>STUDENT CENTER</p>
+       <i>comming soon ...</i>
+       <br/>
+       <h2 onClick={ ()=> history.goBack() }>GO BACK</h2>
     </div>
   )
 }
 
-export default index
+export default Index

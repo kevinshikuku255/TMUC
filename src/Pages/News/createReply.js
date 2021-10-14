@@ -18,12 +18,12 @@ import { GET_POST } from '../../Graphql/posts'
  const CreateReply = ({postId}) => {
    const [play] = useSound(Bubble);
    const [ reply, setReply] = useState("")
+   const [ prev, setPrev ] = useState("")
 
- const [createReply, { loading }] = useMutation(CREATE_REPLY,{
+ const [createReply, { loading , data}] = useMutation(CREATE_REPLY,{
     variables: {body: reply, postId},
     onCompleted:()=>{
        play();
-       setReply("");
     },
     onError(err){
       console.log(err)
@@ -36,7 +36,9 @@ import { GET_POST } from '../../Graphql/posts'
 
 
 const handleSubmit = (e) => {
-    e.preventDefault();
+     e.preventDefault();
+     setReply("");
+     setPrev(reply)
      createReply();
 };
 
@@ -57,7 +59,7 @@ const form = (
                   className="Message"
                   />
               <div className="SendButton">
-                    {loading ? " ..." : <SendIcon  label="reply" color="primary"  onClick={ reply ? handleSubmit : null } />}
+                    {loading ? "..." : <SendIcon  label="reply" color="primary"  onClick={ reply ? handleSubmit : null } />}
               </div>
           </div>
  </form>
@@ -65,7 +67,16 @@ const form = (
 
 
 
-  return( <div > {form} </div> )
+  return(
+     <div >
+       {form}
+       { !data && loading &&
+        <div className="Reply">
+          <p>{prev}</p>
+          <i>sending ...</i>
+      </div>}
+
+ </div> )
 
 };
 

@@ -56,7 +56,7 @@ const values = { title, message,  image, authorId }
     variables: values,
     onCompleted:()=>{
        play()
-       setWarning(<p style={{fontFamily:"sans-serif"}}>Pinned successfully!</p>);
+       setWarning(<p style={{fontFamily:"sans-serif", color:"blueviolet"}}>Pinned successfully!</p>);
     },
     onError(err){
       setErrors(err.message)
@@ -94,7 +94,7 @@ const postImagePrevew =
 const warningMessage = (
   <div className="display_item_alert" >
     { data && warning}
-    {loading && <p style={{fontFamily:"sans-serif"}}>Pinning your Note</p>}
+    {loading && <p style={{fontFamily:"sans-serif"}}>pinning your Note just a minute ...</p>}
   </div>
 )
 
