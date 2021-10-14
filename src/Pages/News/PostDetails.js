@@ -7,6 +7,9 @@ import Skeleton from "./Skeleton";
 import VerifiedIcon from '@mui/icons-material/Verified';
 import "./news.scss";
 
+import Reply from "./Reply";
+import CreateReply from "./createReply";
+
 
 import { useQuery } from '@apollo/client';
 import { GET_POST } from '../../Graphql/posts'
@@ -68,7 +71,7 @@ if( !data){
 
   let newsPost;
   if(data && !loading){
-    const { title,image, message, createdAt, author} = data?.getPost
+    const {id, title,image, message, createdAt, author, replies} = data?.getPost
       newsPost =
       (
       <div className="PostDetailsWrapper">
@@ -87,6 +90,13 @@ if( !data){
                   {image && <Avatar src={image} className={classes.image}/>}
                 </div>
               </div>
+        </div>
+
+        <div className="DetailsReply">
+          <CreateReply postId={id}/>
+          {replies.map(reply => (
+            <Reply  key={reply.id} reply={reply}/>
+          ))}
         </div>
         </div>
        )

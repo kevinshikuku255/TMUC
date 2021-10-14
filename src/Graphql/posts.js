@@ -6,6 +6,11 @@
   name
   image
   message
+  replies{
+    id
+    body
+    createdAt
+  }
   views{
     id
     post
@@ -42,8 +47,25 @@
  /**Get all news posts*/
   export const GET_POSTS = gql`
       query{
-       getPosts{
-          ${postPayload}
+    getPosts{
+        id
+        title
+        name
+        image
+        message
+        replies{
+        id
+        }
+        views{
+        id
+        createdAt
+        }
+        imagePublicId
+        author{
+        id
+        name
+        }
+        createdAt
        }
       }
   `;

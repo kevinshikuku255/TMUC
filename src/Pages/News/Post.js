@@ -6,8 +6,8 @@ import { Avatar, makeStyles} from "@material-ui/core";
 
 import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import ShareTwoToneIcon from '@mui/icons-material/ShareTwoTone';
 import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
+import ForumIcon from '@mui/icons-material/Forum';
 
 
 import {
@@ -47,8 +47,7 @@ function Post({ post }) {
   const classes = useStyles();
   const history = useHistory();
   const path = history.location.pathname;
-  const { id, title, message, image, imagePublicId, createdAt, views, author } = post;
-
+  const { id, title, message, image, imagePublicId, createdAt, views, replies, author } = post;
 
 // Record a view
 const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
@@ -84,24 +83,24 @@ const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
 
 
 // Sharing the pinned post
-async function Share() {
-  const label= JSON.stringify(title, null, 2)
-  const url = "https://tmuc.netlify.app/Noticeboard";
-  const text = JSON.stringify(message, null, 2);
-  try {
-      await navigator
-      .share({
-        label,
-        url,
-        text
-      })
+// async function Share() {
+//   const label= JSON.stringify(title, null, 2)
+//   const url = "https://tmuc.netlify.app/Noticeboard";
+//   const text = JSON.stringify(message, null, 2);
+//   try {
+//       await navigator
+//       .share({
+//         label,
+//         url,
+//         text
+//       })
 
-    } catch (err) {
+//     } catch (err) {
 
-// the user cancels the action of sharing
-       console.log("share canceled");
-    }
-}
+// // the user cancels the action of sharing
+//        console.log("share canceled");
+//     }
+// }
 
 
 
@@ -130,8 +129,8 @@ const markUp = (
                   <VisibilityTwoToneIcon/>
                   <p> {views?.length} views</p>
                 </div>
-                 <div className="PostActions" onClick={Share}>
-                     <ShareTwoToneIcon/> share
+                 <div className="PostActions" onClick={id ? clickHandler : null}>
+                     <ForumIcon/> {replies.length} feedback
                  </div>
                 <p>{timeAgo(createdAt)}</p>
               </div>}

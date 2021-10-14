@@ -76,27 +76,31 @@ const  Head = () => {
 
 
   return (
-    <div className="HeadWrapper">
-    {(loading === true ) && <LinearProgress/>}
-    <div className="Head">
-          <div className="Logo">
-            <div className="Avartor" style={{ opacity: location.pathname === "/" && .4}}>
-               { <ArrowBack onClick={back}/> }
-            </div>
-            <div  className="Name">
-              <p>TOM MBOYA STUDENT</p>
-              <h5>
-                {custom_head}
-              </h5>
-            </div>
-          </div>
-          <div className="Menu">
-             <MoreVert onClick={openMenu}/>
-             <Menu menu_on={menu}/>
-          </div>
-    </div>
-    <SubHeader/>
-    </div>
+    <>
+
+       { profileName !== "StudentCenter" &&
+        <div className="HeadWrapper">
+        {(loading === true ) && <LinearProgress/>}
+        <div className="Head">
+              <div className="Logo">
+                <div className="Avartor" style={{ opacity: location.pathname === "/" && .4}}>
+                  { <ArrowBack onClick={back}/> }
+                </div>
+                <div  className="Name">
+                  <p>TOM MBOYA STUDENT</p>
+                  <h5>
+                    {custom_head}
+                  </h5>
+                </div>
+              </div>
+              <div className="Menu">
+                <MoreVert onClick={openMenu}/>
+                <Menu menu_on={menu}/>
+              </div>
+        </div>
+        <SubHeader/>
+        </div>}
+    </>
   )
 };
 

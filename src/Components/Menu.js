@@ -68,6 +68,7 @@ async function onShare() {
               <p className="Logo">
                 <Avatar src={Logo} className={classes.small}/>
               </p>
+              <p className="MenuItem" onClick={() => history.push("/StudentCenter")}>  STUDENT CENTER </p>
               <p className="MenuItem" onClick={() => history.push("/")} >ACADEMICS</p>
               <p className="MenuItem" onClick={() => history.push("/Activities")} >ACTIVITIES</p>
               <p className="MenuItem" onClick={() => history.push("/Sotmuc")} >SOTMUC</p>
@@ -77,6 +78,7 @@ async function onShare() {
               {!user && <p className="MenuItem" onClick={() => history.push("/Signin")}> LOGIN</p>}
               {user && <p className="MenuItem" onClick={() => history.push("/Editpost")}> MY PINNED POSTS</p>}
               <p className="MenuItem" onClick={onShare}> SHARE THIS APP</p>
+
            </div>
         </div>
         }

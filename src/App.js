@@ -28,6 +28,7 @@ import Cu from './Pages/Activities/Cu';
 import FallbackPage  from './Components/FallbackPage';
 import PostDetails from "./Pages/News/PostDetails";
 import MakePost from "./Pages/News/MakePost";
+import StudentCenter from "./Pages/StudentCenter";
 
 
 
@@ -85,6 +86,7 @@ function App() {
                 <Route  path="/Signup" component={Signup}/>
                 <Route  path="/Signin" component={Signin}/>
                 <Route  path="/Editpost" component={EditPost}/>
+                <Route path="/StudentCenter" component={StudentCenter} />
                 <Route  path='*' component={Swipble} />
               </Switch>
             </React.Suspense>

@@ -118,12 +118,22 @@
 
 
 
+
+
+
+
+
+
+
+
 /* --------------------------Details post------------------------------------------------ */
 .PostDetailsWrapper{
   padding: 0 .5rem;
   margin: auto;
   padding-top: 5.5rem;
   min-height: calc(100vh - 5.5rem);
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
    .DetailsNews{
       display: flex;
@@ -165,7 +175,69 @@
         }
      }
  }
+ .DetailsReply{
+  margin-top: 2rem;
+ }
 }
+
+
+
+/* ------------------------Reply-------------------------------------------------- */
+
+.Reply{
+  width: 100%;
+  margin: auto;
+  padding: 2rem 0;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  word-wrap: break-word;
+  writing-mode: horizontal-tb;
+  white-space: pre-wrap;
+  font-family: sans-serif;
+  i{
+    float: right;
+  }
+}
+
+
+.ReplayTextInput{
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  margin:1rem  auto;
+  .Message{
+      flex: auto;
+      border: 1px solid wheat;
+      background: none;
+      border-radius: 5px;
+      resize: none;
+      outline: none;
+      font-size: larger;
+      font-family: sans-serif;
+      padding: .5rem;
+  }
+  .SendButton{
+    flex: .1;
+    margin: auto  .5rem 0  .5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
