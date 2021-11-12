@@ -7,6 +7,8 @@ import { Photos } from "./Photos";
 /** Carousel component */
 function CarouselComponent() {
   return (
+     <>
+     <sup>Ad</sup>
       <Carousel
           itemsToShow={1} className="Carousel"
           showArrows={false}
@@ -15,14 +17,13 @@ function CarouselComponent() {
           pagination={false}
           >
           <Photos/>
-
           <div className="four">
-            <h3>ROYAL DENTAL CLINIC HOMABAY</h3>
+            <h5>ROYAL DENTAL CLINIC HOMABAY</h5>
             <p>Salama Area next to Oasis Plaza</p>
             <i>call: 0703178781 or <a href="https://royaldental.ke/">https://royaldental.ke</a></i>
           </div>
         </Carousel>
+        </>
   )
 }
-
 export default CarouselComponent;

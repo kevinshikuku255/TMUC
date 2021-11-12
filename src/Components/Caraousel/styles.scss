@@ -53,13 +53,13 @@ div{
    margin: auto;
    i{
      font-size: x-small;
-     
+
    }
  }
 }
 
 
-.bwgQCB {
+.rec-carousel-wrapper{
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -69,9 +69,14 @@ div{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #00ffff48;
     border: 1px solid cyan;
     border-radius: 5px;
     padding: .2rem 0;
     width: 100%;
+}
+
+sup{
+ position: absolute;
+ right: 0;
+ top: 0;
 }

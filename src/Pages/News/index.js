@@ -98,8 +98,8 @@ if(error && !data){
 let MarkeUp;
 if(posts){
    MarkeUp = ( posts && posts?.length > 0) &&  posts?.map( post => (
-        <div>
-            <Post key={post?.id} post ={post}/>
+        <div key={post?.id}>
+            <Post post ={post}/>
         </div>
      ))
 }
