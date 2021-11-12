@@ -1,5 +1,5 @@
 import React from 'react';
-// import Carousel from "../../Components/Carousel";
+import Carousel from "../../Components/Caraousel";
 import ReactGA from 'react-ga';
 import "./pages.scss";
 
@@ -26,7 +26,7 @@ function Index() {
   return (
   <div className="Main">
       <div className="Home_page">
-            {/* <Carousel/> */}
+            <Carousel className="Ad"/>
         <div className="Pages">
           <Login/>
           <Elearning/>

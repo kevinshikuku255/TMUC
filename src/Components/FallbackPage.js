@@ -9,11 +9,10 @@ function FallbackPage() {
     <>
       <Head/>
       <div className="FallbackPage">
-        <h1>OOOPS !</h1>
-        <h2>404 Page not found</h2>
+        <h2>TMUC STUDENT APP</h2>
       </div>
     </>
   )
 }
 
-export default FallbackPage
+export default FallbackPage;

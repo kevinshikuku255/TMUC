@@ -297,12 +297,14 @@
 
 /* --------------------------FallbackPage------------------------------------------------ */
 .FallbackPage{
-  height: 100vh;
+  height: calc(100vh - 5.5rem);
   width: 100vw;
+  margin-top: 5.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  h1{
+  background-color: rgb(248, 224, 193);
+  h2{
     font-size: xx-large;
     font-weight: bolder;
     font-family: serif;
@@ -379,43 +381,3 @@
 
 
 
-
-/* -----------------------------AD--------------------------------------------- */
-
-.Carousel{
-margin-bottom: .5rem;
-div{
-  // width: 100%;
-  height: auto;
-}
- .one{
-   background-color: blue;
-   width: 100vw;
-   height: 4rem;
- }
- .two{
-   background-color: blueviolet;
-   width: 100vw;
-   height: 4rem;
- }
- .three{
-   background-color: chartreuse;
-   width: 100vw;
-   height: 4rem;
- }
- .four{
-   background-color: cyan;
-   width: 100vw;
-   height: 4rem;
- }
- .five{
-   background-color: darkblue;
-   width: 100vw;
-   height: 4rem;
- }
- .six{
-   background-color: dimgrey;
-   width: 100vw;
-   height: 4rem;
- }
-}

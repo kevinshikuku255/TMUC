@@ -72,7 +72,7 @@ async function onShare() {
               <p className="MenuItem" onClick={() => history.push("/")} >ACADEMICS</p>
               <p className="MenuItem" onClick={() => history.push("/Activities")} >ACTIVITIES</p>
               <p className="MenuItem" onClick={() => history.push("/Sotmuc")} >SOTMUC</p>
-              <p className="MenuItem" onClick={() => history.push("/News")}>NOTICE-BOARD</p>
+              <p className="MenuItem" onClick={() => history.push("/Noticeboard")}>NOTICE-BOARD</p>
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Policy")}>  USAGE POLICY</p>
               {!user && <p className="MenuItem" onClick={() => history.push("/Signin")}> LOGIN</p>}

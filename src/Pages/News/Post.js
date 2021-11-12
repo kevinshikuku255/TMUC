@@ -118,7 +118,9 @@ const markUp = (
 //Swipe left and right actions
 const leadingActions = () => (
   <LeadingActions>
-    <SwipeAction onClick={console.timeLog() }>
+    <SwipeAction
+     onClick={() => console.log("")}
+    >
       <div className="RightSwipe">
         {weekDay(createdAt)}
       </div>
@@ -130,7 +132,7 @@ const trailingActions = () => (
   <TrailingActions>
     <SwipeAction
       destructive={true}
-       onClick={ () => deletePost()}
+      onClick={ () => deletePost()}
     >
       <div className="SwipeToDelete">
         <p>Delete</p>
@@ -138,6 +140,7 @@ const trailingActions = () => (
     </SwipeAction>
   </TrailingActions>
 );
+
   return (
     <div>
       <SwipeableList>

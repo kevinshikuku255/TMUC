@@ -6,16 +6,13 @@
                   width: 96vw;
                   .MessageInput{
                               margin: .5rem auto;
-                              // background-color: #dadada;
-                              // padding: .2rem 0rem;
                               display: flex;
                               flex-direction: row;
-                              // height: auto;
-                              // padding: 0 ;
                               width: 96vw;
                     .Message{
                             flex: auto;
-                            border: none;
+                            border: 1px solid white;
+                            border-radius: 5px;
                             background: none;
                             resize: none;
                             outline: none;
