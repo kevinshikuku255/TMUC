@@ -24,7 +24,7 @@ export const  CreatePost = () => {
   const [errors, setErrors] = useState('');
   const [warning, setWarning] = useState('');
   const [ {user } ] = useAuthContext();
-   const [play] = useSound(Bubble);
+  const [play] = useSound(Bubble);
   const authorId = user ? user?.id : null
    const handleReset = () => {
     setTitle('');

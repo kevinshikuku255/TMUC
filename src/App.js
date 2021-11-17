@@ -11,27 +11,17 @@ import './App.scss';
 
 import Index from "./Pages/Home/index";
 import News from "./Pages/News/index";
-import FallbackPage  from './Components/FallbackPage';
-import Fab from "./Components/Fab";
 import Head from "./Components/Head";
 import Activities from "./Pages/Activities";
 
-// const Activities = lazy(() => import("./Pages/Activities"))
-// const Head = lazy(() => import("./Components/Head"));
 const Policy = lazy(() => import("./Components/Policy"));
 const Cu   = lazy(() => import('./Pages/Activities/Cu'));
 const Profile  = lazy(() => import("./Components/Profile"));
-const MakePost   = lazy(() => import('./Components/FallbackPage'));
+const MakePost   = lazy(() => import("./Pages/News/MakePost"));
 const Desktopview = lazy(() => import("./Components/Desktopview"));
 const Football  = lazy(() => import('./Pages/Activities/Football'));
 const PostDetails   = lazy(() => import("./Pages/News/PostDetails"));
-const StudentCenter   = lazy(() => import("./Pages/StudentCenter"));
-
-
 const Sotmuc = lazy(() => import("./Components/Sotmuc"));
-const Signup = lazy(() => import("./Pages/Auth/SignUp"));
-const Signin = lazy(() => import("./Pages/Auth/SignIn"));
-const EditPost = lazy(() => import("./Pages/Auth/EditPost"));
 
 
 ReactGA.initialize(REACT_GA);
@@ -43,7 +33,7 @@ const Swipble = () =>{
   <RouterCarousel
     swipeLeftClassName={'router-carousel-zone router-carousel-zone--left'}
     swipeRightClassName={'router-carousel-zone router-carousel-zone--right'}
-    fallbackRoute={<FallbackPage/>}
+    fallbackRoute={FalLback}
     >
     <Route exact path="/" component={Index}/>
     <Route path="/Noticeboard" component={News}/>
@@ -67,10 +57,9 @@ function App() {
       <BrowserView>
            <Desktopview/>
       </BrowserView>
-      <Suspense fallback={<FallbackPage/>}>
+      <Suspense fallback={FalLback}>
       <MobileView>
             <div className="App_header">
-              <Fab/>
               <Head/>
             </div>
             <Switch>
@@ -81,10 +70,6 @@ function App() {
               <Route  path="/Sotmuc" component={Sotmuc}/>
               <Route  path="/CreatePost" component={MakePost}/>
               <Route  path="/Policy" component={Policy}/>
-              <Route  path="/Signup" component={Signup}/>
-              <Route  path="/Signin" component={Signin}/>
-              <Route  path="/Editpost" component={EditPost}/>
-              <Route path="/StudentCenter" component={StudentCenter} />
               <Route  path='*' component={Swipble} />
             </Switch>
         </MobileView>
@@ -94,3 +79,16 @@ function App() {
 }
 
 export default App;
+
+
+const FalLback = () => {
+  <div style={{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    height:"100vh",
+    backgroundColor:"burlywood",
+  }}>
+    <p>Loading ...</p>
+  </div>
+}

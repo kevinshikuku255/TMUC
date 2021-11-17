@@ -1,6 +1,6 @@
 import React, { useEffect, useRef} from 'react';
 import { useHistory } from 'react-router-dom';
-import { useLoadContext, useAuthContext } from '../Context';
+import { useLoadContext } from '../Context';
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../Images/favicon.png";
 
@@ -19,7 +19,6 @@ export default function AccountMenu({menu_on}) {
  const ref = useRef();
  const history = useHistory();
  const classes = useStyles();
- const  [ {user}] = useAuthContext()
  const  [ , loadispatch ] = useLoadContext();
 
   useEffect(() => {
@@ -68,15 +67,12 @@ async function onShare() {
               <p className="Logo">
                 <Avatar src={Logo} className={classes.small}/>
               </p>
-              <p className="MenuItem" onClick={() => history.push("/StudentCenter")}>  STUDENT CENTER </p>
               <p className="MenuItem" onClick={() => history.push("/")} >ACADEMICS</p>
               <p className="MenuItem" onClick={() => history.push("/Activities")} >ACTIVITIES</p>
               <p className="MenuItem" onClick={() => history.push("/Sotmuc")} >SOTMUC</p>
               <p className="MenuItem" onClick={() => history.push("/Noticeboard")}>NOTICE-BOARD</p>
-              <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Policy")}>  USAGE POLICY</p>
-              {!user && <p className="MenuItem" onClick={() => history.push("/Signin")}> LOGIN</p>}
-              {user && <p className="MenuItem" onClick={() => history.push("/Editpost")}> MY PINNED POSTS</p>}
+              <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={onShare}> SHARE THIS APP</p>
 
            </div>

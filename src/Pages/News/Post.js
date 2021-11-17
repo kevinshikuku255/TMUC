@@ -1,17 +1,13 @@
 import React, { useEffect} from 'react';
 import { useAuthContext} from "../../Context";
 import { useHistory } from "react-router-dom";
-import { timeAgo, weekDay } from  "../../Utils/date";
 import { Avatar, makeStyles} from "@material-ui/core";
 
 import PushPinIcon from '@mui/icons-material/PushPin';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import VisibilityTwoToneIcon from '@mui/icons-material/VisibilityTwoTone';
-import ForumTwoToneIcon from '@mui/icons-material/ForumTwoTone';
 
 
 import {
-  LeadingActions,
   SwipeableList,
   SwipeableListItem,
   SwipeAction,
@@ -47,7 +43,7 @@ function Post({ post }) {
   const classes = useStyles();
   const history = useHistory();
   const path = history.location.pathname;
-  const { id, title, message, image, imagePublicId, createdAt, views, replies, author } = post;
+  const { id, title, message, image, imagePublicId, author } = post;
 
 // Record a view
 const [ view ] = useMutation(RECORD_VIEW, { variables:{postId: id} })
@@ -87,7 +83,7 @@ const markUp = (
               <div className="NewsHead">
                 <div className="NewsPin">{id ? <PushPinIcon/> : "Ad"}</div>
               </div>
-              <div className="NewsBody">
+              <div className="NewsBody" onClick={id ? clickHandler : null}>
                 {author &&
                 <div className="NewsAuthor">
                    <p>{author?.name} </p>
@@ -95,39 +91,16 @@ const markUp = (
                 </div>}
                 <p className="NewsTitle">{title}</p>
                 <p className="NewsBody">{ displayMessage}
-                    <b style={{color:"blueviolet"}}  onClick={id ? clickHandler : null} >{". . . read more"}</b>
+                    <b style={{color:"blueviolet"}}>{". . . read more"}</b>
                 </p>
                 <div>
                  {image &&  <Avatar src={image} className={id ? classes.image : classes.Ad}/>}
                 </div>
               </div>
-
-              {id && <div className="NewsActions">
-                <div className="PostActions">
-                  <VisibilityTwoToneIcon/>
-                  <p> {views?.length} views</p>
-                </div>
-                 <div className="PostActions" onClick={id ? clickHandler : null}>
-                     <ForumTwoToneIcon/> <p>{replies?.length}</p>
-                 </div>
-                <p>{timeAgo(createdAt)}</p>
-              </div>}
           </div>
 )
 
 //Swipe left and right actions
-const leadingActions = () => (
-  <LeadingActions>
-    <SwipeAction
-     onClick={() => console.log("")}
-    >
-      <div className="RightSwipe">
-        {weekDay(createdAt)}
-      </div>
-    </SwipeAction>
-  </LeadingActions>
-);
-
 const trailingActions = () => (
   <TrailingActions>
     <SwipeAction
@@ -145,7 +118,7 @@ const trailingActions = () => (
     <div>
       <SwipeableList>
       <SwipeableListItem
-        trailingActions={ user && path === "/Editpost" ? trailingActions():  leadingActions()}
+        trailingActions={ user && path === "/Editpost" ? trailingActions() : null}
       >
         {markUp}
       </SwipeableListItem>

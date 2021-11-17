@@ -4,6 +4,7 @@ import { CreatePost } from "../../Components/PostItem/Post";
 import "./news.scss";
 
 
+/** Create post component */
 function MakePost() {
   ReactGA.pageview('/CreatePost');
   return (
