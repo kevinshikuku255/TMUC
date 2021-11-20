@@ -29,6 +29,7 @@ function Index() {
             <Carousel className="Ad"/>
         <div className="Pages">
           <Login/>
+
           <Elearning/>
           <Portal/>
           <Library/>

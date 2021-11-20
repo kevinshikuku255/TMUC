@@ -11,7 +11,6 @@
   margin: 6rem 1rem 1rem 1rem;
   min-height: calc(100vh - 6rem);
   padding-bottom: .5rem;
-  transition: all .5s ease-out;
   position: relative;
 .Pages{
   display: grid;
@@ -20,7 +19,8 @@
   column-gap: .5rem;
   row-gap: .5rem;
   font-size: x-small;
-}}
+ }
+}
 
   .Portal, .Elearning, .Login, .Downloads, .About, .Council, .Library, .History, .Academics, .StudentCouncil, .Photos, .Direction, .Helb{
   display: flex;
@@ -33,6 +33,7 @@
   &:hover{
    background-color: rgb(248, 224, 193);
    border: 1px solid burlywood;
+   border-radius: 30px 0px;
   }
   h4{
     font-variant:small-caps;
@@ -130,3 +131,8 @@
   width: fit-content;
 }
 
+
+.Ad{
+    position: fixed;
+    top: 0;
+  }

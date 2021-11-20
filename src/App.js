@@ -34,6 +34,7 @@ const Swipble = () =>{
     swipeLeftClassName={'router-carousel-zone router-carousel-zone--left'}
     swipeRightClassName={'router-carousel-zone router-carousel-zone--right'}
     fallbackRoute={FalLback}
+    sliderMode={false}
     >
     <Route exact path="/" component={Index}/>
     <Route path="/Noticeboard" component={News}/>

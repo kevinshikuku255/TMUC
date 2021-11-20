@@ -21,6 +21,10 @@ function CarouselComponent() {
             <h2>TOM MBOYA UNIVERSITY</h2>
             <p>KNWOLEDGE FOR SUTAINABLE INNOVATION ENTERPRICE</p>
           </div>
+          <div className="four">
+            <h2>TOM MBOYA UNIVERSITY</h2>
+            <p>KNWOLEDGE FOR SUTAINABLE INNOVATION ENTERPRICE</p>
+          </div>
         </Carousel>
         </>
   )
