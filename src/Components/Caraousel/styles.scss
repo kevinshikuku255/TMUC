@@ -19,25 +19,7 @@
 margin-bottom: .5rem;
 div{
   height: auto;
-  // border-radius: 10px;
-  // padding: 0 .1rem;
-  height: 5rem;
 }
-//  .one{
-//   //  background-color: blue;
-//    width: 100%;
-//    height: 4rem;
-//  }
-//  .two{
-//   //  background-color: blueviolet;
-//    width: 100%;
-//    height: 4rem;
-//  }
-//  .three{
-//   //  background-color: chartreuse;
-//    width: 100%;
-//    height: 4rem;
-//  }
  .four{
    background-image: linear-gradient(black, blue);
    background-clip: text;
@@ -50,10 +32,13 @@ div{
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   font-family: sans-serif;
    margin: auto;
-   i{
-     font-size: x-small;
-
+   p{
+     color: red;
+     font-weight: bolder;
+     font-size: smaller;
+     text-align: center;
    }
  }
 }
@@ -69,8 +54,8 @@ div{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 1px solid cyan;
-    border-radius: 5px;
+    border: 2px solid burlywood;
+    border-radius: 20px 0px ;
     padding: .2rem 0;
     width: 100%;
 }
