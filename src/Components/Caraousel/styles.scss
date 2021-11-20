@@ -34,6 +34,10 @@ div{
    align-items: center;
    font-family: sans-serif;
    margin: auto;
+   h2{
+     text-shadow: 1px 0 4px black;
+     color: blue;
+   }
    p{
      color: red;
      font-weight: bolder;

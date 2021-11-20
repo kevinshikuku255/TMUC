@@ -19,7 +19,7 @@ function CarouselComponent() {
           {/* <Photos/> */}
           <div className="four">
             <h2>TOM MBOYA UNIVERSITY</h2>
-            <p>KNWOLEDGE FOR SUTAINANLE INNOVATION ENTERPRICE</p>
+            <p>KNWOLEDGE FOR SUTAINABLE INNOVATION ENTERPRICE</p>
           </div>
         </Carousel>
         </>
