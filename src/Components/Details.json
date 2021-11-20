@@ -1,0 +1,126 @@
+{
+
+  "Dama":{
+    "name": "Damaries",
+    "position": "Former President of Student Organisation"
+  },
+  "Deric":{
+    "name": "Deric",
+    "position": ""
+  },
+  "Evans":{
+    "name": "Evans",
+    "position": ""
+  },
+  "Other":{
+    "name": "",
+    "position": ""
+  },
+  "Mercy":{
+    "name": "Mercy",
+    "position": "Former representative of People With Disabilities"
+  },
+  "Asa":{
+    "name": "Asa",
+    "position":""
+  },
+  "Clinton":{
+    "name": "Clinton",
+    "position": "Incumbent Secretary General"
+  },
+  "Kevin":{
+    "name": "Kevin",
+    "position": "Former chairman of Sports and Entertainement"
+  },
+  "Kingslay": {
+    "name": "KINGSLAY KENYA",
+    "Genre":"Bongo music",
+    "Youtube": "https://www.youtube.com/channel/UCw7SA8EzxCNdJsThOjBd4EA/featured",
+    "Instagram":"https://www.instagram.com/kingslaykenya/",
+    "Ig":"kingslaykenya",
+    "Youtubechannel":"KINGSLAY KENYA"
+  },
+  "Iconic": {
+    "name": "iCONIC254",
+    "category": "music",
+    "Genre":"Afro pop, Gengeton, Dancehall & Hiphop",
+    "Youtube": "https://youtube.com/c/Iconicmusic254",
+    "Phone": "+254718807722",
+    "Instagram":"https://Instagram.com/i_conic254",
+    "Ig": "i_conic254",
+    "Youtubechannel":"iCONIC254"
+  },
+  "Magicdee": {
+    "name": "Magicdee KE",
+    "Genre":"Gospel music",
+    "Youtube": "https://www.youtube.com/channel/UCUDw-UZefu72unUc9AU3YCw",
+    "Instagram":"https://www.instagram.com/magicdee_music/",
+    "Ig":"Magicdee_music",
+    "Youtubechannel":"Magicdee KE"
+  },
+  "Lilian_Boke": {
+    "name": "Lilian_Boke",
+    "Genre":"Good Music",
+    "Youtube": "https://www.youtube.com/channel/UCB8QwZ-yxc51A7AJKYScolg",
+    "Youtubechannel":"Lilian Boke"
+  },
+  "Lameki": {
+    "name": "Lameki Mteule",
+    "Genre":"Musician/Band",
+    "Youtube": "https://www.youtube.com/channel/UCsvi7XdC3uMbP7IWam2urHA",
+    "Youtubechannel":"Lamecky Mteule official",
+    "Facebook": "https://www.facebook.com/Lamecky-Mteule-music-110629477019659/",
+    "Fb":"Lamecky Mteule music"
+  },
+  "Gidy": {
+    "name": "Gidy"
+  },
+  "Mccollo": {
+    "name": "MC COLLO",
+    "Genre":"Event MC",
+    "Instagram":"https://www.instagram.com/magicdee_music/",
+    "Ig":"mccollo123"
+  },
+  "Kiongozi": {
+    "name": "kiongozi Portus",
+    "Category": "Funny content creation & Stand up comedy",
+    "Youtube": "https://www.youtube.com/channel/UCuxFiVjMW9RAaxAf4OPBAWg/featured",
+    "Facebook": "https://www.facebook.com/PortusKiongozi",
+    "Fb":"Kiongizi Portus",
+    "Phone": "+254715116636",
+    "Instagram":"https://www.instagram.com/kiongozi_portus/",
+    "Ig": "kiongozi_portus",
+    "Tiktok": "https://www.tiktok.com/@kiongoziportus?lang=en",
+    "Tktok": "KiongoziPortus",
+    "Email": "ombogaouma@gmail.com",
+    "Youtubechannel":"Kiongozi Portus"
+  },
+  "Babafemi": {
+    "name": "Clinton @Babafemi254",
+    "Category": "Active politics",
+    "Twitter" :"https://twitter.com/Babafemi254"
+  },
+  "Kenyanboy": {
+    "name": "Kenyanboy",
+    "Category": "CREATIVE CONTENT CREATOR🇰🇪",
+    "Youtubechannel":"Kenyanboy254",
+    "Youtube": "https://www.youtube.com/channel/UClcIVex5deyKAHe4CqRz6jQ",
+    "Facebook": "https://www.facebook.com/profile.php?id=100069379683477",
+    "Fb":"Wãzïmü Wã Cømédy",
+    "Phone": "+254795961199",
+    "Email": "mesharkmutne@gmail.com",
+    "Tiktok": "https://www.tiktok.com/@kenyanboy254_comedian?",
+    "Tktok": "Kenyanboy254_comedian",
+    "Twitter" :"https://twitter.com/kenyanbodycomedian",
+    "Instagram":"https://www.instagram.com/_kenyanboy_254_comedian/",
+    "Ig": "kenyan_body254_comedia"
+  },
+  "J_se": {
+    "name": "j_se911",
+    "Category": "Lets dance 🔥🔥 @j_se911 all platforms",
+    "Youtubechannel":"j_se911",
+    "Instagram":"https://www.instagram.com/j_se911/",
+    "Ig":"j_se911",
+    "Youtube": "https://www.youtube.com/channel/UCWdbPuL0cz5BnmRt6KJn5IA/featured"
+  }
+}

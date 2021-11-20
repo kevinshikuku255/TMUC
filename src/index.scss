@@ -1,0 +1,46 @@
+body::-webkit-scrollbar{
+  display: none;
+  width: 0px;
+  background: #ff0000;
+  }
+
+/* Track */
+body::-webkit-scrollbar-track {
+  display: none;
+}
+
+body, html{
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  zoom:reset;
+  overscroll-behavior-y: contain;
+  font-family: serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer */
+   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+p, h1, h2, h3, h4, h5, h6{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+//Theme colors
+$color1: #e8d0b1; // theme color 1
+$color2: #deb887; // theme color 2
+$color3: #ffffff; //theme color 3
+$color4: #deb887; // header color
+$color5: #00000064; // black
+$color6: #43434364; // gray
+$color7: #ffffff; // White
