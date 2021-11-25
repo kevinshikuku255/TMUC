@@ -93,7 +93,7 @@ function PostDetails({match}) {
 
   let newsPost;
   if(data && !loading){
-    const {id, title,image, message, createdAt, author, replies} = data?.getPost
+    const {title,image, message, createdAt, author} = data?.getPost
       newsPost =
       (
       <div className="PostDetailsWrapper">
