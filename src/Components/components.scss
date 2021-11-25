@@ -84,7 +84,7 @@
   margin: auto;
   z-index: 3;
   font-weight: bolder;
-  box-shadow: 0 .5px 1.5px $color5;
+  box-shadow: 0 2px 1.5px $color5;
   @media screen and (min-width: 48rem ) {
       background-color: white;
       left: 0;
@@ -189,7 +189,7 @@
     font-size: smaller;
     font-weight: bolder;
     // font-variant: small-caps;
-    font-stretch: extra-condensed;
+    // font-stretch: extra-condensed;
     cursor: pointer;
     padding:0 0 .1rem 0rem;
   }

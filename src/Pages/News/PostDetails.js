@@ -8,10 +8,6 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import ReplyIcon from '@mui/icons-material/Reply';
 import "./news.scss";
 
-import Reply from "./Reply";
-import CreateReply from "./createReply";
-
-
 import { useQuery } from '@apollo/client';
 import { GET_POST } from '../../Graphql/posts'
 
@@ -119,13 +115,6 @@ function PostDetails({match}) {
                   {image && <Avatar src={image} className={classes.image}/>}
                 </div>
               </div>
-        </div>
-
-        <div className="DetailsReply">
-          <CreateReply postId={id}/>
-          {replies.map(reply => (
-            <Reply  key={reply?.id} reply={reply}/>
-          ))}
         </div>
         </div>
        )
