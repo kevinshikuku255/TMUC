@@ -22,7 +22,7 @@ const SubHeader = () => {
           <p onClick={() => history.push("/")}  className={ (pathname === "/" ) ? "active" : "a"}>ACADEMICS</p>
         </div>
         <div>
-             <p onClick={() => history.push("/Noticeboard")} className={ (pathname === "/Noticeboard" ) ? "active" : "a"}>E-NOTICEBOARD</p>
+             <p onClick={() => history.push("/Noticeboard")} className={ (pathname === "/Noticeboard" ) ? "active" : "a"}>NOTICEBOARD</p>
         </div>
         <div>
              <p onClick={() => handleClick()} className={ (pathname === "/Activities" ) ? "active" : "a"}>ACTIVITIES</p>
