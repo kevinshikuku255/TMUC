@@ -18,8 +18,9 @@ function CarouselComponent() {
           >
           {/* <Photos/> */}
           <div className="four">
-            <h2>TOM MBOYA UNIVERSITY</h2>
-            <p>KNWOLEDGE FOR SUTAINABLE INNOVATION ENTERPRICE</p>
+            <h2>UPDATES !!</h2>
+            <p>You can now, create your weekly class and personal timetable on the timetable tab
+             to stay organised </p>
           </div>
         </Carousel>
         </>

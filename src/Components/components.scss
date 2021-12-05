@@ -79,18 +79,15 @@
   background-color: $color4;
   padding: 0 ;
   top: 0;
-  width: inherit;
+  width: 100vw;
   height: fit-content;
   margin: auto;
   z-index: 3;
   font-weight: bolder;
   box-shadow: 0 2px 1.5px $color5;
   @media screen and (min-width: 48rem ) {
-      background-color: white;
-      left: 0;
-      box-shadow: -12px 0px -20px $color5;
-      border: none;
-  }
+    width:460px;
+ }
 }
 
 .Head{

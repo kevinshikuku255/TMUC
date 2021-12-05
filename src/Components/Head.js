@@ -14,7 +14,6 @@ const SubHeader = () => {
   const history = useHistory();
   const {pathname} = useLocation();
 /* -------------------------------------------------------------------------- */
-   const handleClick = () => { history.push("/Activities") }
 
    return(
      <div className="SubHeader">
@@ -25,7 +24,7 @@ const SubHeader = () => {
              <p onClick={() => history.push("/Noticeboard")} className={ (pathname === "/Noticeboard" ) ? "active" : "a"}>NOTICEBOARD</p>
         </div>
         <div>
-             <p onClick={() => handleClick()} className={ (pathname === "/Activities" ) ? "active" : "a"}>ACTIVITIES</p>
+             <p onClick={() =>history.push("/Timetable")} className={ (pathname === "/Timetable" ) ? "active" : "a"}>My-TTABLE</p>
         </div>
      </div>
    )
@@ -56,6 +55,8 @@ const  Head = () => {
     custom_head = "CHRISTIAN UNION"
   }else if(profileName === "Noticeboard"){
     custom_head = "ONLINE NOTICEBOARD"
+  }else if(profileName === "Timetable"){
+    custom_head = "MY WEEKLY TIMETABLE"
   }
   else if(profileName === "Activities"){
     custom_head = "UNIVERSITY ACTIVITIES"
