@@ -98,13 +98,20 @@ let timetable = JSON.parse(localStorage.getItem("timetable"));
                }
              </div>
 
-              <input className="time_input" type="text" value={values?.Time} placeholder=" Time eg 17:00 - 18:00" name="Time" onChange={changeHandler}/> <br/>
+              <input
+                className="time_input" type="text"
+                value={values?.Time}
+                placeholder=" Time eg 17:00 - 18:00"
+                autocomplete="off"
+                name="Time" onChange={changeHandler}
+                />
 
               <TextareaAutosize
                     placeholder=" Activity eg. UCI 404"
                     name="Activity"
                     minRows={1}
                     onChange={changeHandler}
+                    autocomplete="off"
                     value={values?.Activity}
                     className="activity_input"
                   />
