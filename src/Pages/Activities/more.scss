@@ -1,7 +1,6 @@
 @import "../../index";
 
 
-
 .Container{
   margin-right: 0vw;
   background-color: $color1;
@@ -39,6 +38,10 @@
   height: 7.5rem;
   border: 1px solid gray;
   border-radius: 5px;
+  @media screen and (min-width: 48rem ) {
+    width: 38rem;
+    cursor: pointer;
+  }
   &:hover{
     background-color: rgb(242, 242, 242);
     border: 1px solid rgb(201, 169, 169);
@@ -117,6 +120,10 @@
   border: 1px solid #a3a3a3a1;
   border-radius: 5px;
   background-color: rgb(228, 228, 228);
+  @media screen and (min-width: 48rem ) {
+    width: 38rem;
+    cursor: pointer;
+  }
   &:hover{
     border: 1px solid #808080a1;
   }
@@ -128,6 +135,9 @@
   width: 96vw;
   justify-content: space-around;
   flex-direction: row;
+  @media screen and (min-width: 48rem ) {
+    width: 38rem;
+  }
 }
 
 

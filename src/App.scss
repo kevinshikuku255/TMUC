@@ -1,9 +1,11 @@
 
 .App{
   @media screen and (min-width: 48rem ) {
-    width:460px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 46rem;
+    padding: 0 2rem;
+    background-color: #e8d0b1;
  }
 }

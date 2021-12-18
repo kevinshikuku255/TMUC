@@ -1,12 +1,12 @@
 body::-webkit-scrollbar{
-  display: none;
+  // display: none;
   width: 0px;
   background: #ff0000;
   }
 
 /* Track */
 body::-webkit-scrollbar-track {
-  display: none;
+  // display: none;
 }
 
 body, html{
@@ -18,16 +18,16 @@ body, html{
 
 body {
   margin: 0;
-  zoom:reset;
-  overscroll-behavior-y: contain;
-  font-family: serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-     -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* Internet Explorer */
-   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
-  -webkit-user-select: none; /* Chrome, Safari, and Opera */
-  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+  // zoom:reset;
+  // overscroll-behavior-y: contain;
+  // font-family: serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  //    -moz-user-select: none; /* Firefox */
+  //     -ms-user-select: none; /* Internet Explorer */
+  //  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  // -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  // -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
 p, h1, h2, h3, h4, h5, h6{

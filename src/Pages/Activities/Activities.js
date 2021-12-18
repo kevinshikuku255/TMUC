@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
  img: {
    borderRadius:"5px",
-   width:"99vw",
+   width:"99%",
    height: theme.spacing(23),
    margin:"auto",
  }

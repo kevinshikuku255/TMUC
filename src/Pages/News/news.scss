@@ -23,34 +23,23 @@
 .NewsWrapper{
       margin-top:5.5rem;
       min-height: calc(100vh - 5.5rem);
+      @media screen and (min-width: 48rem ) {
+        margin-top: 7rem;
+      }
   }
 
-.SwipeToDelete, .RightSwipe{
-  background-color: rgb(250, 57, 57);
-  border-bottom: 5px solid white;
-  border-top: 5px solid white;
-  display: flex;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  padding-left: 2rem;
-}
-.RightSwipe{
- background-color: green;
-}
 
 .News{
     display: flex;
     padding: 0 .5rem ;
-    border-radius: 7px;
-    border-bottom: 5px solid white;
-    border-top: 5px solid white;
+    border-bottom: 1.5rem solid white;
     flex-direction: column;
     margin: 0 auto;
     width: 98vw;
     background-color: #e2e2e2;
+    @media screen and (min-width: 48rem ) {
+      width: 42rem;
+    }
     .NewsHead{
       display: flex;
       flex-direction: row;
@@ -136,11 +125,19 @@
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
+  @media screen and (min-width: 48rem ) {
+    background: none;
+    width: 40rem;
+    border: 1px solid;
+    border-bottom: none;
+    min-height: calc(100vh - 7rem);
+  }
    .DetailsNews{
       display: flex;
       padding: .5rem 0;
       border-radius: 2px;
       flex-direction: column;
+      margin-top: 1rem;
       .DetailsHead{
          display: flex;
          flex-direction: row;
