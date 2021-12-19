@@ -10,8 +10,9 @@ import './App.scss';
 
 import Index from "./Pages/Home/index";
 import News from "./Pages/News/index";
-import Head from "./Components/Head";
+import Head from "./Components/Head/Index";
 import Timetable from "./Pages/Timetable/Index";
+import { SignUp,  SignIn } from "./Pages/Auth";
 
 
 const Policy = lazy(() => import("./Components/Policy"));
@@ -28,7 +29,7 @@ ReactGA.initialize(REACT_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 //Swipable views
-const Swipble = () =>{
+const Swipble = () => {
   return (
   <RouterCarousel
     swipeLeftClassName={'router-carousel-zone router-carousel-zone--left'}
@@ -66,6 +67,8 @@ function App() {
               <Route  path="/CreatePost" component={MakePost}/>
               <Route  path="/Activities" component={Activities}/>
               <Route  path="/Policy" component={Policy}/>
+              <Route  path="/Signup" component={SignUp}/>
+              <Route  path="/Signin" component={SignIn}/>
               <Route  path='*' component={Swipble} />
             </Switch>
         </Suspense>

@@ -19,7 +19,7 @@ function Academics() {
      dispatch({
        type: "LOAD",
        payload: true
-     })
+     })  
     handleClick()
    }
 

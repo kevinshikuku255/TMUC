@@ -39,11 +39,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 0px -30px;
+  border-radius: .5rem;
   background-color: #deb887;
   box-shadow: 0px -1px 4px .5px #000000ba;
   @media screen and (min-width:48rem){
     width: 10rem;
+  }
+  &:nth-child(odd){
+     border-radius: 0px 200px 0px 200px;
+  }
+  &:nth-child(even){
+     border-radius: 200px 0px 200px 0px;
   }
   &:hover{
    background-color: #f8e0c1d1;

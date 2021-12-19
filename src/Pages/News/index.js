@@ -28,7 +28,7 @@ import { SignalWifiOff} from "@material-ui/icons";
 
 /** News component */
 function Index() {
-  ReactGA.pageview('/News');
+  ReactGA.pageview('/Noticeboard');
   const [ {posts} , postDispatch ]=  usePostsContext();
   const online = navigator.online;
 
