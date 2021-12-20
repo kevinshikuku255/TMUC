@@ -12,6 +12,7 @@ import Index from "./Pages/Home/index";
 import News from "./Pages/News/index";
 import Head from "./Components/Head/Index";
 import Timetable from "./Pages/Timetable/Index";
+import PostDetails from "./Pages/News/PostDetails";
 import { SignUp,  SignIn } from "./Pages/Auth";
 
 
@@ -22,7 +23,6 @@ const Activities = lazy(() => import("./Pages/Activities"));
 const Profile  = lazy(() => import("./Components/Profile"));
 const MakePost   = lazy(() => import("./Pages/News/MakePost"));
 const Football  = lazy(() => import('./Pages/Activities/Football'));
-const PostDetails   = lazy(() => import("./Pages/News/PostDetails"));
 
 
 ReactGA.initialize(REACT_GA);
