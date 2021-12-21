@@ -3,6 +3,9 @@
     position: absolute;
     width: 100%;
     min-height: calc(100vh - 5.5rem);
+    @media screen and (min-width: 48rem ) {
+      width: 46rem;
+    }
    }
 
 
@@ -12,11 +15,18 @@
   position: relative;
   display: flex;
   background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
+  @media screen and (min-width: 48rem ) {
+        width: 36rem;
+        background: inherit;
+        display: block;
+        margin-top: 9rem;
+
+   }
   div{
     // background-color: red;
     height: fit-content;
     margin:auto 0 0 0;
-    width: 100vw;
+    width: 100%;
   }
 }
 
@@ -32,13 +42,13 @@
 .News{
     display: flex;
     padding: 0 .5rem ;
-    border-bottom: 1.5rem solid white;
+    border-bottom: 1.5rem solid #fffafa;
     flex-direction: column;
     margin: 0 auto;
     width: 98vw;
     background-color: #e2e2e2;
     @media screen and (min-width: 48rem ) {
-      width: 42rem;
+      width: 30rem;
     }
     .NewsHead{
       display: flex;
@@ -127,15 +137,16 @@
   background-image: linear-gradient(to bottom left, #f8902e, #ebebeb);
   @media screen and (min-width: 48rem ) {
     background: none;
-    width: 40rem;
-    border: 1px solid;
+    width: 32rem;
     border-bottom: none;
     min-height: calc(100vh - 7rem);
   }
    .DetailsNews{
       display: flex;
       padding: .5rem 0;
-      border-radius: 2px;
+      border-radius: 5px;
+      border: 1px solid;
+      padding: 1rem;
       flex-direction: column;
       margin-top: 1rem;
       .DetailsHead{
@@ -260,6 +271,9 @@
    border-top: 5px solid white;
    position: relative;
    margin: auto;
+   @media screen and (min-width: 48rem ) {
+      width: 36rem;
+    }
    &:hover{
      background-color: #979797;
    }
@@ -312,6 +326,9 @@
     margin: 0 auto 0 auto;
     width: 98vw;
     background-color: #ebebeb;
+    @media screen and (min-width: 48rem ) {
+      width: 36rem;
+    }
     &:hover{
      background-color: #d1d1d1;
     }

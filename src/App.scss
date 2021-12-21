@@ -1,11 +1,13 @@
 
 .App{
+  min-height: 100vh;
   @media screen and (min-width: 48rem ) {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 46rem;
+    width: 38rem;
     padding: 0 2rem;
     background-color: #e8d0b1;
+    border-right: 1px solid gray;
  }
 }
