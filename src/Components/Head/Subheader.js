@@ -27,7 +27,6 @@ import "../components.scss";
             transport:"beacon",
             label:"TIMETABLE-TAB"
           })
-          console.log("time table")
     history.push("/Timetable")
   }
 

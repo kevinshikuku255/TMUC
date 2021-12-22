@@ -4,7 +4,10 @@ import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
 import { useSubscription, useLazyQuery } from '@apollo/client';
-import {  NEW_POST, GET_POSTS } from './Graphql/posts';
+import {  NEW_POST, GET_POSTS, POST_SUBSCRIPTION} from './Graphql/posts';
+
+import { Notifications } from 'react-push-notification';
+import addNotification from 'react-push-notification';
 
 import './App.scss';
 
@@ -52,12 +55,25 @@ function App() {
     }, [ getPosts, data ])
 
 
-// const {data: subsDat, loading} = useSubscription(POST_SUBSCRIPTION);
-// const { message, title} = !loading &&  subsDat?.newPost
-// console.log(message)
+const {data: subsDat, loading} = useSubscription(POST_SUBSCRIPTION);
+const { message, title} = !loading &&  subsDat?.newPost
+
+
+useEffect(() => {
+  console.log(message);
+  addNotification({
+    title,
+    subtitle: 'This is a subtitle',
+    message,
+    native: true
+  });
+},[title, message])
+
+
 
   return (
     <div className="App">
+      <Notifications />
       <Suspense fallback={FalLback}>
             <Head/>
             <Switch>

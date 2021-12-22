@@ -17,11 +17,13 @@ import Direction from "./Direction";
 import Helb from "./Helb";
 
 
-
 /** Home page */
 function Index() {
   ReactGA.pageview('/');
 /* -------------------------POST------------------------------------------------- */
+
+
+
 
   return (
   <div className="Main">
