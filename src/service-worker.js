@@ -4,6 +4,27 @@ import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 
+import { useSubscription} from '@apollo/client';
+
+const POST_SUBSCRIPTION = gql`
+  subscription{
+    newPost{
+        id
+        title
+        message
+        image
+        imagePublicId
+        name
+        createdAt
+    }
+  }
+`;
+
+
+
+const {data} = useSubscription(POST_SUBSCRIPTION,{ fetchPolicy:"network-only" });
+console.log(data)
+const { title, message} = data.newPost;
 
 clientsClaim();
 
@@ -18,7 +39,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 // https://developers.google.com/web/fundamentals/architecture/app-shell
 const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 registerRoute(
-  // Return false to exempt requests from being fulfilled by index.html.
+  // Return false  to exempt requests from being fulfilled by index.html.
   ({ request, url }) => {
     // If this isn't a navigation, skip.
     if (request.mode !== 'navigate') {
@@ -62,3 +83,18 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+
+
+//Push notifications
+self.addEventListener("push", e => {
+  console.log(e)
+
+    e.waitUntil(self.registration.showNotification(
+        title,
+        {
+            body: message,
+            icon: "/favicon.png"
+        }
+    ));
+
+});
