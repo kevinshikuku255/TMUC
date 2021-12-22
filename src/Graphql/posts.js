@@ -122,3 +122,20 @@ export const NEW_POST = gql`
   }
 `
 
+
+/** Subscriptions */
+export const POST_SUBSCRIPTION = gql`
+  subscription{
+    newPost{
+        id
+        title
+        message
+        image
+        imagePublicId
+        name
+        createdAt
+    }
+  }
+`;
+
+

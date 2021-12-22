@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
 import { useSubscription, useLazyQuery } from '@apollo/client';
-import {  NEW_POST, GET_POSTS} from './Graphql/posts';
+import {  NEW_POST, GET_POSTS } from './Graphql/posts';
 
 import './App.scss';
 
@@ -44,7 +44,6 @@ const Swipble = () => {
  )
 };
 
-
 function App() {
    const { data } = useSubscription(NEW_POST);
    const [ getPosts ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
@@ -53,6 +52,9 @@ function App() {
     }, [ getPosts, data ])
 
 
+// const {data: subsDat, loading} = useSubscription(POST_SUBSCRIPTION);
+// const { message, title} = !loading &&  subsDat?.newPost
+// console.log(message)
 
   return (
     <div className="App">

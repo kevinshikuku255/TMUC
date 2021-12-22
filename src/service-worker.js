@@ -22,9 +22,9 @@ const POST_SUBSCRIPTION = gql`
 
 
 
-const {data} = useSubscription(POST_SUBSCRIPTION,{ fetchPolicy:"network-only" });
-console.log(data)
-const { title, message} = data.newPost;
+const { data , loading} = useSubscription(POST_SUBSCRIPTION);
+const { message, title} = !loading &&  data?.newPost;
+
 
 clientsClaim();
 
