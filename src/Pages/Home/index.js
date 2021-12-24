@@ -23,8 +23,6 @@ function Index() {
 /* -------------------------POST------------------------------------------------- */
 
 
-
-
   return (
   <div className="Main">
       <div className="Home_page">

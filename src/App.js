@@ -4,7 +4,8 @@ import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
 import { useSubscription, useLazyQuery } from '@apollo/client';
-import {  NEW_POST, GET_POSTS } from './Graphql/posts';
+import {  NEW_POST, GET_POSTS, POST_SUBSCRIPTION } from './Graphql/posts';
+import { Notify } from "./Notification";
 
 
 import './App.scss';
@@ -29,7 +30,7 @@ const Football  = lazy(() => import('./Pages/Activities/Football'));
 ReactGA.initialize(REACT_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-//Swipable views
+/** Swipable views */
 const Swipble = () => {
   return (
   <RouterCarousel
@@ -45,6 +46,7 @@ const Swipble = () => {
  )
 };
 
+
 function App() {
    const { data } = useSubscription(NEW_POST);
    const [ getPosts ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
@@ -52,38 +54,9 @@ function App() {
         getPosts()
     }, [ getPosts, data ])
 
-
-Notification.requestPermission(function(status) {
-    console.log('Notification permission status:', status);
-});
-
-function displayNotification() {
-  if (Notification.permission === 'granted') {
-    navigator.serviceWorker.getRegistration().then(function(reg) {
-      var options = {
-        body: 'Here is a notification body!',
-        icon: 'images/example.png',
-        vibrate: [100, 50, 100],
-        data: {
-          dateOfArrival: Date.now(),
-          primaryKey: 1
-        },
-        actions: [
-          {action: 'explore', title: 'Explore this new world',
-            icon: '"../public/favicon.png"'},
-          {action: 'close', title: 'Close notification',
-            icon: '"../public/logo144.png"'},
-        ]
-      };
-      console.log(reg)
-      reg.showNotification('Hello world!', options);
-    });
-  }
-}
-
-
-displayNotification()
-
+const { data: notificationData , loading} = useSubscription(POST_SUBSCRIPTION);
+const { message, title, image} = !loading &&  notificationData?.newPost;
+Notify({message, title, image})
 
 
   return (
