@@ -4,10 +4,8 @@ import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
 import { useSubscription, useLazyQuery } from '@apollo/client';
-import {  NEW_POST, GET_POSTS, POST_SUBSCRIPTION} from './Graphql/posts';
+import {  NEW_POST, GET_POSTS } from './Graphql/posts';
 
-import { Notifications } from 'react-push-notification';
-import addNotification from 'react-push-notification';
 
 import './App.scss';
 
@@ -55,25 +53,41 @@ function App() {
     }, [ getPosts, data ])
 
 
-const {data: subsDat, loading} = useSubscription(POST_SUBSCRIPTION);
-const { message, title} = !loading &&  subsDat?.newPost
+Notification.requestPermission(function(status) {
+    console.log('Notification permission status:', status);
+});
+
+function displayNotification() {
+  if (Notification.permission === 'granted') {
+    navigator.serviceWorker.getRegistration().then(function(reg) {
+      var options = {
+        body: 'Here is a notification body!',
+        icon: 'images/example.png',
+        vibrate: [100, 50, 100],
+        data: {
+          dateOfArrival: Date.now(),
+          primaryKey: 1
+        },
+        actions: [
+          {action: 'explore', title: 'Explore this new world',
+            icon: '"../public/favicon.png"'},
+          {action: 'close', title: 'Close notification',
+            icon: '"../public/logo144.png"'},
+        ]
+      };
+      console.log(reg)
+      reg.showNotification('Hello world!', options);
+    });
+  }
+}
 
 
-useEffect(() => {
-  console.log(message);
-  addNotification({
-    title,
-    subtitle: 'This is a subtitle',
-    message,
-    native: true
-  });
-},[title, message])
+displayNotification()
 
 
 
   return (
     <div className="App">
-      <Notifications />
       <Suspense fallback={FalLback}>
             <Head/>
             <Switch>
