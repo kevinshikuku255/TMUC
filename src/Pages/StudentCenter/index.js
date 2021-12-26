@@ -3,13 +3,20 @@ import ReactGA from 'react-ga';
 import Singlecard from "./Singlecard"
 import "./studentcenter.scss";
 
+import helmet from "./img/helmet-1.png";
+import potion from "./img/potion-1.png"
+import ring from "./img/ring-1.png";
+import scroll from "./img/scroll-1.png";
+import shield from "./img/shield-1.png";
+import sword from "./img/sword-1.png";
+
 const cardImages = [
-  {"src": "/img/helmet-1.png", matched: false},
-  {"src": "/img/potion-1.png", matched: false},
-  {"src": "/img/ring-1.png", matched: false},
-  {"src": "/img/scroll-1.png", matched: false},
-  {"src": "/img/shield-1.png", matched: false},
-  {"src": "/img/sword-1.png", matched: false}
+  { name: "helmet", matched: false, url:helmet},
+  { name: "potion", matched: false, url:potion},
+  { name: "ring",  matched: false, url:ring},
+  { name: "scroll", matched: false, url:scroll},
+  { name: "shield", matched: false, url:shield},
+  { name: "sword", matched: false, url:sword}
 ]
 
 
@@ -24,7 +31,8 @@ function Index() {
    const [ choiceTwo, setChoiceTwo] = useState(null);
 
    const [ disabled, setDisabled] = useState(false);
-   const [ show, setShow] = useState(false)
+   const [ show, setShow] = useState(false);
+   const [ score, setScore ] = useState(601)
 
    const [ gameOver, setGameOver ] = useState(false)
 
@@ -38,10 +46,22 @@ function Index() {
     setChoiceTwo(null);
 
     setCards(shufledCards)
+    setGameOver(false);
     setTurns(0)
   }
 
 
+//Check for previus score in localstorge
+useEffect(() => {
+ let prev =  localStorage.getItem("score");
+ if(!prev){
+   localStorage.setItem("score", 601)
+   setScore(localStorage.getItem("score"))
+ }else{
+   setScore(prev)
+ }
+
+}, [gameOver])
 
 
 
@@ -59,10 +79,10 @@ function Index() {
 useEffect(() => {
   if(choiceOne && choiceTwo){
     setDisabled(true)
-     if(choiceOne.src ===  choiceTwo.src){
+     if(choiceOne.name ===  choiceTwo.name){
        setCards( prev => {
          return prev.map( card => {
-                if( card.src === choiceOne.src){
+                if( card.name === choiceOne.name){
                   return { ...card, matched: true}
                 }else{
                     return card
@@ -97,7 +117,6 @@ useEffect(() => {
   shufleCards()
 },[])
 
-//Cheke if all cards are flipped(Game over)
 
   return (
     <div className="StudentCenter">
@@ -105,30 +124,27 @@ useEffect(() => {
          <p>FLIP CARDS</p>
          <p>
             Flips: <span style={{color:"blue"}}>{turns}</span> -
-            Highest: <span style={{color:"red"}}>{localStorage.getItem("score")}</span> -
-            Score: <span style={{color:"blueviolet"}}> {6/localStorage.getItem("score") * 100} </span>
+            Highest: <span style={{color:"red"}}>{score}</span> -
+            Score: <span style={{color:"blueviolet"}}> { Math.trunc(6/score * 100)}% </span>
          </p>
          <br/>
-         <p onClick={() => setShow(!show)} className='player_hints'> player Hints</p>
+         <p onClick={() => setShow(!show)} className='player_hints'> player Hints</p> <br/>
+         {gameOver && <p style={{color:"yellow"}}>Game over 🎉🎉✨</p>}
 
          <div className='top_player'>
            <h3>Top players:</h3>
            <div style={{textAlign:"start"}}>
               <table>
+
                 <tr>
                   <td>9 Flips - </td>
-                  <td>🥇</td>
+                  <td>66% 🥇</td>
                   <td>Qutekid</td>
                 </tr>
                 <tr>
                   <td>10 Flips - </td>
-                  <td>🥈</td>
+                  <td>60% 🥈</td>
                   <td>John</td>
-                </tr>
-                <tr>
-                  <td>9 Flips - </td>
-                  <td>🥉</td>
-                  <td>Doe</td>
                 </tr>
               </table>
            </div>

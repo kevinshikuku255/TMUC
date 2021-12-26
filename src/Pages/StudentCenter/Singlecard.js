@@ -1,5 +1,6 @@
 import React from 'react';
 import "./studentcenter.scss";
+import cover from "./img/cover.png"
 
 /** Single card */
 function Singlecard({card, handleChoice, flipped, disabled}) {
@@ -12,10 +13,10 @@ function Singlecard({card, handleChoice, flipped, disabled}) {
   return (
     <div className='card'>
         <div className={flipped ? "flipped" : ""}>
-            <img className="front" src={card.src} alt="front"/>
+            <img className="front" src={card.url} alt="front"/>
             <img
               className="back"
-              src='/img/cover.png'
+              src={cover}
               alt="back"
               onClick={handleClick}
               />

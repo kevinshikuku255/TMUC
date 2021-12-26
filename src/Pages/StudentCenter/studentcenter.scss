@@ -7,7 +7,7 @@
   flex-direction: column;
   font-family: sans-serif;
   .new_game{
-    margin: 0 0 4rem 0;
+    margin: 6rem 0 4rem 0;
     text-align: center;
     p, button{
       padding: 0;
@@ -19,6 +19,7 @@
      left: 0;
      margin: 6rem 0 0 .5rem;
      background: none;
+     font-size:smaller;
    }
 
     button{
