@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import "./styles.scss";
 import Carousel from 'react-elastic-carousel';
 // import { Photos } from "./Photos";
@@ -6,6 +7,7 @@ import Carousel from 'react-elastic-carousel';
 
 /** Carousel component */
 function CarouselComponent() {
+  const history = useHistory();
   return (
      <>
      {/* <sup>Ad</sup> */}
@@ -18,9 +20,8 @@ function CarouselComponent() {
           >
           {/* <Photos/> */}
           <div className="four">
-            <h2>UPDATES !!</h2>
-            <p>You can now, create your weekly class and personal timetable on the timetable tab
-             to stay organised </p>
+            <p>Play mind game to compete with others </p>
+             <button onClick={() => history.push("/Studentcenter")}>Play</button>
           </div>
         </Carousel>
         </>
