@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar, makeStyles} from "@material-ui/core";
-import Nav from "../../Components/Nav";
+import Nav from "../../Components/SotmucNav";
 import Fteam from "../../Images/ball.jpeg";
 import Fteampic2 from "../../Images/ball2.jpeg";
 import Fteampic3 from "../../Images/ball3.jpeg";

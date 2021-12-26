@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import Nav from "../../Components/Nav";
+import Nav from "../../Components/SotmucNav";
 import "./more.scss";
 
 import { Avatar, makeStyles} from "@material-ui/core";

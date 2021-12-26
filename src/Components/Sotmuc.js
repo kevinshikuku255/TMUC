@@ -4,7 +4,7 @@ import ReactGA from 'react-ga';
 import { useHistory} from"react-router-dom";
 import { useLoadContext } from '../Context';
 import { Avatar, makeStyles} from "@material-ui/core";
-import Nav from "./Nav";
+import SotmucNav from "./SotmucNav";
 
 import Asa from "../Images/Asa.jpg";
 import Sec from "../Images/sec.jpg";
@@ -74,7 +74,7 @@ let head = (
 
   return (
 <div className="SotmucGrid">
-    <Nav head={head}/>
+    <SotmucNav head={head}/>
     <div className="SotmucGridWrapper">
          <div className="Year">
            <p>2021 - 2022</p>

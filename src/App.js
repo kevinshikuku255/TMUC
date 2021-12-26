@@ -16,6 +16,7 @@ import Head from "./Components/Head/Index";
 import Timetable from "./Pages/Timetable/Index";
 import PostDetails from "./Pages/News/PostDetails";
 import { SignUp,  SignIn } from "./Pages/Auth";
+import StudentCenter from "./Pages/StudentCenter/index";
 
 
 const Policy = lazy(() => import("./Components/Policy"));
@@ -74,13 +75,13 @@ Notify({message, title, image})
               <Route  path="/Policy" component={Policy}/>
               <Route  path="/Signup" component={SignUp}/>
               <Route  path="/Signin" component={SignIn}/>
+              <Route  path="/Studentcenter" component={StudentCenter}/>
               <Route  path='*' component={Swipble} />
             </Switch>
         </Suspense>
     </div>
   );
 }
-
 export default App;
 
 

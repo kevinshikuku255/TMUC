@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from "../../Components/Nav";
+import Nav from "../../Components/SotmucNav";
 import "./more.scss";
 
 import { Avatar, makeStyles} from "@material-ui/core";

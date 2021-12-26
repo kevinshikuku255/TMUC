@@ -46,6 +46,9 @@ const  Head = () => {
   else if(profileName === ""){
     custom_head = "UNIVERSITY ACADEMICS"
   }
+  else if(profileName === "Studentcenter"){
+    custom_head = "STUDENT CENTER"
+  }
   else if(profileName === "Editpost"){
     custom_head = "EDIT PINNED NOTICE"
   }

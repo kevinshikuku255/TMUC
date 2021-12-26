@@ -1,0 +1,111 @@
+.StudentCenter{
+  background-color: burlywood;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  .new_game{
+    margin: 0 0 4rem 0;
+    text-align: center;
+    p, button{
+      padding: 0;
+      margin: 0;
+    }
+   .top_player{
+     position: absolute;
+     top: 0;
+     left: 0;
+     margin: 6rem 0 0 .5rem;
+     background: none;
+   }
+
+    button{
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 6rem .5rem 0 0;
+      background: none;
+      border: none;
+      padding: .2rem .4rem;
+      background-color: blueviolet;
+      outline: none;
+      border-radius: 7px;
+      cursor: pointer;
+      &:hover{
+        background-color: #7b0fe1;
+      }
+    }
+    .player_hints{
+      cursor: pointer;
+      color: #31316f;
+      background: none;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+    .hints{
+      position:absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      margin-top: 6rem;
+      height: 100vh;
+      background-color: burlywood;
+      z-index: 3;
+      text-align: initial;
+      padding: 1rem;
+      .hide_hints{
+        margin: 1rem .5rem 0 auto;
+        background: none;
+        border: none;
+        padding: .2rem .4rem;
+        background-color: blueviolet;
+        width: fit-content;
+        outline: none;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+
+    }
+  }
+
+
+ .card_grid{
+   display: grid;
+   width: 80vw;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+ }
+}
+
+.card{
+display: flex;
+justify-content: center;
+align-items: center;
+width: fit-content;
+  img{
+     width: 4rem;
+     border: 2px;
+     border-radius: 3px;
+   }
+   .front{
+     transform: rotateY(90deg);
+     transition: all ease-in-out .2s;
+     position: absolute;
+   }
+   .back{
+     transition: all ease-in-out .2s;
+     transition-delay: .1s;
+   }
+   .flipped {
+     .front{
+       transform: rotateY(0deg);
+       transition-delay: .1s;
+     }
+     .back{
+       transform: rotateY(-90deg);
+       transition-delay: 0s;
+     }
+   }
+}

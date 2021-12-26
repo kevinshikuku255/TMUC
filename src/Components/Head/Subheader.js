@@ -6,7 +6,7 @@ import "../components.scss";
 
 
 /** Sub header compoent Containing the three header Navigation tabs*/
-  export const SubHeader = () => {
+export const SubHeader = () => {
   const history = useHistory();
   const {pathname} = useLocation();
 
