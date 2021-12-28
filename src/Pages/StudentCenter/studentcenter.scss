@@ -16,8 +16,9 @@
     border-right: 1px solid gray;
  }
   .new_game{
-    margin: 6rem 0 4rem 0;
+    margin: 9rem 0 2rem 0;
     text-align: center;
+    border: 1px solid red;
     .game_name{
       font-size: x-large;
       font-weight: bolder;
@@ -50,6 +51,7 @@
       cursor: pointer;
       &:hover{
         background-color: #7b0fe1;
+        color: black;
       }
     }
     .player_hints{

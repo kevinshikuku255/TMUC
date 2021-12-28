@@ -190,7 +190,7 @@ useEffect(() =>  {
          <p className='game_name'>FLIP CARDS</p>
          <p>
             Flips: <span style={{color:"blue"}}>{turns}</span> -
-            Highest: <span style={{color:"red"}}>{score}</span> -
+            Lowest: <span style={{color:"red"}}>{score}</span> -
             Score: <span style={{color:"blueviolet"}}> { Math.trunc(6/score * 100)}% </span>
          </p>
          <br/>
@@ -200,18 +200,17 @@ useEffect(() =>  {
          {gameOver && <p style={{color:"yellow"}}>Game over 🎉🎉✨</p>}
 
          <div className='top_player'>
-           <h3>Top players:</h3>
+          <span>Lest possible "6"</span> <h3>Top players:</h3>
            <div style={{textAlign:"start"}}>
               <table>
                 <thead>
                    { top_players?.map((player, i) => (
                       <tr key={player.id}>
                         {/* <td style={{color:"red"}}>{`${ i + 1} .`} 🥇</td> */}
-                        <td>{player.flips} Flips - {player.score}% </td>
+                        <td> 🏅 {player.flips} Flips - {player.score}% </td>
                         <td>{player.name}</td>
                       </tr>
                    ))}
-                   <br/>
                    <h3 style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>More players</h3>
                 </thead>
               </table>
