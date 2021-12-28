@@ -37,12 +37,16 @@ div{
    h2{
      text-shadow: 1px 0 4px black;
      color: blue;
+     padding: 0;
+     margin: 0;
    }
    p{
      color: red;
      font-weight: bolder;
      font-size: smaller;
      text-align: center;
+     padding: 0;
+     margin: 0;
    }
  }
 }
@@ -59,8 +63,8 @@ div{
     justify-content: center;
     align-items: center;
     border: 2px solid burlywood;
-    border-radius: 20px 0px ;
-    padding: .2rem 0;
+    border-radius: 5px ;
+    padding: .1rem 0;
     width: 100%;
 }
 
@@ -68,4 +72,20 @@ sup{
  position: absolute;
  right: 0;
  top: 0;
+}
+
+button{
+  padding: 0;
+  margin: .1rem;
+  border: none;
+  outline: none;
+  padding: .3rem 2.5rem;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+  background-color: blueviolet;
+  cursor: pointer;
+  &:hover{
+    color: #8400ff;
+  }
 }

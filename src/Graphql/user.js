@@ -30,6 +30,19 @@ export const GET_USERS = gql`
  }
 `;
 
+ /** Get gamers*/
+export const GET_GAMERS = gql`
+   query($skip:Int, $limit:Int){
+     getGamers(skip: $skip, limit:$limit){
+      id
+      name
+      flips
+      score
+      username
+      createdAt
+    }
+ }
+`;
 
  /**Get authenticated user */
   export const GET_AUTH_USER = gql`
@@ -67,6 +80,20 @@ export const SIGN_UP = gql`
   }
 `
 
+/** creates gamer account */
+export const GAMER_SIGN_IN = gql`
+  mutation($name: String) {
+     gamerSignin(name: $name){
+        id
+        name
+        username
+        flips
+        score
+        createdAt
+     }
+  }
+`
+
 /** Logs in a user */
 export const SIGN_IN = gql`
   mutation($name: String!, $password: String!) {
@@ -74,4 +101,18 @@ export const SIGN_IN = gql`
          token
      }
   }
+`
+
+/** save scores */
+export const SAVE_SCORES = gql`
+  mutation($score: String, $flips_: String, $username: String){
+   saveGamerScores(score: $score, flips_: $flips_, username: $username){
+        id
+        name
+        username
+        flips
+        score
+        createdAt
+ }
+}
 `

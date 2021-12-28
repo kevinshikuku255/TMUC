@@ -6,9 +6,23 @@
   justify-content: center;
   flex-direction: column;
   font-family: sans-serif;
+  @media screen and (min-width: 48rem ) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38rem;
+    padding: 0 2rem;
+    background-color: #e8d0b1;
+    border-right: 1px solid gray;
+ }
   .new_game{
     margin: 6rem 0 4rem 0;
     text-align: center;
+    .game_name{
+      font-size: x-large;
+      font-weight: bolder;
+      font-family: serif;
+    }
     p, button{
       padding: 0;
       margin: 0;
@@ -45,29 +59,15 @@
       font-weight: bolder;
       cursor: pointer;
     }
-    .hints{
-      position:absolute;
-      top: 0;
-      left: 0;
-      margin: auto;
-      margin-top: 6rem;
-      height: 100vh;
-      background-color: burlywood;
-      z-index: 3;
-      text-align: initial;
-      padding: 1rem;
-      .hide_hints{
-        margin: 1rem .5rem 0 auto;
-        background: none;
-        border: none;
-        padding: .2rem .4rem;
-        background-color: blueviolet;
-        width: fit-content;
-        outline: none;
-        border-radius: 7px;
+    h4{
+        background-color: rgb(228, 17, 13);
+        border-radius: 5px;
+        margin: 0;
+        padding: .2rem 0;
+        margin:2rem;
         cursor: pointer;
-      }
-
+        color: white;
+        font-weight: bolder;
     }
   }
 
@@ -110,3 +110,89 @@ width: fit-content;
      }
    }
 }
+
+/* -------------------------------------------------------------------------- */
+.signin{
+  height: calc(100vh - 14rem);
+  margin: 14rem 0 0 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: burlywood;
+  opacity: .9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  @media screen and (min-width: 48rem ) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38rem;
+    padding: 0 2rem;
+    background-color: #e8d0b1;
+    border-right: 1px solid gray;
+ }
+}
+
+.signup_wrapper{
+  margin-top: -10rem;
+  text-align: center;
+  h2{
+    padding: 1rem;
+  }
+  input{
+    outline: none;
+    padding: .2rem;
+    background: rgb(80, 80, 254);
+    font-family: sans-serif;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+  }
+  .signup_button{
+    background-color: blueviolet;
+    padding: .2rem .3rem;
+    border-radius: 5px;
+    width: 4rem;
+    margin: .2rem auto ;
+    cursor: pointer;
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+
+/* -------------------------------------------------------------------------- */
+    .hints{
+      position:absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      margin-top: 6rem;
+      height: calc(100vh - 6rem);
+      width:100%;
+      word-wrap: break-word;
+      background-color: burlywood;
+      z-index: 3;
+      text-align: initial;
+      padding: 1rem;
+      .hide_hints{
+        margin: 1rem .5rem 0 auto;
+        background: none;
+        border: none;
+        padding: .2rem .4rem;
+        background-color: blueviolet;
+        width: fit-content;
+        color:white;
+        outline: none;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+
+    }

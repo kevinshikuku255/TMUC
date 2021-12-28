@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
-import Singlecard from "./Singlecard"
+import Singlecard from "./Singlecard";
+import Signup  from "./Signup";
+import { SAVE_SCORES, GET_GAMERS } from "../../Graphql/user";
+import { useMutation, useQuery, useLazyQuery } from '@apollo/client';
+import Hints from "./Hints";
+import ListOfPlayers from "./ListOfPlayers";
 import "./studentcenter.scss";
 
 import helmet from "./img/helmet-1.png";
@@ -19,8 +24,6 @@ const cardImages = [
   { name: "sword", matched: false, url:sword}
 ]
 
-
-
 /** Student center */
 function Index() {
    ReactGA.pageview('Studentcenter');
@@ -32,11 +35,66 @@ function Index() {
 
    const [ disabled, setDisabled] = useState(false);
    const [ show, setShow] = useState(false);
-   const [ score, setScore ] = useState(601)
+   const [ score, setScore ] = useState(601);
+   const [ signup, setSignUp] = useState(false);
+   const [ showListOfPlayer, setShowListOfPlayer ] = useState(false)
 
    const [ gameOver, setGameOver ] = useState(false)
+   const online = navigator.online;
 
 
+     //Use lazy query
+  const { data:cachedGamers }  = useQuery(GET_GAMERS,{ fetchPolicy:"cache-only" });
+  const [ getgamers, {data}] = useLazyQuery(GET_GAMERS,{ fetchPolicy:"network-only" });
+
+  useEffect(() => {
+      getgamers()
+  }, [getgamers, online , gameOver])
+
+  const data_= data?.getGamers || cachedGamers?.getGamers
+
+  const top_players = data_?.slice(0, 3)
+
+
+
+    let gamer = JSON.parse(localStorage.getItem("Gamer"))?.username;
+    let flips = localStorage.getItem("score");
+    let score_ = Math.trunc( 6/flips * 100).toString()
+
+// Save scores to server............................................
+    const [ savescores ] = useMutation(SAVE_SCORES, {
+          variables: {flips_: flips, score: score_,  username: gamer },
+          onError:(e)=>{
+            console.log("did not save scores")
+          },
+          onCompleted:(data) => {
+            localStorage.setItem("Gamer", JSON.stringify(data?.saveGamerScores))
+          }
+        })
+
+
+// Signup for game
+const signupForGame = () => {
+    let user =  localStorage.getItem("Gamer");
+    if(user){
+      setSignUp(false)
+    }else{
+      setSignUp(true)
+    }
+}
+
+// Save game score on load or when game is over
+    useEffect(() => {
+       let user = localStorage.getItem("Gamer");
+        if(user){
+          savescores()
+        }else {
+          return
+        }
+    }, [gameOver, savescores])
+
+
+//Shafle cards
   const shufleCards = () => {
    const  shufledCards = [...cardImages, ...cardImages ]
     .sort( () => Math.random() - 0.5)
@@ -49,6 +107,7 @@ function Index() {
     setGameOver(false);
     setTurns(0)
   }
+
 
 
 //Check for previus score in localstorge
@@ -91,8 +150,8 @@ useEffect(() => {
        })
        let filterd = cards.filter(card => card.matched === false)
        if(filterd.length === 2){
-         setGameOver(true)
          let prev = localStorage.getItem("score");
+          setGameOver(true)
         if(turns + 1 <= prev)
            localStorage.setItem("score", turns + 1)
        }
@@ -112,53 +171,55 @@ const resetTurn = () => {
   setDisabled(false);
 }
 
-// Start the game on load
-useEffect(() => {
-  shufleCards()
+useEffect(() =>  {
+  shufleCards();
 },[])
 
 
   return (
     <div className="StudentCenter">
+
+      { signup &&
+        <div className='signin'>
+          <Signup close={() => setSignUp(false)}/>
+        </div>
+      }
+
+
        <div className='new_game'>
-         <p>FLIP CARDS</p>
+         <p className='game_name'>FLIP CARDS</p>
          <p>
             Flips: <span style={{color:"blue"}}>{turns}</span> -
             Highest: <span style={{color:"red"}}>{score}</span> -
             Score: <span style={{color:"blueviolet"}}> { Math.trunc(6/score * 100)}% </span>
          </p>
          <br/>
-         <p onClick={() => setShow(!show)} className='player_hints'> player Hints</p> <br/>
+         <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
+         {!gamer && <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>}
+
          {gameOver && <p style={{color:"yellow"}}>Game over 🎉🎉✨</p>}
 
          <div className='top_player'>
            <h3>Top players:</h3>
            <div style={{textAlign:"start"}}>
               <table>
-
-                <tr>
-                  <td>9 Flips - </td>
-                  <td>66% 🥇</td>
-                  <td>Qutekid</td>
-                </tr>
-                <tr>
-                  <td>10 Flips - </td>
-                  <td>60% 🥈</td>
-                  <td>John</td>
-                </tr>
+                <thead>
+                   { top_players?.map((player, i) => (
+                      <tr key={player.id}>
+                        {/* <td style={{color:"red"}}>{`${ i + 1} .`} 🥇</td> */}
+                        <td>{player.flips} Flips - {player.score}% </td>
+                        <td>{player.name}</td>
+                      </tr>
+                   ))}
+                   <br/>
+                   <h3 style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>More players</h3>
+                </thead>
               </table>
            </div>
          </div>
 
-         {show &&
-          <div className='hints'>
-            <p>This is a game of turns! take the least number of flip turns to rank higher. <span style={{color:"blue"}}>6</span> is the highes rank overal</p>
-            <br/>
-            <p>For to be ranked among other players, must register for the game b</p>
-            <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum fugiat eaque obcaecati aperiam quod. A, facere nulla veniam laudantium laboriosam vero, vel cumque asperiores molestias adipisci nemo ipsum iure, architecto saepe ipsam dicta deserunt rerum quos maxime consequuntur natus in eos quod. Maxime minus officia ipsum reiciendis suscipit, reprehenderit eligendi?</p>
-            <p className="hide_hints"onClick={() => setShow(!show)}>Back to play</p>
-          </div>
-         }
+         {show && <Hints hide={() => setShow(false)}/>}
+         { showListOfPlayer && <ListOfPlayers players={data_} hide={() => setShowListOfPlayer(false)}/> }
 
          <button onClick={shufleCards}>New game</button>
        </div>

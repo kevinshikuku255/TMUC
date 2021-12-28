@@ -9,7 +9,7 @@ function Singlecard({card, handleChoice, flipped, disabled}) {
           handleChoice(card)
         }
   }
-
+  
   return (
     <div className='card'>
         <div className={flipped ? "flipped" : ""}>
