@@ -194,13 +194,13 @@ useEffect(() =>  {
             Score: <span style={{color:"blueviolet"}}> { Math.trunc(6/score * 100)}% </span>
          </p>
          <br/>
-         <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
+        <span>Least possible "6"</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
          {!gamer && <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>}
 
          {gameOver && <p style={{color:"yellow"}}>Game over 🎉🎉✨</p>}
 
          <div className='top_player'>
-          <span>Lest possible "6"</span> <h3>Top players:</h3>
+           <h3>Top players:</h3>
            <div style={{textAlign:"start"}}>
               <table>
                 <thead>
