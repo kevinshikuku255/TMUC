@@ -20,7 +20,7 @@ function CarouselComponent() {
           >
           {/* <Photos/> */}
           <div className="four">
-            <p>Play mind game to compete with others </p>
+            <p>How accurate can you remember your last move? </p>
              <button onClick={() => history.push("/Studentcenter")}>Play</button>
           </div>
         </Carousel>

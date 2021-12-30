@@ -198,16 +198,16 @@ useEffect(() =>  {
                   </table>
               </div>
           </div>
-         <p>
-            Flips: <span style={{color:"blue"}}>{turns}</span> -
-            Lowest: <span style={{color:"red"}}>{score}</span> -
+         <p style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+            Flips: <span style={{fontSize:"1.8rem", color:"blue"}}>{turns}</span> -
+            Lowest: <span style={{color:"red",}}>{score}</span> -
             Score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
          </p>
          <br/>
         <span>Least possible 8 flips</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
          {!gamer && <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>}
 
-         {gameOver && <p style={{color:"yellow"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
+         {gameOver && <p style={{color:"#fe9000"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
 
          {show && <Hints hide={() => setShow(false)}/>}
          { showListOfPlayer && <ListOfPlayers players={data_} hide={() => setShowListOfPlayer(false)}/> }

@@ -86,10 +86,10 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: fit-content;
-   .front{
+   .front, .front_{
      width: 4rem;
      height: 4rem;
-     background-color: rgb(254, 144, 0);
+     background-color: #fe9000;
      border: 2px solid burlywood;
      display: flex;
      justify-content: center;
