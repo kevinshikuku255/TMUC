@@ -11,9 +11,9 @@ import "./studentcenter.scss";
 const cardImages = [
   { name: "melon", matched: false, emoji:"🍉"},
   { name: "love",  matched: false, emoji:"💖"},
-  { name: "orbit", matched: false, emoji:"💫"},
+  { name: "orbit", matched: false, emoji:"🍆"},
   { name: "start", matched: false,  emoji:"❄️"},
-  { name: "sun", matched: false,  emoji:"🌞"},
+  { name: "sun", matched: false,  emoji:"🍒"},
   { name: "heart-", matched: false, emoji:"💔"},
   { name: "lough", matched: false, emoji:"😂"},
   { name: "arrow-", matched: false, emoji:"🎯"},
@@ -180,9 +180,24 @@ useEffect(() =>  {
         </div>
       }
 
-
        <div className='new_game'>
-         <p className='game_name'>FLIP CARDS</p>
+      <div className='top_player'>
+              <h3>Top players:</h3>
+              <div style={{textAlign:"start"}}>
+                  <table>
+                    <thead>
+                      { top_players?.map((player, i) => (
+                          <tr key={player.id}>
+                            {/* <td style={{color:"red"}}>{`${ i + 1} .`} 🥇</td> */}
+                            <td> 🏅 {player.flips} Flips - {player.score}% </td>
+                            <td>{player.name}</td>
+                          </tr>
+                      ))}
+                      <h5 style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>More players</h5>
+                    </thead>
+                  </table>
+              </div>
+          </div>
          <p>
             Flips: <span style={{color:"blue"}}>{turns}</span> -
             Lowest: <span style={{color:"red"}}>{score}</span> -
@@ -193,24 +208,6 @@ useEffect(() =>  {
          {!gamer && <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>}
 
          {gameOver && <p style={{color:"yellow"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
-
-         <div className='top_player'>
-           <h3>Top players:</h3>
-           <div style={{textAlign:"start"}}>
-              <table>
-                <thead>
-                   { top_players?.map((player, i) => (
-                      <tr key={player.id}>
-                        {/* <td style={{color:"red"}}>{`${ i + 1} .`} 🥇</td> */}
-                        <td> 🏅 {player.flips} Flips - {player.score}% </td>
-                        <td>{player.name}</td>
-                      </tr>
-                   ))}
-                   <h3 style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>More players</h3>
-                </thead>
-              </table>
-           </div>
-         </div>
 
          {show && <Hints hide={() => setShow(false)}/>}
          { showListOfPlayer && <ListOfPlayers players={data_} hide={() => setShowListOfPlayer(false)}/> }

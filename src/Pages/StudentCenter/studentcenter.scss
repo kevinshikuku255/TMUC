@@ -33,7 +33,7 @@
      left: 0;
      margin: 6rem 0 0 .5rem;
      background: none;
-     font-size:smaller;
+     font-size:x-small;
    }
 
     button{
@@ -87,8 +87,8 @@ justify-content: center;
 align-items: center;
 width: fit-content;
    .front{
-     width: 5rem;
-     height: 5rem;
+     width: 4rem;
+     height: 4rem;
      background-color: rgb(254, 144, 0);
      border: 2px solid burlywood;
      display: flex;
@@ -102,8 +102,8 @@ width: fit-content;
    }
    .back{
      transition: all ease-in-out .2s;
-     width: 5rem;
-     height: 5rem;
+     width: 4rem;
+     height: 4rem;
      border: 2px solid burlywood;
      border-radius: 3px;
      background-color: black;
