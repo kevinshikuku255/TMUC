@@ -8,20 +8,15 @@ import Hints from "./Hints";
 import ListOfPlayers from "./ListOfPlayers";
 import "./studentcenter.scss";
 
-import helmet from "./img/helmet-1.png";
-import potion from "./img/potion-1.png"
-import ring from "./img/ring-1.png";
-import scroll from "./img/scroll-1.png";
-import shield from "./img/shield-1.png";
-import sword from "./img/sword-1.png";
-
 const cardImages = [
-  { name: "helmet", matched: false, url:helmet},
-  { name: "potion", matched: false, url:potion},
-  { name: "ring",  matched: false, url:ring},
-  { name: "scroll", matched: false, url:scroll},
-  { name: "shield", matched: false, url:shield},
-  { name: "sword", matched: false, url:sword}
+  { name: "melon", matched: false, emoji:"🍉"},
+  { name: "love",  matched: false, emoji:"💖"},
+  { name: "orbit", matched: false, emoji:"💫"},
+  { name: "start", matched: false,  emoji:"❄️"},
+  { name: "sun", matched: false,  emoji:"🌞"},
+  { name: "heart-", matched: false, emoji:"💔"},
+  { name: "lough", matched: false, emoji:"😂"},
+  { name: "arrow-", matched: false, emoji:"🎯"},
 ]
 
 /** Student center */
@@ -59,7 +54,7 @@ function Index() {
 
     let gamer = JSON.parse(localStorage.getItem("Gamer"))?.username;
     let flips = localStorage.getItem("score");
-    let score_ = Math.trunc( 6/flips * 100).toString()
+    let score_ = Math.trunc( 8/flips * 100).toString()
 
 // Save scores to server............................................
     const [ savescores ] = useMutation(SAVE_SCORES, {
@@ -191,13 +186,13 @@ useEffect(() =>  {
          <p>
             Flips: <span style={{color:"blue"}}>{turns}</span> -
             Lowest: <span style={{color:"red"}}>{score}</span> -
-            Score: <span style={{color:"blueviolet"}}> { Math.trunc(6/score * 100)}% </span>
+            Score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
          </p>
          <br/>
-        <span>Least possible "6"</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
+        <span>Least possible 8 flips</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
          {!gamer && <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>}
 
-         {gameOver && <p style={{color:"yellow"}}>Game over 🎉🎉✨</p>}
+         {gameOver && <p style={{color:"yellow"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
 
          <div className='top_player'>
            <h3>Top players:</h3>
