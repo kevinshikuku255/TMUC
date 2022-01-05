@@ -107,6 +107,7 @@ if(posts){
   return (
     <div className="NewsWrapper">
       {/* <Post key={mike.id} post ={mike} onClick={null}/> */}
+      <div id="awn-z5461799"></div>
       {MarkeUp}
       {loader}
     </div>
