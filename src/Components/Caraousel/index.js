@@ -1,5 +1,6 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import ScriptTag from 'react-script-tag';
+// import { useHistory } from "react-router-dom";
 import "./styles.scss";
 import Carousel from 'react-elastic-carousel';
 // import { Photos } from "./Photos";
@@ -7,7 +8,8 @@ import Carousel from 'react-elastic-carousel';
 
 /** Carousel component */
 function CarouselComponent() {
-  const history = useHistory();
+  // const history = useHistory()
+
   return (
      <>
      {/* <sup>Ad</sup> */}
@@ -20,8 +22,9 @@ function CarouselComponent() {
           >
           {/* <Photos/> */}
           <div className="four">
-            <p>How accurate can you remember your last move? </p>
-             <button onClick={() => history.push("/Studentcenter")}>Play</button>
+            {/* <p>How accurate can you remember your last move? </p>
+             <button onClick={() => history.push("/Studentcenter")}>Play</button> */}
+             <ScriptTag  data-cfasync="false" type="text/javascript" src="https://www.greatdexchange.com/a/display.php?r=5461487"/>
           </div>
         </Carousel>
         </>
