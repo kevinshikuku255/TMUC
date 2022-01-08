@@ -21,9 +21,12 @@ function CarouselComponent() {
           >
           {/* <Photos/> */}
           <div className="four">
-            <p>How accurate can you remember your last move? </p>
+            {/* <p>How accurate can you remember your last move? </p>
             <h6>make least flips to rank the highest</h6>
-             <button onClick={() => history.push("/Studentcenter")}>Play</button>
+             <button onClick={() => history.push("/Studentcenter")}>Play</button> */}
+             <p>COMRADES CYBER IN TOWN GARAGE ROAD </p>
+             <i>near transformer</i>
+             <h6> Download and print exam card affordale price</h6>
           </div>
         </Carousel>
         </>
