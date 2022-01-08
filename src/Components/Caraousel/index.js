@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import "./styles.scss";
 import Carousel from 'react-elastic-carousel';
 // import { Photos } from "./Photos";
@@ -7,7 +7,7 @@ import Carousel from 'react-elastic-carousel';
 
 /** Carousel component */
 function CarouselComponent() {
-  const history = useHistory()
+  // const history = useHistory()
 
   return (
      <>
