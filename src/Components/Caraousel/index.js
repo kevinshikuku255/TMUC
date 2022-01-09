@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./styles.scss";
 import Carousel from 'react-elastic-carousel';
 // import { Photos } from "./Photos";
@@ -7,7 +7,7 @@ import Carousel from 'react-elastic-carousel';
 
 /** Carousel component */
 function CarouselComponent() {
-  // const history = useHistory()
+  const history = useHistory();
 
   return (
      <>
@@ -21,12 +21,9 @@ function CarouselComponent() {
           >
           {/* <Photos/> */}
           <div className="four">
-            {/* <p>How accurate can you remember your last move? </p>
+            <p>How accurate can you remember your last move? </p>
             <h6>make least flips to rank the highest</h6>
-             <button onClick={() => history.push("/Studentcenter")}>Play</button> */}
-             <p>COMRADES CYBER IN TOWN GARAGE ROAD </p>
-             <i>near transformer</i>
-             <h6> Download and print exam card affordale price</h6>
+             <button onClick={() => history.push("/Studentcenter")}>Play</button>
           </div>
         </Carousel>
         </>
