@@ -7,7 +7,7 @@
   "background_color": "#deb887",
     "icons": [
     {
-      "src": "logo96.png",
+      "src": "favicon.png",
       "type": "image/png",
       "sizes": "96x96"
     },
