@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextareaAutosize} from '@material-ui/core';
-import { KeyboardArrowDown, KeyboardArrowUp} from '@mui/icons-material';
+import { KeyboardArrowDown, KeyboardArrowUp, Check} from '@mui/icons-material';
 
 function Add({close}) {
 
@@ -12,7 +12,6 @@ const [ day, setDay] = useState(false);
 /* ---------------------------------------------------------------------------------------------- */
 // Save student timetable data to localstorage.
 const saveData = (e) => {
-  e.preventDefault();
 
 //check for empty fields.
   if(values.Day === '' || values.Time === '' || values.Activity === '') {
@@ -55,24 +54,47 @@ const setdayHandler = (e) => {
   setDay(!day)
 }
 
+//Save data and close the input form
+const complete = () => {
+   saveData()
+   close()
+}
   return (
      <div  className="add_item">
+         <div className='close' onClick={complete}> <Check/></div>
          <div className="item_data">
              <div className="day_input">
                 <div className="day"  onClick={() => setDay(!day)}>
-                  <div> Day: {values?.Day === "" ? " eg. Sunday" : values?.Day}</div>
+                  <div> { !values?.Day && "Day : eg. "}  {values?.Day === "" ? <span style={{color:"green"}}>Sunday</span> : values?.Day}</div>
                   { day &&  <KeyboardArrowUp/>}
                   { !day && <KeyboardArrowDown/>}
               </div>
               { day &&
                 <div className="day_list">
-                  <p onClick={setdayHandler}>Monday</p>
-                  <p onClick={setdayHandler}>Tuesday</p>
-                  <p onClick={setdayHandler}>Wednesday</p>
-                  <p onClick={setdayHandler}>Thursday</p>
-                  <p onClick={setdayHandler}>Friday</p>
-                  <p onClick={setdayHandler}>Saturday</p>
-                  <p onClick={setdayHandler}>Sunday</p>
+
+                <table>
+                    <tr>
+                      <td onClick={setdayHandler}>Monday</td> 
+                      <td onClick={setdayHandler}>Tuesday</td> 
+                    </tr> <br/>
+                    <tr>
+                      <td onClick={setdayHandler}>Wednesday</td> 
+                      <td onClick={setdayHandler}>Thursday</td>
+                      <td onClick={setdayHandler}>Friday</td>
+                    </tr> <br/>
+                    <tr>
+                    
+                    <td onClick={setdayHandler}
+                    >Saturday</td> 
+                    <td onClick={setdayHandler}>Sunday</td>
+                    </tr>
+                </table>
+
+                  
+                  
+                  
+                  
+                  
                 </div>
                }
              </div>
@@ -86,7 +108,7 @@ const setdayHandler = (e) => {
                 />
 
               <TextareaAutosize
-                    placeholder=" Activity eg. UCI 404"
+                    placeholder=" Activity eg. Football, UCI 404, Lunch etc"
                     name="Activity"
                     minRows={1}
                     onChange={changeHandler}
@@ -94,9 +116,6 @@ const setdayHandler = (e) => {
                     value={values?.Activity}
                     className="activity_input"
                   />
-         </div>
-         <div className="add_button">
-           <button onClick={saveData} type="submit">Save</button>
          </div>
        </div>
   )

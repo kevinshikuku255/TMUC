@@ -4,7 +4,7 @@ import Event from "./Event";
 import Add from "./Add";
 import "./styles.scss";
 
-import { KeyboardArrowDown, KeyboardArrowUp} from '@mui/icons-material';
+import {AddchartRounded} from '@mui/icons-material';
 
 // Time table component.
 const  Index = () => {
@@ -15,15 +15,12 @@ const  Index = () => {
       <div className="timetable_wrapper">
         { !close &&
           <div  className="open" onClick={() => setClose(!close)}>
-            Add + <KeyboardArrowDown/>
+             <AddchartRounded/>
           </div>
         }
 
         { close &&
           <>
-            <div onClick={() => setClose(!close)} className="close">
-              Close  <KeyboardArrowUp/>
-            </div>
             <Add close={() =>  setClose()}/>
           </>
         }
@@ -32,4 +29,4 @@ const  Index = () => {
     )
 }
 
-export default Index;
+export default Index;     

@@ -12,48 +12,42 @@
 
   .add_item{
     height: auto;
-    // padding: 1rem;
-    display: flex;
-    width:86%;
-    margin: .5rem auto;
-    padding:.5rem .5rem 0 .5rem;
+    width:96%;
+    margin: 0 auto;
+    padding:0;
     flex-direction: row;
-    border: 1px solid;
-    border-radius: 3px;
-    box-shadow: 0 1px 4px #825959;
+    .close{
+      width: fit-content;
+      margin: 0 .3rem 0 auto;
+      
+    }
   }
 
 
 .close, .open{
-  display: flex;
-  width:86%;
-  margin: .5rem auto;
-  padding:.5rem .5rem 0 .5rem;
-  align-items: center;
-  justify-content: space-between;
-  color: palevioletred;
+ width: fit-content;
+ margin: 0 .5rem 0 auto;
+  color: magenta;
 }
 
 .open{
   color: blue;
-  background: #acacac5f;
-  border-radius: 2px;
-  box-shadow: 0px 0 1px black;
+  // background: #acacac5f;
 }
 
 
 .delete{
-  margin: 2px 0 2px auto;
+  margin: 1rem 0 1rem auto;
   width: fit-content;
   button{
     border: none;
     outline: none;
-    padding: .2rem .3rem;
-    border-radius: 5px;
-    background: #ff5050;
-    margin:0 0 0 auto;
+    background: none;
+    color: red;
     font-weight: bolder;
-    color: #ffffff;
+    :hover{
+       color: #002e00;
+    }
   }
 }
 
@@ -69,19 +63,21 @@
             color: blue;
             padding: .2rem .5rem;
             border-radius: 3px;
-            border: 1px solid;
-            width: 90%;
-            background-color: white;
+            border-bottom: 1px solid;
+            width: 96%;
         }
         .day_list{
-          p{
-            margin:.5rem auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          td{
             background-color: rgb(61, 67, 56);
-            border-radius: 2px;
-            padding: .2rem;
+            width: 6rem;
+            text-align: center;
+            border-radius: 10px;
+            padding: .3rem;
             cursor: pointer;
             color: white;
-            width: 90%;
             &:hover{
               background-color: rgba(61, 67, 56, 0.646);
             }
@@ -91,13 +87,15 @@
     }
      .activity_input, .time_input{
       outline: none;
-      border: 1px solid;
-      width:86%;
+      border: none;
+      border-bottom: 1px solid;
+      outline: none;
+      background: none;
+      width:96%;
       margin: .5rem auto;
       padding:.5rem;
       color: blue;
       resize: none;
-      border-radius: 3px;
       font-family: sans-serif;
      }
 
@@ -142,27 +140,29 @@
 
 .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday, .Sunday{
   background: rgb(252, 173, 186);
-  border: 1px solid #f56c83;
-  width:86%;
-  margin: .5rem auto;
-  padding:.5rem .5rem 0 .5rem;
-  border-radius: 5px;
+  // border: 1px solid #f56c83;
+  width:98%;
+  margin: .5rem auto 2rem auto;
+  padding:.2rem;
+  border-radius: 1px;
   .day{
-    font-size: larger;
+    font-size: large;
     color: red;
+    padding: 0;
+    margin: 0 0 0 .2rem;
 
   }
   .event_activity{
-    margin: .5rem 0 ;
+    margin: 0 0 .4rem 0 ;
     border-bottom: 1px solid #ffe0e5;
-    padding: .2rem;
+    padding: 0 .2rem;
+    font-size: smaller;
     word-wrap: break-word;
   }
 }
 
 .Tuesday{
   background: #adfcfb;
-  border: 1px solid #03a4a1;
   .day{
     color: #fe00e0;
 
@@ -174,7 +174,6 @@
 
 .Wednesday{
   background: #e8fcad;
-  border: 1px solid #688a02;
   .day{
     color: #003ffe;
 
@@ -186,7 +185,6 @@
 
 .Thursday{
   background: #0080009e;
-  border: 1px solid #002e00;
   .day{
     color: #fefefe;
 
@@ -198,7 +196,6 @@
 
 .Friday{
   background: yellow;
-  border: 1px solid rgb(154, 154, 3);
   .day{
     color: #05ed01;
 
@@ -210,7 +207,6 @@
 
 .Saturday{
   background: #e8fcad;
-  border: 1px solid #688a02;
   .day{
     color: #003ffe;
 

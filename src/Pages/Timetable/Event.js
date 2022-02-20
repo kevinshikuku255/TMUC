@@ -3,6 +3,7 @@ import "./styles.scss";
 
 /** Event ... */
 function Event() {
+  let days = []
   const monday = JSON.parse(localStorage.getItem("Monday"));
   const tuesday = JSON.parse(localStorage.getItem("Tuesday"));
   const wednesday = JSON.parse(localStorage.getItem("Wednesday"));
@@ -10,6 +11,7 @@ function Event() {
   const friday = JSON.parse(localStorage.getItem("Friday"));
   const saturday = JSON.parse(localStorage.getItem("Saturday"));
   const sunday = JSON.parse(localStorage.getItem("Sunday"));
+  days.push(monday, tuesday, wednesday, thursday, friday, saturday, sunday)
 
  const [ deleted, setDeleted] = useState(false)
 
@@ -25,7 +27,9 @@ function Event() {
                     { monday.map((day, i) => (
                               <>
                                   <div className="event_activity" key={i}>
-                                    <div><p>{day.Activity}</p> <p>{day.Time}</p> </div>
+                                    <div>
+                                      <p>{day.Activity}</p> 
+                                      <p> <span style={{color:"green"}}>Time:</span> {day.Time}</p> </div>
                                   </div>
                               </>
                         ))}
@@ -41,7 +45,9 @@ function Event() {
                     { tuesday.map((day, i) => (
                               <>
                                   <div className="event_activity" key={i}>
-                                    <div><p>{day.Activity}</p> <p>{day.Time}</p> </div>
+                                    <div>
+                                      <p>{day.Activity}</p> 
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> </div>
                                   </div>
                               </>
                         ))}
@@ -55,7 +61,9 @@ function Event() {
                     { wednesday.map((day, i) => (
                               <>
                                   <div className="event_activity" key={i}>
-                                    <div><p>{day.Activity}</p> <p>{day.Time}</p> </div>
+                                    <div>
+                                      <p>{day.Activity}</p> 
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> </div>
                                   </div>
                               </>
                         ))}
@@ -85,7 +93,9 @@ function Event() {
                     { friday.map((day, i) => (
                               <>
                                   <div className="event_activity" key={i}>
-                                    <div><p>{day.Activity}</p> <p>{day.Time}</p> </div>
+                                    <div>
+                                      <p>{day.Activity}</p> 
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> </div>
                                   </div>
                               </>
                         ))}
@@ -99,7 +109,9 @@ function Event() {
                     { saturday.map((day, i) => (
                               <>
                                   <div className="event_activity" key={i}>
-                                    <div><p>{day.Activity}</p> <p>{day.Time}</p> </div>
+                                    <div>
+                                      <p>{day.Activity}</p> 
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> </div>
                                   </div>
                               </>
                         ))}
@@ -114,7 +126,9 @@ function Event() {
                     { sunday.map((day, i) => (
                               <>
                                   <div className="event_activity" key={i}>
-                                    <div><p>{day.Activity}</p> <p>{day.Time}</p> </div>
+                                    <div>
+                                      <p>{day.Activity}</p> 
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> </div>
                                   </div>
                               </>
                         ))}
