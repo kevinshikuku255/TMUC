@@ -200,6 +200,7 @@
 // Time table guide.
 .guide{
   display: flex;
+  opacity: .7;
   justify-content: center;
   align-items: center;
   height: 50vh;
@@ -212,7 +213,7 @@
   }
   ul{
     margin-top: 2rem;
-    opacity: .7;
+    opacity: .5;
     font-size:smaller;
   }
 }

@@ -16,7 +16,7 @@ import Head from "./Components/Head/Index";
 import Timetable from "./Pages/Timetable/Index";
 import PostDetails from "./Pages/News/PostDetails";
 import { SignUp,  SignIn } from "./Pages/Auth";
-import StudentCenter from "./Pages/StudentCenter/index";
+import StudentCenter from "./Pages/StudentCenter";
 
 
 const Policy = lazy(() => import("./Components/Policy"));

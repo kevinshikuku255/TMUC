@@ -81,7 +81,7 @@ const  Head = () => {
                 <Menu menu_on={menu}/>
               </div>
         </div>
-        <SubHeader/>
+        {profileName !== "Studentcenter" && <SubHeader/>}
         </div>}
     </>
   )
