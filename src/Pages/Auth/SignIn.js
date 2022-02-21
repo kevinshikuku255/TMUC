@@ -64,7 +64,7 @@ const submitHundler = (e) => {
     <div className="SignUp">
       <div className="Header">
          <Avatar src={Logo}/>
-         <p>TMUC</p>
+         <p>TMUC ONLINE NOTICE BOARD</p>
          <p className="ErrorMessage">{error}</p>
       </div>
      <form className="Form" onSubmit={submitHundler}>
@@ -98,6 +98,7 @@ const submitHundler = (e) => {
         </form>
         <br/><br/>
       <p style={{color:"blue"}} onClick={()=> history.push("./Signup")}>create account instead</p>
+      <p>If you have an account already, by loging in in you will be able to pin news on the noticeboard</p>
     </div>
   )
 }

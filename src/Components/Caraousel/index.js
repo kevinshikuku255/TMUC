@@ -21,9 +21,9 @@ function CarouselComponent() {
           >
           {/* <Photos/> */}
           <div className="four">
-            <p>How accurate can you remember your last move? </p>
-            <h6>make least flips to rank the highest</h6>
-             <button onClick={() => history.push("/Studentcenter")}>Play</button>
+            <p>Time management is equivalent to academic success  </p>
+            <h6>create your academic time schedule now!</h6>
+             <button onClick={() => history.push("/Timetable")}>Create</button>
           </div>
         </Carousel>
         </>
