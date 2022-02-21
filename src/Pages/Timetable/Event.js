@@ -11,9 +11,21 @@ function Event() {
   const friday = JSON.parse(localStorage.getItem("Friday"));
   const saturday = JSON.parse(localStorage.getItem("Saturday"));
   const sunday = JSON.parse(localStorage.getItem("Sunday"));
-  days.push(monday, tuesday, wednesday, thursday, friday, saturday, sunday)
+  days.push(monday, tuesday, wednesday, thursday, friday, saturday, sunday);
 
- const [ deleted, setDeleted] = useState(false)
+  const  areSame = (arr) => {
+    // Put all array elements in a HashSet
+    let s = new Set(arr);
+    // If all elements are same, size of
+    // HashSet should be 1. As HashSet contains only distinct values.
+    return (s.size === 1);
+}
+
+let empty =  days.includes(null) && areSame(days);
+
+
+
+ const [ deleted, setDeleted] = useState(false);
 
  const delete_ = (e) => {
      localStorage.removeItem(e)
@@ -148,6 +160,22 @@ function Event() {
       {friday_}
       {saturday_}
       {sunday_}
+      {empty && 
+       
+       <div className='guide'>
+         <h2>SET YOUR PERSONAL  SCHEDULE TO STAY ORGANISED</h2>
+          <ul>
+              <b>Success and time management tips !!</b> <br/>
+              <li>Start your day right.</li>
+              <li>Have a plan for what you want to accomplish.</li>
+              <li>Break tasks into reasonable units.</li>
+              <li>Prioritize tasks and refuse inessential tasks.</li>
+              <li>Plan time for meals, exercising, and socializing</li>
+              <li>Follow a big push with relaxation</li>
+          </ul>
+          <h5>The goal is academic excellence, stay organised 🎓</h5>
+       </div>
+       }
     </>
   )
 }

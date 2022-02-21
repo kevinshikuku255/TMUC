@@ -1,10 +1,10 @@
 {
-  "short_name": "TMUS",
+  "short_name": "TMU",
   "name": "Tom Mboya University Student",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#deb887",
-  "background_color": "#deb887",
+  "background_color": "#ffffff ",
     "icons": [
     {
       "src": "favicon.png",

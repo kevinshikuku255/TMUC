@@ -118,32 +118,12 @@
   }
 }
 
-// .Dummy{
-//   opacity:.7;
-//   background: rgba(252, 173, 186, 0.79);
-//   border: 1px solid #f56c83b3;
-//   width: 90vw;
-//   margin: 2rem auto;
-//   padding:.5rem 1rem 0 1rem;
-//   border-radius: 5px;
-//   .day{
-//     font-size: larger;
-//     color: rgba(255, 0, 0, 0.701);
-
-//   }
-//   .event_activity{
-//     margin: .5rem 0 ;
-//     border-bottom: 1px solid #ffe0e5;
-//     padding: .2rem;
-//   }
-// }
-
 .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday, .Sunday{
-  background: rgb(252, 173, 186);
+  background: #fcadba9a;
   // border: 1px solid #f56c83;
-  width:98%;
-  margin: .5rem auto 2rem auto;
-  padding:.2rem;
+  width:100%;
+  margin: .5rem auto 1rem auto;
+  padding-bottom: .4rem;
   border-radius: 1px;
   .day{
     font-size: large;
@@ -162,7 +142,7 @@
 }
 
 .Tuesday{
-  background: #adfcfb;
+  background: #adfcfba1;
   .day{
     color: #fe00e0;
 
@@ -173,7 +153,7 @@
 }
 
 .Wednesday{
-  background: #e8fcad;
+  background: #e8fcad88;
   .day{
     color: #003ffe;
 
@@ -184,7 +164,7 @@
 }
 
 .Thursday{
-  background: #0080009e;
+  background: #00800059;
   .day{
     color: #fefefe;
 
@@ -195,7 +175,7 @@
 }
 
 .Friday{
-  background: yellow;
+  background: rgba(255, 255, 0, 0.494);
   .day{
     color: #05ed01;
 
@@ -206,12 +186,33 @@
 }
 
 .Saturday{
-  background: #e8fcad;
+  background: #e8fcad96;
   .day{
     color: #003ffe;
 
   }
   .event_activity{
     border-bottom: 1px solid #d35a5a;
+  }
+}
+
+
+// Time table guide.
+.guide{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 90%;
+  margin: auto;
+  flex-direction: column;
+  h2{
+    text-align: center;
+    color: magenta;
+  }
+  ul{
+    margin-top: 2rem;
+    opacity: .7;
+    font-size:smaller;
   }
 }
