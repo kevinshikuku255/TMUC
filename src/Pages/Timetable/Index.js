@@ -15,14 +15,14 @@ const  Index = () => {
       <div className="timetable_wrapper">
         { !close &&
           <div  className="open" onClick={() => setClose(!close)}>
-             <AddchartRounded/>
+            <sub>open</sub> <AddchartRounded/>
           </div>
         }
 
         { close &&
-          <>
+          <div>
             <Add close={() =>  setClose()}/>
-          </>
+          </div>
         }
         <Event/>
       </div>

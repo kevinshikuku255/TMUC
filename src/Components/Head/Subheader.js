@@ -48,11 +48,12 @@ export const SubHeader = () => {
           <p onClick={() => academics() }  className={ (pathname === "/" ) ? "active" : "a"}>ACADEMICS</p>
         </div>
         <div>
-             <p onClick={() => timetable() } className={ (pathname === "/Timetable" ) ? "active" : "a"}>My-TTABLE</p>
+             <p onClick={() => noticeboard()} className={ (pathname === "/Noticeboard" ) ? "active" : "a"}>NEWS</p>
         </div>
         <div>
-             <p onClick={() => noticeboard()} className={ (pathname === "/Noticeboard" ) ? "active" : "a"}>NOTICEBOARD</p>
+             <p onClick={() => timetable() } className={ (pathname === "/Timetable" ) ? "active" : "a"}>SCHEDULE</p>
         </div>
+        
 
      </div>
    )

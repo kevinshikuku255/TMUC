@@ -181,7 +181,7 @@ useEffect(() =>  {
       }
 
        <div className='new_game'>
-      <div className='top_player'>
+      {!showListOfPlayer && <div className='top_player'>
               <h3>Top players:</h3>
               <div style={{textAlign:"start"}}>
                   <table>
@@ -193,15 +193,15 @@ useEffect(() =>  {
                             <td>{player.name}</td>
                           </tr>
                       ))}
-                      <h5 style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>More players</h5>
+                      <h5 style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>All players</h5>
                     </thead>
                   </table>
               </div>
-          </div>
+          </div>}
          <p style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
             Flips: <span style={{fontSize:"1.8rem", color:"blue"}}>{turns}</span> -
             Lowest: <span style={{color:"red",}}>{score}</span> -
-            Score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
+            High score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
          </p>
          <br/>
         <span>Least possible 8 flips</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
@@ -210,9 +210,8 @@ useEffect(() =>  {
          {gameOver && <p style={{color:"#fe9000"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
 
          {show && <Hints hide={() => setShow(false)}/>}
-         { showListOfPlayer && <ListOfPlayers players={data_} hide={() => setShowListOfPlayer(false)}/> }
-
-         <button onClick={shufleCards}>New game</button>
+         
+         {!showListOfPlayer  &&<button onClick={shufleCards}>New game</button>}
        </div>
        <div className="card_grid">
            { cards.map( card => (
@@ -226,8 +225,9 @@ useEffect(() =>  {
                />
            ))}
        </div>
+       { showListOfPlayer && <ListOfPlayers players={data_} hide={() => setShowListOfPlayer(false)}/> }
+
     </div>
   )
 }
-
-export default Index
+export default Index;

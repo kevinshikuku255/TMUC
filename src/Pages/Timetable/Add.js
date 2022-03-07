@@ -61,7 +61,7 @@ const complete = () => {
 }
   return (
      <div  className="add_item">
-         <div className='close' onClick={complete}> <Check/></div>
+         <div className='close' onClick={complete}> <sub>done</sub> <Check/></div>
          <div className="item_data">
              <div className="day_input">
                 <div className="day"  onClick={() => setDay(!day)}>
@@ -71,21 +71,21 @@ const complete = () => {
               </div>
               { day &&
                 <div className="day_list">
-
                 <table>
+                   <br/>
                     <tr>
-                      <td onClick={setdayHandler}>Monday</td> 
-                      <td onClick={setdayHandler}>Tuesday</td> 
-                    </tr> <br/>
-                    <tr>
-                      <td onClick={setdayHandler}>Wednesday</td> 
-                      <td onClick={setdayHandler}>Thursday</td>
+                      <td onClick={setdayHandler}>Monday</td> <br/>
                       <td onClick={setdayHandler}>Friday</td>
                     </tr> <br/>
                     <tr>
+                      <td onClick={setdayHandler}>Tuesday</td> 
+                      <td onClick={setdayHandler}>Thursday</td>
+                    <td onClick={setdayHandler}>Saturday</td> <br/>
+                      
+                    </tr> <br/>
+                    <tr>
                     
-                    <td onClick={setdayHandler}
-                    >Saturday</td> 
+                    <td onClick={setdayHandler}>Wednesday</td> <br/>
                     <td onClick={setdayHandler}>Sunday</td>
                     </tr>
                 </table>

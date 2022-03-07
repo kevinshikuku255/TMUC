@@ -1,6 +1,6 @@
 .StudentCenter{
   background-color: burlywood;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,23 +187,36 @@ width: fit-content;
       margin: auto;
       margin-top: 6rem;
       height: calc(100vh - 6rem);
-      width:100%;
-      word-wrap: break-word;
+      word-wrap:normal;
       background-color: burlywood;
       z-index: 3;
       text-align: initial;
       padding: 1rem;
-      .hide_hints{
-        margin: 1rem .5rem 0 auto;
-        background: none;
-        border: none;
-        padding: .2rem .4rem;
-        background-color: blueviolet;
-        width: fit-content;
-        color:white;
-        outline: none;
-        border-radius: 7px;
-        cursor: pointer;
+      .close{
+        color: blue;
+        :hover{
+          background-color: #171779b8;
+        }
       }
 
+    }
+    .players{
+      width: 100vw;
+      margin: 2rem auto 0 1rem;
+      .player_header{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        width: 90%;
+        .close{
+          background-color: blue;
+          border-radius: 5px;
+          padding: .2rem .8rem;
+          color: white;
+          :hover{
+            background-color: #3c3cdeb8;
+          }
+        }
+      }
     }

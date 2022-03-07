@@ -41,8 +41,8 @@ const Swipble = () => {
     sliderMode={false}
     >
     <Route exact path="/" component={Index}/>
-    <Route path="/Timetable" component={Timetable}/>
     <Route path="/Noticeboard" component={News}/>
+    <Route path="/Timetable" component={Timetable}/>
   </RouterCarousel>
  )
 };
