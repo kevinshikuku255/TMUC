@@ -2,7 +2,8 @@
   "short_name": "TMU",
   "name": "Tom Mboya University",
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
+  "orientation":"potrait",
   "theme_color": "#deb887",
   "background_color": "#ffffff ",
     "icons": [
