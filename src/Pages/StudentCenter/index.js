@@ -8,16 +8,71 @@ import Hints from "./Hints";
 import ListOfPlayers from "./ListOfPlayers";
 import "./studentcenter.scss";
 
-const cardImages = [
-  { name: "melon", matched: false, emoji:"🍉"},
-  { name: "love",  matched: false, emoji:"💖"},
-  { name: "orbit", matched: false, emoji:"🍆"},
-  { name: "start", matched: false,  emoji:"❄️"},
-  { name: "sun", matched: false,  emoji:"🍒"},
-  { name: "heart-", matched: false, emoji:"💔"},
-  { name: "lough", matched: false, emoji:"😂"},
-  { name: "arrow-", matched: false, emoji:"🎯"},
-]
+const cardEmoji1 = {
+  emojis : [
+    { name: "melon", matched: false, emoji:"🍉"},
+    { name: "love",  matched: false, emoji:"💖"},
+    { name: "orbit", matched: false, emoji:"🍆"},
+    { name: "start", matched: false,  emoji:"❄️"},
+    { name: "sun", matched: false,  emoji:"🍒"},
+    { name: "heart-", matched: false, emoji:"💔"},
+    { name: "lough", matched: false, emoji:"😂"},
+    { name: "arrow-", matched: false, emoji:"🎯"},
+  ],
+  metaData: {
+    level: 1
+  }
+}
+
+const cardEmoji2 = {
+  emojis : [
+    { name: "melon", matched: false, emoji:"🚲"},
+    { name: "love",  matched: false, emoji:"🚗"},
+    { name: "orbit", matched: false, emoji:"🚕"},
+    { name: "start", matched: false,  emoji:"🛵"},
+    { name: "sun", matched: false,  emoji:"🚢"},
+    { name: "heart-", matched: false, emoji:"🚀"},
+    { name: "lough", matched: false, emoji:"🚑"},
+    { name: "arrow-", matched: false, emoji:"🚤"},
+  ],
+  metaData : {
+    level: 2
+  }
+}
+
+const cardEmoji3 = {
+  emojis : [
+    { name: "melon", matched: false, emoji:"🕓"},
+    { name: "love",  matched: false, emoji:"🕔"},
+    { name: "orbit", matched: false, emoji:"🕞"},
+    { name: "start", matched: false,  emoji:"🕚"},
+    { name: "sun", matched: false,  emoji:"🕣"},
+    { name: "heart-", matched: false, emoji:"🕧"},
+    { name: "lough", matched: false, emoji:"🕙"},
+    { name: "arrow-", matched: false, emoji:"🕚"},
+  ],
+  metaData : {
+    level: 3
+  }
+}
+
+const cardEmoji4 = {
+  emojis : [
+    { name: "melon", matched: false, emoji:"0️⃣"},
+    { name: "love",  matched: false, emoji:"1️⃣"},
+    { name: "orbit", matched: false, emoji:"2️⃣"},
+    { name: "start", matched: false,  emoji:"3️⃣"},
+    { name: "sun", matched: false,  emoji:"4️⃣"},
+    { name: "heart-", matched: false, emoji:"5️⃣"},
+    { name: "lough", matched: false, emoji:"6️⃣"},
+    { name: "arrow-", matched: false, emoji:"7️⃣"},
+  ],
+  metaData : {
+    level: 3
+  }
+}
+
+let cardEmoji = [];
 
 /** Student center */
 function Index() {
@@ -91,7 +146,7 @@ const signupForGame = () => {
 
 //Shafle cards
   const shufleCards = () => {
-   const  shufledCards = [...cardImages, ...cardImages ]
+   const  shufledCards = [...cardEmoji, ...cardEmoji ]
     .sort( () => Math.random() - 0.5)
     .map((card) => ({...card, id: Math.random()}))
 
@@ -101,10 +156,14 @@ const signupForGame = () => {
     setCards(shufledCards)
     setGameOver(false);
     setTurns(0)
+    
+    const randomeNo = Math.floor(Math.random() * 4);
+    cardEmoji = randomeNo === 0 ? cardEmoji1.emojis : 
+                randomeNo === 2 ? cardEmoji2.emojis :
+                randomeNo === 3 ?  cardEmoji3.emojis : cardEmoji4.emojis ;
   }
 
-
-
+  
 //Check for previus score in localstorge
 useEffect(() => {
  let prev =  localStorage.getItem("score");
@@ -168,6 +227,10 @@ const resetTurn = () => {
 
 useEffect(() =>  {
   shufleCards();
+  const randomeNo = Math.floor(Math.random() * 4);
+  cardEmoji = randomeNo === 0 ? cardEmoji1.emojis : 
+              randomeNo === 2 ? cardEmoji2.emojis :
+              randomeNo === 3 ?  cardEmoji3.emojis : cardEmoji4.emojis ;
 },[])
 
 
@@ -193,7 +256,9 @@ useEffect(() =>  {
                             <td>{player.name}</td>
                           </tr>
                       ))}
-                      <h5 style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>All players</h5>
+                      <tr>
+                         <td style={{color:"blueviolet"}} onClick={() => setShowListOfPlayer(true)}>All players</td>
+                      </tr>
                     </thead>
                   </table>
               </div>
