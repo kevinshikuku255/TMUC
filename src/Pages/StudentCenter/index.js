@@ -58,14 +58,14 @@ const cardEmoji3 = {
 
 const cardEmoji4 = {
   emojis : [
-    { name: "melon", matched: false, emoji:"0️⃣"},
-    { name: "love",  matched: false, emoji:"1️⃣"},
-    { name: "orbit", matched: false, emoji:"2️⃣"},
-    { name: "start", matched: false,  emoji:"3️⃣"},
-    { name: "sun", matched: false,  emoji:"4️⃣"},
-    { name: "heart-", matched: false, emoji:"5️⃣"},
-    { name: "lough", matched: false, emoji:"6️⃣"},
-    { name: "arrow-", matched: false, emoji:"7️⃣"},
+    { name: "red", matched: false, emoji:"🔴"},
+    { name: "brown",  matched: false, emoji:"🟠"},
+    { name: "yellow", matched: false, emoji:"🟡"},
+    { name: "green", matched: false,  emoji:"🟢"},
+    { name: "blue", matched: false,  emoji:"🔵"},
+    { name: "maroon", matched: false, emoji:"🟣"},
+    { name: "chclate", matched: false, emoji:"🟤"},
+    { name: "white", matched: false, emoji:"⚪"},
   ],
   metaData : {
     level: 3
