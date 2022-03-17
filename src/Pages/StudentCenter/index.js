@@ -264,12 +264,12 @@ useEffect(() =>  {
               </div>
           </div>}
          <p style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-            <span style={{color:"blue", fontSize:"1.2rem"}}> {turns}  </span> - Flips _
-            Least flips: <span style={{color:"red",}}>{score}</span> _
+            <span style={{color:"blue", fontSize:"1.2rem"}}> {turns}  </span> - Moves _ 
+            My least moves: <span style={{color:"red"}}>{score}</span> _
             High score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
          </p>
          <br/>
-        <span>Least possible 8 flips</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
+        <span>Least possible 8 moves</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
          {!gamer && <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>}
 
          {gameOver && <p style={{color:"#fe9000"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
