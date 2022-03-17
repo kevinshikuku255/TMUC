@@ -6,6 +6,7 @@ import RouterCarousel from 'react-router-carousel';
 import { useSubscription, useLazyQuery } from '@apollo/client';
 import {  NEW_POST, GET_POSTS, POST_SUBSCRIPTION } from './Graphql/posts';
 import { Notify } from "./Notification";
+import colorTheme from "./Components/colorTheme";
 
 
 import './App.scss';
@@ -48,6 +49,7 @@ const Swipble = () => {
 
 
 function App() {
+  const theme = colorTheme();
    const { data } = useSubscription(NEW_POST);
    const [ getPosts ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
     useEffect(() => {
@@ -60,7 +62,7 @@ Notify({message, title, image})
 
 
   return (
-    <div className="App">
+    <div style={{backgroundColor: theme.farground}} className="App">
       <Suspense fallback={FalLback}>
             <Head/>
             <Switch>

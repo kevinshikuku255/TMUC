@@ -4,7 +4,7 @@ import "./pages.scss";
 
 
 /** News components */
-function News() {
+function News({theme}) {
    const handleClick = () => {
         ReactGA.event({
               category:"View",
@@ -17,7 +17,7 @@ function News() {
   return (
    <>
 
-    <div className="Sotmuc_news">
+    <div style={{backgroundColor:theme.background}} className="Sotmuc_news">
     <h2  onClick={() => handleClick()}>SOTMUC NEWS</h2> <br/>
     <h3 style={{color:"red"}} >Feature update for TMUC App...</h3>
     </div>

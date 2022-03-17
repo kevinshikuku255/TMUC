@@ -2,7 +2,7 @@ import ReactGA from 'react-ga';
 import "./pages.scss";
 import { useLoadContext } from '../../Context';
 
-function Elearning() {
+function Elearning({theme}) {
 
    const [,dispatch] = useLoadContext();
    const handleClick = () => {
@@ -24,7 +24,7 @@ function Elearning() {
    }
 
   return (
-    <div className="Elearning">
+    <div style={{backgroundColor:theme.background}} className="Elearning">
        <h4>e-learning</h4>
           <a className="E" onClick={clickHandler} href="https://elearning.tmuc.ac.ke/">e-learning</a>
     </div>

@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import "./pages.scss";
 import { useLoadContext } from '../../Context';
 
-function Helb() {
+function Helb({theme}) {
    const [,dispatch] = useLoadContext();
    const handleClick = () => {
         ReactGA.event({
@@ -23,7 +23,7 @@ function Helb() {
    }
 
   return (
-    <div className="Helb">
+    <div style={{backgroundColor:theme.background}} className="Helb">
        <h4>helb</h4>
           <a className=" HB" onClick={clickHandler} href="https://www.helb.co.ke/student-portal/">helb</a>
     </div>

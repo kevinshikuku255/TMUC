@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import "./pages.scss";
 import { useLoadContext } from '../../Context';
 
-function Council() {
+function Council({theme}) {
    const [,dispatch ]= useLoadContext();
    const handleClick = () => {
         ReactGA.event({
@@ -23,7 +23,7 @@ function Council() {
    }
 
   return (
-    <div className="Council">
+    <div style={{backgroundColor:theme.background}} className="Council">
        <h4>school council</h4>
 
           <a className="C" onClick={clickHandler} href="https://tmuc.ac.ke/management-staff">council</a>

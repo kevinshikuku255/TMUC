@@ -6,7 +6,7 @@ import { useLoadContext } from '../../Context';
 import "./pages.scss";
 
 
-function StudentCouncil() {
+function StudentCouncil({theme}) {
 
 const handleClick = () => {
     ReactGA.event({
@@ -29,7 +29,7 @@ const handleClick = () => {
    }
 
   return (
-    <div className="StudentCouncil">
+    <div style={{backgroundColor:theme.background}} className="StudentCouncil">
        <h4>student council</h4>
           <Link onClick={clickHandler} to="/sotmuc">sotmuc </Link>
     </div>

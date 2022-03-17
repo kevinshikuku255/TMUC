@@ -3,8 +3,8 @@ import ReactGA from 'react-ga';
 import "./pages.scss";
 import { useLoadContext } from '../../Context';
 
-function Portal() {
 
+function Portal({theme}) {
    const [,dispatch] = useLoadContext();
    const handleClick = () => {
         ReactGA.event({
@@ -24,7 +24,7 @@ function Portal() {
    }
 
   return (
-    <div className="Portal">
+    <div style={{backgroundColor:theme.background}} className="Portal">
        <h4>school website</h4>
          <a className="P" onClick={clickHandler} href="https://tmuc.ac.ke/">website</a>
     </div>

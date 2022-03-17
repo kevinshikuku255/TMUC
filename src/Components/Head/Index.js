@@ -8,11 +8,13 @@ import { useLoadContext } from '../../Context';
 import { SubHeader } from "./Subheader";
 
 import Menu from "./Menu";
+import colorTheme from "../colorTheme";
 
 
 /** Main header component.----------------------------------- */
 const  Head = () => {
   const history = useHistory();
+  const theme = colorTheme();
   const location = useLocation();
   const [ { menu, loading }, dispatch] = useLoadContext();
   const profileName = location.pathname.split("/").pop();
@@ -60,9 +62,8 @@ const  Head = () => {
 
   return (
     <>
-
        { profileName !== "StudentCenter" &&
-        <div className="HeadWrapper">
+        <div style={{backgroundColor: theme.background, color:theme.primary}} className="HeadWrapper">
         {(loading === true ) && <LinearProgress/>}
         <div className="Head">
               <div className="Logo">
@@ -70,7 +71,7 @@ const  Head = () => {
                   { <ArrowBack onClick={back}/> }
                 </div>
                 <div  className="Name">
-                  <p>TOM MBOYA STUDENT</p>
+                  <p style={{color: theme.primary === "black" ? "blue" : theme.primary}}>TOM MBOYA STUDENT</p>
                   <h5>
                     {custom_head}
                   </h5>
@@ -81,7 +82,7 @@ const  Head = () => {
                 <Menu menu_on={menu}/>
               </div>
         </div>
-       <SubHeader/>
+        <SubHeader/>
         </div>}
     </>
   )

@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import "./pages.scss";
 
 
-function Blank() {
+function Blank({theme}) {
    const handleClick = () => {
         ReactGA.event({
               category:"View",
@@ -15,7 +15,7 @@ function Blank() {
 
 
   return (
-    <div className="Helb" onClick={handleClick}>
+    <div style={{backgroundColor:theme.background}} className="Helb" onClick={handleClick}>
 
     </div>
   )

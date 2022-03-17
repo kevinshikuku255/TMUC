@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
 import { BrowserRouter} from 'react-router-dom';
 import { createApolloClient } from './Utils/apollo_client';
-import { AuthProvider, LoadProvider, PostProvider } from "./Context";
+import { AuthProvider, LoadProvider, PostProvider,ThemeProvider } from "./Context";
 
 
 import './index.scss';
@@ -30,11 +30,13 @@ ReactDOM.render(
       <ApolloProvider client={apolloClient}>
         <BrowserRouter>
            <AuthProvider>
+             <ThemeProvider>
                 <LoadProvider>
                   <PostProvider>
                       <App/>
                   </PostProvider>
                 </LoadProvider>
+              </ThemeProvider>
             </AuthProvider>
       </BrowserRouter>
     </ApolloProvider>,

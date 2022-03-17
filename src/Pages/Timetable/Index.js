@@ -5,14 +5,16 @@ import Add from "./Add";
 import "./styles.scss";
 
 import {AddchartRounded} from '@mui/icons-material';
+import colorTheme from "../../Components/colorTheme";
 
 // Time table component.
 const  Index = () => {
+  const theme = colorTheme();
   ReactGA.pageview('/Timetable');
   const [ close, setClose] = useState(false);
 
     return (
-      <div className="timetable_wrapper">
+      <div className="timetable_wrapper" style={{color: theme.primary}}>
         { !close &&
           <div  className="open" onClick={() => setClose(!close)}>
             <sub>open</sub> <AddchartRounded/>

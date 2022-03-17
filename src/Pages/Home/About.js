@@ -5,7 +5,7 @@ import { useLoadContext } from '../../Context';
 import "./pages.scss"
 
 
-function About() {
+function About({theme}) {
    const [,dispatch] = useLoadContext();
 
    const handleClick = () => {
@@ -27,7 +27,7 @@ function About() {
 
 
   return (
-    <div className="About">
+    <div style={{backgroundColor:theme.background}} className="About">
        <h4>about tmuc</h4>
       <div>
         {
