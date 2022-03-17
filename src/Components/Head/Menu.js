@@ -68,10 +68,10 @@ async function onShare() {
                 <Avatar src={Logo} className={classes.small}/>
               </p>
               <p className="MenuItem" onClick={() => history.push("/")} >ACADEMICS</p>
+              <p className="MenuItem" onClick={() => history.push("/Noticeboard")}>NEWS</p>
               <p className="MenuItem" onClick={() => history.push("/Studentcenter")} style={{color:"red"}} >STUDENT-CENTER</p>
               <p className="MenuItem" onClick={() => history.push("/Activities")} >ACTIVITIES</p>
               <p className="MenuItem" onClick={() => history.push("/Sotmuc")} >SOTMUC</p>
-              <p className="MenuItem" onClick={() => history.push("/Noticeboard")}>NOTICE-BOARD</p>
               <p className="MenuItem" onClick={() => history.push("/Policy")}>  USAGE POLICY</p>
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Signup")}> SIGN-UP</p>

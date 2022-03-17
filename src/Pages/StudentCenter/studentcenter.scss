@@ -185,13 +185,14 @@ width: fit-content;
       top: 0;
       left: 0;
       margin: auto;
-      margin-top: 6rem;
-      height: calc(100vh - 6rem);
+      margin-top: 5.8rem;
+      height: calc(100vh - 5.8rem);
       word-wrap:normal;
       background-color: burlywood;
       z-index: 3;
       text-align: initial;
       padding: 1rem;
+      z-index: 9;
       .close{
         color: blue;
         :hover{
@@ -201,19 +202,19 @@ width: fit-content;
 
     }
     .players{
-      width: 100vw;
       margin: 2rem auto 0 1rem;
       .player_header{
         display: flex;
         justify-content: space-between;
         flex-direction: row;
         align-items: center;
-        width: 90%;
+        width: 90vw;
+        border-bottom: 1px solid red;
+        padding: 0;
+        margin-bottom: .3rem;
         .close{
-          background-color: blue;
+          color: blue;
           border-radius: 5px;
-          padding: .2rem .8rem;
-          color: white;
           :hover{
             background-color: #3c3cdeb8;
           }

@@ -11,7 +11,6 @@ import { Notify } from "./Notification";
 import './App.scss';
 
 import Index from "./Pages/Home/index";
-import News from "./Pages/News/index";
 import Head from "./Components/Head/Index";
 import Timetable from "./Pages/Timetable/Index";
 import PostDetails from "./Pages/News/PostDetails";
@@ -41,8 +40,8 @@ const Swipble = () => {
     sliderMode={false}
     >
     <Route exact path="/" component={Index}/>
-    <Route path="/Noticeboard" component={News}/>
     <Route path="/Timetable" component={Timetable}/>
+    <Route path="/Studentcenter" component={StudentCenter}/>
   </RouterCarousel>
  )
 };

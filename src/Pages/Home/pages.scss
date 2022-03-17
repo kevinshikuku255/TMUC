@@ -40,8 +40,8 @@
   justify-content: center;
   align-items: center;
   border-radius: .3rem;
-  // background-color: #deb887;
-  background-image: radial-gradient(circle, #deb887, yellow, #deb887);
+  background-color: #deb887;
+  // background-image: radial-gradient(circle, #deb887, yellow, #deb887);
   box-shadow: 0px -1px 4px .5px #000000ba;
   @media screen and (min-width:48rem){
     width: 10rem;
@@ -89,42 +89,33 @@
 
 .E{
   background-image: linear-gradient(to left, #0000ff, #ff0000cd);
-  opacity: .5;
 }
 
 .P{
-  opacity: .5;
   background-image: linear-gradient(to right, #8a2be2, #ff0000cd);
 }
 .L{
-  opacity: .5;
   background-image: linear-gradient(to right, #008080, #ff0000cd);
 }
 
 .D{
-  opacity: .5;
   background-image: linear-gradient(to left, #19e606db, #211b1bcd);
 }
 .A{
-  opacity: .5;
   background-image: linear-gradient(to left, #8c8c41, #211b1bcd);
 }
 
 .C{
-  opacity: .5;
   background-image: linear-gradient(to left, #000000, #5a1010cd);
 }
 
 .LB{
-  opacity: .5;
   background-image: linear-gradient(to left, #d612c0, #703333cd);
 }
 .HB{
-  opacity: .5;
   background-image: linear-gradient(to left, green, #517033cd);
 }
 .H{
-  opacity: .5;
   background-image: linear-gradient(to left, #00e6e6, #034446cd);
 }
 

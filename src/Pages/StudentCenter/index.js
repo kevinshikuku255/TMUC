@@ -264,8 +264,8 @@ useEffect(() =>  {
               </div>
           </div>}
          <p style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-            Flips: <span style={{fontSize:"1.8rem", color:"blue"}}>{turns}</span> -
-            Lowest: <span style={{color:"red",}}>{score}</span> -
+            <span style={{color:"blue", fontSize:"1.2rem"}}> {turns}  </span> - Flips _
+            Least flips: <span style={{color:"red",}}>{score}</span> _
             High score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
          </p>
          <br/>
