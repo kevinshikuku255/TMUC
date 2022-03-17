@@ -8,6 +8,22 @@ import Hints from "./Hints";
 import ListOfPlayers from "./ListOfPlayers";
 import "./studentcenter.scss";
 
+const cardEmoji0 = {
+  emojis : [
+    { name: "A", matched: false, emoji:"A"},
+    { name: "D",  matched: false, emoji:"D"},
+    { name: "B", matched: false, emoji:"B"},
+    { name: "Z", matched: false,  emoji:"Z"},
+    { name: "Q", matched: false,  emoji:"Q"},
+    { name: "W-", matched: false, emoji:"W"},
+    { name: "P", matched: false, emoji:"P"},
+    { name: "X-", matched: false, emoji:"X"},
+  ],
+  metaData: {
+    level: 1
+  }
+}
+
 const cardEmoji1 = {
   emojis : [
     { name: "melon", matched: false, emoji:"🍉"},
@@ -24,16 +40,17 @@ const cardEmoji1 = {
   }
 }
 
+
 const cardEmoji2 = {
   emojis : [
-    { name: "melon", matched: false, emoji:"🚲"},
-    { name: "love",  matched: false, emoji:"🚗"},
-    { name: "orbit", matched: false, emoji:"🚕"},
-    { name: "start", matched: false,  emoji:"🛵"},
-    { name: "sun", matched: false,  emoji:"🚢"},
-    { name: "heart-", matched: false, emoji:"🚀"},
-    { name: "lough", matched: false, emoji:"🚑"},
-    { name: "arrow-", matched: false, emoji:"🚤"},
+    { name: "melon", matched: false, emoji:"🦅"},
+    { name: "love",  matched: false, emoji:"🦆"},
+    { name: "orbit", matched: false, emoji:"🦩"},
+    { name: "start", matched: false,  emoji:"🐥"},
+    { name: "sun", matched: false,  emoji:"🦜"},
+    { name: "heart-", matched: false, emoji:"🐓"},
+    { name: "lough", matched: false, emoji:"🦢"},
+    { name: "arrow-", matched: false, emoji:"🦉"},
   ],
   metaData : {
     level: 2
@@ -157,10 +174,11 @@ const signupForGame = () => {
     setGameOver(false);
     setTurns(0)
     
-    const randomeNo = Math.floor(Math.random() * 4);
-    cardEmoji = randomeNo === 0 ? cardEmoji1.emojis : 
-                randomeNo === 2 ? cardEmoji2.emojis :
-                randomeNo === 3 ?  cardEmoji3.emojis : cardEmoji4.emojis ;
+    const randomeNo = Math.floor(Math.random() * 5);
+    cardEmoji = randomeNo === 0 ? cardEmoji0.emojis : 
+                randomeNo === 2 ? cardEmoji1.emojis :
+                randomeNo === 3 ? cardEmoji1.emojis :
+                randomeNo === 4 ?  cardEmoji2.emojis : cardEmoji3.emojis ;
   }
 
   
