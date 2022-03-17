@@ -1,9 +1,11 @@
 import React from 'react';
 import "./studentcenter.scss";
+import colorTheme from "../../Components/colorTheme";
 
 function ListOfPlayers({players, hide}) {
+  const theme = colorTheme();
   return (
-    <div className='players'>
+    <div className='players' style={{color: theme.primary, backgroundColor: theme.background}}>
        <div className='player_header'>
           <h3>Players </h3>
           <p className="close" onClick={() => hide()}>Close</p>

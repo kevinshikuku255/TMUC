@@ -8,6 +8,8 @@ import Hints from "./Hints";
 import ListOfPlayers from "./ListOfPlayers";
 import "./studentcenter.scss";
 
+import colorTheme from "../../Components/colorTheme";
+
 const cardEmoji0 = {
   emojis : [
     { name: "A", matched: false, emoji:"A"},
@@ -94,6 +96,7 @@ let cardEmoji = [];
 /** Student center */
 function Index() {
    ReactGA.pageview('Studentcenter');
+   const theme = colorTheme();
    const [ cards, setCards] = useState([]);
    const [ turns, setTurns] = useState(0);
 
@@ -253,7 +256,7 @@ useEffect(() =>  {
 
 
   return (
-    <div className="StudentCenter">
+    <div className="StudentCenter" style={{color: theme.primary, backgroundColor: theme.background}}>
 
       { signup &&
         <div className='signin'>

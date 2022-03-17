@@ -1,9 +1,10 @@
 .timetable_wrapper{
   margin: auto;
-  margin-top: 6rem;
-  width: 98vw;
+  margin-top: 5.2rem;
+  width: 100vw;
+  font-weight: bolder;
   font-family: sans-serif;
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - 5.2rem);
   @media screen and (min-width: 48rem ) {
     width: 38rem;
     margin-top: 7rem;
@@ -110,7 +111,7 @@
       background-color: #4545de;
       color: white;
       border-radius: 10px;
-      padding: .2rem .7rem;
+      padding: .4rem .7rem;
       margin-bottom: 1rem;
       font-family: sans-serif;
 
@@ -120,11 +121,11 @@
 
 .Monday, .Tuesday, .Wednesday, .Thursday, .Friday, .Saturday, .Sunday{
   background: #fcadba9a;
-  // border: 1px solid #f56c83;
-  width:100%;
+  border: 2px solid burlywood;
+  width:96%;
   margin: .5rem auto 1rem auto;
-  padding-bottom: .4rem;
-  border-radius: 1px;
+  padding-bottom: .2rem;
+  border-radius: 2px;
   .day{
     font-size: large;
     color: red;

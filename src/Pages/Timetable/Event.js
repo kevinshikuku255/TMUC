@@ -1,8 +1,10 @@
 import React, { useState} from 'react';
 import "./styles.scss";
+import colorTheme from "../../Components/colorTheme";
 
 /** Event ... */
 function Event() {
+  const theme = colorTheme();
   let days = []
   const monday = JSON.parse(localStorage.getItem("Monday"));
   const tuesday = JSON.parse(localStorage.getItem("Tuesday"));
@@ -34,7 +36,7 @@ let empty =  days.includes(null) && areSame(days);
 
 
  let monday_ = ( monday !== null &&
-                <div className="Monday">
+                <div className="Monday" style={{background:theme.secondary}}>
                   <p className="day">Monday</p>
                     { monday.map((day, i) => (
                               <>
@@ -52,7 +54,7 @@ let empty =  days.includes(null) && areSame(days);
 
 
  let tuesday_ = ( tuesday !== null &&
-                <div className="Tuesday">
+                <div className="Tuesday" style={{background:theme.secondary}}>
                   <p className="day">Tuesday</p>
                     { tuesday.map((day, i) => (
                               <>
@@ -68,7 +70,7 @@ let empty =  days.includes(null) && areSame(days);
                     </div>
                 </div>)
  let wednesday_ = ( wednesday !== null &&
-                <div className="Wednesday">
+                <div className="Wednesday" style={{background:theme.secondary}}>
                   <p className="day">Wednesday</p>
                     { wednesday.map((day, i) => (
                               <>
@@ -85,7 +87,7 @@ let empty =  days.includes(null) && areSame(days);
                 </div>)
 
  let thursday_ = ( thursday !== null &&
-                <div className="Thursday">
+                <div className="Thursday" style={{background:theme.secondary}}>
                   <p className="day">Thursday</p>
                     { thursday.map((day, i) => (
                               <>
@@ -100,7 +102,7 @@ let empty =  days.includes(null) && areSame(days);
                 </div>)
 
  let friday_ = ( friday !== null &&
-                <div className="Friday">
+                <div className="Friday" style={{background:theme.secondary}}>
                   <p className="day">Friday</p>
                     { friday.map((day, i) => (
                               <>
@@ -116,7 +118,7 @@ let empty =  days.includes(null) && areSame(days);
                 </div>
                 </div>)
  let saturday_ = ( saturday !== null &&
-                <div className="Saturday">
+                <div className="Saturday" style={{background:theme.secondary}}>
                   <p className="day">Saturday</p>
                     { saturday.map((day, i) => (
                               <>
@@ -133,7 +135,7 @@ let empty =  days.includes(null) && areSame(days);
                 </div>)
 
  let sunday_ = ( sunday !== null &&
-                <div className="Sunday">
+                <div className="Sunday" style={{background:theme.secondary}}>
                   <p className="day">Sunday</p>
                     { sunday.map((day, i) => (
                               <>
