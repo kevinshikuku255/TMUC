@@ -16,7 +16,7 @@ function Colors() {
     const Dark = {
         background: "black",
         brown: "brown",
-        farground: "#464340",
+        farground: "#272625",
         primary: "white", // text color for paragraphs, labels and other essentials
         secondary: "#2b2927" //text color like form microcopy, captions, and table headings
         
