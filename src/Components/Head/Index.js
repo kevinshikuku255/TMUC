@@ -63,7 +63,7 @@ const  Head = () => {
   return (
     <>
        { profileName !== "StudentCenter" &&
-        <div style={{backgroundColor: theme.background, color:theme.primary}} className="HeadWrapper">
+        <div style={{backgroundColor: theme.background, color:theme.primary, boxShadow: "0 .3px 2px gray"}} className="HeadWrapper">
         {(loading === true ) && <LinearProgress/>}
         <div className="Head">
               <div className="Logo">

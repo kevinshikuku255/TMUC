@@ -29,9 +29,12 @@ function Index() {
   <div style={{color: theme.primary}} className="Main">
       <div className="Home_page">
             <Carousel className="Ad"/>
-        <div className="Pages">
+        <div className="Pages1">
           <Login theme={theme}/>
           <Elearning theme={theme}/>
+        </div>
+        <br/>
+        <div className="Pages1">
           <Portal theme={theme}/>
           <Library theme={theme}/>
           <Photos theme={theme}/>

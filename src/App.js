@@ -42,7 +42,7 @@ const Swipble = () => {
     >
     <Route exact path="/" component={Index}/>
     <Route path="/Timetable" component={Timetable}/>
-    <Route path="/Studentcenter" component={StudentCenter}/>
+    {/* <Route path="/Studentcenter" component={StudentCenter}/> */}
   </RouterCarousel>
  )
 };

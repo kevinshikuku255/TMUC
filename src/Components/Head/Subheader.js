@@ -55,8 +55,6 @@ export const SubHeader = () => {
         <div>
              <p onClick={() => noticeboard()} className={ (pathname === "/Studentcenter" ) ? "active" : "a"}>ACTIVITIES</p>
         </div>
-        
-
      </div>
    )
 }

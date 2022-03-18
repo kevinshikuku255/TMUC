@@ -86,7 +86,7 @@ export default function AccountMenu({menu_on}) {
 
            <div className="MenuItems" style={{backgroundColor: theme.background, color:theme.primary}} >
               <p className="Logo">
-                <Avatar src={Logo} className={classes.small}/>
+                <a href='//ashoupsu.com/4/4950173'><Avatar src={Logo} className={classes.small}/></a>
               </p>
               <p className="MenuItem" onClick={() => history.push("/")} >ACADEMICS</p>
               <p className="MenuItem" onClick={() => history.push("/Noticeboard")}>NEWS</p>

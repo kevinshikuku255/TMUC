@@ -18,7 +18,7 @@ function Colors() {
         brown: "brown",
         farground: "#272625",
         primary: "white", // text color for paragraphs, labels and other essentials
-        secondary: "#2b2927" //text color like form microcopy, captions, and table headings
+        secondary: "#151414" //text color like form microcopy, captions, and table headings
         
     }
    const themeColor = Theme === "Dark" ? Dark : Theme === "Light" ? Light : null
