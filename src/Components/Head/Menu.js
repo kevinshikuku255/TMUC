@@ -1,5 +1,6 @@
 import React, { useEffect, useRef} from 'react';
 import { useHistory } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import { useLoadContext, useThemeContext } from '../../Context';
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../../Images/favicon.png";
@@ -40,6 +41,24 @@ export default function AccountMenu({menu_on}) {
   }, [menu_on, loadispatch])
 
 
+// Google analytics
+  const reportDark = () => {
+    ReactGA.event({
+          category:"Theme",
+          action:"changed to dark theme",
+          transport:"beacon",
+          label:"Dark theme",
+        })
+}
+const reportLight = () => {
+  ReactGA.event({
+        category:"Theme",
+        action:"changed to light theme",
+        transport:"beacon",
+        label:"Light theme",
+      })
+}
+
 // Sharing the app link
     async function onShare() {
       const label= "T.M.U.C"
@@ -59,19 +78,23 @@ export default function AccountMenu({menu_on}) {
           console.log("share canceled");
         }
     }
+  // Dark and light theme click handlers
     const darkHandler = () => {
       localStorage.setItem("theme", "Dark")
       dispatch({
         type: "Dark",
         payload: "Dark"
       })
+      reportLight();
     }
+
     const lightHandler = () => {
       localStorage.setItem("theme", "Light")
       dispatch({
         type: "Light",
         payload: "Light"
       })
+      reportDark()
     }
 
 
