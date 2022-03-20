@@ -95,7 +95,7 @@ let cardEmoji = [];
 
 /** Student center */
 function Index() {
-   ReactGA.pageview('Studentcenter');
+   ReactGA.pageview('Game');
    const theme = colorTheme();
    const [ cards, setCards] = useState([]);
    const [ turns, setTurns] = useState(0);
@@ -147,9 +147,9 @@ function Index() {
 const signupForGame = () => {
     let user =  localStorage.getItem("Gamer");
     if(user){
-      setSignUp(false)
+      setSignUp(!signup)
     }else{
-      setSignUp(true)
+      setSignUp(!signup)
     }
 }
 
@@ -257,15 +257,50 @@ useEffect(() =>  {
 
   return (
     <div className="StudentCenter" style={{color: theme.primary, backgroundColor: theme.background}}>
+       
 
-      { signup &&
+       <div className='new_game_button' style={{opacity: signup ? "0" : "1"}}> <p onClick={shufleCards}>New game</p> </div>
+       <div className="card_grid" style={{opacity: signup ? "0" : "1"}}>
+           { cards.map( card => (
+             <Singlecard
+               key={card.id}
+               card={card}
+               handleChoice={handleChoice}
+               flipped={ card === choiceOne || card === choiceTwo || card.matched}
+               disabled={disabled}
+               gameOver={gameOver}
+               />
+           ))}
+       </div>
+
+       <div className='new_game' style={{opacity: signup ? "0" : "1"}}>
+            <p style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                <span style={{color:"whitesmoke", fontSize:"1.2rem"}}> {turns}  </span> - Moves _ 
+                High score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
+            </p>
+            <br/>
+
+            <span style={{color:"red"}}> My moves:  {score} </span> -
+            <span onClick={() => setShow(!show)} style={{color:"blue"}}> { show ?  `Close hints` : `player hints`}</span> 
+
+            {/* {!gamer &&  */}
+             <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>
+             {/* } */}
+
+            {gameOver && <p style={{color:"#fe9000"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
+
+            {show && <Hints hide={() => setShow(!show)}/>}         
+       </div>
+
+
+        { signup &&
         <div className='signin'>
-          <Signup close={() => setSignUp(false)}/>
-        </div>
-      }
+                  <Signup close={() => setSignUp(false)}/>
+                </div>
+              }
 
-       <div className='new_game'>
-      {!showListOfPlayer && <div className='top_player'>
+
+       {!showListOfPlayer && <div className='top_player' style={{opacity: signup ? "0" : "1"}}>
               <h3>Top players:</h3>
               <div style={{textAlign:"start"}}>
                   <table>
@@ -284,33 +319,6 @@ useEffect(() =>  {
                   </table>
               </div>
           </div>}
-         <p style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-            <span style={{color:"blue", fontSize:"1.2rem"}}> {turns}  </span> - Moves _ 
-            My least moves: <span style={{color:"red"}}>{score}</span> _
-            High score: <span style={{color:"blueviolet"}}> { Math.trunc(8/score * 100)}% </span>
-         </p>
-         <br/>
-        <span>Least possible 8 moves</span> <p onClick={() => setShow(true)} className='player_hints'> player Hints</p>
-         {!gamer && <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>}
-
-         {gameOver && <p style={{color:"#fe9000"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
-
-         {show && <Hints hide={() => setShow(false)}/>}
-         
-         {!showListOfPlayer  &&<button onClick={shufleCards}>New game</button>}
-       </div>
-       <div className="card_grid">
-           { cards.map( card => (
-             <Singlecard
-               key={card.id}
-               card={card}
-               handleChoice={handleChoice}
-               flipped={ card === choiceOne || card === choiceTwo || card.matched}
-               disabled={disabled}
-               gameOver={gameOver}
-               />
-           ))}
-       </div>
        { showListOfPlayer && <ListOfPlayers players={data_} hide={() => setShowListOfPlayer(false)}/> }
 
     </div>

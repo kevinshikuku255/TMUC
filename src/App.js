@@ -42,7 +42,7 @@ const Swipble = () => {
     >
     <Route exact path="/" component={Index}/>
     <Route path="/Timetable" component={Timetable}/>
-    {/* <Route path="/Studentcenter" component={StudentCenter}/> */}
+    <Route path="/Studentcenter" component={StudentCenter}/>
   </RouterCarousel>
  )
 };
@@ -76,7 +76,6 @@ Notify({message, title, image})
               <Route  path="/Policy" component={Policy}/>
               <Route  path="/Signup" component={SignUp}/>
               <Route  path="/Signin" component={SignIn}/>
-              <Route  path="/Studentcenter" component={StudentCenter}/>
               <Route  path='*' component={Swipble} />
             </Switch>
         </Suspense>
