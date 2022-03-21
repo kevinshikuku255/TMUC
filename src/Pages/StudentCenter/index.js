@@ -283,9 +283,9 @@ useEffect(() =>  {
             <span style={{color:"red"}}> My moves:  {score} </span> -
             <span onClick={() => setShow(!show)} style={{color:"blue"}}> { show ?  `Close hints` : `player hints`}</span> 
 
-            {/* {!gamer &&  */}
+            {!gamer && 
              <h4 className="signupbutton" onClick={signupForGame}>Sign up to compete</h4>
-             {/* } */}
+             }
 
             {gameOver && <p style={{color:"#fe9000"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}
 
