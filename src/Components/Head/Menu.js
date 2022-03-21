@@ -5,7 +5,7 @@ import { useLoadContext, useThemeContext } from '../../Context';
 import { Avatar, makeStyles } from "@material-ui/core";
 import Logo from "../../Images/favicon.png";
 import colorTheme from "../colorTheme";
-import { LightMode, DarkMode} from '@mui/icons-material';
+import Switch from '@mui/material/Switch';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +24,21 @@ export default function AccountMenu({menu_on}) {
  const classes = useStyles();
  const  [ , loadispatch ] = useLoadContext();
  const  [ { Theme } , dispatch ] = useThemeContext();
-  useEffect(() => {
+
+ const [checked, setChecked] = React.useState(true);
+
+ const handleChange = (event) => {
+   const checked = event.target.checked;
+   if(checked){
+     darkHandler();
+   }else{
+     lightHandler();
+   }
+   setChecked(event.target.checked);
+ };
+
+
+ useEffect(() => {
     const checkIfClickedOutside = e => {
 // If the menu is open and the clicked target is not within the menu, then close the menu
       if (menu_on && ref.current && !ref.current.contains(e.target)) {
@@ -96,7 +110,8 @@ const reportLight = () => {
       })
       reportDark()
     }
-
+    
+    
 
   return (
         <>
@@ -119,8 +134,15 @@ const reportLight = () => {
               <p className="MenuItem" onClick={() => history.push("/Policy")}>  USAGE POLICY</p>
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Signup")}> SIGN-UP</p>
-              { Theme === "Dark" &&  <p className="MenuItem" onClick={lightHandler}>Light <LightMode/></p>}
-              { Theme === "Light" && <p className="MenuItem" onClick={darkHandler}>Dark <DarkMode/></p>}
+
+              <Switch
+                checked={checked}
+                style={{color: Theme === "Dark" ? "white" : "black"}}
+                label={Theme}
+                onChange={handleChange}
+                inputProps={{ 'aria-label': 'controlled' }}
+              />
+              {Theme}
               <p className="MenuItem" onClick={onShare}> SHARE THIS APP</p>
 
            </div>

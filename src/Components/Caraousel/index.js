@@ -1,9 +1,10 @@
 import React from 'react';
 import "./styles.scss";
-import { LightMode, DarkMode} from '@mui/icons-material';
 import { useThemeContext } from '../../Context';
 import colorTheme from "../colorTheme";
 import ReactGA from 'react-ga';
+import Switch from '@mui/material/Switch';
+
 // import Carousel from 'react-elastic-carousel';
 // import { Photos } from "./Photos";
 
@@ -11,7 +12,20 @@ import ReactGA from 'react-ga';
 /** Carousel component */
 function CarouselComponent() {
   const theme = colorTheme();
+  const [checked, setChecked] = React.useState(true);
   const  [ { Theme } , dispatch ] = useThemeContext();
+
+
+  const handleChange = (event) => {
+    const checked = event.target.checked;
+    if(checked){
+      darkHandler();
+    }else{
+      lightHandler();
+    }
+    setChecked(event.target.checked);
+  };
+
 // Google analytics
 const reportDark = () => {
   ReactGA.event({
@@ -63,8 +77,13 @@ ReactGA.event({
           {/* <Photos/> */}
           <div className="four" style={{color: theme.primary}}>
             <p style={{color: theme.primary}}>Dark 🌚 and Light 🌞 mode now on this app  </p>
-            { Theme === "Dark" &&  <p className="MenuItem" onClick={() => lightHandler()}>Change to Light  <LightMode/></p>}
-            { Theme === "Light" && <p className="MenuItem" onClick={() => darkHandler()}>change to Dark  <DarkMode/></p>}
+            <Switch
+                checked={checked}
+                style={{color: Theme === "Dark" ? "white" : "black"}}
+                label={Theme}
+                onChange={handleChange}
+                inputProps={{ 'aria-label': 'controlled' }}
+              />
           </div>
         </div>
         </>
