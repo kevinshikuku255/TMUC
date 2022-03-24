@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 import Singlecard from "./Singlecard";
-import Signup  from "./Signup";
+// import Signup  from "./Signup";
 import { SAVE_SCORES, GET_GAMERS } from "../../Graphql/user";
 import { useMutation, useQuery, useLazyQuery } from '@apollo/client';
 import Hints from "./Hints";
@@ -118,12 +118,12 @@ function Index() {
   const [ getgamers, {data}] = useLazyQuery(GET_GAMERS,{ fetchPolicy:"network-only" });
 
   useEffect(() => {
-      getgamers()
+      getgamers() 
   }, [getgamers, online , gameOver])
 
   const data_= data?.getGamers || cachedGamers?.getGamers
 
-  const top_players = data_?.slice(0, 3)
+  // const top_players = data_?.slice(0, 3)
 
 
 
