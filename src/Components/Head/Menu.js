@@ -137,7 +137,7 @@ const reportLight = () => {
 
               <Switch
                 checked={checked}
-                style={{color: Theme === "Dark" ? "white" : "black"}}
+                style={{color: theme.primary}}
                 label={Theme}
                 onChange={handleChange}
                 inputProps={{ 'aria-label': 'controlled' }}

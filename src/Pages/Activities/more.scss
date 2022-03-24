@@ -3,7 +3,6 @@
 
 .Container{
   margin-right: 0vw;
-  background-color: $color1;
   transition-property: height;
   transition-duration: 2s;
   transition-timing-function: linear;
@@ -11,8 +10,9 @@
 }
 
 .Active_Container{
-  margin-top: 5.5rem;
+  margin-top: 5rem;
   margin-right: 0;
+  padding-top: 1rem;
   background-color: $color1;
   @media screen and (min-width:48vw) {
     background: none;

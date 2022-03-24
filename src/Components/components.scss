@@ -2,8 +2,9 @@
 
 /* -------------------------------------------------------------------------- */
 .SotmucGrid{
-  margin-top: 7rem;
-  min-height: calc(100vh - 7rem);
+  margin-top: 5rem;
+  min-height: calc(100vh - 5rem);
+  padding-top: 2rem;
   @media screen and (min-width: 48rem ) {
     width: 40rem;
   }
@@ -52,7 +53,7 @@
     padding: 0;
     margin: 0;
     font-weight: bolder;
-    color: #000000;
+    // color: #000000;
     text-shadow: 0px 2px 4px rgb(131, 131, 131);
 }
 }
@@ -202,8 +203,13 @@
 
 /* -----------------------------Details--------------------------------------------- */
 .Details{
-  margin-top: 7rem;
-  min-height: calc(100vh - 7rem);
+  margin-top: 5rem;
+  min-height: calc(100vh - 5rem);
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   @media screen and (min-width: 48rem ) {
     width: 36rem;
   }

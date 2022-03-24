@@ -1,7 +1,9 @@
 import React from 'react';
 import {useHistory} from"react-router-dom";
 import ReactGA from 'react-ga';
+import colorTheme from "../../Components/colorTheme";
 import { useLoadContext } from '../../Context';
+
 import "./more.scss";
 
 import { Avatar, makeStyles, Badge} from "@material-ui/core";
@@ -40,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Person() {
 const history = useHistory();
+const theme = colorTheme();
 const [ ,dispatch] = useLoadContext();
 const handleClick = (name) => {
     ReactGA.event({
@@ -70,7 +73,7 @@ const handleClick = (name) => {
   const classes = useStyles();
 
   return (
-<div className="CWrapper">
+<div className="CWrapper" style={{backgroundColor: theme.background, color:theme.primary}}>
 
         <div  className="Ccategory">
            <div className="Cleadership">

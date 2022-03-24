@@ -292,22 +292,22 @@ useEffect(() =>  {
             {show && <Hints hide={() => setShow(!show)}/>}         
        </div>
 
-
+{/* 
         { signup &&
         <div className='signin'>
                   <Signup close={() => setSignUp(false)}/>
                 </div>
-              }
+              } */}
 
 
-       {!showListOfPlayer && <div className='top_player' style={{opacity: signup ? "0" : "1"}}>
+       {/* { !showListOfPlayer && <div className='top_player' style={{opacity: signup ? "0" : "1"}}>
               <h3>Top players:</h3>
               <div style={{textAlign:"start"}}>
                   <table>
                     <thead>
                       { top_players?.map((player, i) => (
                           <tr key={player.id}>
-                            {/* <td style={{color:"red"}}>{`${ i + 1} .`} 🥇</td> */}
+                            <td style={{color:"red"}}>{`${ i + 1} .`} 🥇</td>
                             <td> 🏅 {player.flips} Flips - {player.score}% </td>
                             <td>{player.name}</td>
                           </tr>
@@ -318,7 +318,8 @@ useEffect(() =>  {
                     </thead>
                   </table>
               </div>
-          </div>}
+          </div>} */}
+          
        { showListOfPlayer && <ListOfPlayers players={data_} hide={() => setShowListOfPlayer(false)}/> }
 
     </div>

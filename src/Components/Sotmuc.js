@@ -4,6 +4,7 @@ import ReactGA from 'react-ga';
 import { useHistory} from"react-router-dom";
 import { useLoadContext } from '../Context';
 import { Avatar, makeStyles} from "@material-ui/core";
+import colorTheme from "../Components/colorTheme";
 import SotmucNav from "./SotmucNav";
 
 import Asa from "../Images/Asa.jpg";
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 function Sotmoc() {
   const classes = useStyles();
   const history = useHistory();
+  const theme = colorTheme();
   ReactGA.pageview(window.location.pathname);
 
   const [ ,dispatch ] = useLoadContext();
@@ -73,7 +75,7 @@ let head = (
 
 
   return (
-<div className="SotmucGrid">
+<div className="SotmucGrid" style={{backgroundColor: theme.farground, color:theme.primary}}>
     <SotmucNav head={head}/>
     <div className="SotmucGridWrapper">
          <div className="Year">

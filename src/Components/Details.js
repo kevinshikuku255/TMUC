@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
+import colorTheme from "../Components/colorTheme";
 import { Avatar, makeStyles} from "@material-ui/core";
 import { YouTube, Instagram, WhatsApp, Twitter, Facebook, FormatTextdirectionLToR } from "@material-ui/icons";
 
@@ -21,10 +22,11 @@ const useStyles = makeStyles(() => ({
 export const Details = ({DetailInfo, avartar}) => {
    let pagevieew = window.location.pathname;
    ReactGA.pageview(`${pagevieew.split("/").pop()}`);
+   const theme = colorTheme();
 
    const classes = useStyles();
   return (
-    <div className="Details">
+    <div className="Details" style={{backgroundColor: theme.farground, color:theme.primary}}>
 
       <div className="CoverImage">
           <Avatar alt={DetailInfo?.name} src={avartar} className={classes.large}/>
