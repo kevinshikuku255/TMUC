@@ -1,0 +1,17 @@
+.new_game_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+    p{
+      background-color: white;
+      padding: .2rem .5rem;
+      border-radius: 8px;
+      font-size: smaller;
+      &:hover{
+        background-color: wheat;
+        opacity: .7;
+      }
+    }
+  }
