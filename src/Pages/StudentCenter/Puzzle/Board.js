@@ -8,17 +8,17 @@ function Board() {
 
      // Create an array of string
      var stringArray = localStorage.getItem("tiles") && localStorage.getItem("tiles").split(",")
-     console.log(stringArray)
   
      let savedTiles = [];
-      
      if(stringArray){
-        for (var i = 0; i < 16; i++)
-        savedTiles.push(parseInt(stringArray[i]));
-     }
+         for (var i = 0; i < 16; i++)
+         savedTiles.push(parseInt(stringArray[i]));
+        }
+        
+        console.log(savedTiles.length === 0)
 
 
-    const [ tiles, setTiles] = useState( savedTiles.legth ? savedTiles : shuffle([...Array(TILE_COUNT).keys()]));
+    const [ tiles, setTiles] = useState( savedTiles.length === 0 ? shuffle([...Array(TILE_COUNT).keys()]) : savedTiles);
     // const [ isSolved, setSolved ] = useState(false);
     // const [ isStarted, setIsStarted ] = useState(false);
 
