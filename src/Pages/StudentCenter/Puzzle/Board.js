@@ -7,19 +7,20 @@ import { canSwap , swap, shuffle} from "./helpers";
 function Board() {
 
      // Create an array of string
-     var stringArray = localStorage.getItem("tiles").split(",")
+     var stringArray = localStorage.getItem("tiles") && localStorage.getItem("tiles").split(",")
+     console.log(stringArray)
   
      let savedTiles = [];
       
-     for (var i = 0; i < 16; i++)
-         savedTiles.push(parseInt(stringArray[i]));
+     if(stringArray){
+        for (var i = 0; i < 16; i++)
+        savedTiles.push(parseInt(stringArray[i]));
+     }
 
 
-    const [ tiles, setTiles] = useState( savedTiles|| shuffle([...Array(TILE_COUNT).keys()]));
+    const [ tiles, setTiles] = useState( savedTiles.legth ? savedTiles : shuffle([...Array(TILE_COUNT).keys()]));
     // const [ isSolved, setSolved ] = useState(false);
     // const [ isStarted, setIsStarted ] = useState(false);
-  
-
 
 
     // shuffle ...
