@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Tile from "./Tile";
 import "./puzzle.scss";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants";
-import { canSwap , swap, shuffle} from "./helpers";
+import { canSwap , swap, shuffle, isSolved} from "./helpers";
 
 function Board() {
 
@@ -15,13 +15,24 @@ function Board() {
          savedTiles.push(parseInt(stringArray[i]));
         }
         
-        console.log(savedTiles.length === 0)
-
 
     const [ tiles, setTiles] = useState( savedTiles.length === 0 ? shuffle([...Array(TILE_COUNT).keys()]) : savedTiles);
     // const [ isSolved, setSolved ] = useState(false);
-    // const [ isStarted, setIsStarted ] = useState(false);
 
+
+    // if is solved
+    const completed = isSolved(tiles);
+    if(completed){
+       let earnedCoins = localStorage.getItem("coins");
+       if(earnedCoins === null){
+           localStorage.setItem("coins", 0)
+       }
+      
+       let _earnedCoins = parseInt(localStorage.getItem("coins"))
+
+        localStorage.setItem("coins", Math.floor(Math.random() * 16) + _earnedCoins )
+    }
+    
 
     // shuffle ...
     const shuffleTiles = () => {
@@ -50,11 +61,6 @@ function Board() {
         shuffleTiles()
     }
 
-
-    // const handleStartClick = () => {
-    //     shuffleTiles();
-    //     setIsStarted(true);
-    // }
  
     const pieceWidth = Math.round(BOARD_SIZE / GRID_SIZE);
     const pieceHeight = Math.round(BOARD_SIZE / GRID_SIZE);
@@ -65,7 +71,8 @@ function Board() {
     };
   return(
       <>
-      <h1>Puzzle challenge </h1> <h5>level 1</h5>
+      <h1>Puzzle challenge </h1> 
+      <h4>level 1💎 _______ Coins💰: Ksh.{localStorage.getItem("coins") || 0} </h4>
       <div className='new_game_button'> 
          <p onClick={ () => handleShuffleClick() }> New game </p> 
          {/* <p onClick={ () => handleStartClick()}>start</p>   */}
