@@ -1,7 +1,7 @@
 import React from 'react';
 import colorTheme from "../../Components/colorTheme";
-import Flips from "./Flips";
-// import Puzzle from "./Puzzle";
+// import Flips from "./Flips";
+import Puzzle from "./Puzzle";
 
 /** Student center */
 function  StudentCenter() {
@@ -21,8 +21,8 @@ const style = {
   return (
       <div className='studentCenter' style={style}>
 
-         <Flips/>
-         {/* <Puzzle/> */}
+         {/* <Flips/> */}
+         <Puzzle/>
       </div>
   )
 }

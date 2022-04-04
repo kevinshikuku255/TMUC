@@ -95,7 +95,7 @@ let cardEmoji = [];
 function Index() {
    ReactGA.pageview('Game');
    const theme = colorTheme();
-   const [ cards, setCards] = useState([]);
+   const [ cards, setCards] = useState([...Array(16).keys()]);
    const [ turns, setTurns] = useState(0);
 
    const [ choiceOne, setChoiceOne] = useState(null);
@@ -232,7 +232,7 @@ useEffect(() =>  {
        <h2>GAME OF FLIPS</h2>
        <div className='new_game_button'> 
           <p onClick={shufleCards}>New game</p>  
-          {/* <p onClick={shufleCards}>switch to puzzle game</p> */}
+          <p onClick={shufleCards}>switch to puzzle game</p>
        </div>
 
        <div className="card_grid">

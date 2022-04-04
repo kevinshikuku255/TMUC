@@ -58,13 +58,13 @@
    }
 
  .new_game_button{
-      // width: fit-content;
       display: flex;
       justify-content: center;
       align-items: center;
       color: black;
-      cursor: pointer;
+      background: none;
       p{
+        cursor: pointer;
         background-color: white;
         padding: .2rem .5rem;
         border-radius: 8px;
@@ -98,7 +98,7 @@ width: fit-content;
      display: flex;
      justify-content: center;
      align-items: center;
-     border-radius: 3px;
+    //  border-radius: 3px;
      font-size: xx-large;
      transform: rotateY(90deg);
      transition: all ease-in-out .2s;
