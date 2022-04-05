@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { TextareaAutosize} from '@material-ui/core';
-import { useThemeContext } from '../../Context';
 import { KeyboardArrowDown, KeyboardArrowUp, Check} from '@mui/icons-material';
+import colorTheme from "../../Components/colorTheme";
 
 function Add({close}) {
 
 const initial_values = {Day:'', Time:'', Activity:''}
 const [ values, setValue] = useState(initial_values);
 const [ day, setDay] = useState(false);
-const  [ { Theme } ] = useThemeContext();
+const theme = colorTheme();
 
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -63,7 +63,7 @@ const complete = () => {
 }
   return (
      <div  className="add_item">
-         <div className='close' onClick={complete}> <sub>done</sub> <Check/></div>
+         <div className='close' onClick={complete}> <sub>Add</sub> <Check/></div>
          <div className="item_data">
              <div className="day_input">
                 <div className="day"  onClick={() => setDay(!day)}>
@@ -103,7 +103,7 @@ const complete = () => {
                 className="time_input" type="text"
                 name="Time" onChange={changeHandler}
                 placeholder=" Time eg 17:00 - 18:00"
-                style={{color: Theme === "Dark" ? "white": "Black"}}
+                style={{color: theme.primary}}
                 />
 
               <TextareaAutosize
@@ -113,7 +113,7 @@ const complete = () => {
                     onChange={changeHandler}
                     value={values?.Activity}
                     className="activity_input"
-                    style={{color: Theme === "Dark" ? "white": "Black"}}
+                    style={{color: theme.primary}}
                     placeholder=" Activity eg. Football, UCI 404, Lunch etc"
                   />
          </div>

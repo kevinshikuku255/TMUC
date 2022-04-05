@@ -1,18 +1,45 @@
 import React, { useState} from 'react';
 import "./styles.scss";
 import colorTheme from "../../Components/colorTheme";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 /** Event ... */
 function Event() {
   const theme = colorTheme();
   let days = []
   const monday = JSON.parse(localStorage.getItem("Monday"));
-  const tuesday = JSON.parse(localStorage.getItem("Tuesday"));
-  const wednesday = JSON.parse(localStorage.getItem("Wednesday"));
-  const thursday = JSON.parse(localStorage.getItem("Thursday"));
   const friday = JSON.parse(localStorage.getItem("Friday"));
-  const saturday = JSON.parse(localStorage.getItem("Saturday"));
   const sunday = JSON.parse(localStorage.getItem("Sunday"));
+  const tuesday = JSON.parse(localStorage.getItem("Tuesday"));
+  const thursday = JSON.parse(localStorage.getItem("Thursday"));
+  const saturday = JSON.parse(localStorage.getItem("Saturday"));
+  const wednesday = JSON.parse(localStorage.getItem("Wednesday"));
+
+  const [open, setOpen] = React.useState(false);
+  const [ xday, setXDay ] =  React.useState('');
+
+  const handleOpen = (day) => {
+        setXDay(day)
+        setOpen(true)
+  };
+
+
+  const handleClose = () => setOpen(false);
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: "70%",
+    bgcolor: theme.farground,
+    color: theme.primary,
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+
   days.push(monday, tuesday, wednesday, thursday, friday, saturday, sunday);
 
   const  areSame = (arr) => {
@@ -32,6 +59,7 @@ let empty =  days.includes(null) && areSame(days);
  const delete_ = (e) => {
      localStorage.removeItem(e)
      setDeleted(!deleted)
+     setOpen(false)
  }
 
 
@@ -48,7 +76,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                 <div className="delete">
-                  <button onClick={ () => delete_("Monday")}>Delete</button>
+                  {open && <button onClick={ () => handleOpen("Monday")}>Delete</button>}
                 </div>
                 </div>)
 
@@ -66,7 +94,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                     <div className="delete">
-                       <button onClick={ () => delete_("Tuesday")}>Delete</button>
+                       {!open && <button onClick={ () => handleOpen("Tuesday")}>Delete</button>}
                     </div>
                 </div>)
  let wednesday_ = ( wednesday !== null &&
@@ -82,7 +110,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                   <div className="delete">
-                     <button onClick={ () => delete_("Wednesday")}>Delete</button>
+                     {!open && <button onClick={ () => handleOpen("Wednesday")}>Delete</button>}
                  </div>
                 </div>)
 
@@ -97,7 +125,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                 <div className="delete">
-                      <button onClick={ () => delete_("Thursday")}>Delete</button>
+                     {!open &&  <button onClick={ () => handleOpen("Thursday")}>Delete</button>}
                 </div>
                 </div>)
 
@@ -114,7 +142,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                  <div className="delete">
-                    <button onClick={ () => delete_("Friday")}>Delete</button>
+                    {!open && <button onClick={ () => handleOpen("Friday")}>Delete</button>}
                 </div>
                 </div>)
  let saturday_ = ( saturday !== null &&
@@ -130,7 +158,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                  <div className="delete">
-                    <button onClick={ () => delete_("Saturday")}>Delete</button>
+                    {!open && <button onClick={ () => handleOpen("Saturday")}>Delete</button>}
                 </div>
                 </div>)
 
@@ -147,7 +175,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                 <div className="delete">
-                   <button onClick={ () => delete_("Sunday")}>Delete</button>
+                   {!open && <button onClick={ () => handleOpen("Sunday")}>Delete</button>}
                 </div>
                 </div>)
 
@@ -155,6 +183,23 @@ let empty =  days.includes(null) && areSame(days);
   return (
     <>
       <p>{deleted}</p>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Do you want to delete  your {xday}  schedule?
+          </Typography>
+          <div  className="modalButtons">
+            <button onClick={handleClose} style={{color: theme.link}}>Cancel</button>
+            <button onClick={() => delete_(xday)} style={{color: "red"}} >Delete</button>
+          </div>
+        </Box>
+
+        </Modal>
       {monday_}
       {tuesday_}
       {wednesday_}

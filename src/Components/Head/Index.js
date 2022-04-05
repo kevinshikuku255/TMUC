@@ -18,6 +18,7 @@ const  Head = () => {
   const location = useLocation();
   const [ { menu, loading }, dispatch] = useLoadContext();
   const profileName = location.pathname.split("/").pop();
+
   let back = e => { e.stopPropagation(); history.goBack(); };
 
   const openMenu = () => {
@@ -36,20 +37,12 @@ const  Head = () => {
     custom_head = "CHRISTIAN UNION"
   }else if(profileName === "Noticeboard"){
     custom_head = "ONLINE NOTICEBOARD"
-  }else if(profileName === "Timetable"){
-    custom_head = "MY WEEKLY TIMETABLE"
   }
   else if(profileName === "Activities"){
     custom_head = "UNIVERSITY ACTIVITIES"
   }
   else if(profileName === "CreatePost"){
     custom_head = "PIN A NOTICE"
-  }
-  else if(profileName === ""){
-    custom_head = "UNIVERSITY ACADEMICS"
-  }
-  else if(profileName === "Studentcenter"){
-    custom_head = "STUDENT CENTER"
   }
   else if(profileName === "Editpost"){
     custom_head = "EDIT PINNED NOTICE"
@@ -58,7 +51,9 @@ const  Head = () => {
     custom_head = ""
   }
 
-
+ const style = {
+   display: profileName === '' ? "none" : profileName === "Timetable" ? "none" : profileName === "Studentcenter" ? "none" : ''
+ }
 
   return (
     <>
@@ -67,7 +62,7 @@ const  Head = () => {
         {(loading === true ) && <LinearProgress/>}
         <div className="Head">
               <div className="Logo">
-                <div className="Avartor" style={{ opacity: location.pathname === "/" && .4}}>
+                <div className="Avartor" style={style}>
                   { <ArrowBack onClick={back}/> }
                 </div>
                 <div  className="Name">
@@ -78,7 +73,7 @@ const  Head = () => {
                 </div>
               </div>
               <div className="Menu">
-                <MoreVert onClick={openMenu}/>
+                <MoreVert onClick={openMenu} fontSize="large" />
                 <Menu menu_on={menu}/>
               </div>
         </div>

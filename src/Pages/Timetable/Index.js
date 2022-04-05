@@ -16,8 +16,8 @@ const  Index = () => {
     return (
       <div className="timetable_wrapper" style={{backgroundColor:theme.background, color: theme.primary}}>
         { !close &&
-          <div  className="open" onClick={() => setClose(!close)}>
-            <sub>open</sub> <AddchartRounded/>
+          <div  className="open" style={{color: theme.link}} onClick={() => setClose(!close)}>
+            <sub>Add</sub> <AddchartRounded />
           </div>
         }
 

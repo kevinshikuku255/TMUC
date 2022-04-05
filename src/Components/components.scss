@@ -71,14 +71,11 @@
 /* --------------------------------App Head------------------------------------------ */
 .HeadWrapper{
   position: fixed;
-  padding: 0 ;
   top: 0;
   width: 100vw;
   height: fit-content;
-  margin: auto;
   z-index: 3;
   font-weight: bolder;
-  box-shadow: 0 2px 1.5px $color5;
   @media screen and (min-width: 48rem ) {
     box-shadow: none;
     width: 40rem;
@@ -87,7 +84,6 @@
 }
 
 .Head{
-  // width: inherit;
   height: fit-content;
   display: flex;
   font-weight: lighter;
@@ -100,7 +96,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin:.5rem 0 0 1rem;
+        margin:1rem 0 1rem 1rem;
         font-family: sans-serif;
         font-weight: bolder;
         p{
@@ -177,7 +173,7 @@
     padding: .5rem 0 0rem 0;
     width: 100%;
     display: flex;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #8080803a;
     justify-content: space-between;
     align-items:center;
     div{
@@ -198,9 +194,6 @@
     padding:0;
     margin: 0;
   }
-}
-.active{
-  border-bottom: 3px solid #8a8a8a;
 }
 
 
