@@ -76,7 +76,7 @@ let empty =  days.includes(null) && areSame(days);
                               </>
                         ))}
                 <div className="delete">
-                  {open && <button onClick={ () => handleOpen("Monday")}>Delete</button>}
+                  {!open && <button onClick={ () => handleOpen("Monday")}>Delete</button>}
                 </div>
                 </div>)
 
