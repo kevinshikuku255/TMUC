@@ -9,7 +9,7 @@ const theme = colorTheme();
 const style = {
     color: theme.primary, 
     backgroundColor: theme.background,
-    minHeight: "87.2vh",
+    minHeight: "87.3vh",
     marginTop: "5.2rem",
     width:"100vw",
     borderTop:"1px solid wheat",

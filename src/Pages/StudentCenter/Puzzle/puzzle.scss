@@ -27,12 +27,15 @@
   .tile{
     // position: absolute;
     display: flex;
+    font-weight: 600;
+    font-family: fantasy;
     justify-content: center;
     align-items: center;
     list-style: none;
     background-color: green;
     border: 1px solid red;
     font-size: 2rem;
+    text-shadow: 2px 2px #ff0000;
   }
 
   .hole{

@@ -30,7 +30,7 @@ function Board() {
       
        let _earnedCoins = parseInt(localStorage.getItem("coins"))
 
-        localStorage.setItem("coins", Math.floor(Math.random() * 16) + _earnedCoins )
+        localStorage.setItem("coins", Math.floor(Math.random() * 16 + 1) + _earnedCoins )
     }
     
 
@@ -45,11 +45,19 @@ function Board() {
         
 
     //swap ...
-    const swapTiles = (tileIndex) =>{
+    const swapTiles = (tileIndex) => {
         if(canSwap(tileIndex, tiles.indexOf(tiles.length - 1), GRID_SIZE)){
             const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1));
             setTiles(swappedTiles);
             localStorage.setItem("tiles", swappedTiles)
+
+            let earnedPoints = localStorage.getItem("points");
+            if(earnedPoints === null){
+                localStorage.setItem("points", 0)
+              }
+              let _earnedPoints = parseInt(localStorage.getItem("points"))
+
+              localStorage.setItem("points", Math.floor(Math.random() * 0.9 + 0.2) + _earnedPoints )
         }
     }
 
@@ -72,7 +80,7 @@ function Board() {
   return(
       <>
       <h1>Puzzle challenge </h1> 
-      <h4>level 1💎 _______ Coins💰: Ksh.{localStorage.getItem("coins") || 0} </h4>
+      <h4>level 1💎 ___ Points: {localStorage.getItem("points") || 1} ___ Coins💰: Ksh.{localStorage.getItem("coins") || 0} </h4> <br/>
       <div className='new_game_button'> 
          <p onClick={ () => handleShuffleClick() }> New game </p> 
          {/* <p onClick={ () => handleStartClick()}>start</p>   */}
