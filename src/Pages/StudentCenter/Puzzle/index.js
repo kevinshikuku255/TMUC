@@ -16,7 +16,7 @@ const [ open, setOpen ] = useState(false);
             Number one tiles should be at the top left corner and empty tile as the last after tile 15 to complete.</p>
             <p>You earn coins as you arrange the tiles in order, the clever moves taken earnes you more coins and poinst.</p>
             <p>On completion of the puzzle you earn more additional coins which can be up to Ksh. 50 coins according to how clever your moves were during the challenge.</p>
-            <p>The coins can be redemable 💰</p> 
+            <p>Acumilate enough coins to redeem 💰</p> 
           </div>}
       </div>
   )

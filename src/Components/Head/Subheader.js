@@ -46,14 +46,14 @@ export const SubHeader = () => {
 
    return(
      <div className="SubHeader" style={{color:theme.primary}}>
-        <div>
-          <p onClick={() => academics() }  className={ (pathname === "/" ) ? "active" : "a"}>ACADEMICS</p>
+        <div className={ (pathname === "/" ) ? "active" : "a"} >
+          <p onClick={() => academics() }>ACADEMICS</p>
         </div>
-        <div>
-             <p onClick={() => timetable() } className={ (pathname === "/Timetable" ) ? "active" : "a"}>SCHEDULE</p>
+        <div className={ (pathname === "/Timetable" ) ? "active" : "a"}>
+             <p onClick={() => timetable() } >SCHEDULE</p>
         </div>
-        <div>
-             <p onClick={() => noticeboard()} className={ (pathname === "/Studentcenter" ) ? "active" : "a"}>ACTIVITIES</p>
+        <div className={ (pathname === "/Studentcenter" ) ? "active" : "a"}>
+             <p onClick={() => noticeboard()}>ACTIVITIES</p>
         </div>
      </div>
    )

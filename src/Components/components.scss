@@ -173,13 +173,19 @@
 .SubHeader{
     display: relative;
     margin:  0 auto;
-    height: 1.4rem;
+    height: fit-content;
     padding: .5rem 0 0rem 0;
-    width: 95%;
-    border: none;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items:center;
+    div{
+      text-align: center;
+      height: inherit;
+      width: calc(100% / 3);
+      align-self: baseline;
+
+    }
     p, a{
     font-family: sans-serif;
     font-size: .75rem;
@@ -187,14 +193,13 @@
     font-variant: small-caps;
     font-stretch: extra-condensed;
     cursor: pointer;
-    padding:0  0 .1rem 0rem;
+    padding:0;
+    margin: 0;
   }
 }
 .active{
   border-bottom: 3px solid #ededf5;
 }
-
-
 
 
 

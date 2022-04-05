@@ -12,7 +12,6 @@ const style = {
     minHeight: "87.3vh",
     marginTop: "5.2rem",
     width:"100vw",
-    borderTop:"1px solid wheat",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -20,7 +19,6 @@ const style = {
 }
   return (
       <div className='studentCenter' style={style}>
-
          {/* <Flips/> */}
          <Puzzle/>
       </div>
