@@ -9,8 +9,9 @@ const theme = colorTheme();
 const style = {
     color: theme.primary, 
     backgroundColor: theme.background,
-    minHeight: "87.3vh",
-    marginTop: "5.2rem",
+    minHeight: "calc(100vh - 6rem)",
+    marginTop: "4rem",
+    paddingTop: '2rem',
     width:"100vw",
     display: "flex",
     alignItems: "center",
