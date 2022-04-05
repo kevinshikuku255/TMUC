@@ -28,7 +28,7 @@ function Board() {
            localStorage.setItem("coins", 0)
        }
       
-       let _earnedCoins = parseInt(localStorage.getItem("coins"))
+       let _earnedCoins = parseFloat(localStorage.getItem("coins"))
 
         localStorage.setItem("coins", Math.floor(Math.random() * 16 + 1) + _earnedCoins )
     }
@@ -50,7 +50,8 @@ function Board() {
             const swappedTiles = swap(tiles, tileIndex, tiles.indexOf(tiles.length - 1));
             setTiles(swappedTiles);
             localStorage.setItem("tiles", swappedTiles)
-
+             
+             // points
             let earnedPoints = localStorage.getItem("points");
             if(earnedPoints === null){
                 localStorage.setItem("points", 0)
@@ -58,6 +59,22 @@ function Board() {
               let _earnedPoints = parseInt(localStorage.getItem("points"))
 
               localStorage.setItem("points", Math.floor(Math.random() * 0.9 + 0.2) + _earnedPoints )
+
+              // earn coin token
+              let points = parseInt(localStorage.getItem('points'));
+              let coinToken = points - _earnedPoints;
+
+              let existingCoins = localStorage.getItem("coins");
+
+              if(existingCoins === null){
+                localStorage.setItem("coins", 0)
+               }
+               
+               let _existingCoins = parseFloat(localStorage.getItem("coins"));
+
+              let newCoins = parseFloat(Math.random() * ( (coinToken) / 8))
+
+              localStorage.setItem("coins", (_existingCoins + newCoins))
         }
     }
 
@@ -77,10 +94,13 @@ function Board() {
         width : BOARD_SIZE,
         height: BOARD_SIZE,
     };
+ 
+     let __ = parseFloat(localStorage.getItem("coins")).toFixed(2)
+
   return(
       <>
       <h1>Puzzle challenge </h1> 
-      <h4>level 1💎 ___ Points: {localStorage.getItem("points") || 1} ___ Coins💰: Ksh.{localStorage.getItem("coins") || 0} </h4> <br/>
+      <h4>level 1💎 ___ Points: {localStorage.getItem("points") || 1} ___ Coins💰: Ksh.{ __ || 0} </h4> <br/>
       <div className='new_game_button'> 
          <p onClick={ () => handleShuffleClick() }> New game </p> 
          {/* <p onClick={ () => handleStartClick()}>start</p>   */}
