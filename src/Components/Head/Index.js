@@ -73,7 +73,7 @@ const  Head = () => {
                 </div>
               </div>
               <div className="Menu">
-                <MoreVert onClick={openMenu} fontSize="large" />
+                <MoreVert onClick={openMenu} />
                 <Menu menu_on={menu}/>
               </div>
         </div>

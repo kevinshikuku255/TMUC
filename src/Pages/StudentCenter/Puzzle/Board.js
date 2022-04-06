@@ -72,7 +72,7 @@ function Board() {
                
                let _existingCoins = parseFloat(localStorage.getItem("coins"));
 
-              let newCoins = parseFloat(Math.random() * ( (coinToken) / 8))
+              let newCoins = parseFloat(Math.random() * ( (coinToken) / 16))
 
               localStorage.setItem("coins", (_existingCoins + newCoins))
         }
@@ -100,7 +100,7 @@ function Board() {
   return(
       <>
       <h1>Puzzle challenge </h1> 
-      <h4>Points: {localStorage.getItem("points") || 1} _________ Coins💰: Ksh.{ __ || 0} </h4> <br/>
+      <h4>Points: {localStorage.getItem("points") || 1} _________ Coins💰: Ksh.{ __ || 0 } </h4> <br/>
       <div className='new_game_button'> 
          <p onClick={ () => handleShuffleClick() }> New game </p> 
          {/* <p onClick={ () => handleStartClick()}>start</p>   */}
