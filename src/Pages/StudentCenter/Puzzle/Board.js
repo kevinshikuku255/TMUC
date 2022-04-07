@@ -19,11 +19,12 @@ function Board() {
         }
          
     const [ tiles, setTiles] = useState( savedTiles.length === 0 ? shuffle([...Array(TILE_COUNT).keys()]) : savedTiles);
+    const [ swapped, setSwaped ] = useState(false);
     // const [ isSolved, setSolved ] = useState(false);
 
 
     // if is solved
-    const completed = isSolved(tiles);
+    const completed = !isSolved(tiles);
     if(completed) {
        // check if local strorage value is null
        let earnedCoins = localStorage.getItem("coins");
@@ -33,10 +34,9 @@ function Board() {
       
        let _earnedCoins = parseFloat(localStorage.getItem("coins"))
 
-        localStorage.setItem("coins", Math.floor(Math.random() * 16 + 1) + _earnedCoins ) 
-        // let newPuzzle = shuffle(savedTiles);
-        // localStorage.setItem('tiles', newPuzzle);
-        // console.log(newPuzzle); 
+        if(swapped){
+            localStorage.setItem("coins", Math.floor(Math.random() * 16 + 1) + _earnedCoins ) 
+        }
     }
     
 
@@ -81,6 +81,7 @@ function Board() {
               let newCoins = parseFloat(Math.random() * ( (coinToken) / 8))
 
               localStorage.setItem("coins", (_existingCoins + newCoins))
+              setSwaped(true)
         }
     }
 

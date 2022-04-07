@@ -37,11 +37,10 @@ function Tile(props) {
                 transform: `translate3d(${translateX})px, ${translateY}px`,
                 opacity: tile === TILE_COUNT - 1 ? 0 : 1,
                 border: `1px solid ${theme.link}`,
-                textShadow: `2px 2px 10px ${theme.link}`
-
+            
         }}
         >
-         <button disabled={solved} style={{color: theme.primary}}>
+         <button disabled={solved} style={{color: theme.primary, textShadow: `2px 2px 10px ${theme.link}`}}>
             {tile + 1}
          </button>
        </li>
