@@ -24,7 +24,7 @@ function Board() {
 
 
     // if is solved
-    const completed = !isSolved(tiles);
+    const completed = isSolved(tiles);
     if(completed) {
        // check if local strorage value is null
        let earnedCoins = localStorage.getItem("coins");
