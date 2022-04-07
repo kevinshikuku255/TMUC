@@ -1,36 +1,42 @@
 import React, { useState } from "react";
 import Tile from "./Tile";
 import "./puzzle.scss";
-import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants";
+import colorTheme from "../../../Components/colorTheme";
 import { canSwap , swap, shuffle, isSolved} from "./helpers";
+import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants";
+
 
 function Board() {
 
      // Create an array of string
-     var stringArray = localStorage.getItem("tiles") && localStorage.getItem("tiles").split(",")
+     var stringArray = localStorage.getItem("tiles") && localStorage.getItem("tiles").split(",");
+     const theme = colorTheme();
   
      let savedTiles = [];
      if(stringArray){
          for (var i = 0; i < 16; i++)
-         savedTiles.push(parseInt(stringArray[i]));
+          savedTiles.push(parseInt(stringArray[i]));
         }
-        
-
+         
     const [ tiles, setTiles] = useState( savedTiles.length === 0 ? shuffle([...Array(TILE_COUNT).keys()]) : savedTiles);
     // const [ isSolved, setSolved ] = useState(false);
 
 
     // if is solved
     const completed = isSolved(tiles);
-    if(completed){
+    if(completed) {
+       // check if local strorage value is null
        let earnedCoins = localStorage.getItem("coins");
        if(earnedCoins === null){
-           localStorage.setItem("coins", 0)
+           localStorage.setItem("coins", 0 )
        }
       
        let _earnedCoins = parseFloat(localStorage.getItem("coins"))
 
-        localStorage.setItem("coins", Math.floor(Math.random() * 16 + 1) + _earnedCoins )
+        localStorage.setItem("coins", Math.floor(Math.random() * 16 + 1) + _earnedCoins ) 
+        // let newPuzzle = shuffle(savedTiles);
+        // localStorage.setItem('tiles', newPuzzle);
+        // console.log(newPuzzle); 
     }
     
 
@@ -72,7 +78,7 @@ function Board() {
                
                let _existingCoins = parseFloat(localStorage.getItem("coins"));
 
-              let newCoins = parseFloat(Math.random() * ( (coinToken) / 16))
+              let newCoins = parseFloat(Math.random() * ( (coinToken) / 8))
 
               localStorage.setItem("coins", (_existingCoins + newCoins))
         }
@@ -93,14 +99,16 @@ function Board() {
     const style = {
         width : BOARD_SIZE,
         height: BOARD_SIZE,
+        border: `2px solid ${theme.link}`
     };
  
-     let __ = parseFloat(localStorage.getItem("coins")).toFixed(2)
+     let __ = localStorage.getItem("coins") === null ? 0 : parseFloat(localStorage.getItem("coins")).toFixed(2)
+
 
   return(
       <>
       <h1>Puzzle challenge </h1> 
-      <h4>Points: {localStorage.getItem("points") || 1} _________ Coins💰: Ksh.{ __ || 0 } </h4> <br/>
+      <h4>Points: {localStorage.getItem("points") || 1 } _________ Coins💰: Ksh. { __ || 0 } </h4> <br/>
       <div className='new_game_button'> 
          <p onClick={ () => handleShuffleClick() }> New game </p> 
          {/* <p onClick={ () => handleStartClick()}>start</p>   */}
@@ -109,6 +117,7 @@ function Board() {
       <ul style={style} className="board">
           {tiles.map((tile, index) => (
               <Tile
+                 solved= {completed}
                  key={tile}
                  index={index}
                  tile={tile}

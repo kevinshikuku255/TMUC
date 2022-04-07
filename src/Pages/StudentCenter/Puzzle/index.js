@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import './puzzle.scss';
 import Board from "./Board";
+import colorTheme from "../../../Components/colorTheme";
 
 /** Puzzle game */
 const Puzzle = () => {
 const [ open, setOpen ] = useState(false);
+const theme = colorTheme();
   return(
       <div  className="puzzle">
           <Board/>
           {!open ? 
-           <p style={{color: "blueviolet"}} onClick={() => setOpen(!open)}>HINTS</p> : <p style={{color: "blueviolet"}} onClick={() => setOpen(!open)}>CLOSE HINTS</p>}
+           <p style={{color: theme.link}} onClick={() => setOpen(!open)}>HINTS</p> : <p  style={{color: theme.link}} onClick={() => setOpen(!open)}>CLOSE HINTS</p>}
           { open && 
           <div style={{width: "80vw"}} > 
             <p>Arange the tiles to complete the puzzle.</p>

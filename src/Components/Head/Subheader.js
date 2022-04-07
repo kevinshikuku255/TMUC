@@ -44,7 +44,7 @@ export const SubHeader = () => {
 
 /* -------------------------------------------------------------------------- */
    const activeStyle = {
-    borderBottom: "3px solid #8a8a8a",
+    borderBottom: `3px solid ${theme.link}`,
     color: theme.link
    }
    return(

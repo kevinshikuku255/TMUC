@@ -3,10 +3,12 @@ import "./puzzle.scss";
 import { Motion, spring} from 'react-motion'
 ; import { getMatrixPosition, getVisualPosition } from "./helpers";
 import { TILE_COUNT, GRID_SIZE }  from "./constants";
+import colorTheme from "../../../Components/colorTheme";
 
 
 function Tile(props) {
-    const { tile, index, width, height, handleClick } = props;
+    const { tile, index, width, height, handleClick, solved } = props;
+    const theme = colorTheme();
 
     const { row, col } = getMatrixPosition(index);
     const visualPos = getVisualPosition(row, col, width, height);
@@ -31,12 +33,17 @@ function Tile(props) {
             onClick={() => handleClick(index)}
             style={{
                 width: tileStyle.width,
-           height: tileStyle.height,
-           transform: `translate3d(${translateX})px, ${translateY}px`,
-           opacity: tile === TILE_COUNT - 1 ? 0 : 1
+                height: tileStyle.height,
+                transform: `translate3d(${translateX})px, ${translateY}px`,
+                opacity: tile === TILE_COUNT - 1 ? 0 : 1,
+                border: `1px solid ${theme.link}`,
+                textShadow: `2px 2px 10px ${theme.link}`
+
         }}
         >
-         {tile + 1}
+         <button disabled={solved} style={{color: theme.primary}}>
+            {tile + 1}
+         </button>
        </li>
        )}
      </Motion>

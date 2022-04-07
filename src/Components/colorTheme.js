@@ -9,7 +9,7 @@ function Colors() {
         background: "burlywood",
         farground: "#e8d0b1",
         brown: "brown",
-        link: '#4a4300',
+        link: '#4169E1',
         primary: "black", // text color for paragraphs, labels and other essentials
         secondary: "#e1ac66" //text color like form microcopy, captions, and table headings
     }

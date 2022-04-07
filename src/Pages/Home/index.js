@@ -28,19 +28,20 @@ function Index() {
     color: theme.link,
     fontSize: "smaller",
     padding: 0,
-    margin: "1rem 0"
+    margin: "1rem 0",
+    textAlign: "center"
  }
 
   return (
   <div style={{color: theme.primary}} className="Main">
       <div className="Home_page">
             {/* <Carousel className="Ad"/> */}
-        <br/>
+        <p style={style}> Play the puzzle challenge in the Activities tab to earn coins in Ksh.</p>
         <div className="Pages1">
           <Login theme={theme}/>
           <Elearning theme={theme}/>
         </div>
-        <p style={style}> Play the puzzle challenge in the Activities tab to earn coins in Ksh.</p>
+        <br/>
         <div className="Pages1">
           <Portal theme={theme}/>
           <Library theme={theme}/>
