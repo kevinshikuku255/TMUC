@@ -36,11 +36,14 @@ function Tile(props) {
                 height: tileStyle.height,
                 transform: `translate3d(${translateX})px, ${translateY}px`,
                 opacity: tile === TILE_COUNT - 1 ? 0 : 1,
-                border: `1px solid ${theme.link}`,
-            
+                border: `1px solid ${theme.link}`,            
         }}
         >
-         <button disabled={solved} style={{color: theme.primary, textShadow: `2px 2px 10px ${theme.link}`}}>
+         <button disabled={solved} style={
+                { color: theme.primary, 
+                  width: "100%",
+                  height: "100%",
+                  textShadow: `2px 2px 10px ${theme.link}`}}>
             {tile + 1}
          </button>
        </li>
