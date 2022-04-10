@@ -9,6 +9,7 @@ import colorTheme from "../../../Components/colorTheme";
 function Tile(props) {
     const { tile, index, width, height, handleClick, solved } = props;
     const theme = colorTheme();
+    const even = ((tile + 1) % 2) === 0;
 
     const { row, col } = getMatrixPosition(index);
     const visualPos = getVisualPosition(row, col, width, height);
@@ -34,6 +35,7 @@ function Tile(props) {
             style={{
                 width: tileStyle.width,
                 height: tileStyle.height,
+                backgroundColor: even ? "#458B00" : "green",
                 transform: `translate3d(${translateX})px, ${translateY}px`,
                 opacity: tile === TILE_COUNT - 1 ? 0 : 1,
                 border: `1px solid ${theme.link}`,            
