@@ -18,7 +18,7 @@ function Colors() {
         background: "black",
         brown: "brown",
         farground: "#272625",
-        link: "#ff9203",
+        link: "#3cb371",
         primary: "#cecece", // text color for paragraphs, labels and other essentials
         secondary: "#151414" //text color like form microcopy, captions, and table headings
         

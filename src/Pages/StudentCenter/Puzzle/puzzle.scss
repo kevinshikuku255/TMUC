@@ -47,3 +47,12 @@
   button{
     display: block;
   }
+
+  .score{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1{
+    text-align: center;
+  }

@@ -43,9 +43,12 @@
   button{
     border: none;
     outline: none;
+    font-size: x-small;
     background: none;
     color: red;
     font-weight: bolder;
+    padding: 0 1rem 0 0;
+    margin: 0;
     :hover{
        color: #002e00;
     }

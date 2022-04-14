@@ -66,7 +66,7 @@ const  Head = () => {
                   { <ArrowBack onClick={back}/> }
                 </div>
                 <div  className="Name">
-                  <p style={{color: theme.primary === "black" ? "blue" : theme.primary}}>TOM MBOYA STUDENT</p>
+                  <p style={{color: theme.link}}>TOM MBOYA STUDENT</p>
                   <h5>
                     {custom_head}
                   </h5>
