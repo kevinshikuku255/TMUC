@@ -6,6 +6,7 @@ import colorTheme from "../colorTheme";
 
 
 
+
 /** Sub header compoent Containing the three header Navigation tabs*/
 export const SubHeader = () => {
   const theme = colorTheme();
@@ -19,7 +20,7 @@ export const SubHeader = () => {
             transport:"beacon",
             label:"ACADEMICS-TAB"
           })
-    history.push("/")
+    history.push("/Studentcenter")
   }
 
   const timetable = () => {
@@ -39,7 +40,7 @@ export const SubHeader = () => {
             transport:"beacon",
             label:"NOTICE-BOARD-TAB"
           })
-    history.push("/Studentcenter")
+    history.push("/")
   }
 
 /* -------------------------------------------------------------------------- */
@@ -49,13 +50,14 @@ export const SubHeader = () => {
    }
    return(
      <div className="SubHeader" style={{color:theme.primary}}>
-        <div style = {  pathname === "/" ? activeStyle : null} >
+
+        <div style = {  pathname === "/Studentcenter" ? activeStyle : null} >
           <p onClick={() => academics() }>ACADEMICS</p>
         </div>
         <div style = { pathname === "/Timetable"  ? activeStyle : null}>
              <p onClick={() => timetable() } >SCHEDULE</p>
         </div>
-        <div style ={ pathname === "/Studentcenter"  ? activeStyle : null}>
+        <div style ={ pathname === "/"  ? activeStyle : null}>
              <p onClick={() => noticeboard()}>ACTIVITIES</p>
         </div>
      </div>

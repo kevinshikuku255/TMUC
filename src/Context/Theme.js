@@ -5,7 +5,7 @@ import React, {createContext, useReducer, useContext} from 'react';
 const ThemeContext = createContext();
 
 const initialState = {
-  Theme: localStorage.getItem("theme") || "Light",
+  Theme: localStorage.getItem("theme") || "Dark",
 }
 
 export const Dark = "Dark";

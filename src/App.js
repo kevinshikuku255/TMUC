@@ -40,9 +40,9 @@ const Swipble = () => {
     fallbackRoute={FalLback}
     sliderMode={false}
     >
-    <Route exact path="/" component={Index}/>
+    <Route path="/Studentcenter" component={Index}/>
     <Route path="/Timetable" component={Timetable}/>
-    <Route path="/Studentcenter" component={StudentCenter}/>
+    <Route exact path="/" component={StudentCenter}/>
   </RouterCarousel>
  )
 };

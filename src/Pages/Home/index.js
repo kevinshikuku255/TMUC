@@ -36,7 +36,8 @@ function Index() {
   <div style={{color: theme.primary}} className="Main">
       <div className="Home_page">
             {/* <Carousel className="Ad"/> */}
-        <p style={style}> Play the puzzle challenge in the Activities tab to earn coins in Ksh.</p>
+        {/* <p style={style}> Play the puzzle challenge in the Activities tab to earn coins in Ksh.</p> */}
+        <h6 style={style}>Dark mode enabled by default !</h6>
         <div className="Pages1">
           <Login theme={theme}/>
           <Elearning theme={theme}/>

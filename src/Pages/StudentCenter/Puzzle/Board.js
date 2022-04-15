@@ -108,7 +108,7 @@ function Board() {
 
   return(
       <>
-      <h1>Puzzle challenge </h1> 
+      <h3>Puzzle game challenge </h3> 
       <h4 className="score">
            <span>Points: {localStorage.getItem("points") || 1 }</span> 
            <span>Coins💰: Ksh. { __ || 0 }</span> 
