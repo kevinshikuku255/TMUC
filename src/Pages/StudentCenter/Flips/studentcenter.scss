@@ -164,16 +164,6 @@ width: fit-content;
     border: 1px solid gray;
     border-radius: 2px;
   }
-  .signup_button{
-    background-color: blueviolet;
-    padding: .2rem .3rem;
-    border-radius: 5px;
-    width: 4rem;
-    margin: .2rem auto ;
-    cursor: pointer;
-    color: white;
-    font-weight: bolder;
-  }
 }
 
 
@@ -187,7 +177,7 @@ width: fit-content;
       padding: 1rem;
       z-index: 9;
       .close{
-        color: blue;
+        color: #3cb371;
         :hover{
           background-color: #171779b8;
         }
@@ -206,7 +196,7 @@ width: fit-content;
         padding: 0;
         margin-bottom: .3rem;
         .close{
-          color: blue;
+          color: #3cb371;
           border-radius: 5px;
           :hover{
             background-color: #3c3cdeb8;

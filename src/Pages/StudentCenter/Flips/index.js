@@ -265,9 +265,9 @@ useEffect(() =>  {
             </p>
             <br/>
 
-            <span style={{color:"red", }}> My moves:  {score} </span> 
+            <span style={{color:"red", }}> Best moves:  {score} </span> 
             
-            <span onClick={() => setShow(!show)} style={{color:"blue"}}> { show ?  `Close hints` : `player hints`}</span> 
+            <span onClick={() => setShow(!show)} style={{color:"#3cb371"}}> { show ?  `Close hints` : `player hints`}</span> 
 
 
             {gameOver && <p style={{color:"#fe9000"}}>Game over <span style={{fontSize:"large"}}>🎉🎉</span></p>}

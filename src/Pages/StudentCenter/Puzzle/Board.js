@@ -108,15 +108,13 @@ function Board() {
 
   return(
       <>
-      <h3>Puzzle game challenge </h3> 
+      <h2>Puzzle game challenge </h2> 
       <h4 className="score">
            <span>Points: {localStorage.getItem("points") || 1 }</span> 
            <span>Coins💰: Ksh. { __ || 0 }</span> 
      </h4> <br/>
       <div className='new_game_button'> 
          <p onClick={ () => handleShuffleClick() }> New game </p> 
-         {/* <p onClick={ () => handleStartClick()}>start</p>   */}
-         {/* <p> switch to flip game </p> */}
       </div>
       <ul style={style} className="board">
           {tiles.map((tile, index) => (
