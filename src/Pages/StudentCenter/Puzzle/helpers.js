@@ -13,7 +13,7 @@ export function isSolvable (tiles ) {
   }
 
 
-  /** Is solvable */
+  /** Is solved */
   export function isSolved(tiles) {
       for(let i = 0, l = tiles.length; i < l; i++) {
           if(tiles[i] !== i){

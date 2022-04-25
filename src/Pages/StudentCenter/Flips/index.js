@@ -232,7 +232,6 @@ useEffect(() =>  {
        <h2>GAME OF FLIPS</h2>
        <div className='new_game_button'> 
           <p onClick={shufleCards}>New game</p>  
-          <p onClick={shufleCards}>switch to puzzle game</p>
        </div>
 
        <div className="card_grid">
