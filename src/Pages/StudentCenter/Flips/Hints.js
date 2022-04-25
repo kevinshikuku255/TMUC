@@ -6,7 +6,7 @@ function Hints({hide}) {
 const theme = colorTheme();
   return (
       <div className='hints' style={{color: theme.primary, backgroundColor: theme.background}}>
-        <h1>BRAIN GAME</h1>
+        <h1>FLIP GAME</h1>
         <br/> <br/>
           <h3>How well can you remember previous cards and predict the next matching card?</h3> <br/>
           <p>This is a game of flips! take the least number of flip-turns to rank higher

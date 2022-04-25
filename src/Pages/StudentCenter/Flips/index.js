@@ -4,8 +4,6 @@ import "./studentcenter.scss";
 import ReactGA from 'react-ga';
 import Singlecard from "./Singlecard";
 import colorTheme from "../../../Components/colorTheme";
-import { SAVE_SCORES } from "../../../Graphql/user";
-import { useMutation } from '@apollo/client';
 
 
 const cardEmoji0 = {
@@ -108,32 +106,6 @@ function Index() {
    const [ gameOver, setGameOver ] = useState(false);
 
    let totalMatched =   cards.filter(card => card.matched === true).length / 2
-
-    let gamer = JSON.parse(localStorage.getItem("Gamer"))?.username;
-    let flips = localStorage.getItem("score");
-    let score_ = Math.trunc( 8/flips * 100).toString()
-
-// Save scores to server............................................
-    const [ savescores ] = useMutation(SAVE_SCORES, {
-          variables: {flips_: flips, score: score_,  username: gamer },
-          onError:(e)=>{
-            console.log("did not save scores")
-          },
-          onCompleted:(data) => {
-            localStorage.setItem("Gamer", JSON.stringify(data?.saveGamerScores))
-          }
-        })
-
-
-// Save game score on load or when game is over
-    useEffect(() => {
-       let user = localStorage.getItem("Gamer");
-        if(user){
-          savescores()
-        }else {
-          return
-        }
-    }, [gameOver, savescores])
 
 
 //Shafle cards
