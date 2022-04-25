@@ -20,7 +20,6 @@ function Board() {
          
     const [ tiles, setTiles] = useState( savedTiles.length === 0 ? shuffle([...Array(TILE_COUNT).keys()]) : savedTiles);
     const [ swapped, setSwaped ] = useState(false);
-    // const [ isSolved, setSolved ] = useState(false);
 
 
     // if is solved
@@ -34,10 +33,11 @@ function Board() {
       
        let _earnedCoins = parseFloat(localStorage.getItem("coins"))
 
-        if(swapped){
-            localStorage.setItem("coins", Math.floor(Math.random() * 8 + 1) + _earnedCoins ) 
+        if(swapped) {
+            localStorage.setItem("coins", Math.floor(Math.random() * 8 + 1) + _earnedCoins ); 
         }
     }
+    
     
 
     // shuffle ...
@@ -103,7 +103,14 @@ function Board() {
         border: `2px solid ${theme.link}`
     };
  
-     let __ = localStorage.getItem("coins") === null ? 0 : parseFloat(localStorage.getItem("coins")).toFixed(2)
+    let earnerdMoney;
+    let __ = localStorage.getItem("coins") === null ? 0 : (Math.floor(localStorage.getItem("coins")))
+    if( __ > 1000){
+        let k = __ / 1000
+        earnerdMoney = `${k.toString().substring(0,4)}k`
+    }else{
+        earnerdMoney = Math.floor(__)
+    }
 
 
   return(
@@ -111,7 +118,7 @@ function Board() {
       <h2>Puzzle game challenge </h2> 
       <h4 className="score">
            <span>Points: {localStorage.getItem("points") || 1 }</span> 
-           <span>Coins💰: Ksh. { __ || 0 }</span> 
+           <span>Coins💰: Ksh. { earnerdMoney || 0 }</span> 
      </h4> <br/>
       <div className='new_game_button'> 
          <p onClick={ () => handleShuffleClick() }> New game </p> 
