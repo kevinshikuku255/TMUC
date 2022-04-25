@@ -17,7 +17,7 @@ const theme = colorTheme();
             A, facere nulla veniam laudantium laboriosam vero, vel cumque asperiores molestias adipisci nemo ipsum iure, 
             architecto saepe ipsam dicta deserunt rerum quos maxime consequuntur natus in eos quod. Maxime minus officia ipsum 
             reiciendis suscipit, reprehenderit eligendi?</p> <br/>
-          <p className="close" onClick={() => hide()} >Close hints</p>
+          <p className="close" onClick={() => hide()} >Close hints</p>  
       </div>
   )
 }
