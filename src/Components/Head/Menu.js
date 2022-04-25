@@ -77,15 +77,14 @@ export default function AccountMenu({menu_on}) {
               </p>
               <p className="MenuItem" onClick={() => history.push("/")} >ACADEMICS</p>
               <p className="MenuItem" onClick={() => history.push("/Noticeboard")}>NEWS</p>
-              <p className="MenuItem" onClick={() => history.push("/Studentcenter")} style={{color:"red"}} >STUDENT-CENTER</p>
-              <p className="MenuItem" onClick={() => history.push("/Activities")} >ACTIVITIES</p>
+              <p className="MenuItem" onClick={() => history.push("/Activities")} >STUDENT-CENTER</p>
               <p className="MenuItem" onClick={() => history.push("/Sotmuc")} >SOTMUC</p>
               <p className="MenuItem" onClick={() => history.push("/Policy")}>  USAGE POLICY</p>
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Signup")}> SIGN-UP</p>
 
               <p className="MenuItem" onClick={onShare}> SHARE THIS APP</p>
-              <p className="MenuItem" onClick={() => history.push("/Settings")} >SETTINGS</p>
+              <p className="MenuItem" onClick={() => history.push("/Settings")} >SETTINGS</p> <br/>
               <p style={{color:theme.link, fontSize:"0.4rem"}}>by Qutekid</p>
 
            </div>

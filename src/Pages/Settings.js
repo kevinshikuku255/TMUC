@@ -71,7 +71,6 @@ const reportLight = () => {
   }
   
   const iconHandler = (e) => {
-    console.log(e.target.cheked)
     localStorage.setItem("home", "Icons")
     dispatch({
       type: "Icons",
@@ -84,7 +83,7 @@ const reportLight = () => {
     <div className='settings' style={{backgroundColor: theme.background, color: theme.primary}}>
         <div>
             <h4>App settings and customization:</h4>
-            <p>Customize the app to look and feel according to your taste and preferacne.</p>
+            <p>Customize the app to look and feel according to your taste and preferance.</p>
         </div>
         <div>
             <h4>Theme:</h4>
@@ -107,8 +106,8 @@ const reportLight = () => {
         </div>
         <div>
            <h4>Contribute:</h4>
-           <p>You can now contribute to the building and betterment of this application by texting your opinions</p>
-           <a style={{color:"#3cb371"}} href="https://api.whatsapp.com/send?phone=+254740253367"> WhatsApp <WhatsAppIcon /></a> <br/>
+           <p>You can now contribute code and opinions to the building and betterment of this application by texting.</p>
+           <a style={{color:"#3cb371"}} href="https://api.whatsapp.com/send?phone=+254740253367"> WhatsApp <WhatsAppIcon /></a> 
         </div>
         <div>
           <h4>Vesion:</h4>

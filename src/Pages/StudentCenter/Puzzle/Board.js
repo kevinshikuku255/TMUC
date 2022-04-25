@@ -35,7 +35,7 @@ function Board() {
        let _earnedCoins = parseFloat(localStorage.getItem("coins"))
 
         if(swapped){
-            localStorage.setItem("coins", Math.floor(Math.random() * 16 + 1) + _earnedCoins ) 
+            localStorage.setItem("coins", Math.floor(Math.random() * 8 + 1) + _earnedCoins ) 
         }
     }
     
@@ -78,7 +78,7 @@ function Board() {
                
                let _existingCoins = parseFloat(localStorage.getItem("coins"));
 
-              let newCoins = parseFloat(Math.random() * ( (coinToken) / 8))
+              let newCoins = parseFloat(Math.random() * ( (coinToken) / 18))
 
               localStorage.setItem("coins", (_existingCoins + newCoins))
               setSwaped(true)
