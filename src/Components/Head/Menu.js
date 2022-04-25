@@ -1,11 +1,10 @@
 import React, { useEffect, useRef} from 'react';
-import { useHistory } from 'react-router-dom';
-import ReactGA from 'react-ga';
-import { useLoadContext, useThemeContext } from '../../Context';
-import { Avatar, makeStyles } from "@material-ui/core";
-import Logo from "../../Images/favicon.png";
+
 import colorTheme from "../colorTheme";
-import Switch from '@mui/material/Switch';
+import Logo from "../../Images/favicon.png";
+import { useHistory } from 'react-router-dom';
+import { useLoadContext } from '../../Context';
+import { Avatar, makeStyles } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,19 +22,6 @@ export default function AccountMenu({menu_on}) {
  const history = useHistory();
  const classes = useStyles();
  const  [ , loadispatch ] = useLoadContext();
- const  [ { Theme } , dispatch ] = useThemeContext();
-
- const [checked, setChecked] = React.useState(true);
-
- const handleChange = (event) => {
-   const checked = event.target.checked;
-   if(checked){
-     darkHandler();
-   }else{
-     lightHandler();
-   }
-   setChecked(event.target.checked);
- };
 
 
  useEffect(() => {
@@ -54,24 +40,6 @@ export default function AccountMenu({menu_on}) {
     }
   }, [menu_on, loadispatch])
 
-
-// Google analytics
-  const reportDark = () => {
-    ReactGA.event({
-          category:"Theme",
-          action:"changed to dark theme",
-          transport:"beacon",
-          label:"Dark theme",
-        })
-}
-const reportLight = () => {
-  ReactGA.event({
-        category:"Theme",
-        action:"changed to light theme",
-        transport:"beacon",
-        label:"Light theme",
-      })
-}
 
 // Sharing the app link
     async function onShare() {
@@ -92,25 +60,6 @@ const reportLight = () => {
           console.log("share canceled");
         }
     }
-  // Dark and light theme click handlers
-    const darkHandler = () => {
-      localStorage.setItem("theme", "Dark")
-      dispatch({
-        type: "Dark",
-        payload: "Dark"
-      })
-      reportLight();
-    }
-
-    const lightHandler = () => {
-      localStorage.setItem("theme", "Light")
-      dispatch({
-        type: "Light",
-        payload: "Light"
-      })
-      reportDark()
-    }
-    
     
 
   return (
@@ -135,15 +84,9 @@ const reportLight = () => {
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Signup")}> SIGN-UP</p>
 
-              <Switch
-                checked={checked}
-                style={{color: theme.primary}}
-                label={Theme}
-                onChange={handleChange}
-                inputProps={{ 'aria-label': 'controlled' }}
-              />
-              {Theme}
               <p className="MenuItem" onClick={onShare}> SHARE THIS APP</p>
+              <p className="MenuItem" onClick={() => history.push("/Settings")} >SETTINGS</p>
+              <p style={{color:theme.link, fontSize:"0.4rem"}}>by Qutekid</p>
 
            </div>
         </div>

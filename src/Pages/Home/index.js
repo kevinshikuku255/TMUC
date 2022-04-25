@@ -3,25 +3,16 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import "./pages.scss";
 
-import Portal from "./Portal";
-import Elearning from "./E-learning";
-import Login from "./StudentLogin";
-import Downloads from "./Downloads";
-import About from "./About";
-import Council from "./Council";
-import Library from "./Library";
-import History from "./History";
-import Academics from "./Academics"
-import Photos from "./Photos";
-import Direction from "./Direction";
-import Helb from "./Helb";
+import { Portal, Elearning, Login, Downloads, About, Council, Library, History, Academics, Photos, Direction, Helb } from "./Links";
 import colorTheme from "../../Components/colorTheme";
-
+import { useThemeContext } from '../../Context';
 
 /** Home page */
 function Index() {
   ReactGA.pageview('/');
   const theme = colorTheme();
+  const  [ { Home }  ] = useThemeContext();
+  const icons = Home === "Icons" ? true : false;
 /* -------------------------POST------------------------------------------------- */
 
  const style = {
@@ -35,26 +26,24 @@ function Index() {
   return (
   <div style={{color: theme.primary}} className="Main">
       <div className="Home_page">
-            {/* <Carousel className="Ad"/> */}
-        {/* <p style={style}> Play the puzzle challenge in the Activities tab to earn coins in Ksh.</p> */}
-        <h6 style={style}>Dark mode enabled by default !</h6>
-        <div className="Pages1">
-          <Login theme={theme}/>
-          <Elearning theme={theme}/>
-        </div>
-        <br/>
-        <div className="Pages1">
-          <Portal theme={theme}/>
-          <Library theme={theme}/>
-          <Photos theme={theme}/>
-          <Downloads theme={theme}/>
-          <Academics theme={theme}/>
-          <About theme={theme}/>
-          <Direction theme={theme}/>
-          <Council theme={theme}/>
-          <History theme={theme}/>
-          <Helb theme={theme}/>
-      </div>
+            <h6 style={style}>customize academics tab of this app in the settings</h6>
+            <div className="Pages1">
+              <Login theme={theme}  icon={icons}/>
+              <Elearning theme={theme}  icon={icons}/>
+            </div>
+            <br/>
+            <div className="Pages1">
+              <Portal theme={theme} icon={icons}/>
+              <Library theme={theme} icon={icons}/>
+              <Photos theme={theme} icon={icons}/>
+              <Downloads theme={theme} icon={icons}/>
+              <Academics theme={theme} icon={icons}/>
+              <About theme={theme} icon={icons}/>
+              <Direction theme={theme} icon={icons}/>
+              <Council theme={theme} icon={icons}/>
+              <History theme={theme} icon={icons}/>
+              <Helb theme={theme} icon={icons}/>
+          </div>
       </div>
   </div>
   )

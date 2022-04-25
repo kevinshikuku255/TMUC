@@ -10,3 +10,17 @@
     border-right: 1px solid gray;
  }
 }
+
+.settings{
+  min-height: 100vh;
+  margin-top: 5.2rem;
+  padding-top: 1rem;
+  div {
+    margin: 1rem;
+    border-bottom: 1px solid white;
+    a{
+      display:flex;
+      align-items: center;
+    }
+  }
+}

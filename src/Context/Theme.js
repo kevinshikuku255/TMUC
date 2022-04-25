@@ -6,14 +6,17 @@ const ThemeContext = createContext();
 
 const initialState = {
   Theme: localStorage.getItem("theme") || "Dark",
+  Home:  localStorage.getItem("home") || "Icons",
 }
 
 export const Dark = "Dark";
 export const Light = "Light";
+export const Icons = "Icons";
+export const Buttons = "Buttons";
 
 //State reducer
 export const ThemeReducer = (state, action)  => {
-   switch(action.type){ 
+   switch(action.type) { 
     case Dark :
       return {
         ...state, Theme: action.payload
@@ -21,6 +24,14 @@ export const ThemeReducer = (state, action)  => {
       case Light :
       return {
         ...state, Theme: action.payload
+      }
+      case Icons :
+      return {
+        ...state, Home: action.payload
+      }
+      case Buttons :
+      return {
+        ...state, Home: action.payload
       }
       default:
        throw new Error(`unknown action type ${action.type}`)

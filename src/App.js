@@ -17,6 +17,7 @@ import Timetable from "./Pages/Timetable/Index";
 import PostDetails from "./Pages/News/PostDetails";
 import { SignUp,  SignIn } from "./Pages/Auth";
 import StudentCenter from "./Pages/StudentCenter";
+import Settings from "./Pages/Settings"
 
 
 const Policy = lazy(() => import("./Components/Policy"));
@@ -76,6 +77,7 @@ Notify({message, title, image})
               <Route  path="/Policy" component={Policy}/>
               <Route  path="/Signup" component={SignUp}/>
               <Route  path="/Signin" component={SignIn}/>
+              <Route  path="/Settings" component={Settings}/>
               <Route  path='*' component={Swipble} />
             </Switch>
         </Suspense>
