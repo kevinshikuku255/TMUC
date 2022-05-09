@@ -2,13 +2,13 @@ import React from 'react'
 import "../App.scss";
 import colorTheme from "../Components/colorTheme";
 import ReactGA from 'react-ga';
+import { useHistory } from 'react-router-dom';
 import { useThemeContext } from '../Context';
 import Switch from '@mui/material/Switch';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 function Settings() {
-    const theme = colorTheme();
-
+const theme = colorTheme();
+const history = useHistory();
  const  [ { Theme, Home } , dispatch ] = useThemeContext();
 
  const [checked, setChecked] = React.useState(false);
@@ -106,12 +106,25 @@ const reportLight = () => {
         </div>
         <div>
            <h4>Contribute:</h4>
-           <p>You can now contribute code and opinions to the building and betterment of this application by texting.</p>
-           <a style={{color:"#3cb371"}} href="https://api.whatsapp.com/send?phone=+254740253367"> WhatsApp <WhatsAppIcon /></a> 
+           <p>You can now contribute code and opinions to the building and betterment of this application get the email in the info</p>
         </div>
-        <div>
-          <h4>Vesion:</h4>
-          <p>App version 5.6.2</p>
+        
+        <div className="UsagePolicy">
+            <h4>Usage policy:</h4>
+
+            <p>The news tab gives an alternative online noticeboard to convey and read real time information in addition to the physical noticeboard.</p>
+            <br/>
+            <p>Student groups and clubs, SOTMUC and any other student who would like to convey instant and long time information to majority of students can now do so with ease.</p>
+             <br/>
+            <p>Don't hesitate to notify fellow students on matters of urgency like lost and found items, urgent student meetings among other issues relating to students' welfare.</p>
+            <br/>
+            <p>We acknowledge the powere that comes with technology and therefore you are reminded to keep all your comments on this virtual platform free from misinformation and postive</p> 
+
+            <p>You will be reponsible for your online activities.</p>
+       </div>
+
+       <div>
+          <h4 style={{color: theme.link}} onClick={() => history.push("/Info")}>App info</h4>
         </div>
     </div>
   )

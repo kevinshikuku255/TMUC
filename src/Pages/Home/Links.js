@@ -123,7 +123,7 @@ export function Photos({theme, icon}) {
        return (
          <div style={{backgroundColor:!icon &&  theme.background}} className="Library"> 
            <a onClick={clickHandler} href="https://tmuc.ac.ke/library-home">
-           {icon && <LibraryBooksIcon fontSize='large'/>}
+           {icon && <LibraryBooksIcon  fontSize='large'/>}
             <h4>school library</h4>
              {!icon && <p className="LB" >library</p>}
            </a>

@@ -75,8 +75,8 @@ let empty =  days.includes(null) && areSame(days);
                     { monday.map((day, i) => (
                                   <div className="event_activity" key={i}>
                                     <div>
+                                       <p> <span style={{color:"green"}}>Time:</span> {day.Time}</p> <br/>
                                        <p>{day.Activity}</p> 
-                                       <p> <span style={{color:"green"}}>Time:</span> {day.Time}</p> 
                                      </div>
                                      <div className="delete">
                                       <button onClick={ () => handleOpen({day: "Monday", index: i, time: day.Time})}>Delete</button>
@@ -92,8 +92,8 @@ let empty =  days.includes(null) && areSame(days);
                     { tuesday.map((day, i) => (
                                   <div className="event_activity" key={i}>
                                     <div>
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> <br/>
                                       <p>{day.Activity}</p> 
-                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> 
                                     </div>
                                     <div className="delete">
                                       <button onClick={ () => handleOpen({day: "Tuesday", index: i, time: day.Time})}>Delete</button>
@@ -107,8 +107,8 @@ let empty =  days.includes(null) && areSame(days);
                     { wednesday.map((day, i) => (
                                   <div className="event_activity" key={i}>
                                     <div>
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> <br/>
                                       <p>{day.Activity}</p> 
-                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> 
                                     </div>
                                     <div className="delete">
                                       <button onClick={ () => handleOpen({day: "Wednesday", index: i, time: day.Time})}>Delete</button>
@@ -122,7 +122,10 @@ let empty =  days.includes(null) && areSame(days);
                   <p className="day">Thursday</p>
                     { thursday.map((day, i) => (
                                   <div className="event_activity" key={i}>
-                                    <div><p>{day.Activity}</p> <p>{day.Time}</p> </div>
+                                    <div>
+                                        <p><span style={{color:"green"}}>Time:</span>{day.Time}</p><br/>
+                                        <p>{day.Activity}</p> 
+                                    </div>
                                     <div className="delete">
                                         <button onClick={ () => handleOpen({day: "Thursday", index: i, time: day.Time})}>Delete</button>
                                       </div>
@@ -136,8 +139,8 @@ let empty =  days.includes(null) && areSame(days);
                     { friday.map((day, i) => (
                                   <div className="event_activity" key={i}>
                                     <div>
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> <br/>
                                       <p>{day.Activity}</p> 
-                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> 
                                     </div>
                                     <div className="delete">
                                         <button onClick={ () => handleOpen({day: "Friday", index: i, time: day.Time})}>Delete</button>
@@ -151,8 +154,8 @@ let empty =  days.includes(null) && areSame(days);
                     { saturday.map((day, i) => (
                                   <div className="event_activity" key={i}>
                                     <div>
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> <br/>
                                       <p>{day.Activity}</p> 
-                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> 
                                     </div>
                                     <div className="delete">
                                         <button onClick={ () => handleOpen({day: "Saturday", index: i, time: day.Time})}>Delete</button>
@@ -167,8 +170,8 @@ let empty =  days.includes(null) && areSame(days);
                     { sunday.map((day, i) => (
                                   <div className="event_activity" key={i}>
                                     <div>
+                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> <br/>
                                       <p>{day.Activity}</p> 
-                                      <p><span style={{color:"green"}}>Time:</span>{day.Time}</p> 
                                     </div>
                                     <div className="delete">
                                         <button onClick={ () => handleOpen({day: "Sunday", index: i, time: day.Time})}>Delete</button>
@@ -176,6 +179,27 @@ let empty =  days.includes(null) && areSame(days);
                                   </div>
                         ))}
                 </div>)
+
+let dammy = [
+  {Day: 'Monday', Time: 'ada', Activity: 'asa'},
+  {Day: 'Monday', Time: 'ada', Activity: 'asa'}
+]
+
+let example = ( dammy !== null && dammy.length > 0 &&
+  <div className="Dammy" style={{background:theme.secondary}}>
+    <p className="day">Wednesday</p>
+      { dammy.map((day, i) => (
+                    <div className="event_activity" key={i}>
+                      <div>
+                         <p> <span style={{color:"green"}}>Time:</span> {day.Time}</p> <br/>
+                         <p>{day.Activity}</p> 
+                       </div>
+                       <div className="delete">
+                        <button>Delete</button>
+                       </div>
+                    </div>
+          ))}
+  </div>)
 
 
   return (
@@ -206,9 +230,14 @@ let empty =  days.includes(null) && areSame(days);
       {saturday_}
       {sunday_}
       {empty && 
-       
+        <div className='guide'>
+          <h4>SET YOUR PERSONAL  SCHEDULE TO STAY ORGANISED</h4>
+        </div>
+      }
+      {empty && example}
+      {empty && 
        <div className='guide'>
-         <h2>SET YOUR PERSONAL  SCHEDULE TO STAY ORGANISED</h2>
+         
           <ul>
               <b>Success and time management tips !!</b> <br/>
               <li>Start your day right.</li>
@@ -218,7 +247,7 @@ let empty =  days.includes(null) && areSame(days);
               <li>Plan time for meals, exercising, and socializing.</li>
               <li>Work on your dreams one step at a time.</li>
           </ul>
-          <h5>The goal is academic excellence 🎓</h5>
+          <h4>The goal is academic excellence 🎓</h4>
        </div>
        }
     </>

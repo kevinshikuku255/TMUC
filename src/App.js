@@ -18,9 +18,9 @@ import PostDetails from "./Pages/News/PostDetails";
 import { SignUp,  SignIn } from "./Pages/Auth";
 import StudentCenter from "./Pages/StudentCenter";
 import Settings from "./Pages/Settings"
+import Info from "./Pages/AppInfo"
 
 
-const Policy = lazy(() => import("./Components/Policy"));
 const Cu   = lazy(() => import('./Pages/Activities/Cu'));
 const Sotmuc = lazy(() => import("./Components/Sotmuc"));
 const Activities = lazy(() => import("./Pages/Activities"));
@@ -74,10 +74,10 @@ Notify({message, title, image})
               <Route  path="/Sotmuc" component={Sotmuc}/>
               <Route  path="/CreatePost" component={MakePost}/>
               <Route  path="/Activities" component={Activities}/>
-              <Route  path="/Policy" component={Policy}/>
               <Route  path="/Signup" component={SignUp}/>
               <Route  path="/Signin" component={SignIn}/>
               <Route  path="/Settings" component={Settings}/>
+              <Route  path="/Info" component={Info}/>
               <Route  path='*' component={Swipble} />
             </Switch>
         </Suspense>

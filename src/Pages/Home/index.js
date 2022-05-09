@@ -26,7 +26,7 @@ function Index() {
   return (
   <div style={{color: theme.primary}} className="Main">
       <div className="Home_page">
-            <h6 style={style}>customize academics tab of this app in the settings</h6>
+            <h6 style={style}>Check amazing 🎉🎉 new features in the settings.</h6>
             <div className="Pages1">
               <Login theme={theme}  icon={icons}/>
               <Elearning theme={theme}  icon={icons}/>

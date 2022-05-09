@@ -21,7 +21,6 @@ function Board() {
     const [ tiles, setTiles] = useState( savedTiles.length === 0 ? shuffle([...Array(TILE_COUNT).keys()]) : savedTiles);
     const [ swapped, setSwaped ] = useState(false);
 
-
     // if is solved
     const completed = isSolved(tiles);
     if(completed) {
@@ -78,7 +77,7 @@ function Board() {
                
                let _existingCoins = parseFloat(localStorage.getItem("coins"));
 
-              let newCoins = parseFloat(Math.random() * ( (coinToken) / 18))
+              let newCoins = parseFloat(Math.random() * ( (coinToken) / 8))
 
               localStorage.setItem("coins", (_existingCoins + newCoins))
               setSwaped(true)
@@ -109,7 +108,7 @@ function Board() {
         let k = __ / 1000
         earnerdMoney = `${k.toString().substring(0,4)}k`
     }else{
-        earnerdMoney = Math.floor(__)
+        earnerdMoney = __
     }
 
 
