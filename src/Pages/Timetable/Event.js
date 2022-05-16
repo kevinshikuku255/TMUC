@@ -181,8 +181,8 @@ let empty =  days.includes(null) && areSame(days);
                 </div>)
 
 let dammy = [
-  {Day: 'Monday', Time: 'ada', Activity: 'asa'},
-  {Day: 'Monday', Time: 'ada', Activity: 'asa'}
+  {Day: 'Monday', Time: '8:00 am - 11:00 am', Activity: 'Here goes the activity to be done over the specified time in this case 8:00 am - 11:00am'},
+  {Day: 'Monday', Time: '1:00pm - 4:00 pm', Activity: 'Activity'}
 ]
 
 let example = ( dammy !== null && dammy.length > 0 &&

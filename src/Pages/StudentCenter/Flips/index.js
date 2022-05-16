@@ -200,7 +200,7 @@ useEffect(() =>  {
 
 
   return (
-    <div className="StudentCenter" style={{color: theme.primary, backgroundColor: theme.background}}>
+    <div className="StudentCenter" style={{color: theme.primary, backgroundColor: theme.farground}}>
        <h2>GAME OF FLIPS</h2>
        <div className='new_game_button'> 
           <p onClick={shufleCards}>New game</p>  
@@ -221,7 +221,7 @@ useEffect(() =>  {
 
        <div className='new_game'>
             <p style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                <span style={{color:"whitesmoke", fontSize:"1.2rem", margin:"0 1rem 0 1rem"}}> {turns}  Moves  </span>
+                <span style={{color: theme.primary, fontSize:"1.2rem", margin:"0 1rem 0 1rem"}}> {turns}  Moves  </span>
                 <table>
                   <tbody>
                     <tr>

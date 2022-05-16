@@ -9,7 +9,7 @@ const theme = colorTheme();
 const style = {
     main : {
         color: theme.primary, 
-        backgroundColor: theme.background,
+        backgroundColor: theme.farground,
         minHeight: "calc(100vh - 6rem)",
         marginTop: "4rem",
         paddingTop: '2rem',

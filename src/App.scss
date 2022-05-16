@@ -12,9 +12,9 @@
 }
 
 .settings{
-  min-height: calc(100vh - 5.2rem);
+  min-height: 100vh;
   margin-top: 5.2rem;
-  padding-top: 1rem;
+  font-size: small;
   div {
     margin: 1rem;
     padding: 1rem 0;
@@ -34,7 +34,9 @@
   writing-mode: horizontal-tb;
   white-space: pre-wrap;
   font-family: sans-serif;
-  font-size: x-small;
+  p{
+    font-size: xx-small;
+  }
   @media screen and (min-width: 48rem ) {
     padding: 0;
     width: 36rem;

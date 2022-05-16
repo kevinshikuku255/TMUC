@@ -80,7 +80,7 @@ const reportLight = () => {
 
 
   return (
-    <div className='settings' style={{backgroundColor: theme.background, color: theme.primary}}>
+    <div className='settings' style={{backgroundColor: theme.farground, color: theme.primary}}>
         <div>
             <h4>App settings and customization:</h4>
             <p>Customize the app to look and feel according to your taste and preferance.</p>
@@ -122,7 +122,6 @@ const reportLight = () => {
 
             <p>You will be reponsible for your online activities.</p>
        </div>
-
        <div>
           <h4 style={{color: theme.link}} onClick={() => history.push("/Info")}>App info</h4>
         </div>

@@ -5,7 +5,7 @@ import colorTheme from "../../../Components/colorTheme";
 function Hints({hide}) {
 const theme = colorTheme();
   return (
-      <div className='hints' style={{color: theme.primary, backgroundColor: theme.background}}>
+      <div className='hints' style={{color: theme.primary, backgroundColor: theme.farground}}>
         <h1>FLIP GAME</h1>
         <br/> <br/>
           <h3>How well can you remember previous cards and predict the next matching card?</h3> <br/>
@@ -20,4 +20,4 @@ const theme = colorTheme();
       </div>
   )
 }
-export default Hints
+export default Hints;
