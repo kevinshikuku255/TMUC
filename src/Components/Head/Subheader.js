@@ -20,7 +20,7 @@ export const SubHeader = () => {
             transport:"beacon",
             label:"ACADEMICS-TAB"
           })
-    history.push("/Studentcenter")
+    history.push("/")
   }
 
   const timetable = () => {
@@ -33,14 +33,14 @@ export const SubHeader = () => {
     history.push("/Timetable")
   }
 
-  const noticeboard = () => {
+  const studentcenter = () => {
       ReactGA.event({
             category:"Button",
             action:"Navigated to student center",
             transport:"beacon",
             label:"NOTICE-BOARD-TAB"
           })
-    history.push("/")
+    history.push("/Studentcenter")
   }
 
 /* -------------------------------------------------------------------------- */
@@ -51,14 +51,14 @@ export const SubHeader = () => {
    return(
      <div className="SubHeader" style={{color:theme.primary}}>
 
-        <div style = {  pathname === "/Studentcenter" ? activeStyle : null} >
+        <div style = {  pathname === "/" ? activeStyle : null} >
           <p onClick={() => academics() }>ACADEMICS</p>
         </div>
         <div style = { pathname === "/Timetable"  ? activeStyle : null}>
              <p onClick={() => timetable() } >SCHEDULE</p>
         </div>
-        <div style ={ pathname === "/"  ? activeStyle : null}>
-             <p onClick={() => noticeboard()}>ACTIVITIES</p>
+        <div style ={ pathname === "/Studentcenter"  ? activeStyle : null}>
+             <p onClick={() => studentcenter()}>ACTIVITIES</p>
         </div>
      </div>
    )

@@ -15,18 +15,10 @@ function Index() {
   const icons = Home === "Icons" ? true : false;
 /* -------------------------POST------------------------------------------------- */
 
- const style = {
-    color: theme.link,
-    fontSize: "smaller",
-    padding: 0,
-    margin: "1rem 0",
-    textAlign: "center"
- }
-
   return (
   <div style={{color: theme.primary}} className="Main">
       <div className="Home_page">
-            <h6 style={style}>Check amazing 🎉🎉 new features in the settings.</h6>
+            {/* <h6 style={style}>Check amazing 🎉🎉 new features in the settings.</h6> */}
             <div className="Pages1">
               <Login theme={theme}  icon={icons}/>
               <Elearning theme={theme}  icon={icons}/>
