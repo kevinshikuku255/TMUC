@@ -33,14 +33,14 @@ export const SubHeader = () => {
     history.push("/Timetable")
   }
 
-  const studentcenter = () => {
+  const news = () => {
       ReactGA.event({
             category:"Button",
             action:"Navigated to student center",
             transport:"beacon",
             label:"NOTICE-BOARD-TAB"
           })
-    history.push("/Studentcenter")
+    history.push("/News")
   }
 
 /* -------------------------------------------------------------------------- */
@@ -57,8 +57,8 @@ export const SubHeader = () => {
         <div style = { pathname === "/Timetable"  ? activeStyle : null}>
              <p onClick={() => timetable() } >SCHEDULE</p>
         </div>
-        <div style ={ pathname === "/Studentcenter"  ? activeStyle : null}>
-             <p onClick={() => studentcenter()}>ACTIVITIES</p>
+        <div style ={ pathname === "/News"  ? activeStyle : null}>
+             <p onClick={() => news()}>ACTIVITIES</p>
         </div>
      </div>
    )

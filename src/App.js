@@ -13,9 +13,8 @@ import './App.scss';
 
 import Index from "./Pages/Home/index";
 import Head from "./Components/Head/Index";
+import News from "./Pages/News/index";
 import Timetable from "./Pages/Timetable/Index";
-import PostDetails from "./Pages/News/PostDetails";
-import { SignUp,  SignIn } from "./Pages/Auth";
 import StudentCenter from "./Pages/StudentCenter";
 import Settings from "./Pages/Settings"
 import Info from "./Pages/AppInfo"
@@ -23,9 +22,8 @@ import Info from "./Pages/AppInfo"
 
 const Cu   = lazy(() => import('./Pages/Activities/Cu'));
 const Sotmuc = lazy(() => import("./Components/Sotmuc"));
-const Activities = lazy(() => import("./Pages/Activities"));
+const Studentcenter = lazy(() => import("./Pages/Activities"));
 const Profile  = lazy(() => import("./Components/Profile"));
-const MakePost   = lazy(() => import("./Pages/News/MakePost"));
 const Football  = lazy(() => import('./Pages/Activities/Football'));
 
 
@@ -69,13 +67,10 @@ Notify({message, title, image})
             <Switch>
               <Route  path="/Cu" component={Cu}/>
               <Route  path="/activities/:username" component={Profile}/>
-              <Route  path="/Post/:id" component={PostDetails}/>
               <Route  path="/Football" component={Football}/>
+              <Route  path="/News" component={News}/>
               <Route  path="/Sotmuc" component={Sotmuc}/>
-              <Route  path="/CreatePost" component={MakePost}/>
-              <Route  path="/Activities" component={Activities}/>
-              <Route  path="/Signup" component={SignUp}/>
-              <Route  path="/Signin" component={SignIn}/>
+              <Route  path="/Studentcenter" component={Studentcenter}/>
               <Route  path="/Settings" component={Settings}/>
               <Route  path="/Info" component={Info}/>
               <Route  path='*' component={Swipble} />

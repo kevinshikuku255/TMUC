@@ -76,8 +76,8 @@ export default function AccountMenu({menu_on}) {
                 <a href='//ashoupsu.com/4/4950173'><Avatar src={Logo} className={classes.small}/></a>
               </p>
               <p className="MenuItem" onClick={() => history.push("/")} >ACADEMICS</p>
-              <p className="MenuItem" onClick={() => history.push("/Noticeboard")}>NEWS</p>
-              <p className="MenuItem" onClick={() => history.push("/Activities")} >STUDENT-CENTER</p>
+              <p className="MenuItem" onClick={() => history.push("/News")} >NEWS</p>
+              <p className="MenuItem" onClick={() => history.push("/Studentcenter")}>STUDENT CENTER</p>
               <p className="MenuItem" onClick={() => history.push("/Sotmuc")} >SOTMUC</p>
               <p className="MenuItem" onClick={() => history.push("/CreatePost")}> PIN A POST</p>
               <p className="MenuItem" onClick={() => history.push("/Signup")}> SIGN-UP</p>

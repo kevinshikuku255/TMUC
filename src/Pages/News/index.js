@@ -1,117 +1,80 @@
-import React, { useEffect} from 'react';
-import ReactGA from 'react-ga';
-import "./news.scss";
-import Post from "./Post"
-
-import {  usePostsContext } from "../../Context";
-import { useLazyQuery, useQuery } from '@apollo/client';
-import { GET_POSTS } from '../../Graphql/posts'
-import Skeleton from './Skeleton';
-import { SignalWifiOff} from "@material-ui/icons";
-// import  Img from "../../Images/mike.jpg";
+import React  from 'react';
+import { useQuery } from "react-query";
+import './styles.scss';
+import Loading from "../../Components/loading";
 
 
-// const mike = {
-// author:
-//      {__typename: 'User', id: '61557bbfe494ad225ca14ffa', name: 'Image Paradice'},
-// createdAt: "1633177397421",
-// id: null,
-// image: Img,
-// imagePublicId: null,
-// message: "Garage road oposite transforma: 0742244889",
-// name: null,
-// title: "Welcome all 1st yrs to Comrades cyber and Barbershop in Town",
-// __typename: "Post",
-// }
+/** News page */
+export default function Home() {
+
+  const { isLoading, error, data:payload } = useQuery('news', () =>
+    fetch('https://tmu-news-scrapper.herokuapp.com/').then( res =>
+      res.json()
+
+    )
+  )
 
 
 
-/** News component */
-function Index() {
-  ReactGA.pageview('/Noticeboard');
-  const [ {posts} , postDispatch ]=  usePostsContext();
-  const online = navigator.online;
+let skeleton = Array.from(Array(10).keys())
 
-
-  //Use lazy query
-  const { data:cachedData, loading:cacheLoading, error }  = useQuery(GET_POSTS,{ fetchPolicy:"cache-only" });
-  const [ getPosts ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
-
-
-  useEffect(() => {
-      getPosts()
-  }, [getPosts, online ])
-
-
- const data = cachedData;
- const loading =  cacheLoading
-
-  useEffect(() => {
-    if (data) {
-      postDispatch({
-        type: 'ADD_POSTS',
-        payload: data?.getPosts
-      })
-    }
-  }, [data, postDispatch])
-
-
-let loader;
-  if( posts?.length < 1 || loading){
-     loader = (
-       <div className="NewsWrapper">
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-     </div>
-     )
-  }
-
-
-  if(data && data?.getPosts?.length < 1){
-     loader = (
-       <div className="NewsWrapper">
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-          <Skeleton/>
-     </div>
-     )
-  }
-
-
-if(error && !data){
-  loader = (
-       <div className="NewsWrapper">
-          <Skeleton warning={<SignalWifiOff/>}/>
-          <Skeleton warning={<SignalWifiOff/>}/>
-          <Skeleton warning={<SignalWifiOff/>}/>
-          <Skeleton warning={<SignalWifiOff/>}/>
-          <Skeleton warning={<SignalWifiOff/>}/>
-     </div>)
-}
-
-
-let MarkeUp;
-if(posts){
-   MarkeUp = ( posts && posts?.length > 0) &&  posts?.map( post => (
-        <div key={post?.id}>
-            <Post post ={post}/>
-        </div>
-     ))
-}
 
   return (
-    <div className="NewsWrapper">
-      {/* <Post key={mike.id} post ={mike} onClick={null} style={{marginTop:"6rem"}}/> */}
-      {MarkeUp}
-      {loader}
-    </div>
+    <div  className={"news_feed"} >
 
+
+      <main>
+
+        { (isLoading || payload?.info.length === 0) && 
+           skeleton.map((i) => (
+            <div key={i} style={{margin:'20px'}}>
+               <Loading />
+            </div>
+           ))
+          }
+
+        { ( error || payload?.error) && 
+           skeleton.map((i) => (
+            <div key={i} style={{margin:'20px'}}>
+               <Loading />
+            </div>
+           ))
+          }
+
+        { ( payload ) && payload?.info?.map((el, i) => (
+            <div key={i} className={"news_item"}>
+              <Post data={el}/>
+            </div>
+          ))}
+      </main>
+    </div>   
   )
 }
 
-export default Index;
+
+
+
+/** Post component */
+const Post = ({data}) => {
+  const {link, ad_link, title, img,  ad } = data;
+
+  return(
+    <div>
+      <div>
+        {ad && <sup>Ad</sup>}
+        {img && 
+            <img
+              src={`https://tmuc.ac.ke/${img}?w=${50}&q=${200}`}
+              alt={title}
+              className={"image"}
+              width={400}
+              height={250}
+              />
+          }
+      </div>
+      <p>{title} </p>
+      <br/>
+      <a href={ ad_link || `https://tmuc.ac.ke/${link}`} style={{color:"blueviolet"}} >Read more ...</a>
+    </div>
+  )
+}

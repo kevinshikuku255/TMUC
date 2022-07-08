@@ -5,6 +5,7 @@ import { ApolloProvider } from '@apollo/client';
 import { BrowserRouter} from 'react-router-dom';
 import { createApolloClient } from './Utils/apollo_client';
 import { AuthProvider, LoadProvider, PostProvider,ThemeProvider } from "./Context";
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 
 import './index.scss';
@@ -14,6 +15,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 dotenv.config("../.env");
 // GraphQL HTTP URL
 const API_URL = process.env.REACT_APP_API_URL;
+const queryClient = new QueryClient()
 
 
 // GraphQL WebSocket (subscriptions) URL.
@@ -27,6 +29,7 @@ const apolloClient = createApolloClient(API_URL, websocketApiUrl);
 
 
 ReactDOM.render(
+  <QueryClientProvider client={queryClient}>
       <ApolloProvider client={apolloClient}>
         <BrowserRouter>
            <AuthProvider>
@@ -39,7 +42,8 @@ ReactDOM.render(
               </ThemeProvider>
             </AuthProvider>
       </BrowserRouter>
-    </ApolloProvider>,
+    </ApolloProvider>
+  </QueryClientProvider>,
   document.getElementById('root')
 );
 serviceWorkerRegistration.register();
