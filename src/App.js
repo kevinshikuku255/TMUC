@@ -15,7 +15,6 @@ import Index from "./Pages/Home/index";
 import Head from "./Components/Head/Index";
 import News from "./Pages/News/index";
 import Timetable from "./Pages/Timetable/Index";
-import StudentCenter from "./Pages/StudentCenter";
 import Settings from "./Pages/Settings"
 import Info from "./Pages/AppInfo"
 
@@ -41,7 +40,7 @@ const Swipble = () => {
     >
     <Route path="/" component={Index}/>
     <Route path="/Timetable" component={Timetable}/>
-    <Route exact path="/Studentcenter" component={StudentCenter}/>
+    <Route exact path="/News" component={News}/>
   </RouterCarousel>
  )
 };
@@ -68,7 +67,6 @@ Notify({message, title, image})
               <Route  path="/Cu" component={Cu}/>
               <Route  path="/activities/:username" component={Profile}/>
               <Route  path="/Football" component={Football}/>
-              <Route  path="/News" component={News}/>
               <Route  path="/Sotmuc" component={Sotmuc}/>
               <Route  path="/Studentcenter" component={Studentcenter}/>
               <Route  path="/Settings" component={Settings}/>

@@ -1,4 +1,4 @@
-import React  from 'react';
+import React   from 'react';
 import { useQuery } from "react-query";
 import './styles.scss';
 import Loading from "../../Components/loading";
@@ -6,13 +6,12 @@ import Loading from "../../Components/loading";
 
 /** News page */
 export default function Home() {
-
   const { isLoading, error, data:payload } = useQuery('news', () =>
     fetch('https://tmu-news-scrapper.herokuapp.com/').then( res =>
       res.json()
-
     )
   )
+
 
 
 
@@ -25,7 +24,7 @@ let skeleton = Array.from(Array(10).keys())
 
       <main>
 
-        { (isLoading || payload?.info.length === 0) && 
+        { (isLoading || payload?.info.length === 0 || error) && 
            skeleton.map((i) => (
             <div key={i} style={{margin:'20px'}}>
                <Loading />
@@ -33,15 +32,7 @@ let skeleton = Array.from(Array(10).keys())
            ))
           }
 
-        { ( error || payload?.error) && 
-           skeleton.map((i) => (
-            <div key={i} style={{margin:'20px'}}>
-               <Loading />
-            </div>
-           ))
-          }
-
-        { ( payload ) && payload?.info?.map((el, i) => (
+        { payload?.info.length > 0 &&  payload?.info.map((el, i) => (
             <div key={i} className={"news_item"}>
               <Post data={el}/>
             </div>
