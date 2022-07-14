@@ -33,7 +33,7 @@ cron.schedule("0 */2 * * *", async function() {
 
 
 // Cron job to fetch links and news details
-cron.schedule("*/1 * * * *", async function() {
+cron.schedule("4 */2 * * *", async function() {
 
   const allLinks = await News.find()
   allLinks.map( async ({link, headline, image}) => {
