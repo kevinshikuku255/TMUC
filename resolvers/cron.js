@@ -33,10 +33,12 @@ cron.schedule("0 */2 * * *", async function() {
 
 
 // Cron job to fetch links and news details
-cron.schedule("4 */2 * * *", async function() {
+cron.schedule("2 */2 * * *", async function() {
 
+  await Details.deleteMany({})
+  
   const allLinks = await News.find()
-  allLinks.map( async ({link, headline, image}, i) => {
+  allLinks.map( async ({link, headline, image}) => {
 
     const res = await  axios(link) 
     let { data }  = res
@@ -49,17 +51,15 @@ cron.schedule("4 */2 * * *", async function() {
 
     let message = $(".post-block").find('.node__content').text().trim().replaceAll('\n', ',') 
     let images = $(".post-block").find('.node__content img').get().map(x => $(x).attr('src'))
-    
-  
-  await Details.deleteMany({})
-    
-   await new Details({
+     
+     
+   new Details({
       headline,
       message,
       link,
       image,
       images: images.toString(),
-      timeStamp
+      timeStamp 
     }).save() 
     
     
