@@ -33,6 +33,11 @@ const corsOptions = {
   credentials: true  // <-- REQUIRED backend setting
 };
 
+
+
+
+
+// cors midleware
 app.use(cors(corsOptions))
 
 /* -----------Create a Apollo Server--------------------------------------------------------------- */
@@ -49,11 +54,9 @@ server.applyMiddleware({
 
 // Create http server and add subscriptions to it
 const httpServer = createServer(app);
-server.installSubscriptionHandlers(httpServer);
 
 // Listen to HTTP and WebSocket server
-const PORT = process.env.PORT || process.env.API_PORT;
+const PORT = process.env.PORT || 5000;
 httpServer.listen(PORT, () => {
   console.log(`tmuc_server server ready at http://localhost:${PORT}${server.graphqlPath}`);
-  console.log(`Subscriptions ready at ws://localhost:${PORT}${server.subscriptionsPath}`);
 });
