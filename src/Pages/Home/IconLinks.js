@@ -1,11 +1,10 @@
 import React from 'react';
-// import Carousel from "../../Components/Caraousel";
 import ReactGA from 'react-ga';
 import "./pages.scss";
 import colorTheme from "../../Components/colorTheme";
 
 import SchoolIcon from '@mui/icons-material/School';
-import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
@@ -35,12 +34,9 @@ function Index() {
   return (
   <div style={{color: theme.primary}} className="Main">
       <div className="Home_page">
-                {/* <Carousel className="Ad"/> */}
-            {/* <p style={style}> Play the puzzle challenge in the Activities tab to earn coins in Ksh.</p> */}
-            <h6 style={style}>Dark mode enabled by default !</h6>
           <div  className="Pages1">
             <p> <SchoolIcon/> </p>
-            <p><AssignmentLateIcon/></p>
+            <p><AccountBoxIcon/></p>
             <p><FmdGoodIcon/></p>
             <p><AdminPanelSettingsIcon/></p>
             <p><LibraryBooksIcon/></p>

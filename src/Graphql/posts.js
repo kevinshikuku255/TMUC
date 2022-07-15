@@ -11,6 +11,7 @@
  query{
     getDetails {
       headline
+      message
       timeStamp
       image
       link

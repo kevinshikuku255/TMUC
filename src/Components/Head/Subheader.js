@@ -20,7 +20,7 @@ export const SubHeader = () => {
             transport:"beacon",
             label:"ACADEMICS-TAB"
           })
-    history.push("/")
+      history.replace('/')
   }
 
   const timetable = () => {
@@ -30,7 +30,7 @@ export const SubHeader = () => {
             transport:"beacon",
             label:"TIMETABLE-TAB"
           })
-    history.push("/Timetable")
+    history.replace("/Timetable")
   }
 
   const news = () => {
@@ -40,7 +40,7 @@ export const SubHeader = () => {
             transport:"beacon",
             label:"NOTICE-BOARD-TAB"
           })
-    history.push("/News")
+    history.replace("/News")
   }
 
 /* -------------------------------------------------------------------------- */

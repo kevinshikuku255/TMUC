@@ -5,13 +5,14 @@ import { useQuery } from "@apollo/client"
 import { GET_DETAILS  } from "../../Graphql/posts";
 import { currentDate } from "../../Utils/date";
 import Avatar from '@mui/material/Avatar';
-import Icon from "../../Images/favicon.png"
+import Icon from "../../Images/favicon.png";
+import { useHistory } from 'react-router-dom';
 
 
 /** News page */
 export default function Home() {
-const [ news, setNews] = useState(JSON.parse(localStorage.getItem('news')))
-const skeleton = Array.from(Array(10).keys())
+  const skeleton = Array.from(Array(10).keys());
+  const [ news, setNews] = useState(JSON.parse(localStorage.getItem('news')))
 
   const { loading, error, data} = useQuery(GET_DETAILS,{
     onCompleted: ({getDetails}) => {
@@ -37,7 +38,7 @@ const skeleton = Array.from(Array(10).keys())
         { news && 
          news.map((news, i) => (
            <div key={i} className={"news_item"}>
-              <Post data={news}/>
+              <Post data={news} index={i}/>
            </div>
          ))
         }
@@ -57,15 +58,16 @@ const skeleton = Array.from(Array(10).keys())
 
 
 /** Post component */
-const Post = ({data}) => {
+const Post = ({data, index}) => {
   const {link,  headline, image,  ad, timeStamp } = data;
+  const history = useHistory();
 
   return(
     <div>
       <div>
         {ad && <sup>Ad</sup>}
         <div className='action'>
-          <Avatar alt="Remy Sharp" src={Icon} />
+          <Avatar alt={link} src={Icon} />
           <div>
             <p>TMUC</p>
             <p style={{fontSize:"xx-small"}}>@onlinenewsfeed</p>
@@ -78,6 +80,7 @@ const Post = ({data}) => {
               className={"image"}
               width={400}
               height={300}
+              onClick={ () => history.push(`/News/${index}`)}
               />
           }
       </div>

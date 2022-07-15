@@ -14,6 +14,7 @@ import News from "./Pages/News/index";
 import Timetable from "./Pages/Timetable/Index";
 import Settings from "./Pages/Settings"
 import Info from "./Pages/AppInfo"
+import NewsDetail from "./Pages/News/news-details";
 
 
 const Cu   = lazy(() => import('./Pages/Activities/Cu'));
@@ -54,6 +55,7 @@ function App() {
             <Switch>
               <Route  path="/Cu" component={Cu}/>
               <Route  path="/activities/:username" component={Profile}/>
+              <Route  path="/News/:index" component={NewsDetail}/>
               <Route  path="/Football" component={Football}/>
               <Route  path="/Sotmuc" component={Sotmuc}/>
               <Route  path="/Studentcenter" component={Studentcenter}/>

@@ -4,7 +4,7 @@ import { useLoadContext } from '../../Context';
 import "./pages.scss";
 
 import SchoolIcon from '@mui/icons-material/School';
-import AssignmentLateIcon from '@mui/icons-material/AssignmentLate';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
@@ -98,7 +98,7 @@ export function Photos({theme, icon}) {
        return (
          <div style={{backgroundColor: !icon && theme.background}} className="Login">
            <a onClick={clickHandler} href="http://student.tmuc.ac.ke/">
-           {icon && <AssignmentLateIcon fontSize='large'/>}
+           {icon && <AccountBoxIcon fontSize='large'/>}
             <h4>student portal</h4>
             {!icon && <p className="L" >login</p>}
            </a>
