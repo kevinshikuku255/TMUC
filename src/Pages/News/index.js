@@ -1,21 +1,32 @@
-import React   from 'react';
-import { useQuery } from "react-query";
+import React, { useEffect, useState}   from 'react';
 import './styles.scss';
 import Loading from "../../Components/loading";
+import { useQuery } from "@apollo/client"
+import { GET_DETAILS  } from "../../Graphql/posts";
+import { currentDate } from "../../Utils/date";
+import Avatar from '@mui/material/Avatar';
+import Icon from "../../Images/favicon.png"
 
 
 /** News page */
 export default function Home() {
-  const { isLoading, error, data:payload } = useQuery('news', () =>
-    fetch('https://tmu-news-scrapper.herokuapp.com/').then( res =>
-      res.json()
-    )
-  )
+const [ news, setNews] = useState(JSON.parse(localStorage.getItem('news')))
+const skeleton = Array.from(Array(10).keys())
+
+  const { loading, error, data} = useQuery(GET_DETAILS,{
+    onCompleted: ({getDetails}) => {
+      localStorage.setItem('news', JSON.stringify(getDetails))
+    },
+    // pollInterval: 500,
+    notifyOnNetworkStatusChange: true,
+
+  });
 
 
-
-
-let skeleton = Array.from(Array(10).keys())
+  useEffect(() => {
+    let news = JSON.parse(localStorage.getItem('news')) || data?.getDetails
+    setNews(news)
+  },[data?.getDetails])
 
 
   return (
@@ -23,20 +34,20 @@ let skeleton = Array.from(Array(10).keys())
 
 
       <main>
-
-        { (isLoading || payload?.info.length === 0 || error) && 
+        { news && 
+         news.map((news, i) => (
+           <div key={i} className={"news_item"}>
+              <Post data={news}/>
+           </div>
+         ))
+        }
+        {  (loading || error) &&
            skeleton.map((i) => (
             <div key={i} style={{margin:'20px'}}>
                <Loading />
             </div>
            ))
           }
-
-        { payload?.info.length > 0 &&  payload?.info.map((el, i) => (
-            <div key={i} className={"news_item"}>
-              <Post data={el}/>
-            </div>
-          ))}
       </main>
     </div>   
   )
@@ -47,25 +58,33 @@ let skeleton = Array.from(Array(10).keys())
 
 /** Post component */
 const Post = ({data}) => {
-  const {link, ad_link, title, img,  ad } = data;
+  const {link,  headline, image,  ad, timeStamp } = data;
 
   return(
     <div>
       <div>
         {ad && <sup>Ad</sup>}
-        {img && 
+        <div className='action'>
+          <Avatar alt="Remy Sharp" src={Icon} />
+          <div>
+            <p>TMUC</p>
+            <p style={{fontSize:"xx-small"}}>@onlinenewsfeed</p>
+          </div>
+        </div>
+        {image && 
             <img
-              src={`https://tmuc.ac.ke/${img}?w=${50}&q=${200}`}
-              alt={title}
+              src={image}
+              alt={headline}
               className={"image"}
               width={400}
-              height={250}
+              height={300}
               />
           }
       </div>
-      <p>{title} </p>
+      <p className='headline'>{headline} </p>
+      <p className='date'> { `${currentDate(timeStamp)}` }</p>
       <br/>
-      <a href={ ad_link || `https://tmuc.ac.ke/${link}`} style={{color:"blueviolet"}} >Read more ...</a>
+      <a className='meta' href={ link } style={{color:"blueviolet"}} >Read more ...</a>
     </div>
   )
 }

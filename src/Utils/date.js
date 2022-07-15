@@ -91,21 +91,11 @@ export const currentDate = unixTimestamp => {
     'Dec',
   ];
   const month = months[date.getMonth()];
-  // const day = date.getDate().toString()
-  const day = new Date(date).toLocaleDateString('en-Us', { weekday: "long"})
-
-  console.log(day)
-//days of week
-// let days = ["Sun", "Mon", "Tue", 'Wed', "Thur", "Fri", "Sat"]
 
   const year = date.getFullYear().toString();
-  const time = date.toLocaleString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: false,
-  });
+  var day = date.getDate() + 1;
 
-  return ` ${time} ${day} ${month}  ${year} `;
+  return ` ${month} ${day} ${year} `;
 };
 
 

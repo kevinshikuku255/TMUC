@@ -10,8 +10,8 @@
     font-family: sans-serif;
     border: none;
     font-weight: bolder;
-    border-bottom: 2px solid gray;
-    border-bottom-style: dotted;
+    border-bottom: 20px solid gray;
+    border-bottom-style: groove;
 }
 
 
@@ -21,6 +21,37 @@
     margin-bottom: 1rem;
     position: "relative";
     border-radius: 5px;
+}
+
+.date{
+    margin: .5rem 0;
+    font-size: medium;
+}
+
+.action{
+    display: flex;
+    justify-content: space-between;
+    width: 32%;
+    margin-bottom: .5rem;
+    font-size: large;
+    div{
+        margin: auto 0 0 0;
+    }
+    .avator{
+        margin: auto 0 0 0;
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        background-color: #4bb331;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.meta{
+    float:right;
+    margin: -1rem 0 0 0;
 }
 
 .loading{

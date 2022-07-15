@@ -1,50 +1,32 @@
 import React from 'react';
 import dotenv from 'dotenv';
 import ReactDOM from 'react-dom';
-import { ApolloProvider } from '@apollo/client';
 import { BrowserRouter} from 'react-router-dom';
-import { createApolloClient } from './Utils/apollo_client';
-import { AuthProvider, LoadProvider, PostProvider,ThemeProvider } from "./Context";
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { LoadProvider, ThemeProvider } from "./Context";
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 
 import './index.scss';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-
-dotenv.config("../.env");
-// GraphQL HTTP URL
-const API_URL = process.env.REACT_APP_API_URL;
-const queryClient = new QueryClient()
+dotenv.config();
 
 
-// GraphQL WebSocket (subscriptions) URL.
-// If its url is not set in .env then it has same url, host and pathname
-const WEBSOCKET_API_URL = process.env.REACT_APP_WEBSOCKET_API_URL;
-const websocketApiUrl = WEBSOCKET_API_URL
-  ? WEBSOCKET_API_URL
-  : API_URL.replace('https://', 'ws://').replace('http://', 'ws://');
-
-const apolloClient = createApolloClient(API_URL, websocketApiUrl);
-
+const client = new ApolloClient({
+  uri: 'https://tmuc-server.herokuapp.com/graphql',
+  cache: new InMemoryCache(),
+});
 
 ReactDOM.render(
-  <QueryClientProvider client={queryClient}>
-      <ApolloProvider client={apolloClient}>
+  <ApolloProvider client={client}>
         <BrowserRouter>
-           <AuthProvider>
              <ThemeProvider>
                 <LoadProvider>
-                  <PostProvider>
-                      <App/>
-                  </PostProvider>
+                      <App/>  
                 </LoadProvider>
               </ThemeProvider>
-            </AuthProvider>
       </BrowserRouter>
-    </ApolloProvider>
-  </QueryClientProvider>,
+    </ApolloProvider>,
   document.getElementById('root')
 );
 serviceWorkerRegistration.register();
-

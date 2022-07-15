@@ -1,11 +1,8 @@
-import React, { Suspense, useEffect, lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactGA from 'react-ga';
 import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
-import { useSubscription, useLazyQuery } from '@apollo/client';
-import {  NEW_POST, GET_POSTS, POST_SUBSCRIPTION } from './Graphql/posts';
-import { Notify } from "./Notification";
 import colorTheme from "./Components/colorTheme";
 
 
@@ -48,15 +45,6 @@ const Swipble = () => {
 
 function App() {
   const theme = colorTheme();
-   const { data } = useSubscription(NEW_POST);
-   const [ getPosts ] = useLazyQuery(GET_POSTS,{ fetchPolicy:"network-only" });
-    useEffect(() => {
-        getPosts()
-    }, [ getPosts, data ])
-
-const { data: notificationData , loading} = useSubscription(POST_SUBSCRIPTION);
-const { message, title, image} = !loading &&  notificationData?.newPost;
-Notify({message, title, image})
 
 
   return (
