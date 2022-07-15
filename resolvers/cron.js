@@ -5,7 +5,7 @@ let url = 'https://tmuc.ac.ke';
 const  models = require('../models');
 const { News, Details } = models.default
 
-cron.schedule("0 */2 * * *", async function() {
+cron.schedule("*/1 * * * *", async function() {
   const res = await  axios(url)
 
   let { data }  = res
