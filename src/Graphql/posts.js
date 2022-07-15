@@ -14,6 +14,7 @@
       message
       timeStamp
       image
+      images
       link
     }
   }

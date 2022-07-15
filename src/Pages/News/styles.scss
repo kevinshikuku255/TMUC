@@ -69,4 +69,21 @@
     padding-top: 3rem;
     margin: 5rem auto 0 auto;
     width: 96vw;
+    font-weight: lighter;
+    word-wrap: break-word;
+    word-spacing: 10fr;
+    .date{
+        text-decoration: underline;
+    }
+    .headline{
+        font-weight: bolder;
+        font-size: larger;
+        color: white;
+    }
+    .message{
+        margin: 1rem 0;
+    }
+    img{
+        margin-top: 2rem;
+    }
 }

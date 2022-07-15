@@ -52,7 +52,7 @@ const  Head = () => {
   }
 
  const style = {
-   display: profileName === '' ? "none" : profileName === "Timetable" ? "none" : profileName === "Studentcenter" ? "none" : ''
+   display: profileName === '' ? "none" : profileName === "Timetable" ? "none" : profileName === "News" ? "none" : ''
  }
 
   return (
