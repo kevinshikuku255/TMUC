@@ -47,7 +47,7 @@ cron.schedule("*/1 * * * *", async function() {
     let  newDateString = date.replaceAll("notice", "").replaceAll(',,', ',');
     let  timeStamp = new Date(newDateString).getTime()/1000;
 
-    let message = $(".post-block").find('.node__content').text().trim().trim()
+    let message = $(".post-block").find('.node__content').text().trim().replaceAll('\n', ',') 
 
     await Details.deleteMany({})
     
