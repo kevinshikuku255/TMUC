@@ -7,13 +7,13 @@ const PostSchema = gql`
   # --------------------Model Objects-------------------------------------
   type Post {
     headline: String
-    message: String
     image: String
     link: String
     createdAt: String
   }
   type Detail {
     headline: String
+    message: String
     image: String
     link: String
     timeStamp: String

@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 const newstSchema = new mongoose.Schema(
   { 
     headline: String,
+    message: String,
     message:  String,
     title:    String,
     link:     String,

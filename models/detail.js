@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 const detailtSchema = new mongoose.Schema(
   { 
     headline: String,
-    title:    String,
+    message: String,
     link:     String,
     image:    String,
     timeStamp: Number

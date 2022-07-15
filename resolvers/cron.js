@@ -33,7 +33,7 @@ cron.schedule("0 */2 * * *", async function() {
 
 
 // Cron job to fetch links and news details
-cron.schedule("4 */2 * * *", async function() {
+cron.schedule("*/1 * * * *", async function() {
 
   const allLinks = await News.find()
   allLinks.map( async ({link, headline, image}) => {
@@ -47,18 +47,19 @@ cron.schedule("4 */2 * * *", async function() {
     let  newDateString = date.replaceAll("notice", "").replaceAll(',,', ',');
     let  timeStamp = new Date(newDateString).getTime()/1000;
 
+    let message = $(".post-block").find('.node__content').text().trim().trim()
 
     await Details.deleteMany({})
     
-    await new Details({
+   let tt = await new Details({
       headline,
+      message,
       link,
       image,
       timeStamp
     }).save()
     
-
-    //post title
+console.log(tt)
     
   })
 
