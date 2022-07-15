@@ -15,6 +15,7 @@ const PostSchema = gql`
     headline: String
     message: String
     image: String
+    images: String
     link: String
     timeStamp: String
   }

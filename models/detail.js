@@ -10,6 +10,7 @@ const detailtSchema = new mongoose.Schema(
     message: String,
     link:     String,
     image:    String,
+    images: String,
     timeStamp: Number
   }
 );
