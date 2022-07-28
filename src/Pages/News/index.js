@@ -11,6 +11,7 @@ import { useHistory } from 'react-router-dom';
 
 /** News page */
 export default function Home() {
+  const skeleton = Array.from(Array(10).keys());
   const [ news, setNews] = useState(JSON.parse(localStorage.getItem('news')))
 
   const { loading, error, data} = useQuery(GET_DETAILS,{
@@ -34,7 +35,8 @@ export default function Home() {
 
 
       <main>
-        { (loading || error) && <Loading /> }
+        {((loading || error) && news) && <Loading />}
+        
         { news && 
          news.map((news, i) => (
            <div key={i} className={"news_item"}>
@@ -42,6 +44,13 @@ export default function Home() {
            </div>
          ))
         }
+        {  ((loading || error) && !news) &&
+            skeleton.map((i) => (
+             <div key={i} style={{margin:'20px'}}>
+                
+             </div>
+            ))
+           }
       </main>
     </div>   
   )
