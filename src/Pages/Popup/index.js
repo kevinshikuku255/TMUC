@@ -15,7 +15,6 @@ const Popup = () => {
 
   //   let example = "SBE/BA/00033/017";
 
-
   //phone validation
   const phoneRegex =
     /^(?:0)?((7|1)(?:(?:[1234679][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$/;
@@ -74,7 +73,7 @@ const Popup = () => {
             type="text"
             autoComplete="off"
             name="phone"
-            placeholder="Phone"
+            placeholder="Your correct phone"
             value={values.phone.trim()}
             spellCheck={false}
             onChange={changeHandler}
