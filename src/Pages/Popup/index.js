@@ -14,7 +14,7 @@ const Popup = () => {
   };
 
   //   let example = "SBE/BA/00033/017";
-  console.log(values);
+
 
   //phone validation
   const phoneRegex =
@@ -49,9 +49,8 @@ const Popup = () => {
   if (
     values.admition.length === 16 &&
     values.admition !== "" &&
-    values.name !== ""
+    values.name.length >= 5
   ) {
-    // localStorage.setItem("user", JSON.stringify(values));
     signup();
   }
 
@@ -65,7 +64,7 @@ const Popup = () => {
             type="text"
             autoComplete="off"
             name="name"
-            placeholder="your name"
+            placeholder="your full name"
             spellCheck={false}
             value={values.name}
             onChange={changeHandler}
