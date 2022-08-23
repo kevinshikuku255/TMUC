@@ -13,7 +13,7 @@ dotenv.config();
 
 
 const client = new ApolloClient({
-  uri: 'https://tmuc-server.herokuapp.com/graphql',
+  uri: 'http://localhost:5000/graphql',
   cache: new InMemoryCache(),
 });
 
@@ -22,7 +22,7 @@ ReactDOM.render(
         <BrowserRouter>
              <ThemeProvider>
                 <LoadProvider>
-                      <App/>  
+                      <App/>
                 </LoadProvider>
               </ThemeProvider>
       </BrowserRouter>

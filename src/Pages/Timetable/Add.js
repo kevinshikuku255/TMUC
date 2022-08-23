@@ -45,9 +45,9 @@ const saveData = (e) => {
 /* -------------------------------------------------------------------------- */
 
 const changeHandler = (e) => {
-    const day = e.target.name;
+    const name = e.target.name;
     const val = e.target.value;
-    setValue({...values, [day]: val})
+    setValue({...values, [name]: val})
 }
 
 const setdayHandler = (e) => {
@@ -67,7 +67,7 @@ const complete = () => {
          <div className="item_data">
              <div className="day_input">
                 <div className="day"  onClick={() => setDay(!day)}>
-                  <div> { !values?.Day && "Day : eg. "}  {values?.Day === "" ? 
+                  <div> { !values?.Day && "Day : eg. "}  {values?.Day === "" ?
                      <span style={{color:"green"}}>Sunday</span> : values?.Day}
                   </div>
                   { day &&  <KeyboardArrowUp/>}
@@ -82,17 +82,17 @@ const complete = () => {
                       <td onClick={setdayHandler}>Friday</td>
                     </tr> <br/>
                     <tr>
-                      <td onClick={setdayHandler}>Tuesday</td> 
+                      <td onClick={setdayHandler}>Tuesday</td>
                       <td onClick={setdayHandler}>Thursday</td>
                     <td onClick={setdayHandler}>Saturday</td> <br/>
-                      
+
                     </tr> <br/>
                     <tr>
-                    
+
                     <td onClick={setdayHandler}>Wednesday</td> <br/>
                     <td onClick={setdayHandler}>Sunday</td>
                     </tr>
-                </table>                  
+                </table>
                 </div>
                }
              </div>
@@ -109,7 +109,7 @@ const complete = () => {
               <TextareaAutosize
                     minRows={1}
                     name="Activity"
-                    autocomplete="off"
+                    autoComplete="off"
                     onChange={changeHandler}
                     value={values?.Activity}
                     className="activity_input"

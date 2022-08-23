@@ -32,14 +32,29 @@ function AppInfo() {
 
   return (
     <div style={style.div}>
-        <h3>Tom Mboya University</h3>
-         <p style={style.p}>Version 5.6.2</p>
-         <p style={style.p}><Avatar src={Logo}  className={classes.small}/></p>
-         <p style={style.p}>{'\u00A9'} 2017 - 2022</p>
-         <p>Developed by kevin shikuku __ Alumnus</p>
-         <i>contact: <a href='mailto: kevinsshikuku@gmail.com' style={{color: theme.link}}> kevinsshikuku@gmail.com</a></i>
-    </div> 
-  )
+      <h3>Tom Mboya Student App</h3>
+      <p style={style.p}>Version 6.0.2</p>
+      <p style={style.p}>
+        <Avatar src={Logo} className={classes.small} />
+      </p>
+      <p style={style.p}>{"\u00A9"} 2017 - 2022</p>
+      <p style={style.p}>
+        Native mobile app will be available soon for download
+      </p>
+      <p>Developed by kevin shikuku __ Alumnus</p>
+      <i>
+        contact:{" "}
+        <a href="mailto: kevinsshikuku@gmail.com" style={{ color: theme.link }}>
+          {" "}
+          kevinsshikuku@gmail.com
+        </a>
+      </i>
+      <p style={style.p}>
+        Contribute to the maintanance of the servers through Mpesa No.
+        <span style={{ color: theme.link }}>0740253367 </span>
+      </p>
+    </div>
+  );
 }
 
 export default AppInfo

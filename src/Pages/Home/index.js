@@ -1,44 +1,44 @@
-import React from 'react';
+import React from "react";
 // import Carousel from "../../Components/Caraousel";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 import "./pages.scss";
 
-import { Portal, Elearning, Login, Downloads, About, Council, Library, History, Academics, Photos, Direction, Helb } from "./Links";
 import colorTheme from "../../Components/colorTheme";
-import { useThemeContext } from '../../Context';
+import { useThemeContext, useLoadContext } from "../../Context";
+import Popup from "../Popup";
+
+import { data } from "./data";
+import Card from "./card";
 
 /** Home page */
 function Index() {
-  ReactGA.pageview('/');
+  ReactGA.pageview("/");
   const theme = colorTheme();
-  const  [ { Home }  ] = useThemeContext();
+  const [{ Home }] = useThemeContext();
+  const [{ poped }] = useLoadContext();
   const icons = Home === "Icons" ? true : false;
-/* -------------------------POST------------------------------------------------- */
+  let user_data = JSON.parse(localStorage.getItem("user"));
+
 
   return (
-  <div style={{color: theme.primary}} className="Main">
+    <div style={{ color: theme.primary }} className="Main">
       <div className="Home_page">
-            {/* <h6 style={style}>Check amazing 🎉🎉 new features in the settings.</h6> */}
-            <div className="Pages1">
-              <Login theme={theme}  icon={icons}/>
-              <Elearning theme={theme}  icon={icons}/>
-            </div>
-            <br/>
-            <div className="Pages1">
-              <Portal theme={theme} icon={icons}/>
-              <Library theme={theme} icon={icons}/>
-              <Photos theme={theme} icon={icons}/>
-              <Downloads theme={theme} icon={icons}/>
-              <Academics theme={theme} icon={icons}/>
-              <About theme={theme} icon={icons}/>
-              <Direction theme={theme} icon={icons}/>
-              <Council theme={theme} icon={icons}/>
-              <History theme={theme} icon={icons}/>
-              <Helb theme={theme} icon={icons}/>
-          </div>
+        {(!user_data && poped) && <Popup />}
+        <br />
+        <div className="Pages1">
+          {data.map((card_data, i) => (
+            <Card
+              key={i}
+              data={card_data}
+              icons={icons}
+              theme={theme}
+              index={i}
+            />
+          ))}
+        </div>
       </div>
-  </div>
-  )
+    </div>
+  );
 }
 
 export default Index;

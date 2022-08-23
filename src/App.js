@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import { REACT_GA } from "./config.json";
 import RouterCarousel from 'react-router-carousel';
 import colorTheme from "./Components/colorTheme";
+// import Popup from './Pages/Popup';
 
 
 import './App.scss';
@@ -51,6 +52,7 @@ function App() {
   return (
     <div style={{backgroundColor: theme.farground}} className="App">
       <Suspense fallback={FalLback}>
+        {/* <Popup/> */}
             <Head/>
             <Switch>
               <Route  path="/Cu" component={Cu}/>
