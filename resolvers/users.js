@@ -1,7 +1,6 @@
-import bcrypt from 'bcryptjs';
-import mongoose from 'mongoose';
-import { withFilter , ApolloError} from 'apollo-server';
-
+import bcrypt from "bcryptjs";
+import mongoose from "mongoose";
+import { withFilter, ApolloError } from "apollo-server";
 
 const Query = {
   /**
@@ -9,12 +8,12 @@ const Query = {
    *
    * @param {string} adm
    */
-    getUsers: async (_, __, { User }) => {
-        const count = await User.countDocuments();
-        const users = await User.find()
+  getUsers: async (_, __, { User }) => {
+    const count = await User.countDocuments();
+    const users = await User.find();
 
-        return { users, count };
-    },
+    return { users, count };
+  },
 
   /**
    * Gets user by admition
@@ -36,70 +35,47 @@ const Query = {
   },
 };
 
-
-
-
-
-
 const Mutation = {
-
-    /* -------------------------------------------------------------------------- */
-    /**
-     * Signs up user new user
-     *
-     * @param {string} phone
-     * @param {string} name
-     * @param {string} admition
-     */
+  /* -------------------------------------------------------------------------- */
+  /**
+   * Signs up user new user
+   *
+   * @param {string} phone
+   * @param {string} name
+   * @param {string} admition
+   */
   signup: async (_, { phone, name, admition }, { User }) => {
+    //fields validation
+    if (!name) {
+      throw new ApolloError("Fill name and any other missing fields");
+    }
 
-        // Check if user with given phone number or name already exists
-    const _name = name.toLowerCase().trim()
+    if (!phone) {
+      throw new ApolloError("Fill phone and any other missing fields");
+    }
 
-    const user = await User.findOne().or([{ admition }, { phone }]);
-
-    const name_ = user.name.toLowerCase().trim();
-    const adm = user.admition
-
-    if (_name === name_ && adm === admition) {
-          return user
-        }
-
-        //fields validation
-        if (!name) {
-            throw new ApolloError("Fill name and any other missing fields");
-        }
-
-        if (!phone) {
-            throw new ApolloError("Fill phone and any other missing fields");
-        }
-
-        //phone validation
-        const phoneRegex =
-            /^(?:0)?((7|1)(?:(?:[1234679][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$/;
-        if (!phoneRegex.test(phone)) {
-            throw new ApolloError("Provide correct phone number.");
+    //phone validation
+    const phoneRegex =
+      /^(?:0)?((7|1)(?:(?:[1234679][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$/;
+    if (!phoneRegex.test(phone)) {
+      throw new ApolloError("Provide correct phone number.");
     }
 
     //Admition validation
-        const admRegex = /[A-Z][A-Z][A-Z]\/[A-Z][A-Z]\/[0-9]{5}\/[0-9]{3}/;
+    const admRegex = /[A-Z][A-Z][A-Z]\/[A-Z][A-Z]\/[0-9]{5}\/[0-9]{3}/;
 
-        if (!admRegex.test(admition)) {
-          throw new ApolloError("Provide correct admition number.");
-        }
+    if (!admRegex.test(admition)) {
+      throw new ApolloError("Provide correct admition number.");
+    }
 
+    const newUser = await new User({
+      phone,
+      name,
+      admition,
+    }).save();
 
-        const newUser = await new User({
-          phone,
-          name,
-          admition,
-        }).save();
-
-        return newUser;
-    },
-
-
-}
-
+    return newUser;
+  },
+};
 
 export default { Query, Mutation };
