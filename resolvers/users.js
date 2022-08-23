@@ -45,6 +45,11 @@ const Mutation = {
    * @param {string} admition
    */
   signup: async (_, { phone, name, admition }, { User }) => {
+    const user = await User.findOne().or([{ admition }]);
+    if (user) {
+      return { phone, name, admition };
+    }
+
     //fields validation
     if (!name) {
       throw new ApolloError("Fill name and any other missing fields");
