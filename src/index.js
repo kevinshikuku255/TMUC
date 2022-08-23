@@ -13,7 +13,7 @@ dotenv.config();
 
 
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql',
+  uri: "https://tmuc-server.herokuapp.com/graphql",
   cache: new InMemoryCache(),
 });
 
