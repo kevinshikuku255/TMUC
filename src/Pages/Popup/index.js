@@ -48,22 +48,21 @@ const Popup = () => {
   if (
     values.admition.length === 16 &&
     values.admition !== "" &&
-    values.name.length >= 5
+    values.name.length >= 7
   ) {
     signup();
   }
 
-  console.log(values);
   return (
     <div className="container">
-      {loading && <h5>loading...</h5>}
+      {loading && <h5>confirming your details ...</h5>}
       {!loading && (
         <div className="form">
           <input
             type="text"
             autoComplete="off"
             name="name"
-            placeholder="your full name"
+            placeholder="Your full name"
             spellCheck={false}
             value={values.name}
             onChange={changeHandler}
