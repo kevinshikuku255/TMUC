@@ -9,7 +9,7 @@ cron.schedule("*/1 * * * *", async function() {
   const res = await  axios(url)
 
   let { data }  = res
-  
+
   const $ = cheerio.load(data);
 
   $(".post-block").each( async function(i, post) {
@@ -17,14 +17,14 @@ cron.schedule("*/1 * * * *", async function() {
     let link = $(post).find('a').attr('href')
     let headline = $(post).text().trim();
 
-    
+
     await News.deleteMany({})
-    
+
     await new News({
       headline,
       link: `https://tmuc.ac.ke${link}`,
       image : `https://tmuc.ac.ke${image}`
-    }).save(); 
+    }).save();
 
   });
 });
@@ -36,33 +36,33 @@ cron.schedule("*/1 * * * *", async function() {
 cron.schedule("2 */2 * * *", async function() {
 
   await Details.deleteMany({})
-  
+
   const allLinks = await News.find()
   allLinks.map( async ({link, headline, image}) => {
 
-    const res = await  axios(link) 
+    const res = await  axios(link)
     let { data }  = res
-  
+
     const $ = cheerio.load(data);
     // time stamp
     let date = $(".post-block").find('.post-created').text().split(' ').slice(0, 3).toString()
     let  newDateString = date.replaceAll("notice", "").replaceAll(',,', ',');
     let  timeStamp = new Date(newDateString).getTime()/1000;
 
-    let message = $(".post-block").find('.node__content').text().trim().replaceAll('\n', ',') 
+    let message = $(".post-block").find('.node__content').text().trim().replaceAll('\n', ',')
     let images = $(".post-block").find('.node__content img').get().map(x => $(x).attr('src'))
-     
-     
+
+
    new Details({
       headline,
       message,
       link,
       image,
       images: images.toString(),
-      timeStamp 
-    }).save() 
-    
-    
+      timeStamp
+    }).save()
+
+
   })
 
 })
@@ -93,7 +93,7 @@ const Query = {
       const allPosts = await Details.find()
         .sort({ timeStamp: 'desc' });
       return allPosts ;
-  
+
     },
 
 };

@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-express';
 
 import PostSchema from './Cron';
-import UserSchema from "./User";
+import StudentSchema from "./Student";
 
 const schema = gql`
   type Query {
@@ -11,6 +11,6 @@ const schema = gql`
     _empty: String
   }
   ${PostSchema}
-  ${UserSchema}
+  ${StudentSchema}
 `;
 export default schema;

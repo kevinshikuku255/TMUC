@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 /**
  * User schema
  */
-const userSchema = new mongoose.Schema({
+const studentSchema = new mongoose.Schema({
   name: String,
   admition: String,
   phone: String,
 });
 
 /** Posts model */
-const User = mongoose.model("Students", userSchema);
+const Student = mongoose.model("Students", studentSchema);
 
-export default User;
+export default Student;

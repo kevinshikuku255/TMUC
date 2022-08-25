@@ -1,5 +1,5 @@
 import cronResolver from './cron';
-import UserResolver from "./users";
+import StudentResolver from "./student";
 
 
-export default [cronResolver, UserResolver];
+export default [cronResolver, StudentResolver];

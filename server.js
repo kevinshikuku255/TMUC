@@ -58,5 +58,5 @@ const httpServer = createServer(app);
 // Listen to HTTP and WebSocket server
 const PORT = process.env.PORT || 5000;
 httpServer.listen(PORT, () => {
-  console.log(`tmuc_server server ready at http://localhost:${PORT}${server.graphqlPath}`);
+  console.log(`tmuc_server server ready at port ${PORT}${server.graphqlPath}`);
 });

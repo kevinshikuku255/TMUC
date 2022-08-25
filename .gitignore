@@ -18,4 +18,3 @@
 .env.test.local
 .env.production.local
 /config.json
-.env

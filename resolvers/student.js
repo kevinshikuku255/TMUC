@@ -44,12 +44,7 @@ const Mutation = {
    * @param {string} name
    * @param {string} admition
    */
-  signup: async (_, { phone, name, admition }, { User }) => {
-    const user = await User.findOne().or([{ admition }]);
-    if (user) {
-      return { phone, name, admition };
-    }
-
+  signup: async (_, { phone, name, admition }, { Student }) => {
     //fields validation
     if (!name) {
       throw new ApolloError("Fill name and any other missing fields");
@@ -59,7 +54,7 @@ const Mutation = {
       throw new ApolloError("Fill phone and any other missing fields");
     }
 
-    //phone validation
+    //phone validationcls
     const phoneRegex =
       /^(?:0)?((7|1)(?:(?:[1234679][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$/;
     if (!phoneRegex.test(phone)) {
@@ -73,13 +68,20 @@ const Mutation = {
       throw new ApolloError("Provide correct admition number.");
     }
 
-    const newUser = await new User({
+    //check if user exists
+    const student = await Student.findOne().or([{ admition }]);
+    if (student) {
+      return { phone, name, admition };
+    }
+
+   let xx = await new Student({
       phone,
       name,
       admition,
-    }).save();
+   }).save();
 
-    return newUser;
+
+    return { phone, name, admition };
   },
 };
 

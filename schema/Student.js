@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express';
 
 
 /**
- * User schema
+ * Student schema
  */
 const UserSchema = gql`
   # -----------------Model Objects----------------------------------------
@@ -39,4 +39,4 @@ const UserSchema = gql`
     signup(phone: String!, name: String!, admition: String!): User
   }
 `;
-export default UserSchema; 
+export default UserSchema;
