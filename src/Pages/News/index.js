@@ -37,8 +37,6 @@ export default function Home() {
     setNews(news);
   }, [data?.getDetails]);
 
-console.log(news)
-
   return (
     <div className={"news_feed"}>
       <main>
