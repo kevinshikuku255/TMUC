@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLoadContext } from "../../Context";
 import { useMutation } from "@apollo/client";
-import { SIGN_USER } from "../../Graphql/user";
+import { SIGN_USER } from "../../Graphql/student";
 import "./popup.scss";
 
 const Popup = () => {
@@ -46,10 +46,7 @@ const Popup = () => {
   });
 
   if (
-    values.admition.length === 16 &&
-    values.admition !== "" &&
-    values.name.length >= 7
-  ) {
+    values.admition.length === 16 && values.admition !== "" &&  values.name.length >= 7 ) {
     signup();
   }
 

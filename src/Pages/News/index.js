@@ -23,8 +23,21 @@ export default function Home() {
 
   useEffect(() => {
     let news = JSON.parse(localStorage.getItem("news")) || data?.getDetails;
+    let cc = {
+      __typename: "Detail",
+      headline: "WELCOME FRESHERS 2022/2023  Feel part of our great institution Tom Mboya University named after a Kenyan HERO. Read more about the history of our Legendary icon",
+      image: "http://blogs.iiit.ac.in/wp-content/uploads/2018/08/fresher.png",
+      link: "https://artsandculture.google.com/story/zAURDy0QHvRyJg",
+      message:
+        "You have embarked on a journey to persue your career.",
+      timeStamp: "1659484800",
+    };
+
+    news.splice(0, 0, cc);
     setNews(news);
   }, [data?.getDetails]);
+
+console.log(news)
 
   return (
     <div className={"news_feed"}>

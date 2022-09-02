@@ -23,7 +23,33 @@ function Index() {
   return (
     <div style={{ color: theme.primary }} className="Main">
       <div className="Home_page">
-        {(!user_data && poped) && <Popup />}
+        {!user_data && poped && <Popup />}
+
+        <div class="waviy">
+          <span style={{ "--i": 1 }}>W</span>
+          <span style={{ "--i": 2 }}>E</span>
+          <span style={{ "--i": 3 }}>L</span>
+          <span style={{ "--i": 4 }}>C</span>
+          <span style={{ "--i": 5 }}>O</span>
+          <span style={{ "--i": 6 }}>M</span>
+          <span style={{ "--i": 7 }}>E</span>
+          <span style={{ "--i": 1 }}>__</span>
+          <span style={{ "--i": 1 }}>F</span>
+          <span style={{ "--i": 2 }}>R</span>
+          <span style={{ "--i": 3 }}>E</span>
+          <span style={{ "--i": 4 }}>S</span>
+          <span style={{ "--i": 5 }}>H</span>
+          <span style={{ "--i": 6 }}>E</span>
+          <span style={{ "--i": 7 }}>R</span>
+          <span style={{ "--i": 1 }}>S</span>
+          <span style={{ "--i": 2 }}>__</span>
+          <span style={{ "--i": 3 }}>2</span>
+          <span style={{ "--i": 4 }}>2</span>
+          <span style={{ "--i": 5 }}>/</span>
+          <span style={{ "--i": 6 }}>2</span>
+          <span style={{ "--i": 7 }}>3</span>
+        </div>
+
         <br />
         <div className="Pages1">
           {data.map((card_data, i) => (
