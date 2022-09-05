@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from "../Images/favicon.png";
+import install from "../Images/install.png";
 import { Avatar, makeStyles } from "@material-ui/core";
 import colorTheme from "../Components/colorTheme";
 
@@ -8,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(15),
       height: theme.spacing(15),
       borderRadius: 0,
-    }
+  }
   }));
 
   /** App info */
@@ -50,9 +51,21 @@ function AppInfo() {
         </a>
       </i>
       <p style={style.p}>
-        Contribute to the maintanance of the servers through Mpesa No.
+        {/* Contribute to the maintanance of the servers through Mpesa No. */}
         <span style={{ color: theme.link }}>0740253367 </span>
       </p>
+      <p style={style.p}>
+        Share this application to your friends to download and use through the
+        link --
+        <a style={{ color: theme.link }} href="https://tmuc.netlify.app">
+          https://tmuc.netlify.app
+        </a>
+      </p>
+      <i style={style.p}>
+        PRO TIP: when they open the link, Tell them to click on add to
+        homescreen popup to install to their phone .
+      </i>
+      <img src={install}  alt="tom mboya"/>
     </div>
   );
 }
