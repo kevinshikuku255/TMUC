@@ -18,7 +18,7 @@ export const data = [
     Icon: AccountBoxIcon,
     class_name: "Portal",
     p_class: "L",
-    href: "http://student.tmuc.ac.ke/",
+    href: "https://student.tmuc.ac.ke/",
   },
   {
     name: "E-LEARNING",

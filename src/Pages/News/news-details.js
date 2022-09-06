@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./styles.scss";
 import { currentDate } from "../../Utils/date";
 import { useLocation } from "react-router-dom";
+import Icon from "../../Images/favicon.png";
 
 /** Post component */
 const Post = () => {
@@ -26,6 +27,8 @@ const Post = () => {
 
   const { headline, message, image, timeStamp, images, link } = data[index];
 
+  let _image = image.split(".")[2] === "keundefined" ? Icon : image;
+
   let imgs = images !== "" && images.split(",");
 
   useEffect(() => {
@@ -35,7 +38,7 @@ const Post = () => {
   return (
     <div className="news-details">
       <div>
-        {!imgs && <img src={image} alt={headline} className={"image"} />}
+        {!imgs && <img src={_image} alt={headline} className={"image"} />}
       </div>
       <p className="date"> {`${currentDate(timeStamp)}`}</p>
       <p className="headline">{headline} </p>

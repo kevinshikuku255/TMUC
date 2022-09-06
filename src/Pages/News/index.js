@@ -59,6 +59,8 @@ export default function Home() {
 /** Post component */
 const Post = ({ data, index }) => {
   const { link, headline, image, ad, timeStamp } = data;
+
+  let _image = image.split(".")[2] === "keundefined" ? Icon : image
   const history = useHistory();
 
   return (
@@ -74,7 +76,7 @@ const Post = ({ data, index }) => {
         </div>
         {image && (
           <img
-            src={image}
+            src={_image}
             alt={headline}
             className={"image"}
             width={400}
