@@ -108,8 +108,8 @@ const Privacy = () => {
         This Privacy Policy explains Tom Mboya University Student App (“TMUS” or
         “we” or “our”) privacy practices for visitors to our proprietary
         Internet site at www.tmuc,netlify.app (the “Website”). We created this
-        Privacy Policy to exIn the first interaction with TMUS, when you become
-        our user by signing up for our services, we become a data{" "}
+        Privacy Policy to explain the first interaction with TMUS, when you become
+        our user by signing up for our services, we become a data
         <b>controller of your Personal Data</b>. Our general terms and our
         privacy policy states exactly what we do with your data for this
         interaction, we can guarantee that we will control your personal data in

@@ -6,6 +6,7 @@ import { GET_DETAILS } from "../../Graphql/posts";
 import { currentDate } from "../../Utils/date";
 import Avatar from "@mui/material/Avatar";
 import Icon from "../../Images/favicon.png";
+import Fresher from "../../Images/Fresher.jpg";
 import { useHistory } from "react-router-dom";
 
 /** News page */
@@ -23,13 +24,15 @@ export default function Home() {
 
   useEffect(() => {
     let news = JSON.parse(localStorage.getItem("news")) || data?.getDetails;
+    console.log(news);
     let cc = {
       __typename: "Detail",
-      headline: "WELCOME FRESHERS 2022/2023  Feel part of our great institution Tom Mboya University named after a Kenyan HERO. Read more about the history of our Legendary icon",
-      image: "http://blogs.iiit.ac.in/wp-content/uploads/2018/08/fresher.png",
-      link: "https://artsandculture.google.com/story/zAURDy0QHvRyJg",
-      message:
-        "You have embarked on a journey to persue your career.",
+      headline:
+        "WELCOME FRESHERS 2022/2023  Feel part of our great institution Tom Mboya University named after a Kenyan HERO. Read more about the history of our Legendary icon",
+      image: Fresher,
+      link: "https://tmuc.netlify.app/News/0",
+      message: "You have embarked on a journey to persue your career.",
+      timeStamp: "1661904000",
     };
 
     news.splice(0, 0, cc);
@@ -59,7 +62,7 @@ export default function Home() {
 const Post = ({ data, index }) => {
   const { link, headline, image, ad, timeStamp } = data;
 
-  let _image = image.split(".")[2] === "keundefined" ? Icon : image
+  let _image = image.split(".")[2] === "keundefined" ? Icon : image;
   const history = useHistory();
 
   return (
