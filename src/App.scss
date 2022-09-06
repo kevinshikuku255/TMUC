@@ -1,17 +1,16 @@
-
-.App{
+.App {
   min-height: 100vh;
-  @media screen and (min-width: 48rem ) {
+  @media screen and (min-width: 48rem) {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 38rem;
     padding: 0 2rem;
     border-right: 1px solid gray;
- }
+  }
 }
 
-.settings{
+.settings {
   min-height: 100vh;
   margin-top: 5.2rem;
   font-size: small;
@@ -19,27 +18,44 @@
     margin: 1rem;
     padding: 1rem 0;
     border-bottom: 1px solid #9a9a9a;
-    a{
-      display:flex;
+    a {
+      display: flex;
 
       align-items: center;
     }
   }
 }
 
-.UsagePolicy{
-  margin-top:1rem;
+.UsagePolicy {
+  margin-top: 1rem;
   width: 80vw;
   word-wrap: break-word;
   writing-mode: horizontal-tb;
   white-space: pre-wrap;
   font-family: sans-serif;
-  p{
+  p {
     font-size: xx-small;
   }
-  @media screen and (min-width: 48rem ) {
+  @media screen and (min-width: 48rem) {
     padding: 0;
     width: 36rem;
     font-size: larger;
+  }
+}
+
+// ............ Privacy policy .......................
+
+.privacy-container {
+  margin: 5rem auto 0 auto;
+  padding-top: 1rem;
+  min-height: calc(100vh - 5rem);
+  width: 95vw;
+  word-wrap: break-word;
+  writing-mode: horizontal-tb;
+  white-space: pre-wrap;
+  font-family: sans-serif;
+
+  p{
+    margin:1rem;
   }
 }

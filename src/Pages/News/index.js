@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import Loading from "../../Components/loading";
+// import Loading from "../../Components/loading";
 import { useQuery } from "@apollo/client";
 import { GET_DETAILS } from "../../Graphql/posts";
 import { currentDate } from "../../Utils/date";
@@ -30,7 +30,6 @@ export default function Home() {
       link: "https://artsandculture.google.com/story/zAURDy0QHvRyJg",
       message:
         "You have embarked on a journey to persue your career.",
-      timeStamp: "1659484800",
     };
 
     news.splice(0, 0, cc);
@@ -40,7 +39,7 @@ export default function Home() {
   return (
     <div className={"news_feed"}>
       <main>
-        {(loading || error) && news && <Loading />}
+        {/* {(loading || error) && news && <Loading />} */}
 
         {news &&
           news.map((news, i) => (
@@ -70,8 +69,8 @@ const Post = ({ data, index }) => {
         <div className="action">
           <Avatar alt={link} src={Icon} />
           <div>
-            <p>TMUN</p>
-            <p style={{ fontSize: "xx-small" }}>@online_news_feed</p>
+            <p>TMUS</p>
+            <p style={{ fontSize: "xx-small" }}>@onlinenewsfeed</p>
           </div>
         </div>
         {image && (

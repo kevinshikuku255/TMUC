@@ -15,6 +15,7 @@ import News from "./Pages/News/index";
 import Timetable from "./Pages/Timetable/Index";
 import Settings from "./Pages/Settings"
 import Info from "./Pages/AppInfo"
+import Privacy from "./Pages/Privacy";
 import NewsDetail from "./Pages/News/news-details";
 
 
@@ -50,22 +51,23 @@ function App() {
 
 
   return (
-    <div style={{backgroundColor: theme.farground}} className="App">
+    <div style={{ backgroundColor: theme.farground }} className="App">
       <Suspense fallback={FalLback}>
         {/* <Popup/> */}
-            <Head/>
-            <Switch>
-              <Route  path="/Cu" component={Cu}/>
-              <Route  path="/activities/:username" component={Profile}/>
-              <Route  path="/News/:index" component={NewsDetail}/>
-              <Route  path="/Football" component={Football}/>
-              <Route  path="/Sotmuc" component={Sotmuc}/>
-              <Route  path="/Studentcenter" component={Studentcenter}/>
-              <Route  path="/Settings" component={Settings}/>
-              <Route  path="/Info" component={Info}/>
-              <Route  path='*' component={Swipble} />
-            </Switch>
-        </Suspense>
+        <Head />
+        <Switch>
+          <Route path="/Cu" component={Cu} />
+          <Route path="/activities/:username" component={Profile} />
+          <Route path="/News/:index" component={NewsDetail} />
+          <Route path="/Football" component={Football} />
+          <Route path="/Sotmuc" component={Sotmuc} />
+          <Route path="/Studentcenter" component={Studentcenter} />
+          <Route path="/Settings" component={Settings} />
+          <Route path="/Info" component={Info} />
+          <Route path="/Privacy" component={Privacy} />
+          <Route path="*" component={Swipble} />
+        </Switch>
+      </Suspense>
     </div>
   );
 }
