@@ -164,9 +164,9 @@ const reportLight = () => {
           App info
         </h4>
         <br/>
-        <h4 style={{ color: theme.link }} onClick={() => history.push("/Privacy")}>
+        {/* <h4 style={{ color: theme.link }} onClick={() => history.push("/Privacy")}>
           Privacy Policy
-        </h4>
+        </h4> */}
       </div>
     </div>
   );
