@@ -36,8 +36,6 @@ const Popup = () => {
     },
     onCompleted: () => {
       localStorage.setItem("user", JSON.stringify(values));
-      setValues({ name: "", admition: "", phone: "" });
-
       dispatch({
         type: "POPED",
         payload: false,
@@ -46,8 +44,12 @@ const Popup = () => {
   });
 
   if (
-    values.admition.length === 16 && values.admition !== "" &&  values.name.length >= 7 ) {
+    values.admition.length === 16 &&
+    values.admition !== "" &&
+    values.name.length >= 7
+  ) {
     signup();
+    setValues({ name: "", admition: "", phone: "" });
   }
 
   return (
