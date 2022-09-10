@@ -52,6 +52,7 @@ const Popup = () => {
     setValues({ name: "", admition: "", phone: "" });
   }
 
+
   return (
     <div className="container">
       {loading && <h5>confirming your details ...</h5>}
@@ -71,6 +72,7 @@ const Popup = () => {
             type="text"
             autoComplete="off"
             name="phone"
+            disabled={values.name.length < 7}
             placeholder="Your correct phone"
             value={values.phone.trim()}
             spellCheck={false}
@@ -79,6 +81,7 @@ const Popup = () => {
           <input
             type="text"
             autoComplete="off"
+            disabled={values.phone.length < 10 }
             name="admition"
             placeholder="Admition number"
             value={values.admition.trim().toLocaleUpperCase()}
