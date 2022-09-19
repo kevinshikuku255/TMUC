@@ -24,7 +24,6 @@ export default function Home() {
 
   useEffect(() => {
     let news = JSON.parse(localStorage.getItem("news")) || data?.getDetails;
-    console.log(news);
     let cc = {
       __typename: "Detail",
       headline:
