@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles.scss";
 // import Loading from "../../Components/loading";
 import { useQuery } from "@apollo/client";
@@ -12,7 +12,7 @@ import { useHistory } from "react-router-dom";
 /** News page */
 export default function Home() {
   const skeleton = Array.from(Array(10).keys());
-  const [news ] = useState(JSON.parse(localStorage.getItem("news")));
+  const news = JSON.parse(localStorage.getItem("news"));
 
   console.log(news)
   const { loading, error } = useQuery(GET_DETAILS, {
