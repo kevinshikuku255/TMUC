@@ -33,8 +33,8 @@ export default function Home() {
       message: "You have embarked on a journey to persue your career.",
       timeStamp: "1661904000",
     };
-
-    news.splice(0, 0, cc);
+    console.log(news)
+    news?.splice(0, 0, cc);
     setNews(news);
   }, [data?.getDetails]);
 
