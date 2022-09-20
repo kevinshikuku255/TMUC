@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 // import Loading from "../../Components/loading";
 import { useQuery } from "@apollo/client";
@@ -6,15 +6,16 @@ import { GET_DETAILS } from "../../Graphql/posts";
 import { currentDate } from "../../Utils/date";
 import Avatar from "@mui/material/Avatar";
 import Icon from "../../Images/favicon.png";
-import Fresher from "../../Images/Fresher.jpg";
+// import Fresher from "../../Images/Fresher.jpg";
 import { useHistory } from "react-router-dom";
 
 /** News page */
 export default function Home() {
   const skeleton = Array.from(Array(10).keys());
-  const [news, setNews] = useState(JSON.parse(localStorage.getItem("news")));
+  const [news ] = useState(JSON.parse(localStorage.getItem("news")));
 
-  const { loading, error, data } = useQuery(GET_DETAILS, {
+  console.log(news)
+  const { loading, error } = useQuery(GET_DETAILS, {
     onCompleted: ({ getDetails }) => {
       localStorage.setItem("news", JSON.stringify(getDetails));
     },
@@ -22,21 +23,21 @@ export default function Home() {
     notifyOnNetworkStatusChange: true,
   });
 
-  useEffect(() => {
-    let news = JSON.parse(localStorage.getItem("news")) || data?.getDetails;
-    let cc = {
-      __typename: "Detail",
-      headline:
-        "WELCOME FRESHERS 2022/2023  Feel part of our great institution Tom Mboya University named after a Kenyan HERO. Read more about the history of our Legendary icon",
-      image: Fresher,
-      link: "https://tmuc.netlify.app/News/0",
-      message: "You have embarked on a journey to persue your career.",
-      timeStamp: "1661904000",
-    };
-    console.log(news)
-    news?.splice(0, 0, cc);
-    setNews(news);
-  }, [data?.getDetails]);
+  // useEffect(() => {
+  //   let news = JSON.parse(localStorage.getItem("news")) || data?.getDetails;
+  //   let cc = {
+  //     __typename: "Detail",
+  //     headline:
+  //       "WELCOME FRESHERS 2022/2023  Feel part of our great institution Tom Mboya University named after a Kenyan HERO. Read more about the history of our Legendary icon",
+  //     image: Fresher,
+  //     link: "https://tmuc.netlify.app/News/0",
+  //     message: "You have embarked on a journey to persue your career.",
+  //     timeStamp: "1661904000",
+  //   };
+  //   console.log(news)
+  //   news?.splice(0, 0, cc);
+  //   setNews(news);
+  // }, [data?.getDetails]);
 
   return (
     <div className={"news_feed"}>
