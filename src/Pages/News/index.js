@@ -7,7 +7,7 @@ import { currentDate } from "../../Utils/date";
 import Avatar from "@mui/material/Avatar";
 import Icon from "../../Images/favicon.png";
 // import Fresher from "../../Images/Fresher.jpg";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 /** News page */
 export default function Home() {
@@ -63,7 +63,7 @@ const Post = ({ data, index }) => {
   const { link, headline, image, ad, timeStamp } = data;
 
   let _image = image.split(".")[2] === "keundefined" ? Icon : image;
-  const history = useHistory();
+  // const history = useHistory();
 
   return (
     <div>
@@ -83,7 +83,7 @@ const Post = ({ data, index }) => {
             className={"image"}
             width={400}
             height={300}
-            onClick={() => history.push(`/News/${index}`)}
+            // onClick={() => history.push(`/News/${index}`)}
           />
         )}
       </div>

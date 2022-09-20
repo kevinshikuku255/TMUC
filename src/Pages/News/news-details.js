@@ -76,7 +76,8 @@ const Post = () => {
       timeStamp: "1659484800",
     };
 
-    data.splice(0, 0, cc);
+  console.log(cc)
+    // data.splice(0, 0, cc);
 
   let path = location.pathname;
   let index = parseInt(path.substring(path.indexOf("s") + 1).replace("/", ""));
