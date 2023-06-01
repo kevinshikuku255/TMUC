@@ -5,7 +5,7 @@ import "./pages.scss";
 
 import colorTheme from "../../Components/colorTheme";
 import { useThemeContext, useLoadContext } from "../../Context";
-import Popup from "../Popup";
+// import Popup from "../Popup";
 
 import { data } from "./data";
 import Card from "./card";
@@ -15,15 +15,15 @@ function Index() {
   ReactGA.pageview("/");
   const theme = colorTheme();
   const [{ Home }] = useThemeContext();
-  const [{ poped }] = useLoadContext();
+//   const [{ poped }] = useLoadContext();
   const icons = Home === "Icons" ? true : false;
-  let user_data = JSON.parse(localStorage.getItem("user"));
+//   let user_data = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div style={{ color: theme.primary }} className="Main">
       <div className="Home_page">
-        {!user_data && poped && <Popup />}
-        <br/>
+//         {!user_data && poped && <Popup />}
+//         <br/>
         <div className="Pages1">
           {data.map((card_data, i) => (
             <Card
