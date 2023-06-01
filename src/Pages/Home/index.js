@@ -4,7 +4,7 @@ import ReactGA from "react-ga";
 import "./pages.scss";
 
 import colorTheme from "../../Components/colorTheme";
-import { useThemeContext, useLoadContext } from "../../Context";
+import { useThemeContext } from "../../Context";
 
 import { data } from "./data";
 import Card from "./card";
